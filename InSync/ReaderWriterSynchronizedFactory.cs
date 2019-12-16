@@ -14,10 +14,10 @@ namespace InSync
             return new ReaderWriterSynchronized<TWrite, TRead>(readerWriterLockSlim, writeValue, readValue);
         }
 
-        public static ReaderWriterSynchronized<TWrite, TWrite> Create<TWrite>(ReaderWriterLockSlim readerWriterLockSlim, TWrite writeValue)
+        public static ReaderWriterSynchronized<TWrite> Create<TWrite>(ReaderWriterLockSlim readerWriterLockSlim, TWrite writeValue)
             where TWrite : class
         {
-            return new ReaderWriterSynchronized<TWrite, TWrite>(readerWriterLockSlim, writeValue, writeValue);
+            return new ReaderWriterSynchronized<TWrite>(readerWriterLockSlim, writeValue);
         }
     }
 }

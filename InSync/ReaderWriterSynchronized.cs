@@ -136,4 +136,12 @@ namespace InSync
             return null;
         }
     }
+
+    public class ReaderWriterSynchronized<TWrite> : ReaderWriterSynchronized<TWrite, TWrite>
+        where TWrite : class
+    {
+        public ReaderWriterSynchronized(ReaderWriterLockSlim readerWriterLockSlim, TWrite writeValue) : base(readerWriterLockSlim, writeValue, writeValue)
+        {
+        }
+    }
 }
