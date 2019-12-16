@@ -194,9 +194,8 @@ namespace InSyncBenchmark
             {
                 using (var guard = MultiSync.All(new[] { syncMonitor1, syncMonitor2 }))
                 {
-                    var values = guard.Value;
-                    ((X)values[0]).Value += sqrt;
-                    ((X)values[1]).Value += sqrt;
+                    guard[0].Value += sqrt;
+                    guard[1].Value += sqrt;
                 }
             }
             watch.Stop();
@@ -208,9 +207,8 @@ namespace InSyncBenchmark
             {
                 using (var guard = MultiSync.All(syncMonitors))
                 {
-                    var values = guard.Value;
-                    ((X)values[0]).Value += sqrt;
-                    ((X)values[1]).Value += sqrt;
+                    guard[0].Value += sqrt;
+                    guard[1].Value += sqrt;
                 }
             }
             watch.Stop();
@@ -223,9 +221,8 @@ namespace InSyncBenchmark
             {
                 using (var guard = await MultiSync.AllAsync(new[] { syncSemaphore1, syncSemaphore2 }))
                 {
-                    var values = guard.Value;
-                    ((X)values[0]).Value += sqrt;
-                    ((X)values[1]).Value += sqrt;
+                    guard[0].Value += sqrt;
+                    guard[1].Value += sqrt;
                 }
             }
             watch.Stop();

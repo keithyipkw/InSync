@@ -78,7 +78,7 @@ namespace InSyncTest
 
             // assert
             currentStates.ShouldBe(Enumerable.Repeat(1, count));
-            guard.Value.ShouldBe(Enumerable.Range(0, count).Select(x => x.ToString()));
+            guard.ShouldBe(Enumerable.Range(0, count).Select(x => x.ToString()));
         }
 
         [Test]

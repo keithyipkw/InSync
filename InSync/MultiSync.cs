@@ -8,14 +8,53 @@ using System.Threading.Tasks;
 
 namespace InSync
 {
+    /// <summary>
+    /// https://howardhinnant.github.io/dining_philosophers.html#Polite
+    /// </summary>
+    /// <param name="locks"></param>
+    /// <param name="action"></param>
     public static class MultiSync
     {
-        /// <summary>
-        /// https://howardhinnant.github.io/dining_philosophers.html#Polite
-        /// </summary>
-        /// <param name="locks"></param>
-        /// <param name="action"></param>
-        public static GuardedValue<IReadOnlyList<object>> All(IReadOnlyList<IBareLock> locks)
+        public static GuardedMultiValue<T> All<T>(IReadOnlyList<IBareLock<T>> locks)
+            where T : class
+        {
+            Action dispose = null;
+            try
+            {
+                IReadOnlyList<object> values;
+                (values, dispose) = AcquireAll(locks);
+                var count = values.Count;
+                var typedValues = new T[count];
+                for (int i = 0; i < count; ++i)
+                {
+                    typedValues[i] = (T)values[i];
+                }
+                return new GuardedMultiValue<T>(typedValues, dispose);
+            }
+            catch
+            {
+                dispose?.Invoke();
+                throw;
+            }
+        }
+        
+        public static GuardedMultiValue<object> All(IReadOnlyList<IBareLock> locks)
+        {
+            Action dispose = null;
+            try
+            {
+                IReadOnlyList<object> values;
+                (values, dispose) = AcquireAll(locks);
+                return new GuardedMultiValue<object>(values, dispose);
+            }
+            catch
+            {
+                dispose?.Invoke();
+                throw;
+            }
+        }
+
+        private static (IReadOnlyList<object> Values, Action Dispose) AcquireAll(IReadOnlyList<IBareLock> locks)
         {
             if (locks == null)
             {
@@ -24,7 +63,7 @@ namespace InSync
             var count = locks.Count;
             if (count == 0)
             {
-                return new GuardedValue<IReadOnlyList<object>>(new object[0], null);
+                return (new object[0], null);
             }
 
             void UnlockAll()
@@ -43,7 +82,7 @@ namespace InSync
                 values[0] = locks[0].BarelyLock();
                 if (count == 1)
                 {
-                    return new GuardedValue<IReadOnlyList<object>>(values, UnlockAll);
+                    return (values, UnlockAll);
                 }
                 for (var i = 1; ; i = i >= maxI ? 0 : i + 1)
                 {
@@ -52,7 +91,7 @@ namespace InSync
                         ++lockedCount;
                         if (lockedCount == count)
                         {
-                            return new GuardedValue<IReadOnlyList<object>>(values, UnlockAll);
+                            return (values, UnlockAll);
                         }
                     }
                     else
@@ -71,27 +110,70 @@ namespace InSync
                     }
                 }
             }
-            finally
+            catch
             {
-                if (lockedCount != count)
+                for (var u = 0; u < count; ++u)
                 {
-                    for (var u = 0; u < count; ++u)
+                    if (values[u] != null)
                     {
-                        if (values[u] != null)
-                        {
-                            locks[u].BarelyUnlock();
-                        }
+                        locks[u].BarelyUnlock();
                     }
                 }
+                throw;
             }
         }
-        
-        public static Task<GuardedValue<IReadOnlyList<object>>> AllAsync(IReadOnlyList<IBareAsyncLock> locks)
+
+        public static Task<GuardedMultiValue<T>> AllAsync<T>(IReadOnlyList<IBareAsyncLock<T>> locks)
+            where T : class
         {
             return AllAsync(locks, CancellationToken.None);
         }
 
-        public static async Task<GuardedValue<IReadOnlyList<object>>> AllAsync(IReadOnlyList<IBareAsyncLock> locks, CancellationToken cancellationToken)
+        public static async Task<GuardedMultiValue<T>> AllAsync<T>(IReadOnlyList<IBareAsyncLock<T>> locks, CancellationToken cancellationToken)
+            where T : class
+        {
+            Action dispose = null;
+            try
+            {
+                IReadOnlyList<object> values;
+                (values, dispose) = await AcquireAllAsync(locks, cancellationToken);
+                var count = values.Count;
+                var typedValues = new T[count];
+                for (int i = 0; i < count; ++i)
+                {
+                    typedValues[i] = (T)values[i];
+                }
+                return new GuardedMultiValue<T>(typedValues, dispose);
+            }
+            catch
+            {
+                dispose?.Invoke();
+                throw;
+            }
+        }
+
+        public static Task<GuardedMultiValue<object>> AllAsync(IReadOnlyList<IBareAsyncLock> locks)
+        {
+            return AllAsync(locks, CancellationToken.None);
+        }
+
+        public static async Task<GuardedMultiValue<object>> AllAsync(IReadOnlyList<IBareAsyncLock> locks, CancellationToken cancellationToken)
+        {
+            Action dispose = null;
+            try
+            {
+                IReadOnlyList<object> values;
+                (values, dispose) = await AcquireAllAsync(locks, cancellationToken);
+                return new GuardedMultiValue<object>(values, dispose);
+            }
+            catch
+            {
+                dispose?.Invoke();
+                throw;
+            }
+        }
+
+        private static async Task<(IReadOnlyList<object> Values, Action Dispose)> AcquireAllAsync(IReadOnlyList<IBareAsyncLock> locks, CancellationToken cancellationToken)
         {
             if (locks == null)
             {
@@ -100,7 +182,7 @@ namespace InSync
             var count = locks.Count;
             if (count == 0)
             {
-                return new GuardedValue<IReadOnlyList<object>>(new object[0], null);
+                return (new object[0], null);
             }
 
             void UnlockAll()
@@ -119,7 +201,7 @@ namespace InSync
                 values[0] = await locks[0].BarelyLockAsync(cancellationToken);
                 if (count == 1)
                 {
-                    return new GuardedValue<IReadOnlyList<object>>(values, UnlockAll);
+                    return (values, UnlockAll);
                 }
                 for (var i = 1; ; i = i >= maxI ? 0 : i + 1)
                 {
@@ -128,7 +210,7 @@ namespace InSync
                         ++lockedCount;
                         if (lockedCount == count)
                         {
-                            return new GuardedValue<IReadOnlyList<object>>(values, UnlockAll);
+                            return (values, UnlockAll);
                         }
                     }
                     else
@@ -147,18 +229,16 @@ namespace InSync
                     }
                 }
             }
-            finally
+            catch
             {
-                if (lockedCount != count)
+                for (var u = 0; u < count; ++u)
                 {
-                    for (var u = 0; u < count; ++u)
+                    if (values[u] != null)
                     {
-                        if (values[u] != null)
-                        {
-                            locks[u].BarelyUnlock();
-                        }
+                        locks[u].BarelyUnlock();
                     }
                 }
+                throw;
             }
         }
     }
