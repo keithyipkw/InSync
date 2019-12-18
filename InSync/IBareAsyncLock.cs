@@ -11,9 +11,6 @@ namespace InSync
         Task<object> BarelyLockAsync();
         Task<object> BarelyLockAsync(CancellationToken cancellationToken);
         bool BarelyTryLock(out object value);
-        /// <summary>
-        /// This method must not throw exceptions.
-        /// </summary>
         void BarelyUnlock();
     }
 

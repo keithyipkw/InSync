@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 
 namespace InSyncTest
 {
@@ -13,7 +14,7 @@ namespace InSyncTest
     public class MultiSyncTest
     {
         private delegate bool TryLockDelegate(out object value);
-        
+
         [TestCase(new[] { 0, 0, 0 })]
         [TestCase(new[] { 0, 1, 0 })]
         [TestCase(new[] { 0, 0, 1 })]
@@ -112,6 +113,63 @@ namespace InSyncTest
 
             // assert
             currentStates.ShouldBe(Enumerable.Repeat(0, count));
+        }
+        
+        [Test]
+        public void AllBareLock_ExceptionInRelease_ThrowsUnlockException()
+        {
+            // setup
+            var locks = new List<IBareLock<string>>();
+            var l = new Mock<IBareLock<string>>(MockBehavior.Strict);
+            l.As<IBareLock>().Setup(x => x.BarelyLock()).Returns(() =>
+            {
+                return "0";
+            });
+            l.Setup(x => x.BarelyUnlock()).Throws(new SynchronizationLockException());
+            locks.Add(l.Object);
+            var guard = MultiSync.All(locks);
+
+            // act and assert
+            var exception = Should.Throw<UnlockException>(() => guard.Dispose());
+            exception.InnerException.ShouldBeNull();
+            exception.ExceptionsFromUnlocking.Select(e => e.GetType()).ShouldBe(new[] { typeof(SynchronizationLockException) });
+        }
+
+        [Test]
+        public void AllBareLock_ExceptionInAcquireAndRelease_ThrowsUnlockException()
+        {
+            // setup
+            var locks = new List<IBareLock<string>>();
+            {
+                var l = new Mock<IBareLock<string>>(MockBehavior.Strict);
+                l.As<IBareLock>().Setup(x => x.BarelyLock()).Returns(() =>
+                {
+                    return "0";
+                });
+                l.Setup(x => x.BarelyUnlock()).Throws(new SynchronizationLockException());
+                locks.Add(l.Object);
+            }
+            {
+                var l = new Mock<IBareLock<string>>(MockBehavior.Strict);
+                l.As<IBareLock>().Setup(x => x.BarelyLock()).Returns(() =>
+                {
+                    return "1";
+                });
+                object valueToken;
+                l.As<IBareLock>().Setup(x => x.BarelyTryLock(out valueToken)).Returns(new TryLockDelegate((out object v) =>
+                {
+                    v = "1";
+                    return true;
+                }));
+                l.Setup(x => x.BarelyUnlock());
+                locks.Add(l.Object);
+            }
+            var guard = MultiSync.All(locks);
+
+            // act and assert
+            var exception = Should.Throw<UnlockException>(() => guard.Dispose());
+            exception.InnerException.ShouldBeNull();
+            exception.ExceptionsFromUnlocking.Select(e => e.GetType()).ShouldBe(new[] { typeof(SynchronizationLockException) });
         }
     }
 }

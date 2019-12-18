@@ -6,9 +6,14 @@ namespace InSync
 {
     public class GuardedMultiValue<T> : IReadOnlyList<T>, IDisposable
     {
-        public GuardedMultiValue(IEnumerable<T> values, Action dispose)
+        public GuardedMultiValue(IEnumerable<object> values, Action dispose)
         {
-            this.values = new List<T>(values);
+            var typedValues = new List<T>();
+            foreach (var o in values)
+            {
+                typedValues.Add((T)o);
+            }
+            this.values = typedValues;
             this.dispose = dispose;
         }
 

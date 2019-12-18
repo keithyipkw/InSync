@@ -18,43 +18,15 @@ namespace InSync
         public static GuardedMultiValue<T> All<T>(IReadOnlyList<IBareLock<T>> locks)
             where T : class
         {
-            Action dispose = null;
-            try
-            {
-                IReadOnlyList<object> values;
-                (values, dispose) = AcquireAll(locks);
-                var count = values.Count;
-                var typedValues = new T[count];
-                for (int i = 0; i < count; ++i)
-                {
-                    typedValues[i] = (T)values[i];
-                }
-                return new GuardedMultiValue<T>(typedValues, dispose);
-            }
-            catch
-            {
-                dispose?.Invoke();
-                throw;
-            }
+            return AcquireAll<T>(locks);
         }
         
         public static GuardedMultiValue<object> All(IReadOnlyList<IBareLock> locks)
         {
-            Action dispose = null;
-            try
-            {
-                IReadOnlyList<object> values;
-                (values, dispose) = AcquireAll(locks);
-                return new GuardedMultiValue<object>(values, dispose);
-            }
-            catch
-            {
-                dispose?.Invoke();
-                throw;
-            }
+            return AcquireAll<object>(locks);
         }
 
-        private static (IReadOnlyList<object> Values, Action Dispose) AcquireAll(IReadOnlyList<IBareLock> locks)
+        private static GuardedMultiValue<T> AcquireAll<T>(IReadOnlyList<IBareLock> locks)
         {
             if (locks == null)
             {
@@ -63,14 +35,30 @@ namespace InSync
             var count = locks.Count;
             if (count == 0)
             {
-                return (new object[0], null);
+                return new GuardedMultiValue<T>(new object[0], null);
             }
 
             void UnlockAll()
             {
+                List<Exception> exceptions = null;
                 for (var i = 0; i < count; ++i)
                 {
-                    locks[i].BarelyUnlock();
+                    try
+                    {
+                        locks[i].BarelyUnlock();
+                    }
+                    catch (Exception e)
+                    {
+                        if (exceptions == null)
+                        {
+                            exceptions = new List<Exception>();
+                        }
+                        exceptions.Add(e);
+                    }
+                }
+                if (exceptions != null)
+                {
+                    throw new UnlockException(exceptions, "Exceptions occurred when releasing locks");
                 }
             }
 
@@ -80,44 +68,60 @@ namespace InSync
             try
             {
                 values[0] = locks[0].BarelyLock();
-                if (count == 1)
+                if (count > 1)
                 {
-                    return (values, UnlockAll);
-                }
-                for (var i = 1; ; i = i >= maxI ? 0 : i + 1)
-                {
-                    if (locks[i].BarelyTryLock(out values[i]))
+                    for (var i = 1; ; i = i >= maxI ? 0 : i + 1)
                     {
-                        ++lockedCount;
-                        if (lockedCount == count)
+                        if (locks[i].BarelyTryLock(out values[i]))
                         {
-                            return (values, UnlockAll);
-                        }
-                    }
-                    else
-                    {
-                        for (var u = 0; u < count; ++u)
-                        {
-                            if (values[u] != null)
+                            ++lockedCount;
+                            if (lockedCount == count)
                             {
-                                values[u] = null;
-                                locks[u].BarelyUnlock();
+                                break;
                             }
                         }
-                        Thread.Yield();
-                        values[i] = locks[i].BarelyLock();
-                        lockedCount = 1;
+                        else
+                        {
+                            for (var u = 0; u < count; ++u)
+                            {
+                                if (values[u] != null)
+                                {
+                                    values[u] = null;
+                                    locks[u].BarelyUnlock();
+                                }
+                            }
+                            Thread.Yield();
+                            values[i] = locks[i].BarelyLock();
+                            lockedCount = 1;
+                        }
                     }
                 }
+                return new GuardedMultiValue<T>(values, UnlockAll);
             }
-            catch
+            catch (Exception e)
             {
+                List<Exception> exceptions = null;
                 for (var u = 0; u < count; ++u)
                 {
                     if (values[u] != null)
                     {
-                        locks[u].BarelyUnlock();
+                        try
+                        {
+                            locks[u].BarelyUnlock();
+                        }
+                        catch (Exception unlockException)
+                        {
+                            if (exceptions == null)
+                            {
+                                exceptions = new List<Exception>();
+                            }
+                            exceptions.Add(unlockException);
+                        }
                     }
+                }
+                if (exceptions != null)
+                {
+                    throw new UnlockException(e, exceptions, "An exception occurred then other exceptions occurred when releasing locks");
                 }
                 throw;
             }
@@ -129,27 +133,10 @@ namespace InSync
             return AllAsync(locks, CancellationToken.None);
         }
 
-        public static async Task<GuardedMultiValue<T>> AllAsync<T>(IReadOnlyList<IBareAsyncLock<T>> locks, CancellationToken cancellationToken)
+        public static Task<GuardedMultiValue<T>> AllAsync<T>(IReadOnlyList<IBareAsyncLock<T>> locks, CancellationToken cancellationToken)
             where T : class
         {
-            Action dispose = null;
-            try
-            {
-                IReadOnlyList<object> values;
-                (values, dispose) = await AcquireAllAsync(locks, cancellationToken);
-                var count = values.Count;
-                var typedValues = new T[count];
-                for (int i = 0; i < count; ++i)
-                {
-                    typedValues[i] = (T)values[i];
-                }
-                return new GuardedMultiValue<T>(typedValues, dispose);
-            }
-            catch
-            {
-                dispose?.Invoke();
-                throw;
-            }
+            return AcquireAllAsync<T>(locks, cancellationToken);
         }
 
         public static Task<GuardedMultiValue<object>> AllAsync(IReadOnlyList<IBareAsyncLock> locks)
@@ -157,23 +144,12 @@ namespace InSync
             return AllAsync(locks, CancellationToken.None);
         }
 
-        public static async Task<GuardedMultiValue<object>> AllAsync(IReadOnlyList<IBareAsyncLock> locks, CancellationToken cancellationToken)
+        public static Task<GuardedMultiValue<object>> AllAsync(IReadOnlyList<IBareAsyncLock> locks, CancellationToken cancellationToken)
         {
-            Action dispose = null;
-            try
-            {
-                IReadOnlyList<object> values;
-                (values, dispose) = await AcquireAllAsync(locks, cancellationToken);
-                return new GuardedMultiValue<object>(values, dispose);
-            }
-            catch
-            {
-                dispose?.Invoke();
-                throw;
-            }
+            return AcquireAllAsync<object>(locks, cancellationToken);
         }
 
-        private static async Task<(IReadOnlyList<object> Values, Action Dispose)> AcquireAllAsync(IReadOnlyList<IBareAsyncLock> locks, CancellationToken cancellationToken)
+        private static async Task<GuardedMultiValue<T>> AcquireAllAsync<T>(IReadOnlyList<IBareAsyncLock> locks, CancellationToken cancellationToken)
         {
             if (locks == null)
             {
@@ -182,14 +158,30 @@ namespace InSync
             var count = locks.Count;
             if (count == 0)
             {
-                return (new object[0], null);
+                return new GuardedMultiValue<T>(new object[0], null);
             }
 
             void UnlockAll()
             {
+                List<Exception> exceptions = null;
                 for (var i = 0; i < count; ++i)
                 {
-                    locks[i].BarelyUnlock();
+                    try
+                    {
+                        locks[i].BarelyUnlock();
+                    }
+                    catch (Exception e)
+                    {
+                        if (exceptions == null)
+                        {
+                            exceptions = new List<Exception>();
+                        }
+                        exceptions.Add(e);
+                    }
+                }
+                if (exceptions != null)
+                {
+                    throw new UnlockException(exceptions, "Exceptions occurred when releasing locks");
                 }
             }
 
@@ -199,44 +191,60 @@ namespace InSync
             try
             {
                 values[0] = await locks[0].BarelyLockAsync(cancellationToken);
-                if (count == 1)
+                if (count > 1)
                 {
-                    return (values, UnlockAll);
-                }
-                for (var i = 1; ; i = i >= maxI ? 0 : i + 1)
-                {
-                    if (locks[i].BarelyTryLock(out values[i]))
+                    for (var i = 1; ; i = i >= maxI ? 0 : i + 1)
                     {
-                        ++lockedCount;
-                        if (lockedCount == count)
+                        if (locks[i].BarelyTryLock(out values[i]))
                         {
-                            return (values, UnlockAll);
-                        }
-                    }
-                    else
-                    {
-                        for (var u = 0; u < count; ++u)
-                        {
-                            if (values[u] != null)
+                            ++lockedCount;
+                            if (lockedCount == count)
                             {
-                                values[u] = null;
-                                locks[u].BarelyUnlock();
+                                break;
                             }
                         }
-                        Thread.Yield();
-                        values[i] = await locks[i].BarelyLockAsync(cancellationToken);
-                        lockedCount = 1;
+                        else
+                        {
+                            for (var u = 0; u < count; ++u)
+                            {
+                                if (values[u] != null)
+                                {
+                                    values[u] = null;
+                                    locks[u].BarelyUnlock();
+                                }
+                            }
+                            Thread.Yield();
+                            values[i] = await locks[i].BarelyLockAsync(cancellationToken);
+                            lockedCount = 1;
+                        }
                     }
                 }
+                return new GuardedMultiValue<T>(values, UnlockAll);
             }
-            catch
+            catch (Exception e)
             {
+                List<Exception> exceptions = null;
                 for (var u = 0; u < count; ++u)
                 {
                     if (values[u] != null)
                     {
-                        locks[u].BarelyUnlock();
+                        try
+                        {
+                            locks[u].BarelyUnlock();
+                        }
+                        catch (Exception unlockException)
+                        {
+                            if (exceptions == null)
+                            {
+                                exceptions = new List<Exception>();
+                            }
+                            exceptions.Add(unlockException);
+                        }
                     }
+                }
+                if (exceptions != null)
+                {
+                    throw new UnlockException(e, exceptions, "An exception occurred then other exceptions occurred when releasing locks");
                 }
                 throw;
             }

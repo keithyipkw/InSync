@@ -20,7 +20,7 @@ namespace InSync
         bool BarelyTryLock(out object value);
 
         /// <summary>
-        /// Unlocks the lock. No exceptions should be thrown.
+        /// Unlocks the lock.
         /// </summary>
         void BarelyUnlock();
     }
