@@ -4,40 +4,54 @@ using System.Text;
 
 namespace InSync
 {
+    /// <summary>
+    /// Provides abstraction of synchronization. It also allows its protected object to be accessed only after a synchronization begins.
+    /// <para>Asynchronous operations are not supported. The protected object is non-null.</para>
+    /// </summary>
     public interface IBareLock
     {
         /// <summary>
-        /// Synchronously acquires the lock and returns the protected non-null value.
+        /// Synchronously acquires the lock and returns the protected non-null object.
         /// </summary>
-        /// <returns>The protected non-null value</returns>
+        /// <returns>The protected non-null object.</returns>
+        /// <exception cref="LockException"></exception>
         object BarelyLock();
 
         /// <summary>
-        /// Attempts to acquire the lock. <code>true</code> and the protected non-null value are returned if the lock is acquired.
+        /// Tries to acquire the lock. It returns <c>true</c> and the protected non-null object if the lock is acquired.
         /// </summary>
-        /// <param name="value">The protected non-null value</param>
-        /// <returns><code>true</code> if the lock is acquired, otherwise <code>false</code>.</returns>
+        /// <param name="value">The protected non-null object if the lock is acquired, otherwise, <c>null</c> is returned.</param>
+        /// <returns><c>true</c> if the lock is acquired.</returns>
+        /// <exception cref="LockException"></exception>
         bool BarelyTryLock(out object value);
 
         /// <summary>
-        /// Unlocks the lock.
+        /// Releases the lock.
         /// </summary>
+        /// <exception cref="UnlockException"></exception>
         void BarelyUnlock();
     }
 
+    /// <summary>
+    /// Provides abstraction of synchronization. It also allows its protected object to be accessed only after a synchronization begins.
+    /// <para>Asynchronous operations are not supported. The protected object is non-null.</para>
+    /// </summary>
+    /// <typeparam name="T">The type of the protected object.</typeparam>
     public interface IBareLock<T> : IBareLock where T : class
     {
         /// <summary>
-        /// Synchronously acquires the lock and returns the protected non-null value.
+        /// Synchronously acquires the lock and returns the protected non-null object.
         /// </summary>
-        /// <returns>The protected non-null value</returns>
+        /// <returns>The protected non-null object.</returns>
+        /// <exception cref="LockException"></exception>
         new T BarelyLock();
 
         /// <summary>
-        /// Attempts to acquire the lock. <code>true</code> and the protected non-null value are returned if the lock is acquired.
+        /// Tries to acquire the lock. It returns <c>true</c> and the protected non-null object if the lock is acquired.
         /// </summary>
-        /// <param name="value">The protected non-null value</param>
-        /// <returns><code>true</code> if the lock is acquired, otherwise <code>false</code>.</returns>
+        /// <param name="value">The protected non-null object if the lock is acquired, otherwise, <c>null</c> is returned.</param>
+        /// <returns><c>true</c> if the lock is acquired.</returns>
+        /// <exception cref="LockException"></exception>
         bool BarelyTryLock(out T value);
     }
 }

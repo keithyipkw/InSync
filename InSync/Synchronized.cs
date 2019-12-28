@@ -4,17 +4,37 @@ using System.Threading.Tasks;
 
 namespace InSync
 {
+    /// <summary>
+    /// Uses <seealso cref="Monitor"/> to synchronize and only expose its protected object after a synchronization begins.
+    /// <para>Asynchronous operations are not supported. The protected object is non-null.</para>
+    /// </summary>
+    /// <typeparam name="T">The type of the protected object.</typeparam>
     public class Synchronized<T> : ISynchronized<T>, IBareLock<T> where T : class
     {
+        /// <summary>
+        /// Initializes a new <seealso cref="Synchronized{T}"/> with the specified lock and the object to protect.
+        /// </summary>
+        /// <param name="padLock">The lock for synchronization</param>
+        /// <param name="value">The object to protect.</param>
+        /// <exception cref="ArgumentNullException"><paramref name="padLock"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="value"/> is <c>null</c>.</exception>
         public Synchronized(object padLock, T value)
         {
             this.padLock = padLock ?? throw new ArgumentNullException(nameof(padLock));
             this.value = value ?? throw new ArgumentNullException(nameof(value));
         }
 
+        /// <summary>
+        /// The lock for synchronization
+        /// </summary>
         protected readonly object padLock;
-        protected readonly T value;
 
+        /// <summary>
+        /// The non-null object to protect.
+        /// </summary>
+        protected readonly T value;
+        
+        /// <inheritdoc/>
         public T BarelyLock()
         {
             Monitor.Enter(padLock);
@@ -26,6 +46,7 @@ namespace InSync
             return BarelyLock();
         }
 
+        /// <inheritdoc/>
         public bool BarelyTryLock(out T value)
         {
             if (Monitor.TryEnter(padLock))
@@ -37,6 +58,7 @@ namespace InSync
             return false;
         }
 
+        /// <inheritdoc/>
         public bool BarelyTryLock(out object value)
         {
             var result = BarelyTryLock(out T tmp);
@@ -44,11 +66,13 @@ namespace InSync
             return result;
         }
 
+        /// <inheritdoc/>
         public void BarelyUnlock()
         {
             Monitor.Exit(padLock);
         }
 
+        /// <inheritdoc/>
         public void WithLock(Action<T> action)
         {
             Monitor.Enter(padLock);
@@ -61,7 +85,8 @@ namespace InSync
                 Monitor.Exit(padLock);
             }
         }
-        
+
+        /// <inheritdoc/>
         public TResult WithLock<TResult>(Func<T, TResult> func)
         {
             Monitor.Enter(padLock);
@@ -74,7 +99,8 @@ namespace InSync
                 Monitor.Exit(padLock);
             }
         }
-        
+
+        /// <inheritdoc/>
         public bool TryWithLock(Action<T> action)
         {
             if (Monitor.TryEnter(padLock))
@@ -92,6 +118,7 @@ namespace InSync
             return false;
         }
 
+        /// <inheritdoc/>
         public bool TryWithLock<TResult>(Func<T, TResult> func, out TResult result)
         {
             if (Monitor.TryEnter(padLock))
@@ -110,12 +137,14 @@ namespace InSync
             return false;
         }
 
+        /// <inheritdoc/>
         public GuardedValue<T> Lock()
         {
             Monitor.Enter(padLock);
             return new GuardedValue<T>(value, BarelyUnlock);
         }
-        
+
+        /// <inheritdoc/>
         public GuardedValue<T> TryLock()
         {
             if (Monitor.TryEnter(padLock))

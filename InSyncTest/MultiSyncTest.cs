@@ -132,7 +132,7 @@ namespace InSyncTest
             // act and assert
             var exception = Should.Throw<UnlockException>(() => guard.Dispose());
             exception.InnerException.ShouldBeNull();
-            exception.ExceptionsFromUnlocking.Select(e => e.GetType()).ShouldBe(new[] { typeof(SynchronizationLockException) });
+            exception.ExceptionsDuringUnlock.Select(e => e.GetType()).ShouldBe(new[] { typeof(SynchronizationLockException) });
         }
 
         [Test]
@@ -169,7 +169,7 @@ namespace InSyncTest
             // act and assert
             var exception = Should.Throw<UnlockException>(() => guard.Dispose());
             exception.InnerException.ShouldBeNull();
-            exception.ExceptionsFromUnlocking.Select(e => e.GetType()).ShouldBe(new[] { typeof(SynchronizationLockException) });
+            exception.ExceptionsDuringUnlock.Select(e => e.GetType()).ShouldBe(new[] { typeof(SynchronizationLockException) });
         }
     }
 }
