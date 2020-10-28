@@ -35,11 +35,47 @@ namespace InSync
         /// The reader to protect.
         /// </summary>
         protected readonly TRead reader;
+        
+        private void Acquire()
+        {
+            try
+            {
+                readerWriterLockSlim.EnterReadLock();
+            }
+            catch (Exception e)
+            {
+                throw new LockException(e);
+            }
+        }
+
+        private bool TryAcquire()
+        {
+            try
+            {
+                return readerWriterLockSlim.TryEnterReadLock(0);
+            }
+            catch (Exception e)
+            {
+                throw new LockException(e);
+            }
+        }
+
+        private void Release(Exception priorException)
+        {
+            try
+            {
+                readerWriterLockSlim.ExitReadLock();
+            }
+            catch (Exception e)
+            {
+                throw new UnlockException(priorException, e);
+            }
+        }
 
         /// <inheritdoc/>
         public TRead BarelyLock()
         {
-            readerWriterLockSlim.EnterReadLock();
+            Acquire();
             return reader;
         }
 
@@ -51,7 +87,7 @@ namespace InSync
         /// <inheritdoc/>
         public bool BarelyTryLock(out TRead value)
         {
-            if (readerWriterLockSlim.TryEnterReadLock(0))
+            if (TryAcquire())
             {
                 value = this.reader;
                 return true;
@@ -70,58 +106,73 @@ namespace InSync
         /// <inheritdoc/>
         public void BarelyUnlock()
         {
-            readerWriterLockSlim.ExitReadLock();
+            try
+            {
+                readerWriterLockSlim.ExitReadLock();
+            }
+            catch (Exception e)
+            {
+                throw new UnlockException(e);
+            }
         }
 
         /// <inheritdoc/>
         public void WithLock(Action<TRead> action)
         {
-            readerWriterLockSlim.EnterReadLock();
+            Acquire();
             try
             {
                 action(reader);
             }
-            finally
+            catch (Exception e)
             {
-                readerWriterLockSlim.ExitReadLock();
+                Release(e);
+                throw;
             }
+            BarelyUnlock();
         }
 
         /// <inheritdoc/>
         public TResult WithLock<TResult>(Func<TRead, TResult> func)
         {
-            readerWriterLockSlim.EnterReadLock();
+            Acquire();
+            TResult result;
             try
             {
-                return func(reader);
+                result = func(reader);
             }
-            finally
+            catch (Exception e)
             {
-                readerWriterLockSlim.ExitReadLock();
+                Release(e);
+                throw;
             }
+            BarelyUnlock();
+            return result;
         }
 
         /// <inheritdoc/>
         public GuardedValue<TRead> Lock()
         {
-            readerWriterLockSlim.EnterReadLock();
+            Acquire();
             return new GuardedValue<TRead>(reader, BarelyUnlock);
         }
 
         /// <inheritdoc/>
         public bool TryWithLock(Action<TRead> action)
         {
-            if (readerWriterLockSlim.TryEnterReadLock(0))
+            if (TryAcquire())
             {
                 try
                 {
                     action(reader);
-                    return true;
                 }
-                finally
+                catch (Exception e)
                 {
-                    readerWriterLockSlim.ExitReadLock();
+                    Release(e);
+                    throw;
                 }
+                BarelyUnlock();
+                return true;
             }
             return false;
         }
@@ -129,17 +180,19 @@ namespace InSync
         /// <inheritdoc/>
         public bool TryWithLock<TResult>(Func<TRead, TResult> func, out TResult result)
         {
-            if (readerWriterLockSlim.TryEnterReadLock(0))
+            if (TryAcquire())
             {
                 try
                 {
                     result = func(reader);
-                    return true;
                 }
-                finally
+                catch (Exception e)
                 {
-                    readerWriterLockSlim.ExitReadLock();
+                    Release(e);
+                    throw;
                 }
+                BarelyUnlock();
+                return true;
             }
             result = default;
             return false;
@@ -148,7 +201,7 @@ namespace InSync
         /// <inheritdoc/>
         public GuardedValue<TRead> TryLock()
         {
-            if (readerWriterLockSlim.TryEnterReadLock(0))
+            if (TryAcquire())
             {
                 return new GuardedValue<TRead>(reader, BarelyUnlock);
             }

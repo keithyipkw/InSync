@@ -69,9 +69,16 @@ namespace InSync
         /// <inheritdoc/>
         public void BarelyUnlock()
         {
-            Monitor.Exit(padLock);
+            try
+            {
+                Monitor.Exit(padLock);
+            }
+            catch (Exception e)
+            {
+                throw new UnlockException(e);
+            }
         }
-
+        
         /// <inheritdoc/>
         public void WithLock(Action<T> action)
         {

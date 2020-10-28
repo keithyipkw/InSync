@@ -41,10 +41,62 @@ namespace InSync
         /// </summary>
         protected readonly T value;
 
+        private void Acquire()
+        {
+            try
+            {
+                semaphore.Wait();
+            }
+            catch (Exception e)
+            {
+                throw new LockException(e);
+            }
+        }
+
+        private bool TryAcquire()
+        {
+            try
+            {
+                return semaphore.Wait(0);
+            }
+            catch (Exception e)
+            {
+                throw new LockException(e);
+            }
+        }
+
+        private async Task AcquireAsync(CancellationToken cancellationToken)
+        {
+            try
+            {
+                await semaphore.WaitAsync(cancellationToken);
+            }
+            catch (OperationCanceledException)
+            {
+                throw;
+            }
+            catch (Exception e)
+            {
+                throw new LockException(e);
+            }
+        }
+
+        private void Release(Exception priorException)
+        {
+            try
+            {
+                semaphore.Release();
+            }
+            catch (Exception e)
+            {
+                throw new UnlockException(priorException, e);
+            }
+        }
+
         /// <inheritdoc/>
         public T BarelyLock()
         {
-            semaphore.Wait();
+            Acquire();
             return value;
         }
 
@@ -56,7 +108,7 @@ namespace InSync
         /// <inheritdoc/>
         public bool BarelyTryLock(out T value)
         {
-            if (semaphore.Wait(0))
+            if (TryAcquire())
             {
                 value = this.value;
                 return true;
@@ -76,9 +128,16 @@ namespace InSync
         /// <inheritdoc/>
         public void BarelyUnlock()
         {
-            semaphore.Release();
+            try
+            {
+                semaphore.Release();
+            }
+            catch (Exception e)
+            {
+                throw new UnlockException(e);
+            }
         }
-
+        
         /// <inheritdoc/>
         public Task<T> BarelyLockAsync()
         {
@@ -88,75 +147,79 @@ namespace InSync
         /// <inheritdoc/>
         public async Task<T> BarelyLockAsync(CancellationToken cancellationToken)
         {
-            await semaphore.WaitAsync(cancellationToken);
+            await AcquireAsync(cancellationToken);
             return value;
         }
 
-        Task<object> IBareAsyncLock.BarelyLockAsync()
+        async Task<object> IBareAsyncLock.BarelyLockAsync()
         {
-            return IBareAsyncLockBarelyLockAsync(CancellationToken.None);
+            await AcquireAsync(CancellationToken.None);
+            return value;
         }
 
-        Task<object> IBareAsyncLock.BarelyLockAsync(CancellationToken cancellationToken)
+        async Task<object> IBareAsyncLock.BarelyLockAsync(CancellationToken cancellationToken)
         {
-            return IBareAsyncLockBarelyLockAsync(cancellationToken);
-        }
-
-        private async Task<object> IBareAsyncLockBarelyLockAsync(CancellationToken cancellationToken)
-        {
-            await semaphore.WaitAsync(cancellationToken);
+            await AcquireAsync(cancellationToken);
             return value;
         }
 
         /// <inheritdoc/>
         public void WithLock(Action<T> action)
         {
-            semaphore.Wait();
+            Acquire();
             try
             {
                 action(value);
             }
-            finally
+            catch (Exception e)
             {
-                semaphore.Release();
+                Release(e);
+                throw;
             }
+            BarelyUnlock();
         }
-
+        
         /// <inheritdoc/>
         public TResult WithLock<TResult>(Func<T, TResult> func)
         {
-            semaphore.Wait();
+            Acquire();
+            TResult result;
             try
             {
-                return func(value);
+                result = func(value);
             }
-            finally
+            catch (Exception e)
             {
-                semaphore.Release();
+                Release(e);
+                throw;
             }
+            BarelyUnlock();
+            return result;
         }
 
         /// <inheritdoc/>
         public GuardedValue<T> Lock()
         {
-            semaphore.Wait();
+            Acquire();
             return new GuardedValue<T>(value, BarelyUnlock);
         }
 
         /// <inheritdoc/>
         public bool TryWithLock(Action<T> action)
         {
-            if (semaphore.Wait(0))
+            if (TryAcquire())
             {
                 try
                 {
                     action(value);
-                    return true;
                 }
-                finally
+                catch (Exception e)
                 {
-                    semaphore.Release();
+                    Release(e);
+                    throw;
                 }
+                BarelyUnlock();
+                return true;
             }
             return false;
         }
@@ -164,17 +227,19 @@ namespace InSync
         /// <inheritdoc/>
         public bool TryWithLock<TResult>(Func<T, TResult> func, out TResult result)
         {
-            if (semaphore.Wait(0))
+            if (TryAcquire())
             {
                 try
                 {
                     result = func(value);
-                    return true;
                 }
-                finally
+                catch (Exception e)
                 {
-                    semaphore.Release();
+                    Release(e);
+                    throw;
                 }
+                BarelyUnlock();
+                return true;
             }
             result = default;
             return false;
@@ -183,7 +248,7 @@ namespace InSync
         /// <inheritdoc/>
         public GuardedValue<T> TryLock()
         {
-            if (semaphore.Wait(0))
+            if (TryAcquire())
             {
                 return new GuardedValue<T>(value, BarelyUnlock);
             }
@@ -199,15 +264,17 @@ namespace InSync
         /// <inheritdoc/>
         public async Task WithLockAsync(Action<T> action, CancellationToken cancellationToken)
         {
-            await semaphore.WaitAsync(cancellationToken);
+            await AcquireAsync(cancellationToken);
             try
             {
                 action(value);
             }
-            finally
+            catch (Exception e)
             {
-                semaphore.Release();
+                Release(e);
+                throw;
             }
+            BarelyUnlock();
         }
 
         /// <inheritdoc/>
@@ -219,15 +286,19 @@ namespace InSync
         /// <inheritdoc/>
         public async Task<TResult> WithLockAsync<TResult>(Func<T, TResult> func, CancellationToken cancellationToken)
         {
-            await semaphore.WaitAsync(cancellationToken);
+            await AcquireAsync(cancellationToken);
+            TResult result;
             try
             {
-                return func(value);
+                result = func(value);
             }
-            finally
+            catch (Exception e)
             {
-                semaphore.Release();
+                Release(e);
+                throw;
             }
+            BarelyUnlock();
+            return result;
         }
 
         /// <inheritdoc/>
@@ -239,15 +310,17 @@ namespace InSync
         /// <inheritdoc/>
         public async Task WithLockAsync(Func<T, Task> asyncAction, CancellationToken cancellationToken)
         {
-            await semaphore.WaitAsync(cancellationToken);
+            await AcquireAsync(cancellationToken);
             try
             {
                 await asyncAction(value);
             }
-            finally
+            catch (Exception e)
             {
-                semaphore.Release();
+                Release(e);
+                throw;
             }
+            BarelyUnlock();
         }
 
         /// <inheritdoc/>
@@ -259,15 +332,19 @@ namespace InSync
         /// <inheritdoc/>
         public async Task<TResult> WithLockAsync<TResult>(Func<T, Task<TResult>> asyncFunc, CancellationToken cancellationToken)
         {
-            await semaphore.WaitAsync(cancellationToken);
+            await AcquireAsync(cancellationToken);
+            TResult result;
             try
             {
-                return await asyncFunc(value);
+                result = await asyncFunc(value);
             }
-            finally
+            catch (Exception e)
             {
-                semaphore.Release();
+                Release(e);
+                throw;
             }
+            BarelyUnlock();
+            return result;
         }
 
         /// <inheritdoc/>
@@ -279,7 +356,7 @@ namespace InSync
         /// <inheritdoc/>
         public async Task<GuardedValue<T>> LockAsync(CancellationToken cancellationToken)
         {
-            await semaphore.WaitAsync(cancellationToken);
+            await AcquireAsync(cancellationToken);
             return new GuardedValue<T>(value, BarelyUnlock);
         }
     }

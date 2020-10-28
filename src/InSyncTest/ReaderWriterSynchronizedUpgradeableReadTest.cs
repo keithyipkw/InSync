@@ -3,6 +3,7 @@ using NUnit.Framework;
 using Shouldly;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -10,31 +11,57 @@ using System.Threading.Tasks;
 namespace InSyncTest
 {
     [TestFixture]
-    public class ReaderWriterSynchronizedUpgradeableReadTest
+    public class ReaderWriterSynchronizedUpgradeableReadTest : SynchronizedTestBase<UpgradeableReaderSynchronized<ReaderWriterSynchronizedUpgradeableReadTest.Read>, ReaderWriterSynchronizedUpgradeableReadTest.Read, SynchronizationLockException>
     {
-        private class Write
+        public class Write
         {
         }
 
-        private class Read
+        public class Read
         {
 
         }
 
-        [Test]
-        public void BarelyLock_Acquire()
+        private readonly Write wValue = new Write();
+        private readonly Read rValue = new Read();
+        private ReaderWriterLockSlim rwLock;
+
+        [SetUp]
+        public void Setup()
         {
-            // setup
-            var rwLock = new ReaderWriterLockSlim();
-            var rValue = new Read();
-            var wValue = new Write();
-            var subject = new ReaderWriterSynchronized<Write, Read>(rwLock, wValue, rValue).UpgradeableReader;
+            rwLock = new ReaderWriterLockSlim();
+        }
 
-            // act and assert
-            var result = subject.BarelyLock();
+        protected override UpgradeableReaderSynchronized<Read> Create(bool locked)
+        {
+            if (locked)
+            {
+                rwLock.EnterUpgradeableReadLock();
+            }
+            return new ReaderWriterSynchronized<Write, Read>(rwLock, wValue, rValue).UpgradeableReader;
+        }
 
-            result.ShouldBe(rValue);
+        protected override UpgradeableReaderSynchronized<Read> CreateNotLockable()
+        {
+            var setupEvent = new AutoResetEvent(false);
+            new Thread(() =>
+            {
+                rwLock.EnterWriteLock();
+                setupEvent.Set();
+            }).Start();
+            setupEvent.WaitOne();
+            return new ReaderWriterSynchronized<Write, Read>(rwLock, wValue, rValue).UpgradeableReader;
+        }
+
+        protected override void AssertLocked(Read value)
+        {
             rwLock.IsUpgradeableReadLockHeld.ShouldBeTrue();
+            value.ShouldBeSameAs(rValue);
+        }
+
+        protected override void AssertNotLocked()
+        {
+            rwLock.IsUpgradeableReadLockHeld.ShouldBeFalse();
         }
 
         [Test]
@@ -51,38 +78,6 @@ namespace InSyncTest
             var result = subject.BarelyLock();
 
             result.ShouldBe(wValue);
-        }
-
-        [Test]
-        public void BarelyUnlock_Release()
-        {
-            // setup
-            var rwLock = new ReaderWriterLockSlim();
-            var rValue = new Read();
-            var wValue = new Write();
-            var subject = new ReaderWriterSynchronized<Write, Read>(rwLock, wValue, rValue).UpgradeableReader;
-            rwLock.EnterUpgradeableReadLock();
-
-            // act and assert
-            subject.BarelyUnlock();
-            
-            rwLock.IsUpgradeableReadLockHeld.ShouldBeFalse();
-        }
-
-        [Test]
-        public void BarelyTryLock_Acquire()
-        {
-            // setup
-            var rwLock = new ReaderWriterLockSlim();
-            var rValue = new Read();
-            var wValue = new Write();
-            var subject = new ReaderWriterSynchronized<Write, Read>(rwLock, wValue, rValue).UpgradeableReader;
-
-            // act and assert
-            subject.BarelyTryLock(out Read result).ShouldBeTrue();
-
-            result.ShouldBe(rValue);
-            rwLock.IsUpgradeableReadLockHeld.ShouldBeTrue();
         }
 
         [Test]
@@ -126,47 +121,6 @@ namespace InSyncTest
         }
         
         [Test]
-        public void BarelyTryLock_NotAcquire()
-        {
-            // setup
-            var rwLock = new ReaderWriterLockSlim();
-            var rValue = new Read();
-            var wValue = new Write();
-            var subject = new ReaderWriterSynchronized<Write, Read>(rwLock, wValue, rValue).UpgradeableReader;
-            var setupEvent = new AutoResetEvent(false);
-            new Thread(() =>
-            {
-                rwLock.EnterWriteLock();
-                setupEvent.Set();
-            }).Start();
-            setupEvent.WaitOne();
-
-            // act and assert
-            subject.BarelyTryLock(out Read result).ShouldBeFalse();
-
-            result.ShouldBeNull();
-        }
-
-        [Test]
-        public void WithLockAction_Acquire()
-        {
-            // setup
-            var rwLock = new ReaderWriterLockSlim();
-            var rValue = new Read();
-            var wValue = new Write();
-            var subject = new ReaderWriterSynchronized<Write, Read>(rwLock, wValue, rValue).UpgradeableReader;
-
-            // act and assert
-            subject.WithLock((v) =>
-            {
-                rwLock.IsUpgradeableReadLockHeld.ShouldBeTrue();
-                v.ShouldBe(rValue);
-            });
-            
-            rwLock.IsUpgradeableReadLockHeld.ShouldBeFalse();
-        }
-
-        [Test]
         public void WithLockActionUpgrade()
         {
             // setup
@@ -184,24 +138,6 @@ namespace InSyncTest
                     w.ShouldBe(wValue);
                 });
             });
-
-            rwLock.IsUpgradeableReadLockHeld.ShouldBeFalse();
-        }
-
-        [Test]
-        public void WithLockAction_Exception_Release()
-        {
-            // setup
-            var rwLock = new ReaderWriterLockSlim();
-            var rValue = new Read();
-            var wValue = new Write();
-            var subject = new ReaderWriterSynchronized<Write, Read>(rwLock, wValue, rValue).UpgradeableReader;
-            
-            // act and assert
-            Should.Throw<CustomException>(() => subject.WithLock((v) =>
-            {
-                throw new CustomException();
-            }));
 
             rwLock.IsUpgradeableReadLockHeld.ShouldBeFalse();
         }
@@ -227,192 +163,7 @@ namespace InSyncTest
 
             rwLock.IsUpgradeableReadLockHeld.ShouldBeFalse();
         }
-
-        [Test]
-        public void WithLockFunc_Acquire()
-        {
-            // setup
-            var rwLock = new ReaderWriterLockSlim();
-            var rValue = new Read();
-            var wValue = new Write();
-            var subject = new ReaderWriterSynchronized<Write, Read>(rwLock, wValue, rValue).UpgradeableReader;
-
-            // act and assert
-            subject.WithLock((v) =>
-            {
-                rwLock.IsUpgradeableReadLockHeld.ShouldBeTrue();
-                v.ShouldBe(rValue);
-                return 1;
-            }).ShouldBe(1);
-            
-            rwLock.IsUpgradeableReadLockHeld.ShouldBeFalse();
-        }
-
-        [Test]
-        public void WithLockFunc_Exception_Release()
-        {
-            // setup
-            var rwLock = new ReaderWriterLockSlim();
-            var rValue = new Read();
-            var wValue = new Write();
-            var subject = new ReaderWriterSynchronized<Write, Read>(rwLock, wValue, rValue).UpgradeableReader;
-
-            // act and assert
-            Should.Throw<CustomException>(() => subject.WithLock(new Func<Read, int>((v) =>
-            {
-                throw new CustomException();
-            })));
-            
-            rwLock.IsUpgradeableReadLockHeld.ShouldBeFalse();
-        }
         
-        [Test]
-        public void TryWithLock_Acquire()
-        {
-            // setup
-            var rwLock = new ReaderWriterLockSlim();
-            var rValue = new Read();
-            var wValue = new Write();
-            var subject = new ReaderWriterSynchronized<Write, Read>(rwLock, wValue, rValue).UpgradeableReader;
-
-            // act and assert
-            subject.TryWithLock((v) =>
-            {
-                rwLock.IsUpgradeableReadLockHeld.ShouldBeTrue();
-                v.ShouldBe(rValue);
-            }).ShouldBeTrue();
-            
-            rwLock.IsUpgradeableReadLockHeld.ShouldBeFalse();
-        }
-        
-        [Test]
-        public void TryWithLock_NotAcquire()
-        {
-            // setup
-            var rwLock = new ReaderWriterLockSlim();
-            var rValue = new Read();
-            var wValue = new Write();
-            var subject = new ReaderWriterSynchronized<Write, Read>(rwLock, wValue, rValue).UpgradeableReader;
-            var setupEvent = new AutoResetEvent(false);
-            new Thread(() =>
-            {
-                rwLock.EnterWriteLock();
-                setupEvent.Set();
-            }).Start();
-            setupEvent.WaitOne();
-
-            // act and assert
-            subject.TryWithLock((v) =>
-            {
-                Assert.Fail();
-            }).ShouldBeFalse();
-            
-            rwLock.IsUpgradeableReadLockHeld.ShouldBeFalse();
-        }
-
-        [Test]
-        public void TryWithLock_Exception_Release()
-        {
-            // setup
-            var rwLock = new ReaderWriterLockSlim();
-            var rValue = new Read();
-            var wValue = new Write();
-            var subject = new ReaderWriterSynchronized<Write, Read>(rwLock, wValue, rValue).UpgradeableReader;
-
-            // act and assert
-            Should.Throw<CustomException>(() => subject.TryWithLock(new Action<Read>((v) =>
-            {
-                throw new CustomException();
-            })));
-
-            rwLock.IsUpgradeableReadLockHeld.ShouldBeFalse();
-        }
-
-        [Test]
-        public void TryWithLockFunc_Acquire()
-        {
-            // setup
-            var rwLock = new ReaderWriterLockSlim();
-            var rValue = new Read();
-            var wValue = new Write();
-            var subject = new ReaderWriterSynchronized<Write, Read>(rwLock, wValue, rValue).UpgradeableReader;
-
-            // act and assert
-            subject.TryWithLock((v) =>
-            {
-                rwLock.IsUpgradeableReadLockHeld.ShouldBeTrue();
-                v.ShouldBe(rValue);
-                return 1;
-            }, out var result).ShouldBeTrue();
-
-            result.ShouldBe(1);
-            rwLock.IsUpgradeableReadLockHeld.ShouldBeFalse();
-        }
-
-        [Test]
-        public void TryWithLockFunc_NotAcquire()
-        {
-            // setup
-            var rwLock = new ReaderWriterLockSlim();
-            var rValue = new Read();
-            var wValue = new Write();
-            var subject = new ReaderWriterSynchronized<Write, Read>(rwLock, wValue, rValue).UpgradeableReader;
-            var setupEvent = new AutoResetEvent(false);
-            new Thread(() =>
-            {
-                rwLock.EnterWriteLock();
-                setupEvent.Set();
-            }).Start();
-            setupEvent.WaitOne();
-
-            // act and assert
-            subject.TryWithLock((v) =>
-            {
-                Assert.Fail();
-                return 1;
-            }, out var result).ShouldBeFalse();
-
-            result.ShouldBe(0);
-            rwLock.IsUpgradeableReadLockHeld.ShouldBeFalse();
-        }
-
-        [Test]
-        public void TryWithLockFunc_Exception_Release()
-        {
-            // setup
-            var rwLock = new ReaderWriterLockSlim();
-            var rValue = new Read();
-            var wValue = new Write();
-            var subject = new ReaderWriterSynchronized<Write, Read>(rwLock, wValue, rValue).UpgradeableReader;
-
-            // act and assert
-            Should.Throw<CustomException>(() => subject.TryWithLock(new Func<Read, int>((v) =>
-            {
-                throw new CustomException();
-            }), out var result));
-
-            rwLock.IsUpgradeableReadLockHeld.ShouldBeFalse();
-        }
-
-        [Test]
-        public void Lock_Acquire()
-        {
-            // setup
-            var rwLock = new ReaderWriterLockSlim();
-            var rValue = new Read();
-            var wValue = new Write();
-            var subject = new ReaderWriterSynchronized<Write, Read>(rwLock, wValue, rValue).UpgradeableReader;
-
-            // act and assert
-            using (var guard = subject.Lock())
-            {
-                rwLock.IsUpgradeableReadLockHeld.ShouldBeTrue();
-                guard.Value.ShouldBe(rValue);
-            }
-
-            rwLock.IsUpgradeableReadLockHeld.ShouldBeFalse();
-        }
-
         [Test]
         public void LockUpgrade()
         {
@@ -451,49 +202,6 @@ namespace InSyncTest
             }
 
             rwLock.IsUpgradeableReadLockHeld.ShouldBeFalse();
-        }
-
-        [Test]
-        public void TryLock_Acquire()
-        {
-            // setup
-            var rwLock = new ReaderWriterLockSlim();
-            var rValue = new Read();
-            var wValue = new Write();
-            var subject = new ReaderWriterSynchronized<Write, Read>(rwLock, wValue, rValue).UpgradeableReader;
-
-            // act and assert
-            using (var guard = subject.TryLock())
-            {
-                rwLock.IsUpgradeableReadLockHeld.ShouldBeTrue();
-                guard.Value.ShouldBe(rValue);
-            }
-
-            rwLock.IsUpgradeableReadLockHeld.ShouldBeFalse();
-        }
-
-        [Test]
-        public void TryLock_NotAcquire()
-        {
-            // setup
-            var rwLock = new ReaderWriterLockSlim();
-            var rValue = new Read();
-            var wValue = new Write();
-            var subject = new ReaderWriterSynchronized<Write, Read>(rwLock, wValue, rValue).UpgradeableReader;
-            var setupEvent = new AutoResetEvent(false);
-            new Thread(() =>
-            {
-                rwLock.EnterWriteLock();
-                setupEvent.Set();
-            }).Start();
-            setupEvent.WaitOne();
-
-            // act and assert
-            using (var guard = subject.TryLock())
-            {
-                rwLock.IsUpgradeableReadLockHeld.ShouldBeFalse();
-                guard.ShouldBeNull();
-            }
         }
     }
 }

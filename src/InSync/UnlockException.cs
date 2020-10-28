@@ -11,38 +11,83 @@ namespace InSync
     public class UnlockException : Exception
     {
         /// <summary>
-        /// Initializes a <seealso cref="UnlockException"/> with the specified exception thrown before and during releasing the locks and the message.
+        /// Initializes a <seealso cref="UnlockException"/> with the specified exceptions thrown before and during releasing the locks.
         /// </summary>
-        /// <param name="innerException">The exception thrown before releasing the locks.</param>
+        /// <param name="priorException">The exception thrown before releasing the locks.</param>
         /// <param name="exceptionsDuringUnlock">The exceptions thrown during releasing the locks at the indices in the collection of the locks.</param>
-        /// <param name="message">The error message that explains the reason for the exception.</param>
-        public UnlockException(Exception innerException, IDictionary<int, Exception> exceptionsDuringUnlock, string message)
-            : base(message, innerException)
+        /// <exception cref="ArgumentNullException"><paramref name="exceptionsDuringUnlock"/> is <c>null</c>.</exception>
+        public UnlockException(Exception priorException, IDictionary<int, Exception> exceptionsDuringUnlock)
+            : this(priorException, exceptionsDuringUnlock, "An exception occurred then other exceptions occurred when releasing locks")
         {
-            ExceptionsDuringUnlock = new Dictionary<int, Exception>(exceptionsDuringUnlock ?? throw new ArgumentNullException(nameof(exceptionsDuringUnlock)));
         }
 
         /// <summary>
-        /// Initializes a <seealso cref="UnlockException"/> with the specified exception thrown before and during releasing the locks and the message.
+        /// Initializes a <seealso cref="UnlockException"/> with the specified exceptions thrown before and during releasing the locks.
         /// </summary>
         /// <param name="exceptionsDuringUnlock">The exceptions thrown during releasing the locks at the indices in the collection of the locks.</param>
-        /// <param name="message">The error message that explains the reason for the exception.</param>
-        public UnlockException(IDictionary<int, Exception> exceptionsDuringUnlock, string message)
-            : this(null, exceptionsDuringUnlock, message)
+        /// <exception cref="ArgumentNullException"><paramref name="exceptionsDuringUnlock"/> is <c>null</c>.</exception>
+        public UnlockException(IDictionary<int, Exception> exceptionsDuringUnlock)
+            : this(null, exceptionsDuringUnlock, "Exceptions occurred when releasing locks")
         {
         }
+
+        /// <summary>
+        /// Initializes a <seealso cref="UnlockException"/> with the specified exception thrown during releasing the lock.
+        /// </summary>
+        /// <param name="priorException">The exception thrown before releasing the lock.</param>
+        /// <param name="exceptionDuringUnlock">The exception thrown when releasing the lock.</param>
+        /// <exception cref="ArgumentNullException"><paramref name="exceptionDuringUnlock"/> is <c>null</c>.</exception>
+        public UnlockException(Exception priorException, Exception exceptionDuringUnlock)
+            : this(priorException, exceptionDuringUnlock, "An exception occurred then another exception occurred when releasing locks")
+        {
+        }
+
+        /// <summary>
+        /// Initializes a <seealso cref="UnlockException"/> with the specified exception thrown during releasing the lock.
+        /// </summary>
+        /// <param name="exceptionDuringUnlock">The exception thrown when releasing the lock.</param>
+        /// <exception cref="ArgumentNullException"><paramref name="exceptionDuringUnlock"/> is <c>null</c>.</exception>
+        public UnlockException(Exception exceptionDuringUnlock)
+            : this(null, exceptionDuringUnlock, "An exception occurred when releasing locks")
+        {
+        }
+
+        private UnlockException(Exception priorException, IDictionary<int, Exception> exceptionsDuringUnlock, string message)
+            : base(message,
+                  (exceptionsDuringUnlock ?? throw new ArgumentNullException(nameof(exceptionsDuringUnlock)))
+                  .OrderBy(kv => kv.Key)
+                  .First().Value)
+        {
+            PriorException = priorException;
+            InnerExceptions = new Dictionary<int, Exception>(exceptionsDuringUnlock);
+        }
+
+        private UnlockException(Exception priorException, Exception exceptionDurationUnlock, string message)
+            : base(message, exceptionDurationUnlock)
+        {
+            PriorException = priorException;
+            InnerExceptions = new Dictionary<int, Exception>
+            {
+                [0] = exceptionDurationUnlock ?? throw new ArgumentNullException(nameof(exceptionDurationUnlock))
+            };
+        }
+
+        /// <summary>
+        /// The exception thrown before releasing the locks.
+        /// </summary>
+        public Exception PriorException { get; }
 
         /// <summary>
         /// The exceptions thrown during releasing the locks at the indices in the collection of the locks.
         /// </summary>
-        public IReadOnlyDictionary<int, Exception> ExceptionsDuringUnlock { get; }
+        public IReadOnlyDictionary<int, Exception> InnerExceptions { get; }
 
         /// <inheritdoc/>
         public override string ToString()
         {
             var description = new StringBuilder();
             description.AppendLine($"{GetType().Name}: {Message}");
-            description.AppendLine(string.Join(Environment.NewLine, ExceptionsDuringUnlock.Select(kv => $"    [{kv.Key}]: {kv.Value.GetType().Name}")));
+            description.AppendLine(string.Join(Environment.NewLine, InnerExceptions.Select(kv => $"    [{kv.Key}]: {kv.Value.GetType().Name}")));
 
             if (InnerException != null)
             {

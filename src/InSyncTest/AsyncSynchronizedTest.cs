@@ -3,6 +3,7 @@ using NUnit.Framework;
 using Shouldly;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -10,106 +11,62 @@ using System.Threading.Tasks;
 namespace InSyncTest
 {
     [TestFixture]
-    public class AsyncSynchronizedTest
+    public class AsyncSynchronizedTest : SynchronizedTestBase<AsyncSynchronized<List>, List, ObjectDisposedException>
     {
-        [Test]
-        public void BarelyLock_Acquire()
+        private readonly List value = new List();
+        private SemaphoreSlim semaphore;
+
+        [SetUp]
+        public void Setup()
         {
-            // setup
-            var semaphore = new SemaphoreSlim(1);
-            var value = new List();
-            var subject = new AsyncSynchronized<List>(semaphore, value);
-
-            // act and assert
-            var result = subject.BarelyLock();
-
-            semaphore.CurrentCount.ShouldBe(0);
-            result.ShouldBe(value);
+            semaphore = new SemaphoreSlim(1);
         }
         
-        [Test]
-        public void BarelyUnlock_Release()
+        protected override AsyncSynchronized<List> Create(bool locked)
         {
-            // setup
-            var semaphore = new SemaphoreSlim(0);
-            var value = new List();
-            var subject = new AsyncSynchronized<List>(semaphore, value);
+            if (locked)
+            {
+                semaphore.Wait();
+            }
+            return new AsyncSynchronized<List>(semaphore, value);
+        }
 
-            // act and assert
-            subject.BarelyUnlock();
+        protected override AsyncSynchronized<List> CreateNotUnlockable()
+        {
+            semaphore.Dispose();
+            return new AsyncSynchronized<List>(semaphore, value);
+        }
 
+        protected override void AssertLocked(List value)
+        {
+            semaphore.CurrentCount.ShouldBe(0);
+            this.value.ShouldBe(value);
+        }
+
+        protected override void AssertNotLocked()
+        {
             semaphore.CurrentCount.ShouldBe(1);
         }
 
         [Test]
-        public void BarelyTryLock_Acquire()
+        public void WithLockAction_ExceptionInAcquire_ThrowLockException()
         {
             // setup
             var semaphore = new SemaphoreSlim(1);
             var value = new List();
             var subject = new AsyncSynchronized<List>(semaphore, value);
+            semaphore.Dispose();
 
             // act and assert
-            subject.BarelyTryLock(out List result).ShouldBeTrue();
-
-            semaphore.CurrentCount.ShouldBe(0);
-            result.ShouldBe(value);
-        }
-        
-        [Test]
-        public void BarelyTryLock_NotAcquire()
-        {
-            // setup
-            var semaphore = new SemaphoreSlim(0);
-            var value = new List();
-            var subject = new AsyncSynchronized<List>(semaphore, value);
-            var setupEvent = new AutoResetEvent(false);
-            var cleanUpEvent = new AutoResetEvent(false);
-            
-            // act and assert
-            subject.BarelyTryLock(out List result).ShouldBeFalse();
-
-            semaphore.CurrentCount.ShouldBe(0);
-            result.ShouldBeNull();
-        }
-
-        [Test]
-        public void WithLockAction_Acquire()
-        {
-            // setup
-            var semaphore = new SemaphoreSlim(1);
-            var value = new List();
-            var subject = new AsyncSynchronized<List>(semaphore, value);
-
-            // act and assert
-            subject.WithLock((v) =>
+            var exception = Should.Throw<LockException>(() => subject.WithLock((v) =>
             {
-                semaphore.CurrentCount.ShouldBe(0);
-                v.ShouldBe(value);
-            });
-
-            semaphore.CurrentCount.ShouldBe(1);
-        }
-
-        [Test]
-        public void WithLockAction_Exception_Release()
-        {
-            // setup
-            var semaphore = new SemaphoreSlim(1);
-            var value = new List();
-            var subject = new AsyncSynchronized<List>(semaphore, value);
-            
-            // act and assert
-            Should.Throw<CustomException>(() => subject.WithLock((v) =>
-            {
-                throw new CustomException();
             }));
 
-            semaphore.CurrentCount.ShouldBe(1);
+            exception.InnerException.ShouldBeOfType<ObjectDisposedException>();
         }
-        
+
         [Test]
-        public void WithLockFunc_Acquire()
+        public void WithLockAction_ExceptionInRelease_ThrowUnlockException()
         {
             // setup
             var semaphore = new SemaphoreSlim(1);
@@ -117,18 +74,22 @@ namespace InSyncTest
             var subject = new AsyncSynchronized<List>(semaphore, value);
 
             // act and assert
-            subject.WithLock((v) =>
+            var exception = Should.Throw<UnlockException>(() => subject.WithLock((v) =>
             {
-                semaphore.CurrentCount.ShouldBe(0);
-                v.ShouldBe(value);
-                return 1;
-            }).ShouldBe(1);
-            
-            semaphore.CurrentCount.ShouldBe(1);
+                semaphore.Dispose();
+            }));
+
+            exception.PriorException.ShouldBeNull();
+            exception.InnerExceptions
+                .ToDictionary(kv => kv.Key, kv => kv.Value.GetType())
+                .ShouldBe(new Dictionary<int, Type>
+                {
+                    [0] = typeof(ObjectDisposedException)
+                });
         }
 
         [Test]
-        public void WithLockFunc_Exception_Release()
+        public void WithLockAction_ExceptionInActionAndRelease_ThrowUnlockException()
         {
             // setup
             var semaphore = new SemaphoreSlim(1);
@@ -136,16 +97,23 @@ namespace InSyncTest
             var subject = new AsyncSynchronized<List>(semaphore, value);
 
             // act and assert
-            Should.Throw<CustomException>(() => subject.WithLock(new Func<List, int>((v) =>
+            var exception = Should.Throw<UnlockException>(() => subject.WithLock((v) =>
             {
-                throw new CustomException();
-            })));
-            
-            semaphore.CurrentCount.ShouldBe(1);
+                semaphore.Dispose();
+                throw new SynchronizationLockException();
+            }));
+
+            exception.PriorException.ShouldBeOfType<SynchronizationLockException>();
+            exception.InnerExceptions
+                .ToDictionary(kv => kv.Key, kv => kv.Value.GetType())
+                .ShouldBe(new Dictionary<int, Type>
+                {
+                    [0] = typeof(ObjectDisposedException)
+                });
         }
-        
+
         [Test]
-        public void TryWithLock_Acquire()
+        public void WithLockFunc_ExceptionInRelease_ThrowUnlockException()
         {
             // setup
             var semaphore = new SemaphoreSlim(1);
@@ -153,51 +121,23 @@ namespace InSyncTest
             var subject = new AsyncSynchronized<List>(semaphore, value);
 
             // act and assert
-            subject.TryWithLock((v) =>
+            var exception = Should.Throw<UnlockException>(() => subject.WithLock(new Func<List, int>((v) =>
             {
-                semaphore.CurrentCount.ShouldBe(0);
-                v.ShouldBe(value);
-            }).ShouldBeTrue();
-            
-            semaphore.CurrentCount.ShouldBe(1);
-        }
-
-        [Test]
-        public void TryWithLock_NotAcquire()
-        {
-            // setup
-            var semaphore = new SemaphoreSlim(0);
-            var value = new List();
-            var subject = new AsyncSynchronized<List>(semaphore, value);
-
-            // act and assert
-            subject.TryWithLock((v) =>
-            {
-                Assert.Fail();
-            }).ShouldBeFalse();
-            
-            semaphore.CurrentCount.ShouldBe(0);
-        }
-
-        [Test]
-        public void TryWithLock_Exception_Release()
-        {
-            // setup
-            var semaphore = new SemaphoreSlim(1);
-            var value = new List();
-            var subject = new AsyncSynchronized<List>(semaphore, value);
-
-            // act and assert
-            Should.Throw<CustomException>(() => subject.TryWithLock(new Action<List>((v) =>
-            {
-                throw new CustomException();
+                semaphore.Dispose();
+                return 0;
             })));
 
-            semaphore.CurrentCount.ShouldBe(1);
+            exception.PriorException.ShouldBeNull();
+            exception.InnerExceptions
+                .ToDictionary(kv => kv.Key, kv => kv.Value.GetType())
+                .ShouldBe(new Dictionary<int, Type>
+                {
+                    [0] = typeof(ObjectDisposedException)
+                });
         }
 
         [Test]
-        public void TryWithLockFunc_Acquire()
+        public void WithLockFunc_ExceptionInFuncAndRelease_ThrowUnlockException()
         {
             // setup
             var semaphore = new SemaphoreSlim(1);
@@ -205,107 +145,36 @@ namespace InSyncTest
             var subject = new AsyncSynchronized<List>(semaphore, value);
 
             // act and assert
-            subject.TryWithLock((v) =>
+            var exception = Should.Throw<UnlockException>(() => subject.WithLock(new Func<List, int>((v) =>
             {
-                semaphore.CurrentCount.ShouldBe(0);
-                v.ShouldBe(value);
-                return 1;
-            }, out var result).ShouldBeTrue();
+                semaphore.Dispose();
+                throw new SynchronizationLockException();
+            })));
 
-            result.ShouldBe(1);
-            semaphore.CurrentCount.ShouldBe(1);
+            exception.PriorException.ShouldBeOfType<SynchronizationLockException>();
+            exception.InnerExceptions
+                .ToDictionary(kv => kv.Key, kv => kv.Value.GetType())
+                .ShouldBe(new Dictionary<int, Type>
+                {
+                    [0] = typeof(ObjectDisposedException)
+                });
         }
 
         [Test]
-        public void TryWithLockFunc_NotAcquire()
-        {
-            // setup
-            var semaphore = new SemaphoreSlim(0);
-            var value = new List();
-            var subject = new AsyncSynchronized<List>(semaphore, value);
-            
-            // act and assert
-            subject.TryWithLock((v) =>
-            {
-                Assert.Fail();
-                return 1;
-            }, out var result).ShouldBeFalse();
-
-            result.ShouldBe(0);
-            semaphore.CurrentCount.ShouldBe(0);
-        }
-
-        [Test]
-        public void TryWithLockFunc_Exception_Release()
+        public void TryWithLockAction_ExceptionInAcquire_ThrowLockException()
         {
             // setup
             var semaphore = new SemaphoreSlim(1);
             var value = new List();
             var subject = new AsyncSynchronized<List>(semaphore, value);
+            semaphore.Dispose();
 
             // act and assert
-            Should.Throw<CustomException>(() => subject.TryWithLock(new Func<List, int>((v) =>
+            var exception = Should.Throw<LockException>(() => subject.TryWithLock((v) =>
             {
-                throw new CustomException();
-            }), out var result));
+            }));
 
-            semaphore.CurrentCount.ShouldBe(1);
-        }
-
-        [Test]
-        public void Lock_Acquire()
-        {
-            // setup
-            var semaphore = new SemaphoreSlim(1);
-            var value = new List();
-            var subject = new AsyncSynchronized<List>(semaphore, value);
-
-            // act and assert
-            using (var guard = subject.Lock())
-            {
-                semaphore.CurrentCount.ShouldBe(0);
-                guard.Value.ShouldBe(value);
-            }
-
-            semaphore.CurrentCount.ShouldBe(1);
-        }
-
-        [Test]
-        public void TryLock_Acquire()
-        {
-            // setup
-            var semaphore = new SemaphoreSlim(1);
-            var value = new List();
-            var subject = new AsyncSynchronized<List>(semaphore, value);
-
-            // act and assert
-            using (var guard = subject.TryLock())
-            {
-                semaphore.CurrentCount.ShouldBe(0);
-                guard.Value.ShouldBe(value);
-            }
-
-            semaphore.CurrentCount.ShouldBe(1);
-        }
-
-        [Test]
-        public void TryLock_NotAcquire()
-        {
-            // setup
-            var semaphore = new SemaphoreSlim(0);
-            var value = new List();
-            var subject = new AsyncSynchronized<List>(semaphore, value);
-            var setupEvent = new AutoResetEvent(false);
-            var cleanUpEvent = new AutoResetEvent(false);
-
-            // act and assert
-            using (var guard = subject.TryLock())
-            {
-                semaphore.CurrentCount.ShouldBe(0);
-                guard.ShouldBeNull();
-            }
-
-            semaphore.CurrentCount.ShouldBe(0);
+            exception.InnerException.ShouldBeOfType<ObjectDisposedException>();
         }
 
         [Test]
@@ -368,7 +237,7 @@ namespace InSyncTest
         }
 
         [Test]
-        public void WithLockAsyncActionException_Release()
+        public void WithLockAsyncAction_Exception_Release()
         {
             // setup
             var semaphore = new SemaphoreSlim(1);
@@ -383,9 +252,56 @@ namespace InSyncTest
 
             semaphore.CurrentCount.ShouldBe(1);
         }
+        
+        [Test]
+        public void WithLockAsyncAction_ExceptionInRelease_ThrowUnlockException()
+        {
+            // setup
+            var semaphore = new SemaphoreSlim(1);
+            var value = new List();
+            var subject = new AsyncSynchronized<List>(semaphore, value);
+
+            // act and assert
+            var exception = Should.Throw<UnlockException>(() => subject.WithLockAsync((v) =>
+            {
+                semaphore.Dispose();
+            }));
+
+            exception.PriorException.ShouldBeNull();
+            exception.InnerExceptions
+                .ToDictionary(kv => kv.Key, kv => kv.Value.GetType())
+                .ShouldBe(new Dictionary<int, Type>
+                {
+                    [0] = typeof(ObjectDisposedException)
+                });
+        }
 
         [Test]
-        public async Task WithLockFuncAsync_Acquire()
+        public void WithLockAsyncAction_ExceptionInFuncAndRelease_ThrowUnlockException()
+        {
+            // setup
+            var semaphore = new SemaphoreSlim(1);
+            var value = new List();
+            var subject = new AsyncSynchronized<List>(semaphore, value);
+
+            // act and assert
+            var exception = Should.Throw<UnlockException>(() => subject.WithLock((v) =>
+            {
+                semaphore.Dispose();
+                throw new SynchronizationLockException();
+            }));
+
+            exception.PriorException.ShouldBeOfType<SynchronizationLockException>();
+            exception.InnerExceptions
+                .ToDictionary(kv => kv.Key, kv => kv.Value.GetType())
+                .ShouldBe(new Dictionary<int, Type>
+                {
+                    [0] = typeof(ObjectDisposedException)
+                });
+        }
+        
+        [Test]
+        public async Task WithLockAsyncFunc_Acquire()
         {
             // setup
             var semaphore = new SemaphoreSlim(1);
@@ -420,6 +336,55 @@ namespace InSyncTest
             semaphore.CurrentCount.ShouldBe(1);
         }
         
+        [Test]
+        public void WithLockAsyncFunc_ExceptionInRelease_ThrowUnlockException()
+        {
+            // setup
+            var semaphore = new SemaphoreSlim(1);
+            var value = new List();
+            var subject = new AsyncSynchronized<List>(semaphore, value);
+
+            // act and assert
+            var exception = Should.Throw<UnlockException>(() => subject.WithLockAsync(new Func<List, int>((v) =>
+            {
+                semaphore.Dispose();
+                return 0;
+            })));
+
+            exception.PriorException.ShouldBeNull();
+            exception.InnerExceptions
+                .ToDictionary(kv => kv.Key, kv => kv.Value.GetType())
+                .ShouldBe(new Dictionary<int, Type>
+                {
+                    [0] = typeof(ObjectDisposedException)
+                });
+        }
+
+        [Test]
+        public void WithLockAsyncFunc_ExceptionInFuncAndRelease_ThrowUnlockException()
+        {
+            // setup
+            var semaphore = new SemaphoreSlim(1);
+            var value = new List();
+            var subject = new AsyncSynchronized<List>(semaphore, value);
+
+            // act and assert
+            var exception = Should.Throw<UnlockException>(() => subject.WithLockAsync(new Func<List, int>((v) =>
+            {
+                semaphore.Dispose();
+                throw new SynchronizationLockException();
+            })));
+
+            exception.PriorException.ShouldBeOfType<SynchronizationLockException>();
+            exception.InnerExceptions
+                .ToDictionary(kv => kv.Key, kv => kv.Value.GetType())
+                .ShouldBe(new Dictionary<int, Type>
+                {
+                    [0] = typeof(ObjectDisposedException)
+                });
+        }
+
+
         [Test]
         public async Task LockAsync_Acquire()
         {

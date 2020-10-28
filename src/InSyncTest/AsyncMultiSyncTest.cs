@@ -134,8 +134,13 @@ namespace InSyncTest
 
             // act and assert
             var exception = Should.Throw<UnlockException>(() => guard.Dispose());
-            exception.InnerException.ShouldBeNull();
-            exception.ExceptionsDuringUnlock.Select(e => e.GetType()).ShouldBe(new[] { typeof(SynchronizationLockException) });
+            exception.PriorException.ShouldBeNull();
+            exception.InnerExceptions
+                .ToDictionary(kv => kv.Key, kv => kv.Value.GetType())
+                .ShouldBe(new Dictionary<int, Type>
+                {
+                    [0] = typeof(SynchronizationLockException)
+                });
         }
 
         [Test]
@@ -173,8 +178,13 @@ namespace InSyncTest
 
             // act and assert
             var exception = Should.Throw<UnlockException>(() => guard.Dispose());
-            exception.InnerException.ShouldBeNull();
-            exception.ExceptionsDuringUnlock.Select(e => e.GetType()).ShouldBe(new[] { typeof(SynchronizationLockException) });
+            exception.PriorException.ShouldBeNull();
+            exception.InnerExceptions
+                .ToDictionary(kv => kv.Key, kv => kv.Value.GetType())
+                .ShouldBe(new Dictionary<int, Type>
+                {
+                    [0] = typeof(SynchronizationLockException)
+                });
         }
     }
 }

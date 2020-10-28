@@ -5,7 +5,7 @@ using System.Text;
 namespace InSync
 {
     /// <summary>
-    /// The exception that is thrown when an exception is thrown acquiring a lock.
+    /// The exception that is thrown when an exception is thrown when acquiring a lock.
     /// </summary>
     public class LockException : Exception
     {
