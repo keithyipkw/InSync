@@ -247,7 +247,7 @@ namespace InSync
                                     locks[u].BarelyUnlock();
                                 }
                             }
-                            Thread.Yield();
+                            await Task.Yield();
                             values[i] = await locks[i].BarelyLockAsync(cancellationToken);
                             lockedCount = 1;
                         }
