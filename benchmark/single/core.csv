@@ -1,0 +1,1000 @@
+Loop overhead,0.5055
+lock,10.4835
+Synchronized.WithLock,12.047
+Synchronized.Lock,35.359
+SemaphoreSlim.Wait,27.617
+AsyncSynchronized.WithLock,39.3595
+AsyncSynchronized.Lock,61.9135
+SemaphoreSlim.WaitAsync,25.763
+AsyncSynchronized.WithLockAsync,97.6265
+AsyncSynchronized.LockAsync,113.3565
+Loop overhead,0.502
+lock,10.418
+Synchronized.WithLock,10.7755
+Synchronized.Lock,23.131
+SemaphoreSlim.Wait,26.597
+AsyncSynchronized.WithLock,34.9585
+AsyncSynchronized.Lock,58.1775
+SemaphoreSlim.WaitAsync,25.7455
+AsyncSynchronized.WithLockAsync,81.1525
+AsyncSynchronized.LockAsync,104.169
+Loop overhead,0.501
+lock,10.444
+Synchronized.WithLock,10.932
+Synchronized.Lock,23.058
+SemaphoreSlim.Wait,26.604
+AsyncSynchronized.WithLock,36.0725
+AsyncSynchronized.Lock,60.549
+SemaphoreSlim.WaitAsync,25.5455
+AsyncSynchronized.WithLockAsync,80.325
+AsyncSynchronized.LockAsync,103.6065
+Loop overhead,0.5015
+lock,10.4105
+Synchronized.WithLock,11.162
+Synchronized.Lock,23.175
+SemaphoreSlim.Wait,26.5915
+AsyncSynchronized.WithLock,34.3495
+AsyncSynchronized.Lock,59.2285
+SemaphoreSlim.WaitAsync,25.2605
+AsyncSynchronized.WithLockAsync,80.4735
+AsyncSynchronized.LockAsync,102.9115
+Loop overhead,0.501
+lock,10.457
+Synchronized.WithLock,11.165
+Synchronized.Lock,23.104
+SemaphoreSlim.Wait,26.608
+AsyncSynchronized.WithLock,35.1815
+AsyncSynchronized.Lock,59.0515
+SemaphoreSlim.WaitAsync,25.766
+AsyncSynchronized.WithLockAsync,79.658
+AsyncSynchronized.LockAsync,105.1285
+Loop overhead,0.501
+lock,10.5005
+Synchronized.WithLock,11.157
+Synchronized.Lock,23.1415
+SemaphoreSlim.Wait,26.617
+AsyncSynchronized.WithLock,35.299
+AsyncSynchronized.Lock,54.6695
+SemaphoreSlim.WaitAsync,25.206
+AsyncSynchronized.WithLockAsync,79.6705
+AsyncSynchronized.LockAsync,103.188
+Loop overhead,0.501
+lock,10.5285
+Synchronized.WithLock,10.9625
+Synchronized.Lock,23.2185
+SemaphoreSlim.Wait,26.624
+AsyncSynchronized.WithLock,34.766
+AsyncSynchronized.Lock,59.1815
+SemaphoreSlim.WaitAsync,25.759
+AsyncSynchronized.WithLockAsync,80.518
+AsyncSynchronized.LockAsync,103.726
+Loop overhead,0.5015
+lock,10.4895
+Synchronized.WithLock,11.1355
+Synchronized.Lock,23.421
+SemaphoreSlim.Wait,26.6255
+AsyncSynchronized.WithLock,35.441
+AsyncSynchronized.Lock,58.5895
+SemaphoreSlim.WaitAsync,25.574
+AsyncSynchronized.WithLockAsync,81.0405
+AsyncSynchronized.LockAsync,103.8455
+Loop overhead,0.501
+lock,10.468
+Synchronized.WithLock,11.083
+Synchronized.Lock,23.109
+SemaphoreSlim.Wait,26.628
+AsyncSynchronized.WithLock,34.181
+AsyncSynchronized.Lock,58.2245
+SemaphoreSlim.WaitAsync,25.7515
+AsyncSynchronized.WithLockAsync,80.6705
+AsyncSynchronized.LockAsync,102.406
+Loop overhead,0.5015
+lock,10.548
+Synchronized.WithLock,11.1555
+Synchronized.Lock,23.1755
+SemaphoreSlim.Wait,26.626
+AsyncSynchronized.WithLock,34.891
+AsyncSynchronized.Lock,58.325
+SemaphoreSlim.WaitAsync,25.747
+AsyncSynchronized.WithLockAsync,80.8745
+AsyncSynchronized.LockAsync,103.5265
+Loop overhead,0.5015
+lock,10.4815
+Synchronized.WithLock,11.1685
+Synchronized.Lock,23.1805
+SemaphoreSlim.Wait,26.627
+AsyncSynchronized.WithLock,36.372
+AsyncSynchronized.Lock,60.6725
+SemaphoreSlim.WaitAsync,25.709
+AsyncSynchronized.WithLockAsync,80.9465
+AsyncSynchronized.LockAsync,103.561
+Loop overhead,0.501
+lock,10.5285
+Synchronized.WithLock,11.16
+Synchronized.Lock,23.2
+SemaphoreSlim.Wait,26.589
+AsyncSynchronized.WithLock,34.281
+AsyncSynchronized.Lock,58.546
+SemaphoreSlim.WaitAsync,25.785
+AsyncSynchronized.WithLockAsync,81.08
+AsyncSynchronized.LockAsync,103.574
+Loop overhead,0.5015
+lock,10.443
+Synchronized.WithLock,11.165
+Synchronized.Lock,23.263
+SemaphoreSlim.Wait,26.588
+AsyncSynchronized.WithLock,34.5275
+AsyncSynchronized.Lock,59.2155
+SemaphoreSlim.WaitAsync,25.4835
+AsyncSynchronized.WithLockAsync,80.96
+AsyncSynchronized.LockAsync,103.587
+Loop overhead,0.5015
+lock,10.534
+Synchronized.WithLock,10.9565
+Synchronized.Lock,23.613
+SemaphoreSlim.Wait,26.5845
+AsyncSynchronized.WithLock,35.821
+AsyncSynchronized.Lock,58.2865
+SemaphoreSlim.WaitAsync,25.7695
+AsyncSynchronized.WithLockAsync,80.778
+AsyncSynchronized.LockAsync,103.125
+Loop overhead,0.5015
+lock,10.488
+Synchronized.WithLock,11.175
+Synchronized.Lock,23.2155
+SemaphoreSlim.Wait,26.608
+AsyncSynchronized.WithLock,34.2445
+AsyncSynchronized.Lock,55.255
+SemaphoreSlim.WaitAsync,25.7605
+AsyncSynchronized.WithLockAsync,79.9975
+AsyncSynchronized.LockAsync,102.848
+Loop overhead,0.501
+lock,10.534
+Synchronized.WithLock,11.1895
+Synchronized.Lock,23.928
+SemaphoreSlim.Wait,26.5935
+AsyncSynchronized.WithLock,35.1245
+AsyncSynchronized.Lock,56.888
+SemaphoreSlim.WaitAsync,25.7555
+AsyncSynchronized.WithLockAsync,79.281
+AsyncSynchronized.LockAsync,103.0465
+Loop overhead,0.501
+lock,10.4785
+Synchronized.WithLock,10.969
+Synchronized.Lock,23.583
+SemaphoreSlim.Wait,26.584
+AsyncSynchronized.WithLock,34.362
+AsyncSynchronized.Lock,56.7395
+SemaphoreSlim.WaitAsync,25.7585
+AsyncSynchronized.WithLockAsync,79.6595
+AsyncSynchronized.LockAsync,103.138
+Loop overhead,0.508
+lock,10.489
+Synchronized.WithLock,11.1675
+Synchronized.Lock,23.098
+SemaphoreSlim.Wait,26.595
+AsyncSynchronized.WithLock,35.9045
+AsyncSynchronized.Lock,58.9695
+SemaphoreSlim.WaitAsync,24.773
+AsyncSynchronized.WithLockAsync,80.9815
+AsyncSynchronized.LockAsync,103.926
+Loop overhead,0.501
+lock,10.4735
+Synchronized.WithLock,11.1665
+Synchronized.Lock,23.152
+SemaphoreSlim.Wait,26.6105
+AsyncSynchronized.WithLock,35.955
+AsyncSynchronized.Lock,58.101
+SemaphoreSlim.WaitAsync,25.0855
+AsyncSynchronized.WithLockAsync,80.7985
+AsyncSynchronized.LockAsync,103.831
+Loop overhead,0.501
+lock,10.4355
+Synchronized.WithLock,11.161
+Synchronized.Lock,23.161
+SemaphoreSlim.Wait,26.612
+AsyncSynchronized.WithLock,34.604
+AsyncSynchronized.Lock,58.6585
+SemaphoreSlim.WaitAsync,25.7695
+AsyncSynchronized.WithLockAsync,81.013
+AsyncSynchronized.LockAsync,103.464
+Loop overhead,0.5015
+lock,10.4115
+Synchronized.WithLock,10.93
+Synchronized.Lock,23.1505
+SemaphoreSlim.Wait,26.6205
+AsyncSynchronized.WithLock,34.852
+AsyncSynchronized.Lock,57.698
+SemaphoreSlim.WaitAsync,25.7715
+AsyncSynchronized.WithLockAsync,80.54
+AsyncSynchronized.LockAsync,103.323
+Loop overhead,0.5015
+lock,10.536
+Synchronized.WithLock,11.1645
+Synchronized.Lock,23.176
+SemaphoreSlim.Wait,26.611
+AsyncSynchronized.WithLock,35.2695
+AsyncSynchronized.Lock,57.535
+SemaphoreSlim.WaitAsync,25.7545
+AsyncSynchronized.WithLockAsync,81.3625
+AsyncSynchronized.LockAsync,104.447
+Loop overhead,0.5015
+lock,10.444
+Synchronized.WithLock,11.156
+Synchronized.Lock,23.193
+SemaphoreSlim.Wait,26.631
+AsyncSynchronized.WithLock,35.357
+AsyncSynchronized.Lock,60.1095
+SemaphoreSlim.WaitAsync,25.756
+AsyncSynchronized.WithLockAsync,80.7585
+AsyncSynchronized.LockAsync,103.697
+Loop overhead,0.5015
+lock,10.491
+Synchronized.WithLock,10.9375
+Synchronized.Lock,23.141
+SemaphoreSlim.Wait,26.6345
+AsyncSynchronized.WithLock,35.3435
+AsyncSynchronized.Lock,59.762
+SemaphoreSlim.WaitAsync,25.836
+AsyncSynchronized.WithLockAsync,81.4405
+AsyncSynchronized.LockAsync,103.3995
+Loop overhead,0.5015
+lock,10.416
+Synchronized.WithLock,11.178
+Synchronized.Lock,23.512
+SemaphoreSlim.Wait,26.6385
+AsyncSynchronized.WithLock,35.0945
+AsyncSynchronized.Lock,58.2735
+SemaphoreSlim.WaitAsync,25.66
+AsyncSynchronized.WithLockAsync,78.465
+AsyncSynchronized.LockAsync,103.7415
+Loop overhead,0.5015
+lock,10.547
+Synchronized.WithLock,11.0915
+Synchronized.Lock,23.2255
+SemaphoreSlim.Wait,26.609
+AsyncSynchronized.WithLock,34.485
+AsyncSynchronized.Lock,55.524
+SemaphoreSlim.WaitAsync,25.805
+AsyncSynchronized.WithLockAsync,79.771
+AsyncSynchronized.LockAsync,103.1135
+Loop overhead,0.501
+lock,10.4945
+Synchronized.WithLock,10.93
+Synchronized.Lock,23.3825
+SemaphoreSlim.Wait,26.6425
+AsyncSynchronized.WithLock,34.7155
+AsyncSynchronized.Lock,54.919
+SemaphoreSlim.WaitAsync,25.7645
+AsyncSynchronized.WithLockAsync,79.3115
+AsyncSynchronized.LockAsync,103.4455
+Loop overhead,0.501
+lock,10.4335
+Synchronized.WithLock,10.729
+Synchronized.Lock,23.926
+SemaphoreSlim.Wait,26.606
+AsyncSynchronized.WithLock,35.519
+AsyncSynchronized.Lock,58.274
+SemaphoreSlim.WaitAsync,25.821
+AsyncSynchronized.WithLockAsync,81.243
+AsyncSynchronized.LockAsync,103.2555
+Loop overhead,0.501
+lock,10.4755
+Synchronized.WithLock,11.1685
+Synchronized.Lock,23.2155
+SemaphoreSlim.Wait,26.602
+AsyncSynchronized.WithLock,34.0665
+AsyncSynchronized.Lock,58.3595
+SemaphoreSlim.WaitAsync,25.7675
+AsyncSynchronized.WithLockAsync,80.5875
+AsyncSynchronized.LockAsync,102.883
+Loop overhead,0.5015
+lock,10.475
+Synchronized.WithLock,11.163
+Synchronized.Lock,23.265
+SemaphoreSlim.Wait,26.608
+AsyncSynchronized.WithLock,35.471
+AsyncSynchronized.Lock,57.996
+SemaphoreSlim.WaitAsync,25.7775
+AsyncSynchronized.WithLockAsync,81.5015
+AsyncSynchronized.LockAsync,103.3905
+Loop overhead,0.501
+lock,10.426
+Synchronized.WithLock,11.2
+Synchronized.Lock,23.106
+SemaphoreSlim.Wait,26.587
+AsyncSynchronized.WithLock,35.9195
+AsyncSynchronized.Lock,58.05
+SemaphoreSlim.WaitAsync,25.6495
+AsyncSynchronized.WithLockAsync,81.04
+AsyncSynchronized.LockAsync,103.504
+Loop overhead,0.501
+lock,10.4985
+Synchronized.WithLock,11.0035
+Synchronized.Lock,23.174
+SemaphoreSlim.Wait,26.5875
+AsyncSynchronized.WithLock,35.7445
+AsyncSynchronized.Lock,58.7935
+SemaphoreSlim.WaitAsync,25.761
+AsyncSynchronized.WithLockAsync,80.0945
+AsyncSynchronized.LockAsync,103.133
+Loop overhead,0.508
+lock,10.539
+Synchronized.WithLock,11.167
+Synchronized.Lock,23.106
+SemaphoreSlim.Wait,26.609
+AsyncSynchronized.WithLock,34.86
+AsyncSynchronized.Lock,54.908
+SemaphoreSlim.WaitAsync,25.7635
+AsyncSynchronized.WithLockAsync,79.2175
+AsyncSynchronized.LockAsync,104.368
+Loop overhead,0.501
+lock,10.4995
+Synchronized.WithLock,11.163
+Synchronized.Lock,23.818
+SemaphoreSlim.Wait,26.603
+AsyncSynchronized.WithLock,36.021
+AsyncSynchronized.Lock,54.947
+SemaphoreSlim.WaitAsync,25.7295
+AsyncSynchronized.WithLockAsync,79.816
+AsyncSynchronized.LockAsync,103.26
+Loop overhead,0.5065
+lock,10.485
+Synchronized.WithLock,11.1585
+Synchronized.Lock,23.193
+SemaphoreSlim.Wait,26.5955
+AsyncSynchronized.WithLock,36.675
+AsyncSynchronized.Lock,60.7055
+SemaphoreSlim.WaitAsync,25.758
+AsyncSynchronized.WithLockAsync,80.612
+AsyncSynchronized.LockAsync,104.138
+Loop overhead,0.501
+lock,10.4855
+Synchronized.WithLock,11.1525
+Synchronized.Lock,23.2155
+SemaphoreSlim.Wait,26.6395
+AsyncSynchronized.WithLock,36.4805
+AsyncSynchronized.Lock,60.0995
+SemaphoreSlim.WaitAsync,25.5575
+AsyncSynchronized.WithLockAsync,81.1835
+AsyncSynchronized.LockAsync,104.358
+Loop overhead,0.501
+lock,10.426
+Synchronized.WithLock,10.9385
+Synchronized.Lock,23.161
+SemaphoreSlim.Wait,26.63
+AsyncSynchronized.WithLock,34.936
+AsyncSynchronized.Lock,59.8515
+SemaphoreSlim.WaitAsync,25.485
+AsyncSynchronized.WithLockAsync,80.0035
+AsyncSynchronized.LockAsync,104.9285
+Loop overhead,0.501
+lock,10.4225
+Synchronized.WithLock,10.929
+Synchronized.Lock,23.193
+SemaphoreSlim.Wait,26.689
+AsyncSynchronized.WithLock,35.076
+AsyncSynchronized.Lock,59.6235
+SemaphoreSlim.WaitAsync,25.7675
+AsyncSynchronized.WithLockAsync,80.145
+AsyncSynchronized.LockAsync,105.5055
+Loop overhead,0.501
+lock,10.4855
+Synchronized.WithLock,10.96
+Synchronized.Lock,23.2005
+SemaphoreSlim.Wait,26.6045
+AsyncSynchronized.WithLock,36.433
+AsyncSynchronized.Lock,60.791
+SemaphoreSlim.WaitAsync,25.778
+AsyncSynchronized.WithLockAsync,80.741
+AsyncSynchronized.LockAsync,103.358
+Loop overhead,0.501
+lock,10.485
+Synchronized.WithLock,10.9435
+Synchronized.Lock,23.126
+SemaphoreSlim.Wait,26.6265
+AsyncSynchronized.WithLock,34.312
+AsyncSynchronized.Lock,58.0785
+SemaphoreSlim.WaitAsync,25.78
+AsyncSynchronized.WithLockAsync,81.144
+AsyncSynchronized.LockAsync,104.281
+Loop overhead,0.5015
+lock,10.549
+Synchronized.WithLock,11.0005
+Synchronized.Lock,23.2365
+SemaphoreSlim.Wait,26.6145
+AsyncSynchronized.WithLock,35.364
+AsyncSynchronized.Lock,58.3435
+SemaphoreSlim.WaitAsync,25.788
+AsyncSynchronized.WithLockAsync,81.048
+AsyncSynchronized.LockAsync,103.553
+Loop overhead,0.5015
+lock,10.549
+Synchronized.WithLock,10.938
+Synchronized.Lock,23.2455
+SemaphoreSlim.Wait,26.587
+AsyncSynchronized.WithLock,35.3
+AsyncSynchronized.Lock,58.6135
+SemaphoreSlim.WaitAsync,25.526
+AsyncSynchronized.WithLockAsync,80.769
+AsyncSynchronized.LockAsync,103.754
+Loop overhead,0.5015
+lock,10.531
+Synchronized.WithLock,10.958
+Synchronized.Lock,23.172
+SemaphoreSlim.Wait,26.601
+AsyncSynchronized.WithLock,35.1025
+AsyncSynchronized.Lock,58.8805
+SemaphoreSlim.WaitAsync,25.7505
+AsyncSynchronized.WithLockAsync,81.4405
+AsyncSynchronized.LockAsync,103.038
+Loop overhead,0.501
+lock,10.4255
+Synchronized.WithLock,10.9385
+Synchronized.Lock,23.1485
+SemaphoreSlim.Wait,26.5915
+AsyncSynchronized.WithLock,34.1485
+AsyncSynchronized.Lock,58.9565
+SemaphoreSlim.WaitAsync,25.753
+AsyncSynchronized.WithLockAsync,80.6005
+AsyncSynchronized.LockAsync,102.899
+Loop overhead,0.501
+lock,10.5175
+Synchronized.WithLock,11.171
+Synchronized.Lock,23.2115
+SemaphoreSlim.Wait,26.595
+AsyncSynchronized.WithLock,34.954
+AsyncSynchronized.Lock,58.2635
+SemaphoreSlim.WaitAsync,25.759
+AsyncSynchronized.WithLockAsync,80.796
+AsyncSynchronized.LockAsync,103.9255
+Loop overhead,0.501
+lock,10.4465
+Synchronized.WithLock,11.0695
+Synchronized.Lock,23.127
+SemaphoreSlim.Wait,26.595
+AsyncSynchronized.WithLock,34.7565
+AsyncSynchronized.Lock,59.9075
+SemaphoreSlim.WaitAsync,25.7555
+AsyncSynchronized.WithLockAsync,80.981
+AsyncSynchronized.LockAsync,103.9965
+Loop overhead,0.501
+lock,10.482
+Synchronized.WithLock,11.161
+Synchronized.Lock,23.056
+SemaphoreSlim.Wait,26.6205
+AsyncSynchronized.WithLock,34.844
+AsyncSynchronized.Lock,58.3555
+SemaphoreSlim.WaitAsync,25.7515
+AsyncSynchronized.WithLockAsync,81.056
+AsyncSynchronized.LockAsync,103.838
+Loop overhead,0.501
+lock,10.4795
+Synchronized.WithLock,11.1755
+Synchronized.Lock,23.1505
+SemaphoreSlim.Wait,26.824
+AsyncSynchronized.WithLock,36.7965
+AsyncSynchronized.Lock,60.4055
+SemaphoreSlim.WaitAsync,25.542
+AsyncSynchronized.WithLockAsync,80.4255
+AsyncSynchronized.LockAsync,104.474
+Loop overhead,0.5015
+lock,10.4415
+Synchronized.WithLock,10.9245
+Synchronized.Lock,23.1755
+SemaphoreSlim.Wait,26.6145
+AsyncSynchronized.WithLock,36.6265
+AsyncSynchronized.Lock,60.1575
+SemaphoreSlim.WaitAsync,25.742
+AsyncSynchronized.WithLockAsync,80.333
+AsyncSynchronized.LockAsync,104.583
+Loop overhead,0.5015
+lock,10.463
+Synchronized.WithLock,10.929
+Synchronized.Lock,23.234
+SemaphoreSlim.Wait,26.5905
+AsyncSynchronized.WithLock,36.387
+AsyncSynchronized.Lock,60.4195
+SemaphoreSlim.WaitAsync,25.779
+AsyncSynchronized.WithLockAsync,80.805
+AsyncSynchronized.LockAsync,105.171
+Loop overhead,0.5015
+lock,10.477
+Synchronized.WithLock,11.0915
+Synchronized.Lock,23.216
+SemaphoreSlim.Wait,26.5845
+AsyncSynchronized.WithLock,36.7565
+AsyncSynchronized.Lock,61.243
+SemaphoreSlim.WaitAsync,25.563
+AsyncSynchronized.WithLockAsync,81.5915
+AsyncSynchronized.LockAsync,103.319
+Loop overhead,0.5015
+lock,10.4595
+Synchronized.WithLock,10.925
+Synchronized.Lock,23.1945
+SemaphoreSlim.Wait,26.595
+AsyncSynchronized.WithLock,36.5115
+AsyncSynchronized.Lock,60.53
+SemaphoreSlim.WaitAsync,25.4215
+AsyncSynchronized.WithLockAsync,81.6715
+AsyncSynchronized.LockAsync,104.6345
+Loop overhead,0.5015
+lock,10.446
+Synchronized.WithLock,10.952
+Synchronized.Lock,23.1955
+SemaphoreSlim.Wait,26.606
+AsyncSynchronized.WithLock,36.761
+AsyncSynchronized.Lock,60.6755
+SemaphoreSlim.WaitAsync,25.153
+AsyncSynchronized.WithLockAsync,79.7735
+AsyncSynchronized.LockAsync,104.199
+Loop overhead,0.5115
+lock,10.543
+Synchronized.WithLock,11.064
+Synchronized.Lock,23.1455
+SemaphoreSlim.Wait,26.575
+AsyncSynchronized.WithLock,36.3225
+AsyncSynchronized.Lock,58.9005
+SemaphoreSlim.WaitAsync,25.776
+AsyncSynchronized.WithLockAsync,78.9065
+AsyncSynchronized.LockAsync,104.537
+Loop overhead,0.5015
+lock,10.445
+Synchronized.WithLock,11.16
+Synchronized.Lock,23.2275
+SemaphoreSlim.Wait,26.5905
+AsyncSynchronized.WithLock,34.388
+AsyncSynchronized.Lock,58.194
+SemaphoreSlim.WaitAsync,25.047
+AsyncSynchronized.WithLockAsync,79.2385
+AsyncSynchronized.LockAsync,103.2405
+Loop overhead,0.501
+lock,10.43
+Synchronized.WithLock,10.9335
+Synchronized.Lock,23.096
+SemaphoreSlim.Wait,26.6335
+AsyncSynchronized.WithLock,36.6635
+AsyncSynchronized.Lock,60.7075
+SemaphoreSlim.WaitAsync,25.76
+AsyncSynchronized.WithLockAsync,81.3945
+AsyncSynchronized.LockAsync,104.533
+Loop overhead,0.501
+lock,10.478
+Synchronized.WithLock,11.1585
+Synchronized.Lock,23.1045
+SemaphoreSlim.Wait,26.626
+AsyncSynchronized.WithLock,36.404
+AsyncSynchronized.Lock,58.9445
+SemaphoreSlim.WaitAsync,25.7495
+AsyncSynchronized.WithLockAsync,80.7735
+AsyncSynchronized.LockAsync,104.0015
+Loop overhead,0.501
+lock,10.4865
+Synchronized.WithLock,10.9305
+Synchronized.Lock,23.198
+SemaphoreSlim.Wait,26.6245
+AsyncSynchronized.WithLock,36.4775
+AsyncSynchronized.Lock,59.487
+SemaphoreSlim.WaitAsync,25.654
+AsyncSynchronized.WithLockAsync,80.5535
+AsyncSynchronized.LockAsync,104.0205
+Loop overhead,0.5015
+lock,10.483
+Synchronized.WithLock,11.1645
+Synchronized.Lock,23.1625
+SemaphoreSlim.Wait,26.5885
+AsyncSynchronized.WithLock,36.669
+AsyncSynchronized.Lock,59.2675
+SemaphoreSlim.WaitAsync,25.7605
+AsyncSynchronized.WithLockAsync,80.9665
+AsyncSynchronized.LockAsync,103.9185
+Loop overhead,0.501
+lock,10.4265
+Synchronized.WithLock,10.933
+Synchronized.Lock,23.1905
+SemaphoreSlim.Wait,26.59
+AsyncSynchronized.WithLock,36.4355
+AsyncSynchronized.Lock,58.5405
+SemaphoreSlim.WaitAsync,25.7685
+AsyncSynchronized.WithLockAsync,80.335
+AsyncSynchronized.LockAsync,104.5685
+Loop overhead,0.513
+lock,10.49
+Synchronized.WithLock,11.165
+Synchronized.Lock,23.176
+SemaphoreSlim.Wait,26.591
+AsyncSynchronized.WithLock,36.6655
+AsyncSynchronized.Lock,60.5925
+SemaphoreSlim.WaitAsync,25.6625
+AsyncSynchronized.WithLockAsync,80.3295
+AsyncSynchronized.LockAsync,103.3885
+Loop overhead,0.501
+lock,10.475
+Synchronized.WithLock,11.1525
+Synchronized.Lock,23.079
+SemaphoreSlim.Wait,26.5975
+AsyncSynchronized.WithLock,36.4285
+AsyncSynchronized.Lock,58.296
+SemaphoreSlim.WaitAsync,25.766
+AsyncSynchronized.WithLockAsync,80.999
+AsyncSynchronized.LockAsync,103.531
+Loop overhead,0.5015
+lock,10.4275
+Synchronized.WithLock,11.184
+Synchronized.Lock,23.2005
+SemaphoreSlim.Wait,26.598
+AsyncSynchronized.WithLock,36.0465
+AsyncSynchronized.Lock,58.301
+SemaphoreSlim.WaitAsync,25.0595
+AsyncSynchronized.WithLockAsync,81.4405
+AsyncSynchronized.LockAsync,104.2935
+Loop overhead,0.501
+lock,10.6505
+Synchronized.WithLock,10.931
+Synchronized.Lock,23.123
+SemaphoreSlim.Wait,26.6005
+AsyncSynchronized.WithLock,34.8925
+AsyncSynchronized.Lock,58.921
+SemaphoreSlim.WaitAsync,25.362
+AsyncSynchronized.WithLockAsync,80.662
+AsyncSynchronized.LockAsync,103.207
+Loop overhead,0.501
+lock,10.5015
+Synchronized.WithLock,11.167
+Synchronized.Lock,23.248
+SemaphoreSlim.Wait,26.6115
+AsyncSynchronized.WithLock,36.0945
+AsyncSynchronized.Lock,58.2125
+SemaphoreSlim.WaitAsync,25.744
+AsyncSynchronized.WithLockAsync,80.8775
+AsyncSynchronized.LockAsync,103.159
+Loop overhead,0.501
+lock,10.4705
+Synchronized.WithLock,10.887
+Synchronized.Lock,24.017
+SemaphoreSlim.Wait,26.6075
+AsyncSynchronized.WithLock,34.3015
+AsyncSynchronized.Lock,59.1205
+SemaphoreSlim.WaitAsync,25.741
+AsyncSynchronized.WithLockAsync,80.328
+AsyncSynchronized.LockAsync,104.1275
+Loop overhead,0.5015
+lock,10.418
+Synchronized.WithLock,11.162
+Synchronized.Lock,23.2285
+SemaphoreSlim.Wait,26.614
+AsyncSynchronized.WithLock,34.659
+AsyncSynchronized.Lock,57.7935
+SemaphoreSlim.WaitAsync,25.6675
+AsyncSynchronized.WithLockAsync,81.016
+AsyncSynchronized.LockAsync,103.576
+Loop overhead,0.5015
+lock,10.4695
+Synchronized.WithLock,11.1595
+Synchronized.Lock,23.1575
+SemaphoreSlim.Wait,26.611
+AsyncSynchronized.WithLock,36.3485
+AsyncSynchronized.Lock,58.2675
+SemaphoreSlim.WaitAsync,25.776
+AsyncSynchronized.WithLockAsync,80.82
+AsyncSynchronized.LockAsync,104.046
+Loop overhead,0.5015
+lock,10.542
+Synchronized.WithLock,10.902
+Synchronized.Lock,23.163
+SemaphoreSlim.Wait,26.62
+AsyncSynchronized.WithLock,34.192
+AsyncSynchronized.Lock,58.4265
+SemaphoreSlim.WaitAsync,25.7625
+AsyncSynchronized.WithLockAsync,80.8345
+AsyncSynchronized.LockAsync,103.244
+Loop overhead,0.509
+lock,10.5315
+Synchronized.WithLock,10.823
+Synchronized.Lock,23.225
+SemaphoreSlim.Wait,26.64
+AsyncSynchronized.WithLock,34.2605
+AsyncSynchronized.Lock,58.802
+SemaphoreSlim.WaitAsync,25.7545
+AsyncSynchronized.WithLockAsync,79.871
+AsyncSynchronized.LockAsync,103.214
+Loop overhead,0.5015
+lock,10.434
+Synchronized.WithLock,11.1
+Synchronized.Lock,23.1065
+SemaphoreSlim.Wait,26.599
+AsyncSynchronized.WithLock,34.5985
+AsyncSynchronized.Lock,55.1535
+SemaphoreSlim.WaitAsync,25.6215
+AsyncSynchronized.WithLockAsync,79.1835
+AsyncSynchronized.LockAsync,104.376
+Loop overhead,0.507
+lock,10.4785
+Synchronized.WithLock,10.8455
+Synchronized.Lock,23.185
+SemaphoreSlim.Wait,26.601
+AsyncSynchronized.WithLock,34.366
+AsyncSynchronized.Lock,54.519
+SemaphoreSlim.WaitAsync,25.097
+AsyncSynchronized.WithLockAsync,79.9075
+AsyncSynchronized.LockAsync,102.49
+Loop overhead,0.5015
+lock,10.48
+Synchronized.WithLock,11.16
+Synchronized.Lock,23.1375
+SemaphoreSlim.Wait,26.6465
+AsyncSynchronized.WithLock,34.593
+AsyncSynchronized.Lock,59.027
+SemaphoreSlim.WaitAsync,25.745
+AsyncSynchronized.WithLockAsync,80.9865
+AsyncSynchronized.LockAsync,104.7975
+Loop overhead,0.5015
+lock,10.466
+Synchronized.WithLock,11.163
+Synchronized.Lock,23.185
+SemaphoreSlim.Wait,26.6125
+AsyncSynchronized.WithLock,34.2075
+AsyncSynchronized.Lock,58.867
+SemaphoreSlim.WaitAsync,25.766
+AsyncSynchronized.WithLockAsync,80.723
+AsyncSynchronized.LockAsync,103.677
+Loop overhead,0.511
+lock,10.525
+Synchronized.WithLock,11.166
+Synchronized.Lock,23.103
+SemaphoreSlim.Wait,26.575
+AsyncSynchronized.WithLock,34.268
+AsyncSynchronized.Lock,58.506
+SemaphoreSlim.WaitAsync,25.607
+AsyncSynchronized.WithLockAsync,81.5835
+AsyncSynchronized.LockAsync,104.572
+Loop overhead,0.5015
+lock,10.508
+Synchronized.WithLock,10.9965
+Synchronized.Lock,23.196
+SemaphoreSlim.Wait,26.581
+AsyncSynchronized.WithLock,34.549
+AsyncSynchronized.Lock,58.042
+SemaphoreSlim.WaitAsync,25.7815
+AsyncSynchronized.WithLockAsync,82.4855
+AsyncSynchronized.LockAsync,104.2285
+Loop overhead,0.5015
+lock,10.5195
+Synchronized.WithLock,11.1675
+Synchronized.Lock,23.153
+SemaphoreSlim.Wait,26.707
+AsyncSynchronized.WithLock,35.346
+AsyncSynchronized.Lock,58.816
+SemaphoreSlim.WaitAsync,25.7925
+AsyncSynchronized.WithLockAsync,81.1335
+AsyncSynchronized.LockAsync,103.327
+Loop overhead,0.5015
+lock,10.414
+Synchronized.WithLock,11.1415
+Synchronized.Lock,23.19
+SemaphoreSlim.Wait,26.6
+AsyncSynchronized.WithLock,36.1105
+AsyncSynchronized.Lock,57.819
+SemaphoreSlim.WaitAsync,25.7555
+AsyncSynchronized.WithLockAsync,80.457
+AsyncSynchronized.LockAsync,103.8365
+Loop overhead,0.5115
+lock,10.4865
+Synchronized.WithLock,11.157
+Synchronized.Lock,23.1695
+SemaphoreSlim.Wait,26.606
+AsyncSynchronized.WithLock,35.3085
+AsyncSynchronized.Lock,58.247
+SemaphoreSlim.WaitAsync,25.7515
+AsyncSynchronized.WithLockAsync,80.241
+AsyncSynchronized.LockAsync,103.5465
+Loop overhead,0.508
+lock,10.493
+Synchronized.WithLock,10.9285
+Synchronized.Lock,23.113
+SemaphoreSlim.Wait,26.586
+AsyncSynchronized.WithLock,35.6865
+AsyncSynchronized.Lock,58.3315
+SemaphoreSlim.WaitAsync,24.327
+AsyncSynchronized.WithLockAsync,80.1635
+AsyncSynchronized.LockAsync,104.2305
+Loop overhead,0.5015
+lock,10.5625
+Synchronized.WithLock,11.1595
+Synchronized.Lock,23.139
+SemaphoreSlim.Wait,26.591
+AsyncSynchronized.WithLock,34.155
+AsyncSynchronized.Lock,59.9435
+SemaphoreSlim.WaitAsync,25.739
+AsyncSynchronized.WithLockAsync,80.679
+AsyncSynchronized.LockAsync,103.6965
+Loop overhead,0.5015
+lock,10.475
+Synchronized.WithLock,11.1715
+Synchronized.Lock,23.201
+SemaphoreSlim.Wait,26.609
+AsyncSynchronized.WithLock,34.4365
+AsyncSynchronized.Lock,59.094
+SemaphoreSlim.WaitAsync,25.7435
+AsyncSynchronized.WithLockAsync,81.016
+AsyncSynchronized.LockAsync,104.2905
+Loop overhead,0.5015
+lock,10.4435
+Synchronized.WithLock,11.156
+Synchronized.Lock,23.162
+SemaphoreSlim.Wait,26.6095
+AsyncSynchronized.WithLock,34.843
+AsyncSynchronized.Lock,59.5845
+SemaphoreSlim.WaitAsync,25.0745
+AsyncSynchronized.WithLockAsync,80.6995
+AsyncSynchronized.LockAsync,103.883
+Loop overhead,0.5015
+lock,10.4795
+Synchronized.WithLock,11.1775
+Synchronized.Lock,23.159
+SemaphoreSlim.Wait,26.637
+AsyncSynchronized.WithLock,36.642
+AsyncSynchronized.Lock,60.2545
+SemaphoreSlim.WaitAsync,25.767
+AsyncSynchronized.WithLockAsync,81.356
+AsyncSynchronized.LockAsync,103.714
+Loop overhead,0.501
+lock,10.507
+Synchronized.WithLock,10.938
+Synchronized.Lock,23.0475
+SemaphoreSlim.Wait,26.6
+AsyncSynchronized.WithLock,34.205
+AsyncSynchronized.Lock,58.584
+SemaphoreSlim.WaitAsync,25.376
+AsyncSynchronized.WithLockAsync,81.393
+AsyncSynchronized.LockAsync,103.8855
+Loop overhead,0.501
+lock,10.469
+Synchronized.WithLock,11.1725
+Synchronized.Lock,23.116
+SemaphoreSlim.Wait,26.5945
+AsyncSynchronized.WithLock,34.616
+AsyncSynchronized.Lock,58.282
+SemaphoreSlim.WaitAsync,25.671
+AsyncSynchronized.WithLockAsync,79.7965
+AsyncSynchronized.LockAsync,104.8885
+Loop overhead,0.501
+lock,10.4965
+Synchronized.WithLock,11.175
+Synchronized.Lock,23.2525
+SemaphoreSlim.Wait,26.6025
+AsyncSynchronized.WithLock,35.122
+AsyncSynchronized.Lock,54.805
+SemaphoreSlim.WaitAsync,25.7875
+AsyncSynchronized.WithLockAsync,79.791
+AsyncSynchronized.LockAsync,103.15
+Loop overhead,0.506
+lock,10.4695
+Synchronized.WithLock,10.9285
+Synchronized.Lock,24.0005
+SemaphoreSlim.Wait,26.5975
+AsyncSynchronized.WithLock,34.553
+AsyncSynchronized.Lock,59.4255
+SemaphoreSlim.WaitAsync,25.57
+AsyncSynchronized.WithLockAsync,80.06
+AsyncSynchronized.LockAsync,103.591
+Loop overhead,0.501
+lock,10.5415
+Synchronized.WithLock,11.1555
+Synchronized.Lock,23.225
+SemaphoreSlim.Wait,26.582
+AsyncSynchronized.WithLock,34.6575
+AsyncSynchronized.Lock,58.304
+SemaphoreSlim.WaitAsync,25.7615
+AsyncSynchronized.WithLockAsync,81.2915
+AsyncSynchronized.LockAsync,103.3165
+Loop overhead,0.5015
+lock,10.4845
+Synchronized.WithLock,10.8855
+Synchronized.Lock,23.181
+SemaphoreSlim.Wait,26.588
+AsyncSynchronized.WithLock,34.4395
+AsyncSynchronized.Lock,58.7955
+SemaphoreSlim.WaitAsync,24.8975
+AsyncSynchronized.WithLockAsync,80.915
+AsyncSynchronized.LockAsync,102.897
+Loop overhead,0.501
+lock,10.4905
+Synchronized.WithLock,11.1805
+Synchronized.Lock,23.208
+SemaphoreSlim.Wait,26.594
+AsyncSynchronized.WithLock,34.949
+AsyncSynchronized.Lock,57.8425
+SemaphoreSlim.WaitAsync,25.7125
+AsyncSynchronized.WithLockAsync,81.0035
+AsyncSynchronized.LockAsync,102.8905
+Loop overhead,0.501
+lock,10.5075
+Synchronized.WithLock,10.9565
+Synchronized.Lock,23.149
+SemaphoreSlim.Wait,26.597
+AsyncSynchronized.WithLock,35.8005
+AsyncSynchronized.Lock,58.6315
+SemaphoreSlim.WaitAsync,24.758
+AsyncSynchronized.WithLockAsync,80.3485
+AsyncSynchronized.LockAsync,103.399
+Loop overhead,0.5015
+lock,10.456
+Synchronized.WithLock,11.182
+Synchronized.Lock,23.1795
+SemaphoreSlim.Wait,26.606
+AsyncSynchronized.WithLock,34.512
+AsyncSynchronized.Lock,59.011
+SemaphoreSlim.WaitAsync,25.7815
+AsyncSynchronized.WithLockAsync,80.538
+AsyncSynchronized.LockAsync,103.3125
+Loop overhead,0.5015
+lock,10.561
+Synchronized.WithLock,10.924
+Synchronized.Lock,23.1675
+SemaphoreSlim.Wait,26.593
+AsyncSynchronized.WithLock,36.649
+AsyncSynchronized.Lock,59.0395
+SemaphoreSlim.WaitAsync,25.762
+AsyncSynchronized.WithLockAsync,79.487
+AsyncSynchronized.LockAsync,103.0105
+Loop overhead,0.506
+lock,10.4755
+Synchronized.WithLock,11.1635
+Synchronized.Lock,23.1435
+SemaphoreSlim.Wait,26.6345
+AsyncSynchronized.WithLock,36.482
+AsyncSynchronized.Lock,59.8305
+SemaphoreSlim.WaitAsync,25.075
+AsyncSynchronized.WithLockAsync,81.1955
+AsyncSynchronized.LockAsync,103.431
+Loop overhead,0.501
+lock,10.474
+Synchronized.WithLock,11.157
+Synchronized.Lock,23.138
+SemaphoreSlim.Wait,26.6235
+AsyncSynchronized.WithLock,36.4515
+AsyncSynchronized.Lock,58.6485
+SemaphoreSlim.WaitAsync,25.756
+AsyncSynchronized.WithLockAsync,81.601
+AsyncSynchronized.LockAsync,104.8835
+Loop overhead,0.5015
+lock,10.481
+Synchronized.WithLock,11.164
+Synchronized.Lock,23.173
+SemaphoreSlim.Wait,26.6105
+AsyncSynchronized.WithLock,35.621
+AsyncSynchronized.Lock,59.5575
+SemaphoreSlim.WaitAsync,25.7515
+AsyncSynchronized.WithLockAsync,81.3845
+AsyncSynchronized.LockAsync,103.698
+Loop overhead,0.501
+lock,10.492
+Synchronized.WithLock,10.933
+Synchronized.Lock,23.619
+SemaphoreSlim.Wait,26.6025
+AsyncSynchronized.WithLock,34.3635
+AsyncSynchronized.Lock,58.6615
+SemaphoreSlim.WaitAsync,25.763
+AsyncSynchronized.WithLockAsync,80.705
+AsyncSynchronized.LockAsync,102.9465
+Loop overhead,0.5015
+lock,10.4295
+Synchronized.WithLock,11.043
+Synchronized.Lock,23.152
+SemaphoreSlim.Wait,26.6
+AsyncSynchronized.WithLock,36.4485
+AsyncSynchronized.Lock,54.891
+SemaphoreSlim.WaitAsync,25.757
+AsyncSynchronized.WithLockAsync,79.342
+AsyncSynchronized.LockAsync,103.1395
+Loop overhead,0.501
+lock,10.4235
+Synchronized.WithLock,10.982
+Synchronized.Lock,23.351
+SemaphoreSlim.Wait,26.596
+AsyncSynchronized.WithLock,34.2575
+AsyncSynchronized.Lock,55.729
+SemaphoreSlim.WaitAsync,25.7695
+AsyncSynchronized.WithLockAsync,79.7205
+AsyncSynchronized.LockAsync,103.689

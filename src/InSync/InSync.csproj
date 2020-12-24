@@ -6,7 +6,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Keith Yip</Authors>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <Description>A helper library for organizing synchronizations in concurrency.</Description>
+    <Description>InSync is a general purpose library providing easy ways to correctly write thread-safe code for .NET.</Description>
     <PackageTags>concurrency multithread synchronization lock async</PackageTags>
     <Company />
   </PropertyGroup>

@@ -19,7 +19,7 @@ namespace Example
             public static WriteToken CreatePerObjectOnly() => new WriteToken();
         }
 
-        private AsyncSynchronized<WriteToken> writeToken = AsyncSynchronized.Create(WriteToken.CreatePerObjectOnly());
+        private readonly AsyncSynchronized<WriteToken> writeToken = AsyncSynchronized.Create(WriteToken.CreatePerObjectOnly());
 
         public async Task Foo()
         {

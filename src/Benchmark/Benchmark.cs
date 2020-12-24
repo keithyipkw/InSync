@@ -12,59 +12,91 @@ namespace InSyncBenchmark
 {
     public class Benchmark
     {
+        private const int Repeat = 100 * 1000 * 2;
+
         public async Task Run()
         {
-            Console.WriteLine("0: single lock");
-            Console.WriteLine("1: multiple locks");
-            Console.Write("Select one: ");
-            int which;
+            Console.Error.WriteLine("0: single lock overhead");
+            Console.Error.WriteLine("1: multiple lock overhead");
+            Console.Error.WriteLine("2: dining philosopher");
+            Console.Error.WriteLine("3: dining async philosopher");
+            int test;
+            int repeat;
             while (true)
             {
-                if (int.TryParse(Console.ReadLine(), out which))
+                Console.Error.Write("test repeat <core affinity> <core affinity> ...: ");
+
+                var parameters = new List<int>();
+                foreach (var p in Console.ReadLine().Split(' '))
                 {
-                    if (which < 2)
+                    if (!int.TryParse(p, out var v))
                     {
+                        parameters = null;
                         break;
                     }
+                    parameters.Add(v);
                 }
-                Console.Write("Select one: ");
-            }
-            Console.WriteLine();
-            switch (which)
-            {
-                case 0:
-                    await BenchmarkSingleLock();
-                    break;
-                case 1:
-                    Dining();
-                    break;
-            }
+                if (parameters == null
+                    || parameters.Count < 2)
+                {
+                    continue;
+                }
 
-            Console.WriteLine();
-            Console.WriteLine("Done");
-            while (true)
+                test = parameters[0];
+                repeat = parameters[1];
+
+                var affinity = 0ul;
+                foreach (var p in parameters.Skip(2))
+                {
+                    affinity |= 1ul << p;
+                }
+                using (var process = Process.GetCurrentProcess())
+                {
+                    if (affinity > 0)
+                    {
+                        process.ProcessorAffinity = (IntPtr)affinity;
+                    }
+                    process.PriorityClass = ProcessPriorityClass.High;
+                }
+
+                break;
+            }
+            Console.Error.WriteLine();
+            for (int i = 0; i < repeat; ++i)
             {
-                Console.Read();
+                switch (test)
+                {
+                    case 0:
+                        await BenchmarkSingleLock();
+                        break;
+                    case 1:
+                        await BenchmarkMultipleLockAsync();
+                        break;
+                    case 2:
+                        Dining();
+                        break;
+                    case 3:
+                        await DiningAsync();
+                        break;
+                }
             }
         }
 
         private async Task BenchmarkSingleLock()
         {
-            var repeat = 300_000_000;
-
             var watch = new Stopwatch();
             var x = new X();
             var sqrt = (int)Math.Sqrt(1);
+            ForceGC();
             watch.Restart();
-            for (int i = 0; i < repeat; ++i)
+            for (int i = 0; i < Repeat; ++i)
             {
                 x.Value += sqrt;
             }
             watch.Stop();
-            Console.WriteLine($"Baseline loop {((double)watch.ElapsedTicks * 100 / repeat)}ns");
+            Console.WriteLine($"Loop overhead,{((double)watch.ElapsedTicks * 100 / Repeat)}");
 
-            await TestSynchronizedAsync(repeat);
-            await TestSynchronizeMultipleAsync(repeat);
+            await TestSynchronizedAsync(Repeat);
         }
         
         public async Task TestSynchronizedAsync(int repeat)
@@ -74,6 +106,7 @@ namespace InSyncBenchmark
             var x = new X();
             var sqrt = (int)Math.Sqrt(1);
 
+            ForceGC();
             watch.Restart();
             for (int i = 0; i < repeat; ++i)
             {
@@ -83,17 +116,19 @@ namespace InSyncBenchmark
                 }
             }
             watch.Stop();
-            Console.WriteLine($"Inline lock {((double)watch.ElapsedTicks * 100 / repeat)}ns");
+            Console.WriteLine($"lock,{((double)watch.ElapsedTicks * 100 / repeat)}");
 
             var syncMonitor = Synchronized.Create(x);
+            ForceGC();
             watch.Restart();
             for (int i = 0; i < repeat; ++i)
             {
                 syncMonitor.WithLock((v) => v.Value += sqrt);
             }
             watch.Stop();
-            Console.WriteLine($"Synchronized.WithLock {((double)watch.ElapsedTicks * 100 / repeat)}ns");
+            Console.WriteLine($"Synchronized.WithLock,{((double)watch.ElapsedTicks * 100 / repeat)}");
 
+            ForceGC();
             watch.Restart();
             for (int i = 0; i < repeat; ++i)
             {
@@ -103,19 +138,31 @@ namespace InSyncBenchmark
                 }
             }
             watch.Stop();
-            Console.WriteLine($"Synchronized.Lock {((double)watch.ElapsedTicks * 100 / repeat)}ns");
-            
-            Console.WriteLine();
+            Console.WriteLine($"Synchronized.Lock,{((double)watch.ElapsedTicks * 100 / repeat)}");
+
+            ForceGC();
+            var semaphore = new SemaphoreSlim(1);
+            watch.Restart();
+            for (int i = 0; i < repeat; ++i)
+            {
+                semaphore.Wait();
+                x.Value += sqrt;
+                semaphore.Release();
+            }
+            watch.Stop();
+            Console.WriteLine($"SemaphoreSlim.Wait,{((double)watch.ElapsedTicks * 100 / repeat)}");
 
             var syncSemaphore = AsyncSynchronized.Create(x);
+            ForceGC();
             watch.Restart();
             for (int i = 0; i < repeat; ++i)
             {
                 syncSemaphore.WithLock((v) => v.Value += sqrt);
             }
             watch.Stop();
-            Console.WriteLine($"AsyncSynchronized.WithLock {((double)watch.ElapsedTicks * 100 / repeat)}ns");
+            Console.WriteLine($"AsyncSynchronized.WithLock,{((double)watch.ElapsedTicks * 100 / repeat)}");
 
+            ForceGC();
             watch.Restart();
             for (int i = 0; i < repeat; ++i)
             {
@@ -125,16 +172,29 @@ namespace InSyncBenchmark
                 }
             }
             watch.Stop();
-            Console.WriteLine($"AsyncSynchronized.Lock {((double)watch.ElapsedTicks * 100 / repeat)}ns");
+            Console.WriteLine($"AsyncSynchronized.Lock,{((double)watch.ElapsedTicks * 100 / repeat)}");
 
+            ForceGC();
+            watch.Restart();
+            for (int i = 0; i < repeat; ++i)
+            {
+                await semaphore.WaitAsync();
+                x.Value += sqrt;
+                semaphore.Release();
+            }
+            watch.Stop();
+            Console.WriteLine($"SemaphoreSlim.WaitAsync,{((double)watch.ElapsedTicks * 100 / repeat)}");
+
+            ForceGC();
             watch.Restart();
             for (int i = 0; i < repeat; ++i)
             {
                 await syncSemaphore.WithLockAsync((v) => v.Value += sqrt);
             }
             watch.Stop();
-            Console.WriteLine($"AsyncSynchronized.WithLockAsync {((double)watch.ElapsedTicks * 100 / repeat)}ns");
-            
+            Console.WriteLine($"AsyncSynchronized.WithLockAsync,{((double)watch.ElapsedTicks * 100 / repeat)}");
+
+            ForceGC();
             watch.Restart();
             for (int i = 0; i < repeat; ++i)
             {
@@ -144,20 +204,37 @@ namespace InSyncBenchmark
                 }
             }
             watch.Stop();
-            Console.WriteLine($"AsyncSynchronized.LockAsync {((double)watch.ElapsedTicks * 100 / repeat)}ns");
-
-            Console.WriteLine();
+            Console.WriteLine($"AsyncSynchronized.LockAsync,{((double)watch.ElapsedTicks * 100 / repeat)}");
         }
 
-        public async Task TestSynchronizeMultipleAsync(int repeat)
+        private async Task BenchmarkMultipleLockAsync()
+        {
+            var watch = new Stopwatch();
+            var x1 = new X();
+            var x2 = new X();
+            var sqrt = (int)Math.Sqrt(1);
+            ForceGC();
+            watch.Restart();
+            for (int i = 0; i < Repeat; ++i)
+            {
+                x1.Value += sqrt;
+                x2.Value += sqrt;
+            }
+            watch.Stop();
+            Console.WriteLine($"Loop overhead,{((double)watch.ElapsedTicks * 100 / Repeat)}");
+
+            await TestSynchronizeMultipleAsync(Repeat);
+        }
+
+        private async Task TestSynchronizeMultipleAsync(int repeat)
         {
             var watch = new Stopwatch();
 
             var x1 = new X();
             var x2 = new X();
-            var x3 = new X();
             var sqrt = (int)Math.Sqrt(1);
-            
+
+            ForceGC();
             watch.Restart();
             for (int i = 0; i < repeat; ++i)
             {
@@ -171,11 +248,12 @@ namespace InSyncBenchmark
                 }
             }
             watch.Stop();
-            Console.WriteLine($"Inline lock {((double)watch.ElapsedTicks * 100 / repeat)}ns");
+            Console.WriteLine($"lock,{((double)watch.ElapsedTicks * 100 / repeat)}");
             
             var syncMonitor1 = Synchronized.Create(x1);
             var syncMonitor2 = Synchronized.Create(x2);
 
+            ForceGC();
             watch.Restart();
             for (int i = 0; i < repeat; ++i)
             {
@@ -187,8 +265,9 @@ namespace InSyncBenchmark
                 }
             }
             watch.Stop();
-            Console.WriteLine($"Synchronized.Lock {((double)watch.ElapsedTicks * 100 / repeat)}ns");
-            
+            Console.WriteLine($"Synchronized.Lock,{((double)watch.ElapsedTicks * 100 / repeat)}");
+
+            ForceGC();
             watch.Restart();
             for (int i = 0; i < repeat; ++i)
             {
@@ -199,10 +278,11 @@ namespace InSyncBenchmark
                 }
             }
             watch.Stop();
-            Console.WriteLine($"SynchronizeAll.All monitor {((double)watch.ElapsedTicks * 100 / repeat)}ns");
-            
-            watch.Restart();
+            Console.WriteLine($"MultiSync.All monitor,{((double)watch.ElapsedTicks * 100 / repeat)}");
+
+            ForceGC();
             var syncMonitors = new[] { syncMonitor1, syncMonitor2 };
+            watch.Restart();
             for (int i = 0; i < repeat; ++i)
             {
                 using (var guard = MultiSync.All(syncMonitors))
@@ -212,11 +292,28 @@ namespace InSyncBenchmark
                 }
             }
             watch.Stop();
-            Console.WriteLine($"SynchronizeAll.All(reuse array) monitor {((double)watch.ElapsedTicks * 100 / repeat)}ns");
+            Console.WriteLine($"MultiSync.All monitor reuse array,{((double)watch.ElapsedTicks * 100 / repeat)}");
 
+            ForceGC();
             watch.Restart();
+            var semaphore1 = new SemaphoreSlim(1);
+            var semaphore2 = new SemaphoreSlim(1);
+            for (int i = 0; i < repeat; ++i)
+            {
+                await semaphore1.WaitAsync();
+                await semaphore2.WaitAsync();
+                x1.Value += sqrt;
+                x2.Value += sqrt;
+                semaphore2.Release();
+                semaphore1.Release();
+            }
+            watch.Stop();
+            Console.WriteLine($"SemaphoreSlim.WaitAsync,{((double)watch.ElapsedTicks * 100 / repeat)}");
+
+            ForceGC();
             var syncSemaphore1 = AsyncSynchronized.Create(x1);
             var syncSemaphore2 = AsyncSynchronized.Create(x2);
+            watch.Restart();
             for (int i = 0; i < repeat; ++i)
             {
                 using (var guard = await MultiSync.AllAsync(new[] { syncSemaphore1, syncSemaphore2 }))
@@ -226,22 +323,35 @@ namespace InSyncBenchmark
                 }
             }
             watch.Stop();
-            Console.WriteLine($"SynchronizeAll.AllAsync semaphoreslim {((double)watch.ElapsedTicks * 100 / repeat)}ns");
-
-            Console.WriteLine();
+            Console.WriteLine($"MultiSync.AllAsync semaphoreslim,{((double)watch.ElapsedTicks * 100 / repeat)}");
         }
-        
+
+        private void ForceGC()
+        {
+            GC.Collect(GC.MaxGeneration, GCCollectionMode.Forced, true);
+            GC.WaitForPendingFinalizers();
+            GC.Collect(GC.MaxGeneration, GCCollectionMode.Forced, true);
+        }
+
         private class X
         {
             public int Value;
         }
 
+        private enum Method
+        {
+            Ordered,
+            SmartAndPolite,
+            Count,
+        }
+
         private void Dining()
         {
-            for (var nt = 2; nt <= 32; ++nt)
+            for (var method = (Method)0; method < Method.Count; ++method)
             {
-                for (var method = (Method)0; method < Method.Count; ++method)
+                for (var nt = 2; nt <= 32; ++nt)
                 {
+                    ForceGC();
                     var table = new List<IBareLock>();
                     var lockOrders = new Dictionary<IBareLock, int>();
                     for (var i = 0; i < nt; ++i)
@@ -258,7 +368,7 @@ namespace InSyncBenchmark
                         Action<IReadOnlyList<IBareLock>, Action> lockToEat = null;
                         switch (method)
                         {
-                            case Method.Order:
+                            case Method.Ordered:
                                 lockToEat = (locks, eat) =>
                                 {
                                     locks = locks.OrderBy(x => lockOrders[x]).ToList();
@@ -301,16 +411,73 @@ namespace InSyncBenchmark
                         t.Join();
                     }
                     stopwatch.Stop();
-                    Console.WriteLine($"{method} {nt} {stopwatch.Elapsed.TotalSeconds}");
+                    Console.WriteLine($"{method},{nt},{stopwatch.Elapsed.TotalSeconds}");
                 }
             }
         }
 
-        private enum Method
+        private async Task DiningAsync()
         {
-            Order,
-            SmartAndPolite,
-            Count,
+            for (var method = (Method)0; method < Method.Count; ++method)
+            {
+                for (var nt = 2; nt <= 32; ++nt)
+                {
+                    ForceGC();
+                    var table = new List<IBareAsyncLock>();
+                    var lockOrders = new Dictionary<IBareAsyncLock, int>();
+                    for (var i = 0; i < nt; ++i)
+                    {
+                        table.Add(AsyncSynchronized.Create(new object()));
+                        lockOrders[table[i]] = i;
+                    }
+
+                    var diners = new List<AsyncPhilosopher>();
+                    for (var i = 0; i < nt; ++i)
+                    {
+                        int j = i;
+                        int k = j < nt - 1 ? j + 1 : 0;
+                        Func<IReadOnlyList<IBareAsyncLock>, Action, Task> lockToEat = null;
+                        switch (method)
+                        {
+                            case Method.Ordered:
+                                lockToEat = async (locks, eat) =>
+                                {
+                                    locks = locks.OrderBy(x => lockOrders[x]).ToList();
+                                    foreach (var l in locks)
+                                    {
+                                        await l.BarelyLockAsync();
+                                    }
+                                    eat();
+                                    foreach (var l in locks)
+                                    {
+                                        l.BarelyUnlock();
+                                    }
+                                };
+                                break;
+                            case Method.SmartAndPolite:
+                                lockToEat = async (locks, eat) =>
+                                {
+                                    using (await MultiSync.AllAsync(locks))
+                                    {
+                                        eat();
+                                    }
+                                };
+                                break;
+                        }
+                        diners.Add(new AsyncPhilosopher(new[] { table[j], table[k] }, lockToEat));
+                    }
+                    var stopwatch = new Stopwatch();
+                    var tasks = new List<Task>();
+                    stopwatch.Start();
+                    for (var i = 0; i < nt; ++i)
+                    {
+                        tasks.Add(Task.Run(diners[i].DineAsync));
+                    }
+                    await Task.WhenAll(tasks);
+                    stopwatch.Stop();
+                    Console.WriteLine($"{method},{nt},{stopwatch.Elapsed.TotalSeconds}");
+                }
+            }
         }
     }
 }

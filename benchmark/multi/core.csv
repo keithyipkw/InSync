@@ -1,0 +1,700 @@
+Loop overhead,0.504
+lock,20.6805
+Synchronized.Lock,44.915
+MultiSync.All monitor,201.6235
+MultiSync.All monitor reuse array,167.2535
+SemaphoreSlim.WaitAsync,51.1015
+MultiSync.AllAsync semaphoreslim,402.811
+Loop overhead,0.5015
+lock,20.5825
+Synchronized.Lock,39.885
+MultiSync.All monitor,172.1235
+MultiSync.All monitor reuse array,165.0965
+SemaphoreSlim.WaitAsync,50.8945
+MultiSync.AllAsync semaphoreslim,370.353
+Loop overhead,0.5045
+lock,20.6395
+Synchronized.Lock,39.7935
+MultiSync.All monitor,175.0315
+MultiSync.All monitor reuse array,167.0705
+SemaphoreSlim.WaitAsync,51.037
+MultiSync.AllAsync semaphoreslim,369.6525
+Loop overhead,0.5015
+lock,20.697
+Synchronized.Lock,39.856
+MultiSync.All monitor,172.8855
+MultiSync.All monitor reuse array,164.099
+SemaphoreSlim.WaitAsync,50.9835
+MultiSync.AllAsync semaphoreslim,373.385
+Loop overhead,0.501
+lock,20.697
+Synchronized.Lock,39.8055
+MultiSync.All monitor,174.752
+MultiSync.All monitor reuse array,167.3595
+SemaphoreSlim.WaitAsync,50.9495
+MultiSync.AllAsync semaphoreslim,371.153
+Loop overhead,0.501
+lock,20.784
+Synchronized.Lock,39.793
+MultiSync.All monitor,174.494
+MultiSync.All monitor reuse array,167.3975
+SemaphoreSlim.WaitAsync,50.8
+MultiSync.AllAsync semaphoreslim,370.2935
+Loop overhead,0.501
+lock,20.7945
+Synchronized.Lock,39.9845
+MultiSync.All monitor,173.3215
+MultiSync.All monitor reuse array,165.8105
+SemaphoreSlim.WaitAsync,50.6575
+MultiSync.AllAsync semaphoreslim,372.29
+Loop overhead,0.501
+lock,21.153
+Synchronized.Lock,39.877
+MultiSync.All monitor,173.565
+MultiSync.All monitor reuse array,166.899
+SemaphoreSlim.WaitAsync,50.3845
+MultiSync.AllAsync semaphoreslim,371.8385
+Loop overhead,0.5375
+lock,20.632
+Synchronized.Lock,39.794
+MultiSync.All monitor,174.3405
+MultiSync.All monitor reuse array,167.686
+SemaphoreSlim.WaitAsync,51.062
+MultiSync.AllAsync semaphoreslim,372.6875
+Loop overhead,0.501
+lock,20.637
+Synchronized.Lock,39.8705
+MultiSync.All monitor,172.2075
+MultiSync.All monitor reuse array,166.7535
+SemaphoreSlim.WaitAsync,50.969
+MultiSync.AllAsync semaphoreslim,373.4675
+Loop overhead,0.501
+lock,20.567
+Synchronized.Lock,39.8315
+MultiSync.All monitor,173.1685
+MultiSync.All monitor reuse array,165.705
+SemaphoreSlim.WaitAsync,50.5965
+MultiSync.AllAsync semaphoreslim,371.367
+Loop overhead,0.501
+lock,20.551
+Synchronized.Lock,39.8355
+MultiSync.All monitor,173.68
+MultiSync.All monitor reuse array,165.941
+SemaphoreSlim.WaitAsync,50.689
+MultiSync.AllAsync semaphoreslim,371.4055
+Loop overhead,0.501
+lock,20.746
+Synchronized.Lock,39.843
+MultiSync.All monitor,172.5485
+MultiSync.All monitor reuse array,165.3965
+SemaphoreSlim.WaitAsync,51.142
+MultiSync.AllAsync semaphoreslim,370.245
+Loop overhead,0.5015
+lock,20.551
+Synchronized.Lock,39.8035
+MultiSync.All monitor,173.6
+MultiSync.All monitor reuse array,165.1455
+SemaphoreSlim.WaitAsync,50.805
+MultiSync.AllAsync semaphoreslim,370.297
+Loop overhead,0.501
+lock,20.7345
+Synchronized.Lock,39.819
+MultiSync.All monitor,173.163
+MultiSync.All monitor reuse array,165.886
+SemaphoreSlim.WaitAsync,51.032
+MultiSync.AllAsync semaphoreslim,370.001
+Loop overhead,0.5015
+lock,20.5515
+Synchronized.Lock,39.841
+MultiSync.All monitor,175.011
+MultiSync.All monitor reuse array,166.9285
+SemaphoreSlim.WaitAsync,50.9415
+MultiSync.AllAsync semaphoreslim,371.8585
+Loop overhead,0.501
+lock,20.551
+Synchronized.Lock,40.0255
+MultiSync.All monitor,172.3815
+MultiSync.All monitor reuse array,164.9745
+SemaphoreSlim.WaitAsync,50.764
+MultiSync.AllAsync semaphoreslim,370.3635
+Loop overhead,0.505
+lock,20.8925
+Synchronized.Lock,39.8765
+MultiSync.All monitor,174.3335
+MultiSync.All monitor reuse array,167.581
+SemaphoreSlim.WaitAsync,51.071
+MultiSync.AllAsync semaphoreslim,370.2075
+Loop overhead,0.501
+lock,20.675
+Synchronized.Lock,39.8445
+MultiSync.All monitor,174.4155
+MultiSync.All monitor reuse array,164.6905
+SemaphoreSlim.WaitAsync,50.8315
+MultiSync.AllAsync semaphoreslim,372.05
+Loop overhead,0.5015
+lock,20.5515
+Synchronized.Lock,39.8745
+MultiSync.All monitor,176.4335
+MultiSync.All monitor reuse array,163.827
+SemaphoreSlim.WaitAsync,51.107
+MultiSync.AllAsync semaphoreslim,371.3665
+Loop overhead,0.5015
+lock,20.5575
+Synchronized.Lock,39.7935
+MultiSync.All monitor,176.5495
+MultiSync.All monitor reuse array,168.108
+SemaphoreSlim.WaitAsync,50.95
+MultiSync.AllAsync semaphoreslim,370.538
+Loop overhead,0.505
+lock,21.1185
+Synchronized.Lock,39.8865
+MultiSync.All monitor,177.932
+MultiSync.All monitor reuse array,168.503
+SemaphoreSlim.WaitAsync,50.9445
+MultiSync.AllAsync semaphoreslim,370.3275
+Loop overhead,0.5015
+lock,21.131
+Synchronized.Lock,39.837
+MultiSync.All monitor,176.324
+MultiSync.All monitor reuse array,167.9175
+SemaphoreSlim.WaitAsync,51.0865
+MultiSync.AllAsync semaphoreslim,370.087
+Loop overhead,0.501
+lock,20.592
+Synchronized.Lock,39.866
+MultiSync.All monitor,176.59
+MultiSync.All monitor reuse array,167.8355
+SemaphoreSlim.WaitAsync,51.028
+MultiSync.AllAsync semaphoreslim,370.4485
+Loop overhead,0.5015
+lock,20.726
+Synchronized.Lock,39.815
+MultiSync.All monitor,178.3045
+MultiSync.All monitor reuse array,168.5245
+SemaphoreSlim.WaitAsync,50.708
+MultiSync.AllAsync semaphoreslim,370.687
+Loop overhead,0.5015
+lock,20.597
+Synchronized.Lock,39.811
+MultiSync.All monitor,176.278
+MultiSync.All monitor reuse array,167.513
+SemaphoreSlim.WaitAsync,50.904
+MultiSync.AllAsync semaphoreslim,370.218
+Loop overhead,0.5015
+lock,20.888
+Synchronized.Lock,39.8425
+MultiSync.All monitor,177.2165
+MultiSync.All monitor reuse array,167.641
+SemaphoreSlim.WaitAsync,51.112
+MultiSync.AllAsync semaphoreslim,370.169
+Loop overhead,0.531
+lock,21.1255
+Synchronized.Lock,39.887
+MultiSync.All monitor,177.7575
+MultiSync.All monitor reuse array,167.4015
+SemaphoreSlim.WaitAsync,51.162
+MultiSync.AllAsync semaphoreslim,371.054
+Loop overhead,0.5015
+lock,20.692
+Synchronized.Lock,39.8235
+MultiSync.All monitor,176.0045
+MultiSync.All monitor reuse array,167.89
+SemaphoreSlim.WaitAsync,51.1645
+MultiSync.AllAsync semaphoreslim,373.0445
+Loop overhead,0.501
+lock,20.6145
+Synchronized.Lock,39.8745
+MultiSync.All monitor,176.0475
+MultiSync.All monitor reuse array,166.061
+SemaphoreSlim.WaitAsync,50.8195
+MultiSync.AllAsync semaphoreslim,369.619
+Loop overhead,0.501
+lock,20.555
+Synchronized.Lock,39.8795
+MultiSync.All monitor,177.0905
+MultiSync.All monitor reuse array,166.587
+SemaphoreSlim.WaitAsync,51.1155
+MultiSync.AllAsync semaphoreslim,371.914
+Loop overhead,0.501
+lock,20.5515
+Synchronized.Lock,39.838
+MultiSync.All monitor,177.2655
+MultiSync.All monitor reuse array,168.411
+SemaphoreSlim.WaitAsync,50.426
+MultiSync.AllAsync semaphoreslim,370.3285
+Loop overhead,0.501
+lock,20.8885
+Synchronized.Lock,39.853
+MultiSync.All monitor,176.72
+MultiSync.All monitor reuse array,167.1795
+SemaphoreSlim.WaitAsync,51.081
+MultiSync.AllAsync semaphoreslim,370.4325
+Loop overhead,0.501
+lock,20.56
+Synchronized.Lock,39.853
+MultiSync.All monitor,177.1675
+MultiSync.All monitor reuse array,167.9695
+SemaphoreSlim.WaitAsync,50.968
+MultiSync.AllAsync semaphoreslim,370.8005
+Loop overhead,0.5045
+lock,20.5515
+Synchronized.Lock,39.845
+MultiSync.All monitor,178.146
+MultiSync.All monitor reuse array,168.006
+SemaphoreSlim.WaitAsync,51.0355
+MultiSync.AllAsync semaphoreslim,369.192
+Loop overhead,0.501
+lock,20.628
+Synchronized.Lock,39.8145
+MultiSync.All monitor,176.5435
+MultiSync.All monitor reuse array,167.119
+SemaphoreSlim.WaitAsync,51.0765
+MultiSync.AllAsync semaphoreslim,369.492
+Loop overhead,0.5015
+lock,20.5785
+Synchronized.Lock,39.7975
+MultiSync.All monitor,176.2835
+MultiSync.All monitor reuse array,166.2995
+SemaphoreSlim.WaitAsync,51.028
+MultiSync.AllAsync semaphoreslim,370.624
+Loop overhead,0.505
+lock,20.7125
+Synchronized.Lock,39.8215
+MultiSync.All monitor,175.8405
+MultiSync.All monitor reuse array,167.7665
+SemaphoreSlim.WaitAsync,51.135
+MultiSync.AllAsync semaphoreslim,370.942
+Loop overhead,0.501
+lock,20.7545
+Synchronized.Lock,39.8865
+MultiSync.All monitor,177.197
+MultiSync.All monitor reuse array,168.0465
+SemaphoreSlim.WaitAsync,50.8865
+MultiSync.AllAsync semaphoreslim,369.624
+Loop overhead,0.501
+lock,20.985
+Synchronized.Lock,39.827
+MultiSync.All monitor,176.6535
+MultiSync.All monitor reuse array,168.972
+SemaphoreSlim.WaitAsync,50.691
+MultiSync.AllAsync semaphoreslim,369.3535
+Loop overhead,0.5015
+lock,20.6645
+Synchronized.Lock,39.7745
+MultiSync.All monitor,177.315
+MultiSync.All monitor reuse array,168.7095
+SemaphoreSlim.WaitAsync,51.052
+MultiSync.AllAsync semaphoreslim,368.671
+Loop overhead,0.5015
+lock,20.5625
+Synchronized.Lock,39.788
+MultiSync.All monitor,177.0655
+MultiSync.All monitor reuse array,167.641
+SemaphoreSlim.WaitAsync,51.0305
+MultiSync.AllAsync semaphoreslim,371.746
+Loop overhead,0.501
+lock,20.9655
+Synchronized.Lock,39.8135
+MultiSync.All monitor,177.6325
+MultiSync.All monitor reuse array,168.0165
+SemaphoreSlim.WaitAsync,51.142
+MultiSync.AllAsync semaphoreslim,370.5765
+Loop overhead,0.501
+lock,20.56
+Synchronized.Lock,39.8365
+MultiSync.All monitor,177.2655
+MultiSync.All monitor reuse array,170.0345
+SemaphoreSlim.WaitAsync,51.09
+MultiSync.AllAsync semaphoreslim,369.531
+Loop overhead,0.5015
+lock,20.607
+Synchronized.Lock,39.8295
+MultiSync.All monitor,178.241
+MultiSync.All monitor reuse array,168.753
+SemaphoreSlim.WaitAsync,51.0725
+MultiSync.AllAsync semaphoreslim,369.6535
+Loop overhead,0.505
+lock,20.583
+Synchronized.Lock,39.8585
+MultiSync.All monitor,178.04
+MultiSync.All monitor reuse array,168.575
+SemaphoreSlim.WaitAsync,51.137
+MultiSync.AllAsync semaphoreslim,369.917
+Loop overhead,0.501
+lock,20.91
+Synchronized.Lock,39.8695
+MultiSync.All monitor,178.8425
+MultiSync.All monitor reuse array,168.1345
+SemaphoreSlim.WaitAsync,50.1825
+MultiSync.AllAsync semaphoreslim,370.4075
+Loop overhead,0.5015
+lock,20.584
+Synchronized.Lock,39.8515
+MultiSync.All monitor,179.5295
+MultiSync.All monitor reuse array,170.0565
+SemaphoreSlim.WaitAsync,51.0675
+MultiSync.AllAsync semaphoreslim,372.323
+Loop overhead,0.501
+lock,21.276
+Synchronized.Lock,39.8335
+MultiSync.All monitor,179.033
+MultiSync.All monitor reuse array,167.492
+SemaphoreSlim.WaitAsync,51.0985
+MultiSync.AllAsync semaphoreslim,370.691
+Loop overhead,0.5015
+lock,20.5515
+Synchronized.Lock,39.805
+MultiSync.All monitor,176.8075
+MultiSync.All monitor reuse array,168.203
+SemaphoreSlim.WaitAsync,50.9875
+MultiSync.AllAsync semaphoreslim,369.9985
+Loop overhead,0.501
+lock,20.5575
+Synchronized.Lock,40.06
+MultiSync.All monitor,178.854
+MultiSync.All monitor reuse array,168.0805
+SemaphoreSlim.WaitAsync,50.3695
+MultiSync.AllAsync semaphoreslim,368.981
+Loop overhead,0.505
+lock,20.55
+Synchronized.Lock,39.8315
+MultiSync.All monitor,177.6495
+MultiSync.All monitor reuse array,168.042
+SemaphoreSlim.WaitAsync,51.1385
+MultiSync.AllAsync semaphoreslim,370.4655
+Loop overhead,0.501
+lock,20.5515
+Synchronized.Lock,40.08
+MultiSync.All monitor,176.155
+MultiSync.All monitor reuse array,167.7275
+SemaphoreSlim.WaitAsync,50.6745
+MultiSync.AllAsync semaphoreslim,370.213
+Loop overhead,0.501
+lock,20.6785
+Synchronized.Lock,40.0845
+MultiSync.All monitor,177.5855
+MultiSync.All monitor reuse array,168.796
+SemaphoreSlim.WaitAsync,51.109
+MultiSync.AllAsync semaphoreslim,368.8075
+Loop overhead,0.501
+lock,20.555
+Synchronized.Lock,39.835
+MultiSync.All monitor,177.088
+MultiSync.All monitor reuse array,168.125
+SemaphoreSlim.WaitAsync,49.826
+MultiSync.AllAsync semaphoreslim,369.3735
+Loop overhead,0.501
+lock,21.0805
+Synchronized.Lock,39.849
+MultiSync.All monitor,177.519
+MultiSync.All monitor reuse array,167.505
+SemaphoreSlim.WaitAsync,51.0995
+MultiSync.AllAsync semaphoreslim,368.6535
+Loop overhead,0.501
+lock,20.6925
+Synchronized.Lock,39.8665
+MultiSync.All monitor,178.264
+MultiSync.All monitor reuse array,167.722
+SemaphoreSlim.WaitAsync,51.1535
+MultiSync.AllAsync semaphoreslim,369.3245
+Loop overhead,0.501
+lock,20.5775
+Synchronized.Lock,40.007
+MultiSync.All monitor,178.3865
+MultiSync.All monitor reuse array,169.925
+SemaphoreSlim.WaitAsync,51.045
+MultiSync.AllAsync semaphoreslim,371.5225
+Loop overhead,0.501
+lock,20.6765
+Synchronized.Lock,39.7655
+MultiSync.All monitor,179.14
+MultiSync.All monitor reuse array,170.6825
+SemaphoreSlim.WaitAsync,51.097
+MultiSync.AllAsync semaphoreslim,370.8495
+Loop overhead,0.501
+lock,20.6655
+Synchronized.Lock,39.9875
+MultiSync.All monitor,177.0205
+MultiSync.All monitor reuse array,169.303
+SemaphoreSlim.WaitAsync,51.0565
+MultiSync.AllAsync semaphoreslim,371.35
+Loop overhead,0.5015
+lock,20.552
+Synchronized.Lock,39.8265
+MultiSync.All monitor,178.1
+MultiSync.All monitor reuse array,168.0765
+SemaphoreSlim.WaitAsync,51.024
+MultiSync.AllAsync semaphoreslim,371.233
+Loop overhead,0.501
+lock,20.9555
+Synchronized.Lock,39.7925
+MultiSync.All monitor,177.765
+MultiSync.All monitor reuse array,168.491
+SemaphoreSlim.WaitAsync,51.115
+MultiSync.AllAsync semaphoreslim,370.205
+Loop overhead,0.501
+lock,20.673
+Synchronized.Lock,40.01
+MultiSync.All monitor,177.9275
+MultiSync.All monitor reuse array,168.872
+SemaphoreSlim.WaitAsync,51.1025
+MultiSync.AllAsync semaphoreslim,370.413
+Loop overhead,0.501
+lock,20.6705
+Synchronized.Lock,39.8295
+MultiSync.All monitor,179.2055
+MultiSync.All monitor reuse array,168.1685
+SemaphoreSlim.WaitAsync,50.392
+MultiSync.AllAsync semaphoreslim,370.7565
+Loop overhead,0.501
+lock,21.0915
+Synchronized.Lock,39.852
+MultiSync.All monitor,178.1065
+MultiSync.All monitor reuse array,169.499
+SemaphoreSlim.WaitAsync,51.1005
+MultiSync.AllAsync semaphoreslim,368.918
+Loop overhead,0.501
+lock,20.6995
+Synchronized.Lock,39.8235
+MultiSync.All monitor,177.418
+MultiSync.All monitor reuse array,166.509
+SemaphoreSlim.WaitAsync,50.8175
+MultiSync.AllAsync semaphoreslim,367.7755
+Loop overhead,0.5015
+lock,20.8515
+Synchronized.Lock,39.847
+MultiSync.All monitor,176.936
+MultiSync.All monitor reuse array,167.5615
+SemaphoreSlim.WaitAsync,50.9575
+MultiSync.AllAsync semaphoreslim,369.8745
+Loop overhead,0.5015
+lock,21.092
+Synchronized.Lock,39.857
+MultiSync.All monitor,177.2325
+MultiSync.All monitor reuse array,167.4085
+SemaphoreSlim.WaitAsync,50.995
+MultiSync.AllAsync semaphoreslim,370.5115
+Loop overhead,0.501
+lock,20.555
+Synchronized.Lock,39.8535
+MultiSync.All monitor,177.1245
+MultiSync.All monitor reuse array,169.161
+SemaphoreSlim.WaitAsync,51.1345
+MultiSync.AllAsync semaphoreslim,369.7515
+Loop overhead,0.501
+lock,20.5505
+Synchronized.Lock,39.8125
+MultiSync.All monitor,176.476
+MultiSync.All monitor reuse array,168.7435
+SemaphoreSlim.WaitAsync,50.876
+MultiSync.AllAsync semaphoreslim,369.8765
+Loop overhead,0.5015
+lock,20.5515
+Synchronized.Lock,39.7785
+MultiSync.All monitor,176.329
+MultiSync.All monitor reuse array,166.853
+SemaphoreSlim.WaitAsync,50.727
+MultiSync.AllAsync semaphoreslim,369.7315
+Loop overhead,0.5015
+lock,20.656
+Synchronized.Lock,39.9
+MultiSync.All monitor,177.759
+MultiSync.All monitor reuse array,168.8255
+SemaphoreSlim.WaitAsync,51.1615
+MultiSync.AllAsync semaphoreslim,372.4635
+Loop overhead,0.501
+lock,20.5505
+Synchronized.Lock,39.887
+MultiSync.All monitor,178.035
+MultiSync.All monitor reuse array,167.895
+SemaphoreSlim.WaitAsync,51.1215
+MultiSync.AllAsync semaphoreslim,369.8605
+Loop overhead,0.501
+lock,20.603
+Synchronized.Lock,40.046
+MultiSync.All monitor,177.4205
+MultiSync.All monitor reuse array,167.085
+SemaphoreSlim.WaitAsync,51.0125
+MultiSync.AllAsync semaphoreslim,370.793
+Loop overhead,0.5015
+lock,20.552
+Synchronized.Lock,39.845
+MultiSync.All monitor,176.6735
+MultiSync.All monitor reuse array,167.8035
+SemaphoreSlim.WaitAsync,50.6305
+MultiSync.AllAsync semaphoreslim,370.802
+Loop overhead,0.501
+lock,20.5515
+Synchronized.Lock,39.827
+MultiSync.All monitor,176.299
+MultiSync.All monitor reuse array,168.256
+SemaphoreSlim.WaitAsync,51.1345
+MultiSync.AllAsync semaphoreslim,369.2985
+Loop overhead,0.5015
+lock,20.7095
+Synchronized.Lock,39.841
+MultiSync.All monitor,176.121
+MultiSync.All monitor reuse array,167.2
+SemaphoreSlim.WaitAsync,51.009
+MultiSync.AllAsync semaphoreslim,369.7185
+Loop overhead,0.501
+lock,20.8655
+Synchronized.Lock,39.9975
+MultiSync.All monitor,175.933
+MultiSync.All monitor reuse array,166.391
+SemaphoreSlim.WaitAsync,51.1375
+MultiSync.AllAsync semaphoreslim,371.119
+Loop overhead,0.5015
+lock,20.7055
+Synchronized.Lock,39.815
+MultiSync.All monitor,176.075
+MultiSync.All monitor reuse array,167.398
+SemaphoreSlim.WaitAsync,51.015
+MultiSync.AllAsync semaphoreslim,368.9
+Loop overhead,0.501
+lock,20.7045
+Synchronized.Lock,39.821
+MultiSync.All monitor,176.6745
+MultiSync.All monitor reuse array,168.54
+SemaphoreSlim.WaitAsync,51.012
+MultiSync.AllAsync semaphoreslim,371.9005
+Loop overhead,0.5015
+lock,20.794
+Synchronized.Lock,39.9965
+MultiSync.All monitor,175.334
+MultiSync.All monitor reuse array,167.8445
+SemaphoreSlim.WaitAsync,51.067
+MultiSync.AllAsync semaphoreslim,368.582
+Loop overhead,0.501
+lock,21.163
+Synchronized.Lock,39.7765
+MultiSync.All monitor,175.551
+MultiSync.All monitor reuse array,167.5195
+SemaphoreSlim.WaitAsync,50.9895
+MultiSync.AllAsync semaphoreslim,369.71
+Loop overhead,0.501
+lock,20.9465
+Synchronized.Lock,39.917
+MultiSync.All monitor,176.758
+MultiSync.All monitor reuse array,167.81
+SemaphoreSlim.WaitAsync,50.984
+MultiSync.AllAsync semaphoreslim,369.796
+Loop overhead,0.501
+lock,20.6585
+Synchronized.Lock,39.973
+MultiSync.All monitor,176.2105
+MultiSync.All monitor reuse array,167.538
+SemaphoreSlim.WaitAsync,50.939
+MultiSync.AllAsync semaphoreslim,369.977
+Loop overhead,0.501
+lock,20.553
+Synchronized.Lock,39.8815
+MultiSync.All monitor,176.3265
+MultiSync.All monitor reuse array,167.9175
+SemaphoreSlim.WaitAsync,51
+MultiSync.AllAsync semaphoreslim,368.954
+Loop overhead,0.5015
+lock,20.81
+Synchronized.Lock,39.8575
+MultiSync.All monitor,175.484
+MultiSync.All monitor reuse array,168.63
+SemaphoreSlim.WaitAsync,51.1465
+MultiSync.AllAsync semaphoreslim,370.636
+Loop overhead,0.5015
+lock,20.552
+Synchronized.Lock,40.07
+MultiSync.All monitor,175.3175
+MultiSync.All monitor reuse array,168.0385
+SemaphoreSlim.WaitAsync,50.451
+MultiSync.AllAsync semaphoreslim,370.1155
+Loop overhead,0.5015
+lock,20.551
+Synchronized.Lock,39.858
+MultiSync.All monitor,177.7785
+MultiSync.All monitor reuse array,170.471
+SemaphoreSlim.WaitAsync,50.787
+MultiSync.AllAsync semaphoreslim,370.972
+Loop overhead,0.501
+lock,20.555
+Synchronized.Lock,39.8575
+MultiSync.All monitor,177.144
+MultiSync.All monitor reuse array,168.0355
+SemaphoreSlim.WaitAsync,51.023
+MultiSync.AllAsync semaphoreslim,370.438
+Loop overhead,0.5015
+lock,20.5525
+Synchronized.Lock,39.8205
+MultiSync.All monitor,176.3425
+MultiSync.All monitor reuse array,168.28
+SemaphoreSlim.WaitAsync,50.9305
+MultiSync.AllAsync semaphoreslim,370.6915
+Loop overhead,0.5015
+lock,20.8125
+Synchronized.Lock,39.7975
+MultiSync.All monitor,176.928
+MultiSync.All monitor reuse array,166.425
+SemaphoreSlim.WaitAsync,50.3475
+MultiSync.AllAsync semaphoreslim,371.149
+Loop overhead,0.501
+lock,20.7015
+Synchronized.Lock,39.806
+MultiSync.All monitor,176.9605
+MultiSync.All monitor reuse array,167.8365
+SemaphoreSlim.WaitAsync,50.991
+MultiSync.AllAsync semaphoreslim,370.395
+Loop overhead,0.5045
+lock,21.03
+Synchronized.Lock,39.8535
+MultiSync.All monitor,174.673
+MultiSync.All monitor reuse array,167.5695
+SemaphoreSlim.WaitAsync,50.8855
+MultiSync.AllAsync semaphoreslim,370.106
+Loop overhead,0.501
+lock,20.8715
+Synchronized.Lock,39.9535
+MultiSync.All monitor,177.4445
+MultiSync.All monitor reuse array,168.6215
+SemaphoreSlim.WaitAsync,51.0745
+MultiSync.AllAsync semaphoreslim,370.5705
+Loop overhead,0.5015
+lock,20.84
+Synchronized.Lock,39.8555
+MultiSync.All monitor,177.221
+MultiSync.All monitor reuse array,167.7675
+SemaphoreSlim.WaitAsync,50.975
+MultiSync.AllAsync semaphoreslim,369.422
+Loop overhead,0.501
+lock,20.6795
+Synchronized.Lock,39.8005
+MultiSync.All monitor,177.929
+MultiSync.All monitor reuse array,169.0875
+SemaphoreSlim.WaitAsync,51.1285
+MultiSync.AllAsync semaphoreslim,372.205
+Loop overhead,0.501
+lock,20.551
+Synchronized.Lock,39.854
+MultiSync.All monitor,177.7065
+MultiSync.All monitor reuse array,169.62
+SemaphoreSlim.WaitAsync,50.9535
+MultiSync.AllAsync semaphoreslim,371.053
+Loop overhead,0.5065
+lock,20.6705
+Synchronized.Lock,39.867
+MultiSync.All monitor,177.292
+MultiSync.All monitor reuse array,168.0125
+SemaphoreSlim.WaitAsync,51.1565
+MultiSync.AllAsync semaphoreslim,369.678
+Loop overhead,0.5015
+lock,20.684
+Synchronized.Lock,39.8425
+MultiSync.All monitor,177.6355
+MultiSync.All monitor reuse array,168.1255
+SemaphoreSlim.WaitAsync,51.157
+MultiSync.AllAsync semaphoreslim,370.409
+Loop overhead,0.501
+lock,20.619
+Synchronized.Lock,40.011
+MultiSync.All monitor,176.608
+MultiSync.All monitor reuse array,169.076
+SemaphoreSlim.WaitAsync,51.132
+MultiSync.AllAsync semaphoreslim,370.522

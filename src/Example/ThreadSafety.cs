@@ -16,16 +16,13 @@ namespace Example
             {
                 new Thread(() =>
                 {
-                    obj = Synchronized.Create(new object());
-                }).Start();
-
-                new Thread(() =>
-                {
                     obj?.WithLock(o =>
                     {
                         Console.WriteLine(o.ToString());
                     });
                 }).Start();
+
+                obj = Synchronized.Create(new object());
             }
         }
 
@@ -37,16 +34,13 @@ namespace Example
             {
                 new Thread(() =>
                 {
-                    obj = Synchronized.Create(new object());
-                }).Start();
-
-                new Thread(() =>
-                {
                     obj?.WithLock(o =>
                     {
                         Console.WriteLine(o.ToString());
                     });
                 }).Start();
+
+                obj = Synchronized.Create(new object());
             }
         }
 
@@ -58,16 +52,13 @@ namespace Example
             {
                 new Thread(() =>
                 {
-                    obj.WithLock(container => container.Value = new object());
-                }).Start();
-
-                new Thread(() =>
-                {
-                    obj?.WithLock(container =>
+                    obj.WithLock(container =>
                     {
-                        Console.WriteLine(container.Value.ToString());
+                        Console.WriteLine(container.Value?.ToString());
                     });
                 }).Start();
+
+                obj.WithLock(container => container.Value = new object());
             }
         }
     }
