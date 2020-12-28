@@ -454,6 +454,12 @@ The original C++ code was rewritten in C# but with 10s eating time. For the 4-co
 
 ![dining_core_8](https://user-images.githubusercontent.com/2862593/103096004-74b68480-463d-11eb-85d3-751f5deb166c.png)
 
+Similary, an async version was run 14 and 11 times for the 4-core case and the 8-core case.
+
+![async_dining_core_4](https://user-images.githubusercontent.com/2862593/103216353-d5510480-4950-11eb-990e-f5d6dc2547c1.png)
+
+![async_dining_core_8](https://user-images.githubusercontent.com/2862593/103216363-d84bf500-4950-11eb-8ac2-0c73f5a142d4.png)
+
 ## .NET Framework
 
 The benchmark program was run with the environment:
@@ -505,6 +511,12 @@ The original C++ code was rewritten in C# but with 10s eating time. For the 4-co
 ![dining_fw_4](https://user-images.githubusercontent.com/2862593/103096003-74b68480-463d-11eb-8d73-7742e6d33907.png)
 
 ![dining_fw_8](https://user-images.githubusercontent.com/2862593/103096001-73855780-463d-11eb-8230-e877f1aa16c2.png)
+
+Similary, an async version was run 12 and 15 times for the 4-core case and the 8-core case.
+
+![async_dining_fw_4](https://user-images.githubusercontent.com/2862593/103216360-d7b35e80-4950-11eb-9517-91cb7d925b19.png)
+
+![async_dining_fw_8](https://user-images.githubusercontent.com/2862593/103216355-d6823180-4950-11eb-89b5-8596ec1c36fb.png)
 
 ## C++
 
