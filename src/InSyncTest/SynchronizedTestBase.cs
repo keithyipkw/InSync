@@ -203,52 +203,6 @@ namespace InSyncTest
         }
 
         [Test]
-        public void TryWithLockFunc_Acquire()
-        {
-            // setup
-            var subject = Create(false);
-
-            // act and assert
-            subject.TryWithLock((v) =>
-            {
-                AssertLocked(v);
-                return 1;
-            }, out var result).ShouldBeTrue();
-
-            result.ShouldBe(1);
-            AssertNotLocked();
-        }
-
-        [Test]
-        public void TryWithLockFunc_NotAcquire()
-        {
-            // setup
-            var subject = CreateNotLockable();
-            
-            // act and assert
-            subject.TryWithLock((v) =>
-            {
-                Assert.Fail();
-                return 1;
-            }, out var _).ShouldBeFalse();
-        }
-
-        [Test]
-        public void TryWithLockFunc_ExceptionInAction_Release()
-        {
-            // setup
-            var subject = Create(false);
-
-            // act and assert
-            Should.Throw<CustomException>(() => subject.TryWithLock(new Func<Value, int>((v) =>
-            {
-                throw new CustomException();
-            }), out var result));
-
-            AssertNotLocked();
-        }
-
-        [Test]
         public void Lock_Acquire()
         {
             // setup

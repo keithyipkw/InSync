@@ -38,16 +38,6 @@ namespace InSync
         /// <exception cref="UnlockException"></exception>
         bool TryWithLock(Action<T> action);
 
-        /// <summary>
-        /// Tries to lock and performs the action then unlocks.  If the lock is not acquired, this method returns immediately. The returned value from the function is stored into the parameter <paramref name="result"/>. If the function throws an exception, the lock is released automatically.
-        /// </summary>
-        /// <typeparam name="TResult"></typeparam>
-        /// <param name="func">The protected object is supplied as the argument of the function. The returned value is stored into the parameter <paramref name="result"/>.</param>
-        /// <param name="result">Stores the returned values from the function if the lock is acquired. It stores the default values of <typeparamref name="TResult"/> if the lock is not acquired.</param>
-        /// <returns><c>true</c> the function is called.</returns>
-        /// <exception cref="LockException"></exception>
-        /// <exception cref="UnlockException"></exception>
-        bool TryWithLock<TResult>(Func<T, TResult> func, out TResult result);
 
         /// <summary>
         /// Locks and returns a guard to allow access of the protected object and unlocking.

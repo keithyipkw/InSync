@@ -125,24 +125,6 @@ namespace InSync
             return false;
         }
 
-        /// <inheritdoc/>
-        public bool TryWithLock<TResult>(Func<T, TResult> func, out TResult result)
-        {
-            if (Monitor.TryEnter(padLock))
-            {
-                try
-                {
-                    result = func(value);
-                    return true;
-                }
-                finally
-                {
-                    Monitor.Exit(padLock);
-                }
-            }
-            result = default;
-            return false;
-        }
 
         /// <inheritdoc/>
         public GuardedValue<T> Lock()

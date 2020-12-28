@@ -178,27 +178,6 @@ namespace InSync
         }
 
         /// <inheritdoc/>
-        public bool TryWithLock<TResult>(Func<TRead, TResult> func, out TResult result)
-        {
-            if (TryAcquire())
-            {
-                try
-                {
-                    result = func(reader);
-                }
-                catch (Exception e)
-                {
-                    Release(e);
-                    throw;
-                }
-                BarelyUnlock();
-                return true;
-            }
-            result = default;
-            return false;
-        }
-
-        /// <inheritdoc/>
         public GuardedValue<TRead> TryLock()
         {
             if (TryAcquire())
