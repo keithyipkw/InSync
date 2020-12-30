@@ -53,11 +53,23 @@ namespace InSync
             }
         }
 
-        private bool TryAcquire()
+        private bool TryAcquire(int millisecondsTimeout)
         {
             try
             {
-                return semaphore.Wait(0);
+                return semaphore.Wait(millisecondsTimeout);
+            }
+            catch (Exception e)
+            {
+                throw new LockException(e);
+            }
+        }
+
+        private bool TryAcquire(TimeSpan timeout)
+        {
+            try
+            {
+                return semaphore.Wait(timeout);
             }
             catch (Exception e)
             {
@@ -108,7 +120,7 @@ namespace InSync
         /// <inheritdoc/>
         public bool BarelyTryLock(out T value)
         {
-            if (TryAcquire())
+            if (TryAcquire(0))
             {
                 value = this.value;
                 return true;
@@ -118,9 +130,57 @@ namespace InSync
         }
 
         /// <inheritdoc/>
-        public bool BarelyTryLock(out object value)
+        public bool BarelyTryLock(int millisecondsTimeout, out T value)
+        {
+            if (TryAcquire(millisecondsTimeout))
+            {
+                value = this.value;
+                return true;
+            }
+            value = null;
+            return false;
+        }
+
+        /// <inheritdoc/>
+        public bool BarelyTryLock(TimeSpan timeout, out T value)
+        {
+            if (TryAcquire(timeout))
+            {
+                value = this.value;
+                return true;
+            }
+            value = null;
+            return false;
+        }
+
+        /// <inheritdoc/>
+        bool IBareLock.BarelyTryLock(out object value)
         {
             var result = BarelyTryLock(out T tmp);
+            value = tmp;
+            return result;
+        }
+
+        /// <inheritdoc/>
+        bool IBareAsyncLock.BarelyTryLock(out object value)
+        {
+            var result = BarelyTryLock(out T tmp);
+            value = tmp;
+            return result;
+        }
+
+        /// <inheritdoc/>
+        bool IBareLock.BarelyTryLock(int millisecondsTimeout, out object value)
+        {
+            var result = BarelyTryLock(millisecondsTimeout, out T tmp);
+            value = tmp;
+            return result;
+        }
+
+        /// <inheritdoc/>
+        bool IBareLock.BarelyTryLock(TimeSpan timeout, out object value)
+        {
+            var result = BarelyTryLock(timeout, out T tmp);
             value = tmp;
             return result;
         }
@@ -207,7 +267,47 @@ namespace InSync
         /// <inheritdoc/>
         public bool TryWithLock(Action<T> action)
         {
-            if (TryAcquire())
+            if (TryAcquire(0))
+            {
+                try
+                {
+                    action(value);
+                }
+                catch (Exception e)
+                {
+                    Release(e);
+                    throw;
+                }
+                BarelyUnlock();
+                return true;
+            }
+            return false;
+        }
+
+        /// <inheritdoc/>
+        public bool TryWithLock(int millisecondsTimeout, Action<T> action)
+        {
+            if (TryAcquire(millisecondsTimeout))
+            {
+                try
+                {
+                    action(value);
+                }
+                catch (Exception e)
+                {
+                    Release(e);
+                    throw;
+                }
+                BarelyUnlock();
+                return true;
+            }
+            return false;
+        }
+
+        /// <inheritdoc/>
+        public bool TryWithLock(TimeSpan timeout, Action<T> action)
+        {
+            if (TryAcquire(timeout))
             {
                 try
                 {
@@ -227,7 +327,27 @@ namespace InSync
         /// <inheritdoc/>
         public GuardedValue<T> TryLock()
         {
-            if (TryAcquire())
+            if (TryAcquire(0))
+            {
+                return new GuardedValue<T>(value, BarelyUnlock);
+            }
+            return null;
+        }
+
+        /// <inheritdoc/>
+        public GuardedValue<T> TryLock(int millisecondsTimeout)
+        {
+            if (TryAcquire(millisecondsTimeout))
+            {
+                return new GuardedValue<T>(value, BarelyUnlock);
+            }
+            return null;
+        }
+
+        /// <inheritdoc/>
+        public GuardedValue<T> TryLock(TimeSpan timeout)
+        {
+            if (TryAcquire(timeout))
             {
                 return new GuardedValue<T>(value, BarelyUnlock);
             }

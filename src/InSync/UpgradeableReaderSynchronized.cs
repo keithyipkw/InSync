@@ -48,11 +48,23 @@ namespace InSync
             }
         }
 
-        private bool TryAcquire()
+        private bool TryAcquire(int millisecondsTimeout)
         {
             try
             {
-                return readerWriterLockSlim.TryEnterUpgradeableReadLock(0);
+                return readerWriterLockSlim.TryEnterUpgradeableReadLock(millisecondsTimeout);
+            }
+            catch (Exception e)
+            {
+                throw new LockException(e);
+            }
+        }
+
+        private bool TryAcquire(TimeSpan timeout)
+        {
+            try
+            {
+                return readerWriterLockSlim.TryEnterUpgradeableReadLock(timeout);
             }
             catch (Exception e)
             {
@@ -87,7 +99,31 @@ namespace InSync
         /// <inheritdoc/>
         public bool BarelyTryLock(out TRead value)
         {
-            if (TryAcquire())
+            if (TryAcquire(0))
+            {
+                value = this.reader;
+                return true;
+            }
+            value = null;
+            return false;
+        }
+
+        /// <inheritdoc/>
+        public bool BarelyTryLock(int millisecondsTimeout, out TRead value)
+        {
+            if (TryAcquire(millisecondsTimeout))
+            {
+                value = this.reader;
+                return true;
+            }
+            value = null;
+            return false;
+        }
+
+        /// <inheritdoc/>
+        public bool BarelyTryLock(TimeSpan timeout, out TRead value)
+        {
+            if (TryAcquire(timeout))
             {
                 value = this.reader;
                 return true;
@@ -99,6 +135,20 @@ namespace InSync
         bool IBareLock.BarelyTryLock(out object value)
         {
             var result = BarelyTryLock(out var tmp);
+            value = tmp;
+            return result;
+        }
+
+        bool IBareLock.BarelyTryLock(int millisecondsTimeout, out object value)
+        {
+            var result = BarelyTryLock(millisecondsTimeout, out var tmp);
+            value = tmp;
+            return result;
+        }
+
+        bool IBareLock.BarelyTryLock(TimeSpan timeout, out object value)
+        {
+            var result = BarelyTryLock(timeout, out var tmp);
             value = tmp;
             return result;
         }
@@ -160,7 +210,47 @@ namespace InSync
         /// <inheritdoc/>
         public bool TryWithLock(Action<TRead> action)
         {
-            if (TryAcquire())
+            if (TryAcquire(0))
+            {
+                try
+                {
+                    action(reader);
+                }
+                catch (Exception e)
+                {
+                    Release(e);
+                    throw;
+                }
+                BarelyUnlock();
+                return true;
+            }
+            return false;
+        }
+
+        /// <inheritdoc/>
+        public bool TryWithLock(int millisecondsTimeout, Action<TRead> action)
+        {
+            if (TryAcquire(millisecondsTimeout))
+            {
+                try
+                {
+                    action(reader);
+                }
+                catch (Exception e)
+                {
+                    Release(e);
+                    throw;
+                }
+                BarelyUnlock();
+                return true;
+            }
+            return false;
+        }
+
+        /// <inheritdoc/>
+        public bool TryWithLock(TimeSpan timeout, Action<TRead> action)
+        {
+            if (TryAcquire(timeout))
             {
                 try
                 {
@@ -180,7 +270,27 @@ namespace InSync
         /// <inheritdoc/>
         public GuardedValue<TRead> TryLock()
         {
-            if (TryAcquire())
+            if (TryAcquire(0))
+            {
+                return new GuardedValue<TRead>(reader, BarelyUnlock);
+            }
+            return null;
+        }
+
+        /// <inheritdoc/>
+        public GuardedValue<TRead> TryLock(int millisecondsTimeout)
+        {
+            if (TryAcquire(millisecondsTimeout))
+            {
+                return new GuardedValue<TRead>(reader, BarelyUnlock);
+            }
+            return null;
+        }
+
+        /// <inheritdoc/>
+        public GuardedValue<TRead> TryLock(TimeSpan timeout)
+        {
+            if (TryAcquire(timeout))
             {
                 return new GuardedValue<TRead>(reader, BarelyUnlock);
             }

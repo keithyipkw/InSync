@@ -38,6 +38,25 @@ namespace InSync
         /// <exception cref="UnlockException"></exception>
         bool TryWithLock(Action<T> action);
 
+        /// <summary>
+        /// Tries to lock and performs the action then unlocks. If the lock is not acquired, this method returns immediately. If the action throws an exception, the lock is released automatically.
+        /// </summary>
+        /// <param name="millisecondsTimeout">The number of milliseconds to wait, <seealso cref="System.Threading.Timeout.Infinite"/> (-1) to wait indefinitely, or zero to test the state of the wait handle and return immediately.</param>
+        /// <param name="action">The protected object is supplied as the argument of the action</param>
+        /// <returns><c>true</c> the action is performed.</returns>
+        /// <exception cref="LockException"></exception>
+        /// <exception cref="UnlockException"></exception>
+        bool TryWithLock(int millisecondsTimeout, Action<T> action);
+
+        /// <summary>
+        /// Tries to lock and performs the action then unlocks. If the lock is not acquired, this method returns immediately. If the action throws an exception, the lock is released automatically.
+        /// </summary>
+        /// <param name="timeout">A <seealso cref="TimeSpan"/> that represents the number of milliseconds to wait, a <seealso cref="TimeSpan"/> that represents -1 milliseconds to wait indefinitely, or a <seealso cref="TimeSpan"/> that represents 0 milliseconds to test the wait handle and return immediately.</param>
+        /// <param name="action">The protected object is supplied as the argument of the action</param>
+        /// <returns><c>true</c> the action is performed.</returns>
+        /// <exception cref="LockException"></exception>
+        /// <exception cref="UnlockException"></exception>
+        bool TryWithLock(TimeSpan timeout, Action<T> action);
 
         /// <summary>
         /// Locks and returns a guard to allow access of the protected object and unlocking.
@@ -52,5 +71,21 @@ namespace InSync
         /// <returns>Null if the lock is not acquired.</returns>
         /// <exception cref="LockException"></exception>
         GuardedValue<T> TryLock();
+
+        /// <summary>
+        /// Tries to lock and returns a guard to allow access of the protected object and unlocking. If the lock is not acquired, this method returns null immediately.
+        /// </summary>
+        /// <param name="millisecondsTimeout">The number of milliseconds to wait, <seealso cref="System.Threading.Timeout.Infinite"/> (-1) to wait indefinitely, or zero to test the state of the wait handle and return immediately.</param>
+        /// <returns>Null if the lock is not acquired.</returns>
+        /// <exception cref="LockException"></exception>
+        GuardedValue<T> TryLock(int millisecondsTimeout);
+
+        /// <summary>
+        /// Tries to lock and returns a guard to allow access of the protected object and unlocking. If the lock is not acquired, this method returns null immediately.
+        /// </summary>
+        /// <param name="timeout">A <seealso cref="TimeSpan"/> that represents the number of milliseconds to wait, a <seealso cref="TimeSpan"/> that represents -1 milliseconds to wait indefinitely, or a <seealso cref="TimeSpan"/> that represents 0 milliseconds to test the wait handle and return immediately.</param>
+        /// <returns>Null if the lock is not acquired.</returns>
+        /// <exception cref="LockException"></exception>
+        GuardedValue<T> TryLock(TimeSpan timeout);
     }
 }

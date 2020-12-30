@@ -71,11 +71,23 @@ namespace InSync
             }
         }
 
-        private bool TryAcquire()
+        private bool TryAcquire(int millisecondsTimeout)
         {
             try
             {
-                return readerWriterLockSlim.TryEnterWriteLock(0);
+                return readerWriterLockSlim.TryEnterWriteLock(millisecondsTimeout);
+            }
+            catch (Exception e)
+            {
+                throw new LockException(e);
+            }
+        }
+
+        private bool TryAcquire(TimeSpan timeout)
+        {
+            try
+            {
+                return readerWriterLockSlim.TryEnterWriteLock(timeout);
             }
             catch (Exception e)
             {
@@ -110,7 +122,7 @@ namespace InSync
         /// <inheritdoc/>
         public bool BarelyTryLock(out TWrite value)
         {
-            if (TryAcquire())
+            if (TryAcquire(0))
             {
                 value = this.writer;
                 return true;
@@ -118,10 +130,48 @@ namespace InSync
             value = null;
             return false;
         }
-        
+
+        /// <inheritdoc/>
+        public bool BarelyTryLock(int millisecondsTimeout, out TWrite value)
+        {
+            if (TryAcquire(millisecondsTimeout))
+            {
+                value = this.writer;
+                return true;
+            }
+            value = null;
+            return false;
+        }
+
+        /// <inheritdoc/>
+        public bool BarelyTryLock(TimeSpan timeout, out TWrite value)
+        {
+            if (TryAcquire(timeout))
+            {
+                value = this.writer;
+                return true;
+            }
+            value = null;
+            return false;
+        }
+
         bool IBareLock.BarelyTryLock(out object value)
         {
             var result = BarelyTryLock(out var tmp);
+            value = tmp;
+            return result;
+        }
+
+        bool IBareLock.BarelyTryLock(int millisecondsTimeout, out object value)
+        {
+            var result = BarelyTryLock(millisecondsTimeout, out var tmp);
+            value = tmp;
+            return result;
+        }
+
+        bool IBareLock.BarelyTryLock(TimeSpan timeout, out object value)
+        {
+            var result = BarelyTryLock(timeout, out var tmp);
             value = tmp;
             return result;
         }
@@ -183,7 +233,47 @@ namespace InSync
         /// <inheritdoc/>
         public bool TryWithLock(Action<TWrite> action)
         {
-            if (TryAcquire())
+            if (TryAcquire(0))
+            {
+                try
+                {
+                    action(writer);
+                }
+                catch (Exception e)
+                {
+                    Release(e);
+                    throw;
+                }
+                BarelyUnlock();
+                return true;
+            }
+            return false;
+        }
+
+        /// <inheritdoc/>
+        public bool TryWithLock(int millisecondsTimeout, Action<TWrite> action)
+        {
+            if (TryAcquire(millisecondsTimeout))
+            {
+                try
+                {
+                    action(writer);
+                }
+                catch (Exception e)
+                {
+                    Release(e);
+                    throw;
+                }
+                BarelyUnlock();
+                return true;
+            }
+            return false;
+        }
+
+        /// <inheritdoc/>
+        public bool TryWithLock(TimeSpan timeout, Action<TWrite> action)
+        {
+            if (TryAcquire(timeout))
             {
                 try
                 {
@@ -203,7 +293,27 @@ namespace InSync
         /// <inheritdoc/>
         public GuardedValue<TWrite> TryLock()
         {
-            if (TryAcquire())
+            if (TryAcquire(0))
+            {
+                return new GuardedValue<TWrite>(writer, BarelyUnlock);
+            }
+            return null;
+        }
+
+        /// <inheritdoc/>
+        public GuardedValue<TWrite> TryLock(int millisecondsTimeout)
+        {
+            if (TryAcquire(millisecondsTimeout))
+            {
+                return new GuardedValue<TWrite>(writer, BarelyUnlock);
+            }
+            return null;
+        }
+
+        /// <inheritdoc/>
+        public GuardedValue<TWrite> TryLock(TimeSpan timeout)
+        {
+            if (TryAcquire(timeout))
             {
                 return new GuardedValue<TWrite>(writer, BarelyUnlock);
             }

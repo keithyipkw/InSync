@@ -86,6 +86,39 @@ namespace InSyncTest
             AssertLocked(result);
         }
 
+        [TestCase(0)]
+        [TestCase(1)]
+        [TestCase(Timeout.Infinite)]
+        public void BarelyTryLockTimeoutMs_Acquire(int timeoutMs)
+        {
+            // setup
+            var subject = Create(false);
+
+            // act and assert
+            subject.BarelyTryLock(timeoutMs, out var result).ShouldBeTrue();
+
+            AssertLocked(result);
+        }
+
+        public static object[] TryLockTimeout_Acquire_Source =
+        {
+            new object[] { TimeSpan.Zero },
+            new object[] { TimeSpan.FromMilliseconds(1) },
+            new object[] { Timeout.InfiniteTimeSpan },
+        };
+
+        [TestCaseSource(nameof(TryLockTimeout_Acquire_Source))]
+        public void BarelyTryLockTimeout_Acquire(TimeSpan timeSpan)
+        {
+            // setup
+            var subject = Create(false);
+
+            // act and assert
+            subject.BarelyTryLock(timeSpan, out var result).ShouldBeTrue();
+
+            AssertLocked(result);
+        }
+
         [Test]
         public void BarelyTryLock_NotAcquire()
         {
@@ -94,6 +127,37 @@ namespace InSyncTest
 
             // act and assert
             subject.BarelyTryLock(out var result).ShouldBeFalse();
+
+            result.ShouldBeNull();
+        }
+
+        [TestCase(0)]
+        [TestCase(1)]
+        public void BarelyTryLockTimeoutMs_NotAcquire(int timeoutMs)
+        {
+            // setup
+            var subject = CreateNotLockable();
+
+            // act and assert
+            subject.BarelyTryLock(timeoutMs, out var result).ShouldBeFalse();
+
+            result.ShouldBeNull();
+        }
+
+        public static object[] TryLockTimeout_Timeout_Source =
+        {
+            new object[] { TimeSpan.Zero },
+            new object[] { TimeSpan.FromMilliseconds(1) },
+        };
+
+        [TestCaseSource(nameof(TryLockTimeout_Timeout_Source))]
+        public void BarelyTryLockTimeout_Timeout_NotAcquire(TimeSpan timeSpan)
+        {
+            // setup
+            var subject = CreateNotLockable();
+
+            // act and assert
+            subject.BarelyTryLock(timeSpan, out var result).ShouldBeFalse();
 
             result.ShouldBeNull();
         }
@@ -174,6 +238,38 @@ namespace InSyncTest
             AssertNotLocked();
         }
 
+        [TestCase(0)]
+        [TestCase(1)]
+        [TestCase(Timeout.Infinite)]
+        public void TryWithLockTimeoutMs_Acquire(int timeoutMs)
+        {
+            // setup
+            var subject = Create(false);
+
+            // act and assert
+            subject.TryWithLock(timeoutMs, (v) =>
+            {
+                AssertLocked(v);
+            }).ShouldBeTrue();
+
+            AssertNotLocked();
+        }
+
+        [TestCaseSource(nameof(TryLockTimeout_Acquire_Source))]
+        public void TryWithLockTimeout_Acquire(TimeSpan timeout)
+        {
+            // setup
+            var subject = Create(false);
+
+            // act and assert
+            subject.TryWithLock(timeout, (v) =>
+            {
+                AssertLocked(v);
+            }).ShouldBeTrue();
+
+            AssertNotLocked();
+        }
+
         [Test]
         public void TryWithLock_NotAcquire()
         {
@@ -182,6 +278,33 @@ namespace InSyncTest
 
             // act and assert
             subject.TryWithLock((v) =>
+            {
+                Assert.Fail();
+            }).ShouldBeFalse();
+        }
+
+        [TestCase(0)]
+        [TestCase(1)]
+        public void TryWithLockTimeoutMs_NotAcquire(int timeoutMs)
+        {
+            // setup
+            var subject = CreateNotLockable();
+
+            // act and assert
+            subject.TryWithLock(timeoutMs, (v) =>
+            {
+                Assert.Fail();
+            }).ShouldBeFalse();
+        }
+
+        [TestCaseSource(nameof(TryLockTimeout_Timeout_Source))]
+        public void TryWithLockTimeout_NotAcquire(TimeSpan timeout)
+        {
+            // setup
+            var subject = CreateNotLockable();
+
+            // act and assert
+            subject.TryWithLock(timeout, (v) =>
             {
                 Assert.Fail();
             }).ShouldBeFalse();
@@ -232,6 +355,38 @@ namespace InSyncTest
             AssertNotLocked();
         }
 
+        [TestCase(0)]
+        [TestCase(1)]
+        [TestCase(Timeout.Infinite)]
+        public void TryLockTimeoutMs_Acquire(int timeoutMs)
+        {
+            // setup
+            var subject = Create(false);
+
+            // act and assert
+            using (var guard = subject.TryLock(timeoutMs))
+            {
+                AssertLocked(guard.Value);
+            }
+
+            AssertNotLocked();
+        }
+
+        [TestCaseSource(nameof(TryLockTimeout_Acquire_Source))]
+        public void TryLockTimeout_Acquire(TimeSpan timeout)
+        {
+            // setup
+            var subject = Create(false);
+
+            // act and assert
+            using (var guard = subject.TryLock(timeout))
+            {
+                AssertLocked(guard.Value);
+            }
+
+            AssertNotLocked();
+        }
+
         [Test]
         public void TryLock_NotAcquire()
         {
@@ -240,6 +395,33 @@ namespace InSyncTest
 
             // act and assert
             using (var guard = subject.TryLock())
+            {
+                guard.ShouldBeNull();
+            }
+        }
+
+        [TestCase(0)]
+        [TestCase(1)]
+        public void TryLockTimeoutMs_NotAcquire(int timeoutMs)
+        {
+            // setup
+            var subject = CreateNotLockable();
+
+            // act and assert
+            using (var guard = subject.TryLock(timeoutMs))
+            {
+                guard.ShouldBeNull();
+            }
+        }
+
+        [TestCaseSource(nameof(TryLockTimeout_Timeout_Source))]
+        public void TryLockTimeout_NotAcquire(TimeSpan timeout)
+        {
+            // setup
+            var subject = CreateNotLockable();
+
+            // act and assert
+            using (var guard = subject.TryLock(timeout))
             {
                 guard.ShouldBeNull();
             }

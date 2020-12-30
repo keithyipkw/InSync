@@ -59,9 +59,49 @@ namespace InSync
         }
 
         /// <inheritdoc/>
-        public bool BarelyTryLock(out object value)
+        public bool BarelyTryLock(int millisecondsTimeout, out T value)
+        {
+            if (Monitor.TryEnter(padLock, millisecondsTimeout))
+            {
+                value = this.value;
+                return true;
+            }
+            value = null;
+            return false;
+        }
+
+        /// <inheritdoc/>
+        public bool BarelyTryLock(TimeSpan timeout, out T value)
+        {
+            if (Monitor.TryEnter(padLock, timeout))
+            {
+                value = this.value;
+                return true;
+            }
+            value = null;
+            return false;
+        }
+
+        /// <inheritdoc/>
+        bool IBareLock.BarelyTryLock(out object value)
         {
             var result = BarelyTryLock(out T tmp);
+            value = tmp;
+            return result;
+        }
+
+        /// <inheritdoc/>
+        bool IBareLock.BarelyTryLock(int millisecondsTimeout, out object value)
+        {
+            var result = BarelyTryLock(millisecondsTimeout, out T tmp);
+            value = tmp;
+            return result;
+        }
+
+        /// <inheritdoc/>
+        bool IBareLock.BarelyTryLock(TimeSpan timeout, out object value)
+        {
+            var result = BarelyTryLock(timeout, out T tmp);
             value = tmp;
             return result;
         }
@@ -125,6 +165,41 @@ namespace InSync
             return false;
         }
 
+        /// <inheritdoc/>
+        public bool TryWithLock(int millisecondsTimeout, Action<T> action)
+        {
+            if (Monitor.TryEnter(padLock, millisecondsTimeout))
+            {
+                try
+                {
+                    action(value);
+                    return true;
+                }
+                finally
+                {
+                    Monitor.Exit(padLock);
+                }
+            }
+            return false;
+        }
+
+        /// <inheritdoc/>
+        public bool TryWithLock(TimeSpan timeout, Action<T> action)
+        {
+            if (Monitor.TryEnter(padLock, timeout))
+            {
+                try
+                {
+                    action(value);
+                    return true;
+                }
+                finally
+                {
+                    Monitor.Exit(padLock);
+                }
+            }
+            return false;
+        }
 
         /// <inheritdoc/>
         public GuardedValue<T> Lock()
@@ -137,6 +212,26 @@ namespace InSync
         public GuardedValue<T> TryLock()
         {
             if (Monitor.TryEnter(padLock))
+            {
+                return new GuardedValue<T>(value, BarelyUnlock);
+            }
+            return null;
+        }
+
+        /// <inheritdoc/>
+        public GuardedValue<T> TryLock(int millisecondsTimeout)
+        {
+            if (Monitor.TryEnter(padLock, millisecondsTimeout))
+            {
+                return new GuardedValue<T>(value, BarelyUnlock);
+            }
+            return null;
+        }
+
+        /// <inheritdoc/>
+        public GuardedValue<T> TryLock(TimeSpan timeout)
+        {
+            if (Monitor.TryEnter(padLock, timeout))
             {
                 return new GuardedValue<T>(value, BarelyUnlock);
             }
