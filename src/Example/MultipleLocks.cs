@@ -14,8 +14,8 @@ namespace Example
         {
             using (var guard = MultiSync.All(new[] { lock1, lock2 }))
             {
-                var list1 = guard[0];
-                var list2 = guard[1];
+                var list1 = guard.Value[0];
+                var list2 = guard.Value[1];
                 list1.AddRange(list2);
             }
         }
