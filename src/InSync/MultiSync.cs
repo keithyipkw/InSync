@@ -225,7 +225,7 @@ namespace InSync
 
             var maxI = count - 1;
             var lockedCount = 1;
-            values[0] = (T)await locks[0].BarelyLockAsync(cancellationToken);
+            values[0] = (T)await locks[0].BarelyLockAsync(cancellationToken).ConfigureAwait(false);
             try
             {
                 if (count > 1)
@@ -251,8 +251,15 @@ namespace InSync
                                     locks[u].BarelyUnlock();
                                 }
                             }
-                            await Task.Yield();
-                            values[i] = (T)await locks[i].BarelyLockAsync(cancellationToken);
+                            Task<object> Acquire()
+                            {
+                                return locks[i].BarelyLockAsync(cancellationToken);
+                            }
+                            values[i] = (T)await (await Task.Factory.StartNew(Acquire,
+                                CancellationToken.None,
+                                TaskCreationOptions.PreferFairness,
+                                TaskScheduler.Default).ConfigureAwait(false))
+                                .ConfigureAwait(false);
                             lockedCount = 1;
                         }
                     }

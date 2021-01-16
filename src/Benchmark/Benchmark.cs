@@ -178,7 +178,7 @@ namespace InSyncBenchmark
             watch.Restart();
             for (int i = 0; i < repeat; ++i)
             {
-                await semaphore.WaitAsync();
+                await semaphore.WaitAsync().ConfigureAwait(false);
                 x.Value += sqrt;
                 semaphore.Release();
             }
@@ -278,7 +278,7 @@ namespace InSyncBenchmark
                 }
             }
             watch.Stop();
-            Console.WriteLine($"MultiSync.All monitor,{((double)watch.ElapsedTicks * 100 / repeat)}");
+            Console.WriteLine($"MultiSync.All Monitor,{((double)watch.ElapsedTicks * 100 / repeat)}");
 
             ForceGC();
             var syncMonitors = new[] { syncMonitor1, syncMonitor2 };
@@ -292,7 +292,7 @@ namespace InSyncBenchmark
                 }
             }
             watch.Stop();
-            Console.WriteLine($"MultiSync.All monitor reuse array,{((double)watch.ElapsedTicks * 100 / repeat)}");
+            Console.WriteLine($"MultiSync.All Monitor reusing array,{((double)watch.ElapsedTicks * 100 / repeat)}");
 
             ForceGC();
             watch.Restart();
@@ -300,8 +300,8 @@ namespace InSyncBenchmark
             var semaphore2 = new SemaphoreSlim(1);
             for (int i = 0; i < repeat; ++i)
             {
-                await semaphore1.WaitAsync();
-                await semaphore2.WaitAsync();
+                await semaphore1.WaitAsync().ConfigureAwait(false);
+                await semaphore2.WaitAsync().ConfigureAwait(false);
                 x1.Value += sqrt;
                 x2.Value += sqrt;
                 semaphore2.Release();
@@ -323,7 +323,7 @@ namespace InSyncBenchmark
                 }
             }
             watch.Stop();
-            Console.WriteLine($"MultiSync.AllAsync semaphoreslim,{((double)watch.ElapsedTicks * 100 / repeat)}");
+            Console.WriteLine($"MultiSync.AllAsync SemaphoreSlim,{((double)watch.ElapsedTicks * 100 / repeat)}");
         }
 
         private void ForceGC()

@@ -81,7 +81,7 @@ namespace InSync
         {
             try
             {
-                await semaphore.WaitAsync(cancellationToken);
+                await semaphore.WaitAsync(cancellationToken).ConfigureAwait(false);
             }
             catch (OperationCanceledException)
             {
@@ -197,7 +197,7 @@ namespace InSync
                 throw new UnlockException(e);
             }
         }
-        
+
         /// <inheritdoc/>
         public Task<T> BarelyLockAsync()
         {
@@ -207,19 +207,19 @@ namespace InSync
         /// <inheritdoc/>
         public async Task<T> BarelyLockAsync(CancellationToken cancellationToken)
         {
-            await AcquireAsync(cancellationToken);
+            await AcquireAsync(cancellationToken).ConfigureAwait(false);
             return value;
         }
 
         async Task<object> IBareAsyncLock.BarelyLockAsync()
         {
-            await AcquireAsync(CancellationToken.None);
+            await AcquireAsync(CancellationToken.None).ConfigureAwait(false);
             return value;
         }
 
         async Task<object> IBareAsyncLock.BarelyLockAsync(CancellationToken cancellationToken)
         {
-            await AcquireAsync(cancellationToken);
+            await AcquireAsync(cancellationToken).ConfigureAwait(false);
             return value;
         }
 
@@ -238,7 +238,7 @@ namespace InSync
             }
             BarelyUnlock();
         }
-        
+
         /// <inheritdoc/>
         public TResult WithLock<TResult>(Func<T, TResult> func)
         {
@@ -357,13 +357,25 @@ namespace InSync
         /// <inheritdoc/>
         public Task WithLockAsync(Action<T> action)
         {
-            return WithLockAsync(action, CancellationToken.None);
+            return WithLockAsync(action, CancellationToken.None, true);
         }
 
         /// <inheritdoc/>
-        public async Task WithLockAsync(Action<T> action, CancellationToken cancellationToken)
+        public Task WithLockAsync(Action<T> action, bool onCapturedContext)
         {
-            await AcquireAsync(cancellationToken);
+            return WithLockAsync(action, CancellationToken.None, onCapturedContext);
+        }
+
+        /// <inheritdoc/>
+        public Task WithLockAsync(Action<T> action, CancellationToken cancellationToken)
+        {
+            return WithLockAsync(action, cancellationToken, true);
+        }
+
+        /// <inheritdoc/>
+        public async Task WithLockAsync(Action<T> action, CancellationToken cancellationToken, bool onCapturedContext)
+        {
+            await AcquireAsync(cancellationToken).ConfigureAwait(onCapturedContext);
             try
             {
                 action(value);
@@ -379,13 +391,25 @@ namespace InSync
         /// <inheritdoc/>
         public Task<TResult> WithLockAsync<TResult>(Func<T, TResult> func)
         {
-            return WithLockAsync(func, CancellationToken.None);
+            return WithLockAsync(func, CancellationToken.None, true);
         }
 
         /// <inheritdoc/>
-        public async Task<TResult> WithLockAsync<TResult>(Func<T, TResult> func, CancellationToken cancellationToken)
+        public Task<TResult> WithLockAsync<TResult>(Func<T, TResult> func, bool onCapturedContext)
         {
-            await AcquireAsync(cancellationToken);
+            return WithLockAsync(func, CancellationToken.None, onCapturedContext);
+        }
+
+        /// <inheritdoc/>
+        public Task<TResult> WithLockAsync<TResult>(Func<T, TResult> func, CancellationToken cancellationToken)
+        {
+            return WithLockAsync(func, cancellationToken, true);
+        }
+
+        /// <inheritdoc/>
+        public async Task<TResult> WithLockAsync<TResult>(Func<T, TResult> func, CancellationToken cancellationToken, bool onCapturedContext)
+        {
+            await AcquireAsync(cancellationToken).ConfigureAwait(onCapturedContext);
             TResult result;
             try
             {
@@ -403,13 +427,25 @@ namespace InSync
         /// <inheritdoc/>
         public Task WithLockAsync(Func<T, Task> asyncAction)
         {
-            return WithLockAsync(asyncAction, CancellationToken.None);
+            return WithLockAsync(asyncAction, CancellationToken.None, true);
         }
 
         /// <inheritdoc/>
-        public async Task WithLockAsync(Func<T, Task> asyncAction, CancellationToken cancellationToken)
+        public Task WithLockAsync(Func<T, Task> asyncAction, bool onCapturedContext)
         {
-            await AcquireAsync(cancellationToken);
+            return WithLockAsync(asyncAction, CancellationToken.None, onCapturedContext);
+        }
+        
+        /// <inheritdoc/>
+        public Task WithLockAsync(Func<T, Task> asyncAction, CancellationToken cancellationToken)
+        {
+            return WithLockAsync(asyncAction, cancellationToken, true);
+        }
+
+        /// <inheritdoc/>
+        public async Task WithLockAsync(Func<T, Task> asyncAction, CancellationToken cancellationToken, bool onCapturedContext)
+        {
+            await AcquireAsync(cancellationToken).ConfigureAwait(onCapturedContext);
             try
             {
                 await asyncAction(value);
@@ -425,13 +461,25 @@ namespace InSync
         /// <inheritdoc/>
         public Task<TResult> WithLockAsync<TResult>(Func<T, Task<TResult>> asyncFunc)
         {
-            return WithLockAsync(asyncFunc, CancellationToken.None);
+            return WithLockAsync(asyncFunc, CancellationToken.None, true);
         }
 
         /// <inheritdoc/>
-        public async Task<TResult> WithLockAsync<TResult>(Func<T, Task<TResult>> asyncFunc, CancellationToken cancellationToken)
+        public Task<TResult> WithLockAsync<TResult>(Func<T, Task<TResult>> asyncFunc, bool onCapturedContext)
         {
-            await AcquireAsync(cancellationToken);
+            return WithLockAsync(asyncFunc, CancellationToken.None, onCapturedContext);
+        }
+
+        /// <inheritdoc/>
+        public Task<TResult> WithLockAsync<TResult>(Func<T, Task<TResult>> asyncFunc, CancellationToken cancellationToken)
+        {
+            return WithLockAsync(asyncFunc, cancellationToken, true);
+        }
+
+        /// <inheritdoc/>
+        public async Task<TResult> WithLockAsync<TResult>(Func<T, Task<TResult>> asyncFunc, CancellationToken cancellationToken, bool onCapturedContext)
+        {
+            await AcquireAsync(cancellationToken).ConfigureAwait(onCapturedContext);
             TResult result;
             try
             {
