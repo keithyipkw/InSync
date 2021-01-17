@@ -96,10 +96,11 @@ namespace InSyncBenchmark
             watch.Stop();
             Console.WriteLine($"Loop overhead,{((double)watch.ElapsedTicks * 100 / Repeat)}");
 
-            await TestSynchronizedAsync(Repeat);
+            await TestSynchronizedAsync(1, false);
+            await TestSynchronizedAsync(Repeat, true);
         }
-        
-        public async Task TestSynchronizedAsync(int repeat)
+
+        public async Task TestSynchronizedAsync(int repeat, bool output)
         {
             var watch = new Stopwatch();
 
@@ -116,7 +117,10 @@ namespace InSyncBenchmark
                 }
             }
             watch.Stop();
-            Console.WriteLine($"lock,{((double)watch.ElapsedTicks * 100 / repeat)}");
+            if (output)
+            {
+                Console.WriteLine($"lock,{((double)watch.ElapsedTicks * 100 / repeat)}");
+            }
 
             var syncMonitor = Synchronized.Create(x);
             ForceGC();
@@ -126,7 +130,10 @@ namespace InSyncBenchmark
                 syncMonitor.WithLock((v) => v.Value += sqrt);
             }
             watch.Stop();
-            Console.WriteLine($"Synchronized.WithLock,{((double)watch.ElapsedTicks * 100 / repeat)}");
+            if (output)
+            {
+                Console.WriteLine($"Synchronized.WithLock,{((double)watch.ElapsedTicks * 100 / repeat)}");
+            }
 
             ForceGC();
             watch.Restart();
@@ -138,7 +145,10 @@ namespace InSyncBenchmark
                 }
             }
             watch.Stop();
-            Console.WriteLine($"Synchronized.Lock,{((double)watch.ElapsedTicks * 100 / repeat)}");
+            if (output)
+            {
+                Console.WriteLine($"Synchronized.Lock,{((double)watch.ElapsedTicks * 100 / repeat)}");
+            }
 
             ForceGC();
             var semaphore = new SemaphoreSlim(1);
@@ -150,7 +160,10 @@ namespace InSyncBenchmark
                 semaphore.Release();
             }
             watch.Stop();
-            Console.WriteLine($"SemaphoreSlim.Wait,{((double)watch.ElapsedTicks * 100 / repeat)}");
+            if (output)
+            {
+                Console.WriteLine($"SemaphoreSlim.Wait,{((double)watch.ElapsedTicks * 100 / repeat)}");
+            }
 
             var syncSemaphore = AsyncSynchronized.Create(x);
             ForceGC();
@@ -160,7 +173,10 @@ namespace InSyncBenchmark
                 syncSemaphore.WithLock((v) => v.Value += sqrt);
             }
             watch.Stop();
-            Console.WriteLine($"AsyncSynchronized.WithLock,{((double)watch.ElapsedTicks * 100 / repeat)}");
+            if (output)
+            {
+                Console.WriteLine($"AsyncSynchronized.WithLock,{((double)watch.ElapsedTicks * 100 / repeat)}");
+            }
 
             ForceGC();
             watch.Restart();
@@ -172,7 +188,10 @@ namespace InSyncBenchmark
                 }
             }
             watch.Stop();
-            Console.WriteLine($"AsyncSynchronized.Lock,{((double)watch.ElapsedTicks * 100 / repeat)}");
+            if (output)
+            {
+                Console.WriteLine($"AsyncSynchronized.Lock,{((double)watch.ElapsedTicks * 100 / repeat)}");
+            }
 
             ForceGC();
             watch.Restart();
@@ -183,7 +202,10 @@ namespace InSyncBenchmark
                 semaphore.Release();
             }
             watch.Stop();
-            Console.WriteLine($"SemaphoreSlim.WaitAsync,{((double)watch.ElapsedTicks * 100 / repeat)}");
+            if (output)
+            {
+                Console.WriteLine($"SemaphoreSlim.WaitAsync,{((double)watch.ElapsedTicks * 100 / repeat)}");
+            }
 
             ForceGC();
             watch.Restart();
@@ -192,7 +214,10 @@ namespace InSyncBenchmark
                 await syncSemaphore.WithLockAsync((v) => v.Value += sqrt);
             }
             watch.Stop();
-            Console.WriteLine($"AsyncSynchronized.WithLockAsync,{((double)watch.ElapsedTicks * 100 / repeat)}");
+            if (output)
+            {
+                Console.WriteLine($"AsyncSynchronized.WithLockAsync,{((double)watch.ElapsedTicks * 100 / repeat)}");
+            }
 
             ForceGC();
             watch.Restart();
@@ -204,7 +229,10 @@ namespace InSyncBenchmark
                 }
             }
             watch.Stop();
-            Console.WriteLine($"AsyncSynchronized.LockAsync,{((double)watch.ElapsedTicks * 100 / repeat)}");
+            if (output)
+            {
+                Console.WriteLine($"AsyncSynchronized.LockAsync,{((double)watch.ElapsedTicks * 100 / repeat)}");
+            }
         }
 
         private async Task BenchmarkMultipleLockAsync()
@@ -223,10 +251,11 @@ namespace InSyncBenchmark
             watch.Stop();
             Console.WriteLine($"Loop overhead,{((double)watch.ElapsedTicks * 100 / Repeat)}");
 
-            await TestSynchronizeMultipleAsync(Repeat);
+            await TestSynchronizeMultipleAsync(1, false);
+            await TestSynchronizeMultipleAsync(Repeat, true);
         }
 
-        private async Task TestSynchronizeMultipleAsync(int repeat)
+        private async Task TestSynchronizeMultipleAsync(int repeat, bool output)
         {
             var watch = new Stopwatch();
 
@@ -248,7 +277,10 @@ namespace InSyncBenchmark
                 }
             }
             watch.Stop();
-            Console.WriteLine($"lock,{((double)watch.ElapsedTicks * 100 / repeat)}");
+            if (output)
+            {
+                Console.WriteLine($"lock,{((double)watch.ElapsedTicks * 100 / repeat)}");
+            }
             
             var syncMonitor1 = Synchronized.Create(x1);
             var syncMonitor2 = Synchronized.Create(x2);
@@ -265,7 +297,10 @@ namespace InSyncBenchmark
                 }
             }
             watch.Stop();
-            Console.WriteLine($"Synchronized.Lock,{((double)watch.ElapsedTicks * 100 / repeat)}");
+            if (output)
+            {
+                Console.WriteLine($"Synchronized.Lock,{((double)watch.ElapsedTicks * 100 / repeat)}");
+            }
 
             ForceGC();
             watch.Restart();
@@ -278,7 +313,10 @@ namespace InSyncBenchmark
                 }
             }
             watch.Stop();
-            Console.WriteLine($"MultiSync.All Monitor,{((double)watch.ElapsedTicks * 100 / repeat)}");
+            if (output)
+            {
+                Console.WriteLine($"MultiSync.All Monitor,{((double)watch.ElapsedTicks * 100 / repeat)}");
+            }
 
             ForceGC();
             var syncMonitors = new[] { syncMonitor1, syncMonitor2 };
@@ -292,7 +330,10 @@ namespace InSyncBenchmark
                 }
             }
             watch.Stop();
-            Console.WriteLine($"MultiSync.All Monitor reusing array,{((double)watch.ElapsedTicks * 100 / repeat)}");
+            if (output)
+            {
+                Console.WriteLine($"MultiSync.All Monitor reusing array,{((double)watch.ElapsedTicks * 100 / repeat)}");
+            }
 
             ForceGC();
             watch.Restart();
@@ -308,7 +349,10 @@ namespace InSyncBenchmark
                 semaphore1.Release();
             }
             watch.Stop();
-            Console.WriteLine($"SemaphoreSlim.WaitAsync,{((double)watch.ElapsedTicks * 100 / repeat)}");
+            if (output)
+            {
+                Console.WriteLine($"SemaphoreSlim.WaitAsync,{((double)watch.ElapsedTicks * 100 / repeat)}");
+            }
 
             ForceGC();
             var syncSemaphore1 = AsyncSynchronized.Create(x1);
@@ -323,7 +367,10 @@ namespace InSyncBenchmark
                 }
             }
             watch.Stop();
-            Console.WriteLine($"MultiSync.AllAsync SemaphoreSlim,{((double)watch.ElapsedTicks * 100 / repeat)}");
+            if (output)
+            {
+                Console.WriteLine($"MultiSync.AllAsync SemaphoreSlim,{((double)watch.ElapsedTicks * 100 / repeat)}");
+            }
         }
 
         private void ForceGC()
