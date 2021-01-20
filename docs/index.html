@@ -1,0 +1,449 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Introduction | InSync </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Introduction | InSync ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="toc">
+    <meta property="docfx:tocrel" content="toc">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+                
+                <ul class="nav level1 navbar-nav">
+                      <li>
+                          <a href="performance.html" title="Performance">Performance</a>
+                      </li>
+                      <li>
+                          <a href="api/InSync.html" title="API Documentation">API Documentation</a>
+                      </li>
+                      <li>
+                          <a href="https://github.com/keithyipkw/InSync" title="Source Code">Source Code</a>
+                      </li>
+                </ul>    </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="introduction">Introduction</h1>
+
+<p>InSync is a general purpose library providing easy ways to correctly write thread-safe code for .NET.</p>
+<p>It is easy to forget to acquire correct locks before accessing variables in moderately large classes. It is also difficult to spot the errors in code review. InSync introduces the patterns popular in C++ to solve the problem.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li>Enforce lock acquisition</li>
+<li>Automatic lock release</li>
+<li>A built-in dead-lock free algorithm to acquire multiple locks</li>
+<li>Easy migration</li>
+<li>High performance</li>
+</ul>
+<h2 id="quick-start">Quick Start</h2>
+<p>In this example, we have a supposedly thread-safe class:</p>
+<pre><code class="lang-C#">class QuickStart
+{
+    private int X;
+    private int Y;
+    private readonly object padLock = new object();
+
+    public void Foo(int add)
+    {
+        lock (padLock)
+        {
+            X += 1;
+            Y += add;
+        }
+    }
+
+    public void Bar(int subtract)
+    {
+        // oops
+        X -= 1;
+        Y -= subtract;
+    }
+    
+    public (int X, int Y) Get()
+    {
+        lock (padLock)
+        {
+            return (X, Y);
+        }
+    }
+}
+</code></pre>
+<p>InSync prevents this kind of bug:</p>
+<pre><code class="lang-C#">class QuickStart
+{
+    private class State
+    {
+        public int X { get; set; }
+        public int Y { get; set; }
+    }
+
+    private readonly Synchronized&lt;State&gt; state = Synchronized.Create(new State());
+
+    public void Foo(int z)
+    {
+        state.WithLock(s =&gt;
+        {
+            s.X += 1;
+            s.Y += z;
+        });
+    }
+
+    public void Bar(int z)
+    {
+        // alternative style
+        using (var guard = state.Lock())
+        {
+            guard.Value.X -= 1;
+            guard.Value.Y -= z;
+        }
+    }
+
+    public (int X, int Y) Get()
+    {
+        // passes the return value
+        return state.WithLock(s =&gt;
+        {
+            return (s.X, s.Y);
+        });
+    }
+
+    private void ReusableMethod(State state)
+    {
+        // useful for AsyncSynchronized&lt;T&gt; and ReaderWriterSynchronized&lt;T&gt; because they are non-reentrant
+        state.X += 1;
+    }
+}
+</code></pre>
+<h2 id="usage">Usage</h2>
+<h3 id="single-lock">Single Lock</h3>
+<p>There are 3 types of synchronization objects. The API is similar among them.</p>
+<ul>
+<li><code>Synchronized&lt;T&gt;</code> which uses <code>Monitor</code></li>
+<li><code>AsyncSynchronized&lt;T&gt;</code> which uses <code>SemaphoreSlim</code></li>
+<li><code>ReaderWriterSynchronized&lt;T&gt;</code> which uses <code>ReaderWriterLockSlim</code></li>
+</ul>
+<p>They can be created by constructors or convenient factory methods. For example:</p>
+<pre><code class="lang-C#">var s1 = Synchronized.Create(value1);
+var s2 = Synchronized.Create(padLock, value2);
+</code></pre>
+<p>Without supplying an object as the lock, <code>Synchronized&lt;T&gt;</code> uses the value as the lock. In contrast, <code>AsyncSynchronized&lt;T&gt;</code> and <code>ReaderWriterSynchronized&lt;T&gt;</code> creates new locks.</p>
+<p>For automatical releases, there are 2 styles to access the value inside a synchronization object, <code>WithLock</code> with closures and <code>Lock</code> with <code>using</code>.</p>
+<pre><code class="lang-C#">public interface ISynchronized&lt;T&gt; where T : class
+{
+    void WithLock(Action&lt;T&gt; action);
+
+    TResult WithLock&lt;TResult&gt;(Func&lt;T, TResult&gt; func);
+
+    bool TryWithLock(Action&lt;T&gt; action);
+
+    bool TryWithLock&lt;TResult&gt;(Func&lt;T, TResult&gt; func, out TResult result);
+
+    GuardedValue&lt;T&gt; Lock();
+
+    GuardedValue&lt;T&gt; TryLock();
+}
+</code></pre>
+<p>For example, <code>WithLock</code> with closures:</p>
+<pre><code class="lang-C#">private readonly Synchronized&lt;List&lt;int&gt;&gt; list = Synchronized.Create(new List&lt;int&gt;());
+
+public void WithLock()
+{
+    list.WithLock(list =&gt;
+    {
+        list.Add(0);
+        Console.WriteLine(&quot;locking&quot;);
+    });
+}
+
+public int WithLockReturn()
+{
+    return list.WithLock(list =&gt; list.FirstOrDefault());
+}
+
+public void TryWithLock()
+{
+    if (list.TryWithLock(list =&gt; list.Add(0)))
+    {
+        Console.WriteLine(&quot;added&quot;);
+    }
+}
+</code></pre>
+<p>and <code>Lock</code> with <code>using</code>:</p>
+<pre><code class="lang-C#">private readonly Synchronized&lt;List&lt;int&gt;&gt; list = Synchronized.Create(new List&lt;int&gt;());
+
+public int Guard()
+{
+    using (var guard = list.Lock())
+    {
+        return guard.Value.FirstOrDefault();
+    }
+}
+
+public int TryGuard()
+{
+    using (var guard = list.TryLock())
+    {
+        if (guard != null)
+        {
+            Console.WriteLine(&quot;locking&quot;);
+            return guard.Value.FirstOrDefault();
+        }
+        Console.WriteLine(&quot;not locked&quot;);
+        return -1;
+    }
+}
+</code></pre>
+<p>For manual releases:</p>
+<pre><code class="lang-C#">public interface IBareLock
+{
+    object BarelyLock();
+
+    bool BarelyTryLock(out object value);
+}
+
+public interface IBareLock&lt;T&gt; : IBareLock where T : class
+{
+    new T BarelyLock();
+    
+    bool BarelyTryLock(out T value);
+}
+</code></pre>
+<h3 id="struct-and-mutable-reference">Struct and Mutable Reference</h3>
+<p><code>ValueContainer&lt;T&gt;</code> provides a way to store <code>struct</code> or mutate the value:</p>
+<pre><code class="lang-C#">private readonly Synchronized&lt;ValueContainer&lt;int&gt;&gt; container = Synchronized.Create(new ValueContainer&lt;int&gt;());
+
+public void Increase()
+{
+    container.WithLock(c =&gt;
+    {
+        ++c.Value;
+    });
+}
+</code></pre>
+<h3 id="multiple-locks">Multiple Locks</h3>
+<p><code>MultiSync</code> provides easy ways to acquire multiple locks without deadlocks. It does not require any setup nor lock organizations. Fairness is thread-based and provided by the OS because <code>Thread.Yield</code> is used. Livelock may occur for a very short period under high contention. In such case, CPU power is wasted.</p>
+<p>It uses the smart and polite method described in <a href="https://howardhinnant.github.io/dining_philosophers.html#Polite">https://howardhinnant.github.io/dining_philosophers.html#Polite</a>. Basically, it tries to acquire the locks one by one. If an acquisition fails, it releases all acquired locks. Before a blocking retry of the last acquisition, it yields to let other threads to process first.</p>
+<pre><code class="lang-C#">private readonly Synchronized&lt;List&lt;int&gt;&gt; lock1 = Synchronized.Create(new List&lt;int&gt;());
+private readonly Synchronized&lt;List&lt;int&gt;&gt; lock2 = Synchronized.Create(new List&lt;int&gt;());
+
+public void UnorderedAcquisition()
+{
+    using (var guard = MultiSync.All(new[] { lock1, lock2 }))
+    {
+        var list1 = guard[0];
+        var list2 = guard[1];
+        list1.AddRange(list2);
+    }
+}
+</code></pre>
+<h3 id="synchronization-token">Synchronization Token</h3>
+<p>For some reasons, if the style shown by <code>ResuableMethod</code> in the quick start is not preferred, it is still possible to enforce locking for methods at compile time:</p>
+<pre><code class="lang-C#">private class WriteToken
+{
+    private WriteToken() { }
+
+    /// &lt;summary&gt;
+    /// This should be created once per object only.
+    /// &lt;/summary&gt;
+    /// &lt;returns&gt;&lt;/returns&gt;
+    public static WriteToken CreatePerObjectOnly() =&gt; new WriteToken();
+}
+
+private readonly AsyncSynchronized&lt;WriteToken&gt; writeToken = AsyncSynchronized.Create(WriteToken.CreatePerObjectOnly());
+
+public async Task Foo()
+{
+    using (var w = await writeToken.LockAsync())
+    {
+        ReusableMethod(w.Value);
+    }
+}
+
+public async Task Bar()
+{
+    using (var w = await writeToken.LockAsync())
+    {
+        ReusableMethod(w.Value);
+    }
+}
+
+private void ReusableMethod(WriteToken token)
+{
+    // if (token == null)
+    //     throw new ArgumentNullException(nameof(token));
+    // some complicated code
+}
+</code></pre>
+<p>It is better than purely relying on documenting the methods and hope that callers do right.</p>
+<h2 id="pitfalls">Pitfalls</h2>
+<h3 id="async-with-synchronizedt">Async with Synchronized&lt;T&gt;</h3>
+<p><code>await</code> must not be used between locking and unlocking by <code>Synchronized&lt;T&gt;</code>. <code>AsyncSynchronized&lt;T&gt;</code> should be used instead in the following example:</p>
+<pre><code class="lang-C#">public void NotThreadSafe()
+{
+    list.WithLock(async list =&gt; // 1. Monitor.Enter
+    {
+        await Task.Delay(1);
+
+        // 3. This may resume after Monitor.Exit
+
+        list.Add(0);
+
+    }); // 2. Monitor.Exit
+}
+
+public async Task Throw()
+{
+    using (var guard = list.Lock()) // Monitor.Enter
+    {
+        await Task.Delay(1);
+
+        // This may resume in an unspecified thread
+
+        guard.Value.Add(0);
+
+    } // Monitor.Exit may be called in the unspecified thread
+}
+</code></pre>
+<h3 id="dispose-throws">Dispose() Throws!</h3>
+<p><code>GuardedValue&lt;T&gt;</code> and <code>GuardedMultiValue&lt;T&gt;</code> may throw if releases of locks fail. <code>Dispose()</code> is not expected to throw exceptions or otherwise it results in crashes. Failures in releasing locks usually cause difficult to debug deadlocks later. It is even worst than immediate crashes. Generally, releasing locks should not throw too. Thus, bubbling up the exceptions is a lesser evil than sallowing them.</p>
+<h3 id="still-not-thread-safe">Still not thread-safe</h3>
+<p>If a plain reference to a <code>Synchronized&lt;T&gt;</code> is written by a thread then read by another thread, it is still not thread-safe:</p>
+<pre><code class="lang-C#">class Wrong
+{
+    private Synchronized&lt;object&gt; obj;
+
+    public void Foo()
+    {
+        new Thread(() =&gt;
+        {
+            obj?.WithLock(o =&gt;
+            {
+                Console.WriteLine(o.ToString());
+            });
+        }).Start();
+
+        obj = Synchronized.Create(new object());
+    }
+}
+</code></pre>
+<p>The variable needs some synchronizations. For the above exmaple, <code>volatile</code> is sufficient:</p>
+<pre><code class="lang-C#">class Correct
+{
+    volatile Synchronized&lt;object&gt; obj;
+
+    public void Foo()
+    {
+        new Thread(() =&gt;
+        {
+            obj?.WithLock(o =&gt;
+            {
+                Console.WriteLine(o.ToString());
+            });
+        }).Start();
+
+        obj = Synchronized.Create(new object());
+    }
+}
+</code></pre>
+<p>However, <code>volatile</code> is error-prone for more complicated usages. <code>Synchronized&lt;ValueContainer&lt;T&gt;&gt;</code> is a better choice:</p>
+<pre><code class="lang-C#">class Correct
+{
+    private readonly Synchronized&lt;ValueContainer&lt;object&gt;&gt; obj = Synchronized.Create(new ValueContainer&lt;object&gt;());
+
+    public void Foo()
+    {
+        new Thread(() =&gt;
+        {
+            obj.WithLock(container =&gt;
+            {
+                Console.WriteLine(container.Value?.ToString());
+            });
+        }).Start();
+
+        obj.WithLock(container =&gt; container.Value = new object());
+    }
+}
+</code></pre>
+<h3 id="not-abort-safe">Not abort-safe</h3>
+<p>This library does not support <code>Thread.Abort()</code>. It may leave some locks being permanently locked.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

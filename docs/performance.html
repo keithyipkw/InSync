@@ -1,0 +1,393 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Performance | InSync </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Performance | InSync ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="toc">
+    <meta property="docfx:tocrel" content="toc">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+                
+                <ul class="nav level1 navbar-nav">
+                      <li>
+                          <a href="performance.html" title="Performance">Performance</a>
+                      </li>
+                      <li>
+                          <a href="api/InSync.html" title="API Documentation">API Documentation</a>
+                      </li>
+                      <li>
+                          <a href="https://github.com/keithyipkw/InSync" title="Source Code">Source Code</a>
+                      </li>
+                </ul>    </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="performance">Performance</h1>
+
+<h2 id="net-core">.Net Core</h2>
+<p>The benchmark program was run with the environment:</p>
+<ul>
+<li>InSync 1.0.0</li>
+<li>Targeting .NET Core 2.1</li>
+<li>.NET SDK 5.0.101</li>
+<li>Windows 10</li>
+<li>Ryzen 3700X
+<ul>
+<li>fix clock at 4GHz</li>
+<li>SMT was disabled</li>
+</ul>
+</li>
+<li>StopWatch resolution 100ns</li>
+<li>High process priority</li>
+</ul>
+<h3 id="single-lock">Single Lock</h3>
+<p>With no contentions, execution time of different methods of acquiring 1 lock was measured. Because of insufficient resolution of <code>StopWatch</code>, each method was repeated 200,000 times. The averages of time in nanoseconds were calculated. 100 times of such measurement were ran to get 100 averages for each method. Core 4 was used.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Mean</th>
+<th>STD</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Loop overhead</td>
+<td>0.502205</td>
+<td>0.002618017</td>
+</tr>
+<tr>
+<td>lock</td>
+<td>10.48168</td>
+<td>0.042191334</td>
+</tr>
+<tr>
+<td>Synchronized.WithLock</td>
+<td>11.074585</td>
+<td>0.154348616</td>
+</tr>
+<tr>
+<td>Synchronized.Lock</td>
+<td>23.35174</td>
+<td>1.227891217</td>
+</tr>
+<tr>
+<td>SemaphoreSlim.Wait</td>
+<td>26.62024</td>
+<td>0.105064133</td>
+</tr>
+<tr>
+<td>AsyncSynchronized.WithLock</td>
+<td>35.361215</td>
+<td>0.94974477</td>
+</tr>
+<tr>
+<td>AsyncSynchronized.Lock</td>
+<td>58.553095</td>
+<td>1.554136994</td>
+</tr>
+<tr>
+<td>SemaphoreSlim.WaitAsync</td>
+<td>25.621235</td>
+<td>0.277216726</td>
+</tr>
+<tr>
+<td>AsyncSynchronized.WithLockAsync</td>
+<td>80.763075</td>
+<td>1.842565078</td>
+</tr>
+<tr>
+<td>AsyncSynchronized.LockAsync</td>
+<td>103.82279</td>
+<td>1.143010283</td>
+</tr>
+</tbody>
+</table>
+<h3 id="multiple-locks">Multiple Locks</h3>
+<p>Similarly, that of acquiring 2 locks was measured.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Mean</th>
+<th>STD</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Loop overhead</td>
+<td>0.50222</td>
+<td>0.004764833</td>
+</tr>
+<tr>
+<td>lock</td>
+<td>20.710595</td>
+<td>0.181092486</td>
+</tr>
+<tr>
+<td>Synchronized.Lock</td>
+<td>39.91558</td>
+<td>0.510229626</td>
+</tr>
+<tr>
+<td>MultiSync.All monitor</td>
+<td>176.746805</td>
+<td>3.011581144</td>
+</tr>
+<tr>
+<td>MultiSync.All monitor reuse array</td>
+<td>167.6974</td>
+<td>1.265423182</td>
+</tr>
+<tr>
+<td>SemaphoreSlim.WaitAsync</td>
+<td>50.941635</td>
+<td>0.240256196</td>
+</tr>
+<tr>
+<td>MultiSync.AllAsync semaphoreslim</td>
+<td>370.783275</td>
+<td>3.404508767</td>
+</tr>
+</tbody>
+</table>
+<h3 id="dining-philosophers">Dining Philosophers</h3>
+<p>The original C++ code was rewritten in C# but with 10s eating time. For the 4-core case, 11 times was run using core 4, 5, 6 and 7. For the 8 core case, 11 times was run using all cores.</p>
+<p><img src="https://user-images.githubusercontent.com/2862593/103096006-754f1b00-463d-11eb-8469-0abcb0f955a4.png" alt="dining_core_4"></p>
+<p><img src="https://user-images.githubusercontent.com/2862593/103096004-74b68480-463d-11eb-85d3-751f5deb166c.png" alt="dining_core_8"></p>
+<p>Similary, an async version was run 14 and 11 times for the 4-core case and the 8-core case.</p>
+<p><img src="https://user-images.githubusercontent.com/2862593/103216353-d5510480-4950-11eb-990e-f5d6dc2547c1.png" alt="async_dining_core_4"></p>
+<p><img src="https://user-images.githubusercontent.com/2862593/103216363-d84bf500-4950-11eb-8ac2-0c73f5a142d4.png" alt="async_dining_core_8"></p>
+<h2 id="net-framework">.NET Framework</h2>
+<p>The benchmark program was run with the environment:</p>
+<ul>
+<li>InSync 1.0.0</li>
+<li>Targeting .NET Framework 4.6.1</li>
+<li>Windows 10</li>
+<li>Ryzen 3700X
+<ul>
+<li>fix clock at 4GHz</li>
+<li>SMT was disabled</li>
+</ul>
+</li>
+<li>StopWatch resolution 100ns</li>
+<li>High process priority</li>
+</ul>
+<h3 id="single-lock-1">Single Lock</h3>
+<p>With no contentions, execution time of different methods of acquiring 1 lock was measured. Because of insufficient resolution of <code>StopWatch</code>, each method was repeated 200,000 times. The averages of time in nanoseconds were calculated. 100 times of such measurement were ran to get 100 averages for each method. Core 4 was used.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Mean</th>
+<th>STD</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Loop overhead</td>
+<td>0.36252</td>
+<td>0.003144596</td>
+</tr>
+<tr>
+<td>lock</td>
+<td>12.412035</td>
+<td>0.0109658</td>
+</tr>
+<tr>
+<td>Synchronized.WithLock</td>
+<td>15.138875</td>
+<td>0.232656967</td>
+</tr>
+<tr>
+<td>Synchronized.Lock</td>
+<td>22.0225</td>
+<td>0.6347454</td>
+</tr>
+<tr>
+<td>SemaphoreSlim.Wait</td>
+<td>114.748535</td>
+<td>1.128779152</td>
+</tr>
+<tr>
+<td>AsyncSynchronized.WithLock</td>
+<td>124.169925</td>
+<td>2.015787666</td>
+</tr>
+<tr>
+<td>AsyncSynchronized.Lock</td>
+<td>147.514825</td>
+<td>1.482475072</td>
+</tr>
+<tr>
+<td>SemaphoreSlim.WaitAsync</td>
+<td>103.236805</td>
+<td>1.896086705</td>
+</tr>
+<tr>
+<td>AsyncSynchronized.WithLockAsync</td>
+<td>279.55305</td>
+<td>1.981495923</td>
+</tr>
+<tr>
+<td>AsyncSynchronized.LockAsync</td>
+<td>304.958515</td>
+<td>1.775532174</td>
+</tr>
+</tbody>
+</table>
+<h3 id="multiple-locks-1">Multiple Locks</h3>
+<p>Similarly, that of acquiring 2 locks was measured.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Mean</th>
+<th>STD</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Loop overhead</td>
+<td>0.56915</td>
+<td>0.003600295</td>
+</tr>
+<tr>
+<td>lock</td>
+<td>24.191225</td>
+<td>0.181012533</td>
+</tr>
+<tr>
+<td>Synchronized.Lock</td>
+<td>46.275455</td>
+<td>0.86436219</td>
+</tr>
+<tr>
+<td>MultiSync.All monitor</td>
+<td>179.386635</td>
+<td>3.11450811</td>
+</tr>
+<tr>
+<td>MultiSync.All monitor reuse array</td>
+<td>166.543805</td>
+<td>2.345737108</td>
+</tr>
+<tr>
+<td>SemaphoreSlim.WaitAsync</td>
+<td>193.14303</td>
+<td>2.538284758</td>
+</tr>
+<tr>
+<td>MultiSync.AllAsync semaphoreslim</td>
+<td>752.56565</td>
+<td>3.728029591</td>
+</tr>
+</tbody>
+</table>
+<h3 id="dining-philosophers-1">Dining Philosophers</h3>
+<p>The original C++ code was rewritten in C# but with 10s eating time. For the 4-core case, 13 times was run using core 4, 5, 6 and 7. For the 8-core case, 13 times was run using all cores.</p>
+<p><img src="https://user-images.githubusercontent.com/2862593/103096003-74b68480-463d-11eb-8d73-7742e6d33907.png" alt="dining_fw_4"></p>
+<p><img src="https://user-images.githubusercontent.com/2862593/103096001-73855780-463d-11eb-8230-e877f1aa16c2.png" alt="dining_fw_8"></p>
+<p>Similary, an async version was run 12 and 15 times for the 4-core case and the 8-core case.</p>
+<p><img src="https://user-images.githubusercontent.com/2862593/103216360-d7b35e80-4950-11eb-9517-91cb7d925b19.png" alt="async_dining_fw_4"></p>
+<p><img src="https://user-images.githubusercontent.com/2862593/103216355-d6823180-4950-11eb-89b5-8596ec1c36fb.png" alt="async_dining_fw_8"></p>
+<h2 id="c">C++</h2>
+<p>For reference, a slightly modified version of the original C++ code was run. The eating time was 10s. Other modifications were for conveniently running continously. The environment was:</p>
+<ul>
+<li>Toolset Visual Studio 2019 v142</li>
+<li>Optimization O2</li>
+<li>Windows 10</li>
+<li>Ryzen 3700X
+<ul>
+<li>fix clock at 4GHz</li>
+<li>SMT was disabled</li>
+</ul>
+</li>
+<li>StopWatch resolution 100ns</li>
+<li>High process priority</li>
+</ul>
+<p>For the 4-core case, 10 times was run using core 4, 5, 6 and 7. For the 8 core case, 9 times was run using all cores.</p>
+<p><img src="https://user-images.githubusercontent.com/2862593/103096000-72542a80-463d-11eb-8261-eeff7f94fa9b.png" alt="dining_cpp_4"></p>
+<p><img src="https://user-images.githubusercontent.com/2862593/103096007-754f1b00-463d-11eb-832b-28993acc5949.png" alt="dining_cpp_8"></p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

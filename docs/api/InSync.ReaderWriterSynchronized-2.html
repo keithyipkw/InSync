@@ -1,0 +1,1377 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class ReaderWriterSynchronized&lt;TWrite, TRead&gt;
+   | InSync </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class ReaderWriterSynchronized&lt;TWrite, TRead&gt;
+   | InSync ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc">
+    <meta property="docfx:tocrel" content="toc">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+                
+                <ul class="nav level1 navbar-nav">
+                      <li>
+                          <a href="../performance.html" title="Performance">Performance</a>
+                      </li>
+                      <li>
+                          <a href="../api/InSync.html" title="API Documentation">API Documentation</a>
+                      </li>
+                      <li>
+                          <a href="https://github.com/keithyipkw/InSync" title="Source Code">Source Code</a>
+                      </li>
+                </ul>    </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div>
+              <div class="sidefilter">
+                <form class="toc-filter">
+                  <span class="glyphicon glyphicon-filter filter-icon"></span>
+                  <input type="text" id="toc_filter_input" placeholder="Enter here to filter..." onkeypress="if(event.keyCode==13) {return false;}">
+                </form>
+              </div>
+              <div class="sidetoc">
+                <div class="toc" id="toc">
+                  
+                  <ul class="nav level1">
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="InSync.html" title="InSync" class="">InSync</a>
+                        
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="InSync.AsyncSynchronized.html" title="AsyncSynchronized" class="">AsyncSynchronized</a>
+                          </li>
+                          <li class="">
+                            <a href="InSync.AsyncSynchronized-1.html" title="AsyncSynchronized&lt;T&gt;" class="">AsyncSynchronized&lt;T&gt;</a>
+                          </li>
+                          <li class="">
+                            <a href="InSync.GuardedValue-1.html" title="GuardedValue&lt;T&gt;" class="">GuardedValue&lt;T&gt;</a>
+                          </li>
+                          <li class="">
+                            <a href="InSync.IAsyncSynchronized-1.html" title="IAsyncSynchronized&lt;T&gt;" class="">IAsyncSynchronized&lt;T&gt;</a>
+                          </li>
+                          <li class="">
+                            <a href="InSync.IBareAsyncLock.html" title="IBareAsyncLock" class="">IBareAsyncLock</a>
+                          </li>
+                          <li class="">
+                            <a href="InSync.IBareAsyncLock-1.html" title="IBareAsyncLock&lt;T&gt;" class="">IBareAsyncLock&lt;T&gt;</a>
+                          </li>
+                          <li class="">
+                            <a href="InSync.IBareLock.html" title="IBareLock" class="">IBareLock</a>
+                          </li>
+                          <li class="">
+                            <a href="InSync.IBareLock-1.html" title="IBareLock&lt;T&gt;" class="">IBareLock&lt;T&gt;</a>
+                          </li>
+                          <li class="">
+                            <a href="InSync.ISynchronized-1.html" title="ISynchronized&lt;T&gt;" class="">ISynchronized&lt;T&gt;</a>
+                          </li>
+                          <li class="">
+                            <a href="InSync.LockException.html" title="LockException" class="">LockException</a>
+                          </li>
+                          <li class="">
+                            <a href="InSync.MultiSync.html" title="MultiSync" class="">MultiSync</a>
+                          </li>
+                          <li class="">
+                            <a href="InSync.ReaderSynchronized-1.html" title="ReaderSynchronized&lt;TRead&gt;" class="">ReaderSynchronized&lt;TRead&gt;</a>
+                          </li>
+                          <li class="">
+                            <a href="InSync.ReaderWriterSynchronized-1.html" title="ReaderWriterSynchronized&lt;T&gt;" class="">ReaderWriterSynchronized&lt;T&gt;</a>
+                          </li>
+                          <li class="active">
+                            <a href="InSync.ReaderWriterSynchronized-2.html" title="ReaderWriterSynchronized&lt;TWrite, TRead&gt;" class="active">ReaderWriterSynchronized&lt;TWrite, TRead&gt;</a>
+                          </li>
+                          <li class="">
+                            <a href="InSync.ReaderWriterSynchronizedFactory.html" title="ReaderWriterSynchronizedFactory" class="">ReaderWriterSynchronizedFactory</a>
+                          </li>
+                          <li class="">
+                            <a href="InSync.Synchronized.html" title="Synchronized" class="">Synchronized</a>
+                          </li>
+                          <li class="">
+                            <a href="InSync.Synchronized-1.html" title="Synchronized&lt;T&gt;" class="">Synchronized&lt;T&gt;</a>
+                          </li>
+                          <li class="">
+                            <a href="InSync.UnlockException.html" title="UnlockException" class="">UnlockException</a>
+                          </li>
+                          <li class="">
+                            <a href="InSync.UpgradeableReaderSynchronized-1.html" title="UpgradeableReaderSynchronized&lt;TRead&gt;" class="">UpgradeableReaderSynchronized&lt;TRead&gt;</a>
+                          </li>
+                          <li class="">
+                            <a href="InSync.ValueContainer-1.html" title="ValueContainer&lt;T&gt;" class="">ValueContainer&lt;T&gt;</a>
+                          </li>
+                        </ul>  </li>
+                  </ul>        </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="InSync.ReaderWriterSynchronized`2">
+  
+  
+  <h1 id="InSync_ReaderWriterSynchronized_2" data-uid="InSync.ReaderWriterSynchronized`2" class="text-break">Class ReaderWriterSynchronized&lt;TWrite, TRead&gt;
+  </h1>
+  <div class="markdown level0 summary"><p>Uses <span class="xref">System.Threading.ReaderWriterLockSlim</span> to synchronize and only expose its protected reader or writer after a respective read or write synchronization begins. All the methods implementing its interfaces refer to the writer part. The readers are accessible via <a class="xref" href="InSync.ReaderWriterSynchronized-2.html#InSync_ReaderWriterSynchronized_2_Reader">Reader</a> and <a class="xref" href="InSync.ReaderWriterSynchronized-2.html#InSync_ReaderWriterSynchronized_2_UpgradeableReader">UpgradeableReader</a>.</p>
+<p>Asynchronous operations are not supported. The protected reader and writer are non-null.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">ReaderWriterSynchronized&lt;TWrite, TRead&gt;</span></div>
+      <div class="level2"><a class="xref" href="InSync.ReaderWriterSynchronized-1.html">ReaderWriterSynchronized&lt;T&gt;</a></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="InSync.ISynchronized-1.html">ISynchronized</a>&lt;TWrite&gt;</div>
+    <div><a class="xref" href="InSync.IBareLock-1.html">IBareLock</a>&lt;TWrite&gt;</div>
+    <div><a class="xref" href="InSync.IBareLock.html">IBareLock</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="InSync.html">InSync</a></h6>
+  <h6><strong>Assembly</strong>: InSync.dll</h6>
+  <h5 id="InSync_ReaderWriterSynchronized_2_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class ReaderWriterSynchronized&lt;TWrite, TRead&gt; : ISynchronized&lt;TWrite&gt;, IBareLock&lt;TWrite&gt;, IBareLock where TWrite : class where TRead : class</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TWrite</span></td>
+        <td><p>The type of the writer to protect.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TRead</span></td>
+        <td><p>The type of the reader to protect.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="constructors">Constructors
+  </h3>
+  <a id="InSync_ReaderWriterSynchronized_2__ctor_" data-uid="InSync.ReaderWriterSynchronized`2.#ctor*"></a>
+  <h4 id="InSync_ReaderWriterSynchronized_2__ctor_System_Threading_ReaderWriterLockSlim__0__1_" data-uid="InSync.ReaderWriterSynchronized`2.#ctor(System.Threading.ReaderWriterLockSlim,`0,`1)">ReaderWriterSynchronized(ReaderWriterLockSlim, TWrite, TRead)</h4>
+  <div class="markdown level1 summary"><p>Initializes a <a class="xref" href="InSync.ReaderWriterSynchronized-2.html">ReaderWriterSynchronized&lt;TWrite, TRead&gt;</a> with the specified <span class="xref">System.Threading.ReaderWriterLockSlim</span>, writer to protect and reader to protect.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ReaderWriterSynchronized(ReaderWriterLockSlim readerWriterLockSlim, TWrite writer, TRead reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.ReaderWriterLockSlim</span></td>
+        <td><span class="parametername">readerWriterLockSlim</span></td>
+        <td><p>The <span class="xref">System.Threading.ReaderWriterLockSlim</span> for synchronization.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TWrite</span></td>
+        <td><span class="parametername">writer</span></td>
+        <td><p>The writer to protect.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TRead</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>The reader to protect.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentNullException</span></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">readerWriterLockSlim</code> is <code>null</code>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.ArgumentNullException</span></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">writer</code> is <code>null</code>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.ArgumentNullException</span></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">reader</code> is <code>null</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+  </h3>
+  <h4 id="InSync_ReaderWriterSynchronized_2_reader" data-uid="InSync.ReaderWriterSynchronized`2.reader">reader</h4>
+  <div class="markdown level1 summary"><p>The reader to protect.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly TRead reader</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TRead</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="InSync_ReaderWriterSynchronized_2_readerWriterLockSlim" data-uid="InSync.ReaderWriterSynchronized`2.readerWriterLockSlim">readerWriterLockSlim</h4>
+  <div class="markdown level1 summary"><p>The <span class="xref">System.Threading.ReaderWriterLockSlim</span> for synchronization.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly ReaderWriterLockSlim readerWriterLockSlim</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.ReaderWriterLockSlim</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="InSync_ReaderWriterSynchronized_2_writer" data-uid="InSync.ReaderWriterSynchronized`2.writer">writer</h4>
+  <div class="markdown level1 summary"><p>The writer to protect.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly TWrite writer</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TWrite</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <a id="InSync_ReaderWriterSynchronized_2_Reader_" data-uid="InSync.ReaderWriterSynchronized`2.Reader*"></a>
+  <h4 id="InSync_ReaderWriterSynchronized_2_Reader" data-uid="InSync.ReaderWriterSynchronized`2.Reader">Reader</h4>
+  <div class="markdown level1 summary"><p>Gets the synchronized reader.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ReaderSynchronized&lt;TRead&gt; Reader { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InSync.ReaderSynchronized-1.html">ReaderSynchronized</a>&lt;TRead&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="InSync_ReaderWriterSynchronized_2_UpgradeableReader_" data-uid="InSync.ReaderWriterSynchronized`2.UpgradeableReader*"></a>
+  <h4 id="InSync_ReaderWriterSynchronized_2_UpgradeableReader" data-uid="InSync.ReaderWriterSynchronized`2.UpgradeableReader">UpgradeableReader</h4>
+  <div class="markdown level1 summary"><p>Gets the synchronized upgradeable reader.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public UpgradeableReaderSynchronized&lt;TRead&gt; UpgradeableReader { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InSync.UpgradeableReaderSynchronized-1.html">UpgradeableReaderSynchronized</a>&lt;TRead&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <a id="InSync_ReaderWriterSynchronized_2_BarelyLock_" data-uid="InSync.ReaderWriterSynchronized`2.BarelyLock*"></a>
+  <h4 id="InSync_ReaderWriterSynchronized_2_BarelyLock" data-uid="InSync.ReaderWriterSynchronized`2.BarelyLock">BarelyLock()</h4>
+  <div class="markdown level1 summary"><p>Synchronously acquires the lock and returns the protected non-null object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TWrite BarelyLock()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TWrite</span></td>
+        <td><p>The protected non-null object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InSync.LockException.html">LockException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="InSync_ReaderWriterSynchronized_2_BarelyTryLock_" data-uid="InSync.ReaderWriterSynchronized`2.BarelyTryLock*"></a>
+  <h4 id="InSync_ReaderWriterSynchronized_2_BarelyTryLock__0__" data-uid="InSync.ReaderWriterSynchronized`2.BarelyTryLock(`0@)">BarelyTryLock(out TWrite)</h4>
+  <div class="markdown level1 summary"><p>Tries to acquire the lock. It returns <code>true</code> and the protected non-null object if the lock is acquired.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool BarelyTryLock(out TWrite value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TWrite</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> if the lock is acquired.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InSync.LockException.html">LockException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="InSync_ReaderWriterSynchronized_2_BarelyTryLock_" data-uid="InSync.ReaderWriterSynchronized`2.BarelyTryLock*"></a>
+  <h4 id="InSync_ReaderWriterSynchronized_2_BarelyTryLock_System_Int32__0__" data-uid="InSync.ReaderWriterSynchronized`2.BarelyTryLock(System.Int32,`0@)">BarelyTryLock(Int32, out TWrite)</h4>
+  <div class="markdown level1 summary"><p>Tries to acquire the lock. It returns <code>true</code> and the protected non-null object if the lock is acquired.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool BarelyTryLock(int millisecondsTimeout, out TWrite value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">millisecondsTimeout</span></td>
+        <td><p>The number of milliseconds to wait, <span class="xref">System.Threading.Timeout.Infinite</span> (-1) to wait indefinitely, or zero to test the state of the wait handle and return immediately.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TWrite</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> if the lock is acquired.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InSync.LockException.html">LockException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="InSync_ReaderWriterSynchronized_2_BarelyTryLock_" data-uid="InSync.ReaderWriterSynchronized`2.BarelyTryLock*"></a>
+  <h4 id="InSync_ReaderWriterSynchronized_2_BarelyTryLock_System_TimeSpan__0__" data-uid="InSync.ReaderWriterSynchronized`2.BarelyTryLock(System.TimeSpan,`0@)">BarelyTryLock(TimeSpan, out TWrite)</h4>
+  <div class="markdown level1 summary"><p>Tries to acquire the lock. It returns <code>true</code> and the protected non-null object if the lock is acquired.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool BarelyTryLock(TimeSpan timeout, out TWrite value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.TimeSpan</span></td>
+        <td><span class="parametername">timeout</span></td>
+        <td><p>A <span class="xref">System.TimeSpan</span> that represents the number of milliseconds to wait, a <span class="xref">System.TimeSpan</span> that represents -1 milliseconds to wait indefinitely, or a <span class="xref">System.TimeSpan</span> that represents 0 milliseconds to test the wait handle and return immediately.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TWrite</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> if the lock is acquired.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InSync.LockException.html">LockException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="InSync_ReaderWriterSynchronized_2_BarelyUnlock_" data-uid="InSync.ReaderWriterSynchronized`2.BarelyUnlock*"></a>
+  <h4 id="InSync_ReaderWriterSynchronized_2_BarelyUnlock" data-uid="InSync.ReaderWriterSynchronized`2.BarelyUnlock">BarelyUnlock()</h4>
+  <div class="markdown level1 summary"><p>Releases the lock.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void BarelyUnlock()</code></pre>
+  </div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InSync.UnlockException.html">UnlockException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="InSync_ReaderWriterSynchronized_2_Lock_" data-uid="InSync.ReaderWriterSynchronized`2.Lock*"></a>
+  <h4 id="InSync_ReaderWriterSynchronized_2_Lock" data-uid="InSync.ReaderWriterSynchronized`2.Lock">Lock()</h4>
+  <div class="markdown level1 summary"><p>Locks and returns a guard to allow access of the protected object and unlocking.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GuardedValue&lt;TWrite&gt; Lock()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InSync.GuardedValue-1.html">GuardedValue</a>&lt;TWrite&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InSync.LockException.html">LockException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="InSync_ReaderWriterSynchronized_2_TryLock_" data-uid="InSync.ReaderWriterSynchronized`2.TryLock*"></a>
+  <h4 id="InSync_ReaderWriterSynchronized_2_TryLock" data-uid="InSync.ReaderWriterSynchronized`2.TryLock">TryLock()</h4>
+  <div class="markdown level1 summary"><p>Tries to lock and returns a guard to allow access of the protected object and unlocking. If the lock is not acquired, this method returns null immediately.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GuardedValue&lt;TWrite&gt; TryLock()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InSync.GuardedValue-1.html">GuardedValue</a>&lt;TWrite&gt;</td>
+        <td><p>Null if the lock is not acquired.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InSync.LockException.html">LockException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="InSync_ReaderWriterSynchronized_2_TryLock_" data-uid="InSync.ReaderWriterSynchronized`2.TryLock*"></a>
+  <h4 id="InSync_ReaderWriterSynchronized_2_TryLock_System_Int32_" data-uid="InSync.ReaderWriterSynchronized`2.TryLock(System.Int32)">TryLock(Int32)</h4>
+  <div class="markdown level1 summary"><p>Tries to lock and returns a guard to allow access of the protected object and unlocking. If the lock is not acquired, this method returns null immediately.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GuardedValue&lt;TWrite&gt; TryLock(int millisecondsTimeout)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">millisecondsTimeout</span></td>
+        <td><p>The number of milliseconds to wait, <span class="xref">System.Threading.Timeout.Infinite</span> (-1) to wait indefinitely, or zero to test the state of the wait handle and return immediately.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InSync.GuardedValue-1.html">GuardedValue</a>&lt;TWrite&gt;</td>
+        <td><p>Null if the lock is not acquired.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InSync.LockException.html">LockException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="InSync_ReaderWriterSynchronized_2_TryLock_" data-uid="InSync.ReaderWriterSynchronized`2.TryLock*"></a>
+  <h4 id="InSync_ReaderWriterSynchronized_2_TryLock_System_TimeSpan_" data-uid="InSync.ReaderWriterSynchronized`2.TryLock(System.TimeSpan)">TryLock(TimeSpan)</h4>
+  <div class="markdown level1 summary"><p>Tries to lock and returns a guard to allow access of the protected object and unlocking. If the lock is not acquired, this method returns null immediately.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GuardedValue&lt;TWrite&gt; TryLock(TimeSpan timeout)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.TimeSpan</span></td>
+        <td><span class="parametername">timeout</span></td>
+        <td><p>A <span class="xref">System.TimeSpan</span> that represents the number of milliseconds to wait, a <span class="xref">System.TimeSpan</span> that represents -1 milliseconds to wait indefinitely, or a <span class="xref">System.TimeSpan</span> that represents 0 milliseconds to test the wait handle and return immediately.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InSync.GuardedValue-1.html">GuardedValue</a>&lt;TWrite&gt;</td>
+        <td><p>Null if the lock is not acquired.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InSync.LockException.html">LockException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="InSync_ReaderWriterSynchronized_2_TryWithLock_" data-uid="InSync.ReaderWriterSynchronized`2.TryWithLock*"></a>
+  <h4 id="InSync_ReaderWriterSynchronized_2_TryWithLock_System_Action__0__" data-uid="InSync.ReaderWriterSynchronized`2.TryWithLock(System.Action{`0})">TryWithLock(Action&lt;TWrite&gt;)</h4>
+  <div class="markdown level1 summary"><p>Tries to lock and performs the action then unlocks. If the lock is not acquired, this method returns immediately. If the action throws an exception, the lock is released automatically.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryWithLock(Action&lt;TWrite&gt; action)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Action</span>&lt;TWrite&gt;</td>
+        <td><span class="parametername">action</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> the action is performed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InSync.LockException.html">LockException</a></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="InSync.UnlockException.html">UnlockException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="InSync_ReaderWriterSynchronized_2_TryWithLock_" data-uid="InSync.ReaderWriterSynchronized`2.TryWithLock*"></a>
+  <h4 id="InSync_ReaderWriterSynchronized_2_TryWithLock_System_Int32_System_Action__0__" data-uid="InSync.ReaderWriterSynchronized`2.TryWithLock(System.Int32,System.Action{`0})">TryWithLock(Int32, Action&lt;TWrite&gt;)</h4>
+  <div class="markdown level1 summary"><p>Tries to lock and performs the action then unlocks. If the lock is not acquired, this method returns immediately. If the action throws an exception, the lock is released automatically.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryWithLock(int millisecondsTimeout, Action&lt;TWrite&gt; action)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">millisecondsTimeout</span></td>
+        <td><p>The number of milliseconds to wait, <span class="xref">System.Threading.Timeout.Infinite</span> (-1) to wait indefinitely, or zero to test the state of the wait handle and return immediately.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Action</span>&lt;TWrite&gt;</td>
+        <td><span class="parametername">action</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> the action is performed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InSync.LockException.html">LockException</a></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="InSync.UnlockException.html">UnlockException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="InSync_ReaderWriterSynchronized_2_TryWithLock_" data-uid="InSync.ReaderWriterSynchronized`2.TryWithLock*"></a>
+  <h4 id="InSync_ReaderWriterSynchronized_2_TryWithLock_System_TimeSpan_System_Action__0__" data-uid="InSync.ReaderWriterSynchronized`2.TryWithLock(System.TimeSpan,System.Action{`0})">TryWithLock(TimeSpan, Action&lt;TWrite&gt;)</h4>
+  <div class="markdown level1 summary"><p>Tries to lock and performs the action then unlocks. If the lock is not acquired, this method returns immediately. If the action throws an exception, the lock is released automatically.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryWithLock(TimeSpan timeout, Action&lt;TWrite&gt; action)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.TimeSpan</span></td>
+        <td><span class="parametername">timeout</span></td>
+        <td><p>A <span class="xref">System.TimeSpan</span> that represents the number of milliseconds to wait, a <span class="xref">System.TimeSpan</span> that represents -1 milliseconds to wait indefinitely, or a <span class="xref">System.TimeSpan</span> that represents 0 milliseconds to test the wait handle and return immediately.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Action</span>&lt;TWrite&gt;</td>
+        <td><span class="parametername">action</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> the action is performed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InSync.LockException.html">LockException</a></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="InSync.UnlockException.html">UnlockException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="InSync_ReaderWriterSynchronized_2_WithLock_" data-uid="InSync.ReaderWriterSynchronized`2.WithLock*"></a>
+  <h4 id="InSync_ReaderWriterSynchronized_2_WithLock_System_Action__0__" data-uid="InSync.ReaderWriterSynchronized`2.WithLock(System.Action{`0})">WithLock(Action&lt;TWrite&gt;)</h4>
+  <div class="markdown level1 summary"><p>Locks, performs the action then unlocks. If the action throws an exception, the lock is released automatically.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void WithLock(Action&lt;TWrite&gt; action)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Action</span>&lt;TWrite&gt;</td>
+        <td><span class="parametername">action</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InSync.LockException.html">LockException</a></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="InSync.UnlockException.html">UnlockException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="InSync_ReaderWriterSynchronized_2_WithLock_" data-uid="InSync.ReaderWriterSynchronized`2.WithLock*"></a>
+  <h4 id="InSync_ReaderWriterSynchronized_2_WithLock__1_System_Func__0___0__" data-uid="InSync.ReaderWriterSynchronized`2.WithLock``1(System.Func{`0,``0})">WithLock&lt;TResult&gt;(Func&lt;TWrite, TResult&gt;)</h4>
+  <div class="markdown level1 summary"><p>Locks, call the function then unlocks. The returned value from the function is returned. If the function throws an exception, the lock is released automatically.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TResult WithLock&lt;TResult&gt;(Func&lt;TWrite, TResult&gt; func)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Func</span>&lt;TWrite, TResult&gt;</td>
+        <td><span class="parametername">func</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TResult</span></td>
+        <td><p>The returned value from the function.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TResult</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InSync.LockException.html">LockException</a></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="InSync.UnlockException.html">UnlockException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="eii">Explicit Interface Implementations
+  </h3>
+  <a id="InSync_ReaderWriterSynchronized_2_InSync_IBareLock_BarelyLock_" data-uid="InSync.ReaderWriterSynchronized`2.InSync#IBareLock#BarelyLock*"></a>
+  <h4 id="InSync_ReaderWriterSynchronized_2_InSync_IBareLock_BarelyLock" data-uid="InSync.ReaderWriterSynchronized`2.InSync#IBareLock#BarelyLock">IBareLock.BarelyLock()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">object IBareLock.BarelyLock()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="InSync_ReaderWriterSynchronized_2_InSync_IBareLock_BarelyTryLock_" data-uid="InSync.ReaderWriterSynchronized`2.InSync#IBareLock#BarelyTryLock*"></a>
+  <h4 id="InSync_ReaderWriterSynchronized_2_InSync_IBareLock_BarelyTryLock_System_Int32_System_Object__" data-uid="InSync.ReaderWriterSynchronized`2.InSync#IBareLock#BarelyTryLock(System.Int32,System.Object@)">IBareLock.BarelyTryLock(Int32, out Object)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool IBareLock.BarelyTryLock(int millisecondsTimeout, out object value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">millisecondsTimeout</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="InSync_ReaderWriterSynchronized_2_InSync_IBareLock_BarelyTryLock_" data-uid="InSync.ReaderWriterSynchronized`2.InSync#IBareLock#BarelyTryLock*"></a>
+  <h4 id="InSync_ReaderWriterSynchronized_2_InSync_IBareLock_BarelyTryLock_System_Object__" data-uid="InSync.ReaderWriterSynchronized`2.InSync#IBareLock#BarelyTryLock(System.Object@)">IBareLock.BarelyTryLock(out Object)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool IBareLock.BarelyTryLock(out object value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="InSync_ReaderWriterSynchronized_2_InSync_IBareLock_BarelyTryLock_" data-uid="InSync.ReaderWriterSynchronized`2.InSync#IBareLock#BarelyTryLock*"></a>
+  <h4 id="InSync_ReaderWriterSynchronized_2_InSync_IBareLock_BarelyTryLock_System_TimeSpan_System_Object__" data-uid="InSync.ReaderWriterSynchronized`2.InSync#IBareLock#BarelyTryLock(System.TimeSpan,System.Object@)">IBareLock.BarelyTryLock(TimeSpan, out Object)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool IBareLock.BarelyTryLock(TimeSpan timeout, out object value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.TimeSpan</span></td>
+        <td><span class="parametername">timeout</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="InSync.ISynchronized-1.html">ISynchronized&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="InSync.IBareLock-1.html">IBareLock&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="InSync.IBareLock.html">IBareLock</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

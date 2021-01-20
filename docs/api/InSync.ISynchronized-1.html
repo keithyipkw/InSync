@@ -1,0 +1,742 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Interface ISynchronized&lt;T&gt;
+   | InSync </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Interface ISynchronized&lt;T&gt;
+   | InSync ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc">
+    <meta property="docfx:tocrel" content="toc">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+                
+                <ul class="nav level1 navbar-nav">
+                      <li>
+                          <a href="../performance.html" title="Performance">Performance</a>
+                      </li>
+                      <li>
+                          <a href="../api/InSync.html" title="API Documentation">API Documentation</a>
+                      </li>
+                      <li>
+                          <a href="https://github.com/keithyipkw/InSync" title="Source Code">Source Code</a>
+                      </li>
+                </ul>    </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div>
+              <div class="sidefilter">
+                <form class="toc-filter">
+                  <span class="glyphicon glyphicon-filter filter-icon"></span>
+                  <input type="text" id="toc_filter_input" placeholder="Enter here to filter..." onkeypress="if(event.keyCode==13) {return false;}">
+                </form>
+              </div>
+              <div class="sidetoc">
+                <div class="toc" id="toc">
+                  
+                  <ul class="nav level1">
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="InSync.html" title="InSync" class="">InSync</a>
+                        
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="InSync.AsyncSynchronized.html" title="AsyncSynchronized" class="">AsyncSynchronized</a>
+                          </li>
+                          <li class="">
+                            <a href="InSync.AsyncSynchronized-1.html" title="AsyncSynchronized&lt;T&gt;" class="">AsyncSynchronized&lt;T&gt;</a>
+                          </li>
+                          <li class="">
+                            <a href="InSync.GuardedValue-1.html" title="GuardedValue&lt;T&gt;" class="">GuardedValue&lt;T&gt;</a>
+                          </li>
+                          <li class="">
+                            <a href="InSync.IAsyncSynchronized-1.html" title="IAsyncSynchronized&lt;T&gt;" class="">IAsyncSynchronized&lt;T&gt;</a>
+                          </li>
+                          <li class="">
+                            <a href="InSync.IBareAsyncLock.html" title="IBareAsyncLock" class="">IBareAsyncLock</a>
+                          </li>
+                          <li class="">
+                            <a href="InSync.IBareAsyncLock-1.html" title="IBareAsyncLock&lt;T&gt;" class="">IBareAsyncLock&lt;T&gt;</a>
+                          </li>
+                          <li class="">
+                            <a href="InSync.IBareLock.html" title="IBareLock" class="">IBareLock</a>
+                          </li>
+                          <li class="">
+                            <a href="InSync.IBareLock-1.html" title="IBareLock&lt;T&gt;" class="">IBareLock&lt;T&gt;</a>
+                          </li>
+                          <li class="active">
+                            <a href="InSync.ISynchronized-1.html" title="ISynchronized&lt;T&gt;" class="active">ISynchronized&lt;T&gt;</a>
+                          </li>
+                          <li class="">
+                            <a href="InSync.LockException.html" title="LockException" class="">LockException</a>
+                          </li>
+                          <li class="">
+                            <a href="InSync.MultiSync.html" title="MultiSync" class="">MultiSync</a>
+                          </li>
+                          <li class="">
+                            <a href="InSync.ReaderSynchronized-1.html" title="ReaderSynchronized&lt;TRead&gt;" class="">ReaderSynchronized&lt;TRead&gt;</a>
+                          </li>
+                          <li class="">
+                            <a href="InSync.ReaderWriterSynchronized-1.html" title="ReaderWriterSynchronized&lt;T&gt;" class="">ReaderWriterSynchronized&lt;T&gt;</a>
+                          </li>
+                          <li class="">
+                            <a href="InSync.ReaderWriterSynchronized-2.html" title="ReaderWriterSynchronized&lt;TWrite, TRead&gt;" class="">ReaderWriterSynchronized&lt;TWrite, TRead&gt;</a>
+                          </li>
+                          <li class="">
+                            <a href="InSync.ReaderWriterSynchronizedFactory.html" title="ReaderWriterSynchronizedFactory" class="">ReaderWriterSynchronizedFactory</a>
+                          </li>
+                          <li class="">
+                            <a href="InSync.Synchronized.html" title="Synchronized" class="">Synchronized</a>
+                          </li>
+                          <li class="">
+                            <a href="InSync.Synchronized-1.html" title="Synchronized&lt;T&gt;" class="">Synchronized&lt;T&gt;</a>
+                          </li>
+                          <li class="">
+                            <a href="InSync.UnlockException.html" title="UnlockException" class="">UnlockException</a>
+                          </li>
+                          <li class="">
+                            <a href="InSync.UpgradeableReaderSynchronized-1.html" title="UpgradeableReaderSynchronized&lt;TRead&gt;" class="">UpgradeableReaderSynchronized&lt;TRead&gt;</a>
+                          </li>
+                          <li class="">
+                            <a href="InSync.ValueContainer-1.html" title="ValueContainer&lt;T&gt;" class="">ValueContainer&lt;T&gt;</a>
+                          </li>
+                        </ul>  </li>
+                  </ul>        </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="InSync.ISynchronized`1">
+  
+  
+  <h1 id="InSync_ISynchronized_1" data-uid="InSync.ISynchronized`1" class="text-break">Interface ISynchronized&lt;T&gt;
+  </h1>
+  <div class="markdown level0 summary"><p>Allows its protected object to be accessed only after a synchronization begins. Its methods automatically complete synchronizations or provide some means to do so. They properly handle exceptions thrown by starts of synchronization or users' operations.</p>
+<p>Asynchronous operations are not supported. The protected object is non-null.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="InSync.html">InSync</a></h6>
+  <h6><strong>Assembly</strong>: InSync.dll</h6>
+  <h5 id="InSync_ISynchronized_1_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface ISynchronized&lt;T&gt;
+    where T : class</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The type of the protected object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <a id="InSync_ISynchronized_1_Lock_" data-uid="InSync.ISynchronized`1.Lock*"></a>
+  <h4 id="InSync_ISynchronized_1_Lock" data-uid="InSync.ISynchronized`1.Lock">Lock()</h4>
+  <div class="markdown level1 summary"><p>Locks and returns a guard to allow access of the protected object and unlocking.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">GuardedValue&lt;T&gt; Lock()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InSync.GuardedValue-1.html">GuardedValue</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InSync.LockException.html">LockException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="InSync_ISynchronized_1_TryLock_" data-uid="InSync.ISynchronized`1.TryLock*"></a>
+  <h4 id="InSync_ISynchronized_1_TryLock" data-uid="InSync.ISynchronized`1.TryLock">TryLock()</h4>
+  <div class="markdown level1 summary"><p>Tries to lock and returns a guard to allow access of the protected object and unlocking. If the lock is not acquired, this method returns null immediately.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">GuardedValue&lt;T&gt; TryLock()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InSync.GuardedValue-1.html">GuardedValue</a>&lt;T&gt;</td>
+        <td><p>Null if the lock is not acquired.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InSync.LockException.html">LockException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="InSync_ISynchronized_1_TryLock_" data-uid="InSync.ISynchronized`1.TryLock*"></a>
+  <h4 id="InSync_ISynchronized_1_TryLock_System_Int32_" data-uid="InSync.ISynchronized`1.TryLock(System.Int32)">TryLock(Int32)</h4>
+  <div class="markdown level1 summary"><p>Tries to lock and returns a guard to allow access of the protected object and unlocking. If the lock is not acquired, this method returns null immediately.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">GuardedValue&lt;T&gt; TryLock(int millisecondsTimeout)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">millisecondsTimeout</span></td>
+        <td><p>The number of milliseconds to wait, <span class="xref">System.Threading.Timeout.Infinite</span> (-1) to wait indefinitely, or zero to test the state of the wait handle and return immediately.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InSync.GuardedValue-1.html">GuardedValue</a>&lt;T&gt;</td>
+        <td><p>Null if the lock is not acquired.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InSync.LockException.html">LockException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="InSync_ISynchronized_1_TryLock_" data-uid="InSync.ISynchronized`1.TryLock*"></a>
+  <h4 id="InSync_ISynchronized_1_TryLock_System_TimeSpan_" data-uid="InSync.ISynchronized`1.TryLock(System.TimeSpan)">TryLock(TimeSpan)</h4>
+  <div class="markdown level1 summary"><p>Tries to lock and returns a guard to allow access of the protected object and unlocking. If the lock is not acquired, this method returns null immediately.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">GuardedValue&lt;T&gt; TryLock(TimeSpan timeout)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.TimeSpan</span></td>
+        <td><span class="parametername">timeout</span></td>
+        <td><p>A <span class="xref">System.TimeSpan</span> that represents the number of milliseconds to wait, a <span class="xref">System.TimeSpan</span> that represents -1 milliseconds to wait indefinitely, or a <span class="xref">System.TimeSpan</span> that represents 0 milliseconds to test the wait handle and return immediately.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InSync.GuardedValue-1.html">GuardedValue</a>&lt;T&gt;</td>
+        <td><p>Null if the lock is not acquired.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InSync.LockException.html">LockException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="InSync_ISynchronized_1_TryWithLock_" data-uid="InSync.ISynchronized`1.TryWithLock*"></a>
+  <h4 id="InSync_ISynchronized_1_TryWithLock_System_Action__0__" data-uid="InSync.ISynchronized`1.TryWithLock(System.Action{`0})">TryWithLock(Action&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Tries to lock and performs the action then unlocks. If the lock is not acquired, this method returns immediately. If the action throws an exception, the lock is released automatically.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool TryWithLock(Action&lt;T&gt; action)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Action</span>&lt;T&gt;</td>
+        <td><span class="parametername">action</span></td>
+        <td><p>The protected object is supplied as the argument of the action</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> the action is performed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InSync.LockException.html">LockException</a></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="InSync.UnlockException.html">UnlockException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="InSync_ISynchronized_1_TryWithLock_" data-uid="InSync.ISynchronized`1.TryWithLock*"></a>
+  <h4 id="InSync_ISynchronized_1_TryWithLock_System_Int32_System_Action__0__" data-uid="InSync.ISynchronized`1.TryWithLock(System.Int32,System.Action{`0})">TryWithLock(Int32, Action&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Tries to lock and performs the action then unlocks. If the lock is not acquired, this method returns immediately. If the action throws an exception, the lock is released automatically.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool TryWithLock(int millisecondsTimeout, Action&lt;T&gt; action)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">millisecondsTimeout</span></td>
+        <td><p>The number of milliseconds to wait, <span class="xref">System.Threading.Timeout.Infinite</span> (-1) to wait indefinitely, or zero to test the state of the wait handle and return immediately.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Action</span>&lt;T&gt;</td>
+        <td><span class="parametername">action</span></td>
+        <td><p>The protected object is supplied as the argument of the action</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> the action is performed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InSync.LockException.html">LockException</a></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="InSync.UnlockException.html">UnlockException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="InSync_ISynchronized_1_TryWithLock_" data-uid="InSync.ISynchronized`1.TryWithLock*"></a>
+  <h4 id="InSync_ISynchronized_1_TryWithLock_System_TimeSpan_System_Action__0__" data-uid="InSync.ISynchronized`1.TryWithLock(System.TimeSpan,System.Action{`0})">TryWithLock(TimeSpan, Action&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Tries to lock and performs the action then unlocks. If the lock is not acquired, this method returns immediately. If the action throws an exception, the lock is released automatically.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool TryWithLock(TimeSpan timeout, Action&lt;T&gt; action)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.TimeSpan</span></td>
+        <td><span class="parametername">timeout</span></td>
+        <td><p>A <span class="xref">System.TimeSpan</span> that represents the number of milliseconds to wait, a <span class="xref">System.TimeSpan</span> that represents -1 milliseconds to wait indefinitely, or a <span class="xref">System.TimeSpan</span> that represents 0 milliseconds to test the wait handle and return immediately.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Action</span>&lt;T&gt;</td>
+        <td><span class="parametername">action</span></td>
+        <td><p>The protected object is supplied as the argument of the action</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> the action is performed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InSync.LockException.html">LockException</a></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="InSync.UnlockException.html">UnlockException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="InSync_ISynchronized_1_WithLock_" data-uid="InSync.ISynchronized`1.WithLock*"></a>
+  <h4 id="InSync_ISynchronized_1_WithLock_System_Action__0__" data-uid="InSync.ISynchronized`1.WithLock(System.Action{`0})">WithLock(Action&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Locks, performs the action then unlocks. If the action throws an exception, the lock is released automatically.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void WithLock(Action&lt;T&gt; action)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Action</span>&lt;T&gt;</td>
+        <td><span class="parametername">action</span></td>
+        <td><p>The protected object is supplied as the argument of the action</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InSync.LockException.html">LockException</a></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="InSync.UnlockException.html">UnlockException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="InSync_ISynchronized_1_WithLock_" data-uid="InSync.ISynchronized`1.WithLock*"></a>
+  <h4 id="InSync_ISynchronized_1_WithLock__1_System_Func__0___0__" data-uid="InSync.ISynchronized`1.WithLock``1(System.Func{`0,``0})">WithLock&lt;TResult&gt;(Func&lt;T, TResult&gt;)</h4>
+  <div class="markdown level1 summary"><p>Locks, call the function then unlocks. The returned value from the function is returned. If the function throws an exception, the lock is released automatically.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">TResult WithLock&lt;TResult&gt;(Func&lt;T, TResult&gt; func)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Func</span>&lt;T, TResult&gt;</td>
+        <td><span class="parametername">func</span></td>
+        <td><p>The protected object is supplied as the argument of the function. The returned value is returned by this method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TResult</span></td>
+        <td><p>The returned value from the function.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TResult</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InSync.LockException.html">LockException</a></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="InSync.UnlockException.html">UnlockException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

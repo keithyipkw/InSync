@@ -1,0 +1,2646 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: InSync
+  name: InSync
+  href: api/InSync.html
+  commentId: N:InSync
+  fullName: InSync
+  nameWithType: InSync
+- uid: InSync.AsyncSynchronized
+  name: AsyncSynchronized
+  href: api/InSync.AsyncSynchronized.html
+  commentId: T:InSync.AsyncSynchronized
+  fullName: InSync.AsyncSynchronized
+  nameWithType: AsyncSynchronized
+- uid: InSync.AsyncSynchronized.Create*
+  name: Create
+  href: api/InSync.AsyncSynchronized.html#InSync_AsyncSynchronized_Create_
+  commentId: Overload:InSync.AsyncSynchronized.Create
+  isSpec: "True"
+  fullName: InSync.AsyncSynchronized.Create
+  nameWithType: AsyncSynchronized.Create
+- uid: InSync.AsyncSynchronized.Create``1(``0)
+  name: Create<T>(T)
+  href: api/InSync.AsyncSynchronized.html#InSync_AsyncSynchronized_Create__1___0_
+  commentId: M:InSync.AsyncSynchronized.Create``1(``0)
+  name.vb: Create(Of T)(T)
+  fullName: InSync.AsyncSynchronized.Create<T>(T)
+  fullName.vb: InSync.AsyncSynchronized.Create(Of T)(T)
+  nameWithType: AsyncSynchronized.Create<T>(T)
+  nameWithType.vb: AsyncSynchronized.Create(Of T)(T)
+- uid: InSync.AsyncSynchronized.Create``1(System.Threading.SemaphoreSlim,``0)
+  name: Create<T>(SemaphoreSlim, T)
+  href: api/InSync.AsyncSynchronized.html#InSync_AsyncSynchronized_Create__1_System_Threading_SemaphoreSlim___0_
+  commentId: M:InSync.AsyncSynchronized.Create``1(System.Threading.SemaphoreSlim,``0)
+  name.vb: Create(Of T)(SemaphoreSlim, T)
+  fullName: InSync.AsyncSynchronized.Create<T>(System.Threading.SemaphoreSlim, T)
+  fullName.vb: InSync.AsyncSynchronized.Create(Of T)(System.Threading.SemaphoreSlim, T)
+  nameWithType: AsyncSynchronized.Create<T>(SemaphoreSlim, T)
+  nameWithType.vb: AsyncSynchronized.Create(Of T)(SemaphoreSlim, T)
+- uid: InSync.AsyncSynchronized`1
+  name: AsyncSynchronized<T>
+  href: api/InSync.AsyncSynchronized-1.html
+  commentId: T:InSync.AsyncSynchronized`1
+  name.vb: AsyncSynchronized(Of T)
+  fullName: InSync.AsyncSynchronized<T>
+  fullName.vb: InSync.AsyncSynchronized(Of T)
+  nameWithType: AsyncSynchronized<T>
+  nameWithType.vb: AsyncSynchronized(Of T)
+- uid: InSync.AsyncSynchronized`1.#ctor(System.Threading.SemaphoreSlim,`0)
+  name: AsyncSynchronized(SemaphoreSlim, T)
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1__ctor_System_Threading_SemaphoreSlim__0_
+  commentId: M:InSync.AsyncSynchronized`1.#ctor(System.Threading.SemaphoreSlim,`0)
+  fullName: InSync.AsyncSynchronized<T>.AsyncSynchronized(System.Threading.SemaphoreSlim, T)
+  fullName.vb: InSync.AsyncSynchronized(Of T).AsyncSynchronized(System.Threading.SemaphoreSlim, T)
+  nameWithType: AsyncSynchronized<T>.AsyncSynchronized(SemaphoreSlim, T)
+  nameWithType.vb: AsyncSynchronized(Of T).AsyncSynchronized(SemaphoreSlim, T)
+- uid: InSync.AsyncSynchronized`1.#ctor*
+  name: AsyncSynchronized
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1__ctor_
+  commentId: Overload:InSync.AsyncSynchronized`1.#ctor
+  isSpec: "True"
+  fullName: InSync.AsyncSynchronized<T>.AsyncSynchronized
+  fullName.vb: InSync.AsyncSynchronized(Of T).AsyncSynchronized
+  nameWithType: AsyncSynchronized<T>.AsyncSynchronized
+  nameWithType.vb: AsyncSynchronized(Of T).AsyncSynchronized
+- uid: InSync.AsyncSynchronized`1.BarelyLock
+  name: BarelyLock()
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_BarelyLock
+  commentId: M:InSync.AsyncSynchronized`1.BarelyLock
+  fullName: InSync.AsyncSynchronized<T>.BarelyLock()
+  fullName.vb: InSync.AsyncSynchronized(Of T).BarelyLock()
+  nameWithType: AsyncSynchronized<T>.BarelyLock()
+  nameWithType.vb: AsyncSynchronized(Of T).BarelyLock()
+- uid: InSync.AsyncSynchronized`1.BarelyLock*
+  name: BarelyLock
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_BarelyLock_
+  commentId: Overload:InSync.AsyncSynchronized`1.BarelyLock
+  isSpec: "True"
+  fullName: InSync.AsyncSynchronized<T>.BarelyLock
+  fullName.vb: InSync.AsyncSynchronized(Of T).BarelyLock
+  nameWithType: AsyncSynchronized<T>.BarelyLock
+  nameWithType.vb: AsyncSynchronized(Of T).BarelyLock
+- uid: InSync.AsyncSynchronized`1.BarelyLockAsync
+  name: BarelyLockAsync()
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_BarelyLockAsync
+  commentId: M:InSync.AsyncSynchronized`1.BarelyLockAsync
+  fullName: InSync.AsyncSynchronized<T>.BarelyLockAsync()
+  fullName.vb: InSync.AsyncSynchronized(Of T).BarelyLockAsync()
+  nameWithType: AsyncSynchronized<T>.BarelyLockAsync()
+  nameWithType.vb: AsyncSynchronized(Of T).BarelyLockAsync()
+- uid: InSync.AsyncSynchronized`1.BarelyLockAsync(System.Threading.CancellationToken)
+  name: BarelyLockAsync(CancellationToken)
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_BarelyLockAsync_System_Threading_CancellationToken_
+  commentId: M:InSync.AsyncSynchronized`1.BarelyLockAsync(System.Threading.CancellationToken)
+  fullName: InSync.AsyncSynchronized<T>.BarelyLockAsync(System.Threading.CancellationToken)
+  fullName.vb: InSync.AsyncSynchronized(Of T).BarelyLockAsync(System.Threading.CancellationToken)
+  nameWithType: AsyncSynchronized<T>.BarelyLockAsync(CancellationToken)
+  nameWithType.vb: AsyncSynchronized(Of T).BarelyLockAsync(CancellationToken)
+- uid: InSync.AsyncSynchronized`1.BarelyLockAsync*
+  name: BarelyLockAsync
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_BarelyLockAsync_
+  commentId: Overload:InSync.AsyncSynchronized`1.BarelyLockAsync
+  isSpec: "True"
+  fullName: InSync.AsyncSynchronized<T>.BarelyLockAsync
+  fullName.vb: InSync.AsyncSynchronized(Of T).BarelyLockAsync
+  nameWithType: AsyncSynchronized<T>.BarelyLockAsync
+  nameWithType.vb: AsyncSynchronized(Of T).BarelyLockAsync
+- uid: InSync.AsyncSynchronized`1.BarelyTryLock(`0@)
+  name: BarelyTryLock(out T)
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_BarelyTryLock__0__
+  commentId: M:InSync.AsyncSynchronized`1.BarelyTryLock(`0@)
+  name.vb: BarelyTryLock(ByRef T)
+  fullName: InSync.AsyncSynchronized<T>.BarelyTryLock(out T)
+  fullName.vb: InSync.AsyncSynchronized(Of T).BarelyTryLock(ByRef T)
+  nameWithType: AsyncSynchronized<T>.BarelyTryLock(out T)
+  nameWithType.vb: AsyncSynchronized(Of T).BarelyTryLock(ByRef T)
+- uid: InSync.AsyncSynchronized`1.BarelyTryLock(System.Int32,`0@)
+  name: BarelyTryLock(Int32, out T)
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_BarelyTryLock_System_Int32__0__
+  commentId: M:InSync.AsyncSynchronized`1.BarelyTryLock(System.Int32,`0@)
+  name.vb: BarelyTryLock(Int32, ByRef T)
+  fullName: InSync.AsyncSynchronized<T>.BarelyTryLock(System.Int32, out T)
+  fullName.vb: InSync.AsyncSynchronized(Of T).BarelyTryLock(System.Int32, ByRef T)
+  nameWithType: AsyncSynchronized<T>.BarelyTryLock(Int32, out T)
+  nameWithType.vb: AsyncSynchronized(Of T).BarelyTryLock(Int32, ByRef T)
+- uid: InSync.AsyncSynchronized`1.BarelyTryLock(System.TimeSpan,`0@)
+  name: BarelyTryLock(TimeSpan, out T)
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_BarelyTryLock_System_TimeSpan__0__
+  commentId: M:InSync.AsyncSynchronized`1.BarelyTryLock(System.TimeSpan,`0@)
+  name.vb: BarelyTryLock(TimeSpan, ByRef T)
+  fullName: InSync.AsyncSynchronized<T>.BarelyTryLock(System.TimeSpan, out T)
+  fullName.vb: InSync.AsyncSynchronized(Of T).BarelyTryLock(System.TimeSpan, ByRef T)
+  nameWithType: AsyncSynchronized<T>.BarelyTryLock(TimeSpan, out T)
+  nameWithType.vb: AsyncSynchronized(Of T).BarelyTryLock(TimeSpan, ByRef T)
+- uid: InSync.AsyncSynchronized`1.BarelyTryLock*
+  name: BarelyTryLock
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_BarelyTryLock_
+  commentId: Overload:InSync.AsyncSynchronized`1.BarelyTryLock
+  isSpec: "True"
+  fullName: InSync.AsyncSynchronized<T>.BarelyTryLock
+  fullName.vb: InSync.AsyncSynchronized(Of T).BarelyTryLock
+  nameWithType: AsyncSynchronized<T>.BarelyTryLock
+  nameWithType.vb: AsyncSynchronized(Of T).BarelyTryLock
+- uid: InSync.AsyncSynchronized`1.BarelyUnlock
+  name: BarelyUnlock()
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_BarelyUnlock
+  commentId: M:InSync.AsyncSynchronized`1.BarelyUnlock
+  fullName: InSync.AsyncSynchronized<T>.BarelyUnlock()
+  fullName.vb: InSync.AsyncSynchronized(Of T).BarelyUnlock()
+  nameWithType: AsyncSynchronized<T>.BarelyUnlock()
+  nameWithType.vb: AsyncSynchronized(Of T).BarelyUnlock()
+- uid: InSync.AsyncSynchronized`1.BarelyUnlock*
+  name: BarelyUnlock
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_BarelyUnlock_
+  commentId: Overload:InSync.AsyncSynchronized`1.BarelyUnlock
+  isSpec: "True"
+  fullName: InSync.AsyncSynchronized<T>.BarelyUnlock
+  fullName.vb: InSync.AsyncSynchronized(Of T).BarelyUnlock
+  nameWithType: AsyncSynchronized<T>.BarelyUnlock
+  nameWithType.vb: AsyncSynchronized(Of T).BarelyUnlock
+- uid: InSync.AsyncSynchronized`1.InSync#IBareAsyncLock#BarelyLockAsync
+  name: IBareAsyncLock.BarelyLockAsync()
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_InSync_IBareAsyncLock_BarelyLockAsync
+  commentId: M:InSync.AsyncSynchronized`1.InSync#IBareAsyncLock#BarelyLockAsync
+  name.vb: InSync.IBareAsyncLock.BarelyLockAsync()
+  fullName: InSync.AsyncSynchronized<T>.InSync.IBareAsyncLock.BarelyLockAsync()
+  fullName.vb: InSync.AsyncSynchronized(Of T).InSync.IBareAsyncLock.BarelyLockAsync()
+  nameWithType: AsyncSynchronized<T>.IBareAsyncLock.BarelyLockAsync()
+  nameWithType.vb: AsyncSynchronized(Of T).InSync.IBareAsyncLock.BarelyLockAsync()
+- uid: InSync.AsyncSynchronized`1.InSync#IBareAsyncLock#BarelyLockAsync(System.Threading.CancellationToken)
+  name: IBareAsyncLock.BarelyLockAsync(CancellationToken)
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_InSync_IBareAsyncLock_BarelyLockAsync_System_Threading_CancellationToken_
+  commentId: M:InSync.AsyncSynchronized`1.InSync#IBareAsyncLock#BarelyLockAsync(System.Threading.CancellationToken)
+  name.vb: InSync.IBareAsyncLock.BarelyLockAsync(CancellationToken)
+  fullName: InSync.AsyncSynchronized<T>.InSync.IBareAsyncLock.BarelyLockAsync(System.Threading.CancellationToken)
+  fullName.vb: InSync.AsyncSynchronized(Of T).InSync.IBareAsyncLock.BarelyLockAsync(System.Threading.CancellationToken)
+  nameWithType: AsyncSynchronized<T>.IBareAsyncLock.BarelyLockAsync(CancellationToken)
+  nameWithType.vb: AsyncSynchronized(Of T).InSync.IBareAsyncLock.BarelyLockAsync(CancellationToken)
+- uid: InSync.AsyncSynchronized`1.InSync#IBareAsyncLock#BarelyLockAsync*
+  name: IBareAsyncLock.BarelyLockAsync
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_InSync_IBareAsyncLock_BarelyLockAsync_
+  commentId: Overload:InSync.AsyncSynchronized`1.InSync#IBareAsyncLock#BarelyLockAsync
+  isSpec: "True"
+  name.vb: InSync.IBareAsyncLock.BarelyLockAsync
+  fullName: InSync.AsyncSynchronized<T>.InSync.IBareAsyncLock.BarelyLockAsync
+  fullName.vb: InSync.AsyncSynchronized(Of T).InSync.IBareAsyncLock.BarelyLockAsync
+  nameWithType: AsyncSynchronized<T>.IBareAsyncLock.BarelyLockAsync
+  nameWithType.vb: AsyncSynchronized(Of T).InSync.IBareAsyncLock.BarelyLockAsync
+- uid: InSync.AsyncSynchronized`1.InSync#IBareAsyncLock#BarelyTryLock(System.Object@)
+  name: IBareAsyncLock.BarelyTryLock(out Object)
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_InSync_IBareAsyncLock_BarelyTryLock_System_Object__
+  commentId: M:InSync.AsyncSynchronized`1.InSync#IBareAsyncLock#BarelyTryLock(System.Object@)
+  name.vb: InSync.IBareAsyncLock.BarelyTryLock(ByRef Object)
+  fullName: InSync.AsyncSynchronized<T>.InSync.IBareAsyncLock.BarelyTryLock(out System.Object)
+  fullName.vb: InSync.AsyncSynchronized(Of T).InSync.IBareAsyncLock.BarelyTryLock(ByRef System.Object)
+  nameWithType: AsyncSynchronized<T>.IBareAsyncLock.BarelyTryLock(out Object)
+  nameWithType.vb: AsyncSynchronized(Of T).InSync.IBareAsyncLock.BarelyTryLock(ByRef Object)
+- uid: InSync.AsyncSynchronized`1.InSync#IBareAsyncLock#BarelyTryLock*
+  name: IBareAsyncLock.BarelyTryLock
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_InSync_IBareAsyncLock_BarelyTryLock_
+  commentId: Overload:InSync.AsyncSynchronized`1.InSync#IBareAsyncLock#BarelyTryLock
+  isSpec: "True"
+  name.vb: InSync.IBareAsyncLock.BarelyTryLock
+  fullName: InSync.AsyncSynchronized<T>.InSync.IBareAsyncLock.BarelyTryLock
+  fullName.vb: InSync.AsyncSynchronized(Of T).InSync.IBareAsyncLock.BarelyTryLock
+  nameWithType: AsyncSynchronized<T>.IBareAsyncLock.BarelyTryLock
+  nameWithType.vb: AsyncSynchronized(Of T).InSync.IBareAsyncLock.BarelyTryLock
+- uid: InSync.AsyncSynchronized`1.InSync#IBareLock#BarelyLock
+  name: IBareLock.BarelyLock()
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_InSync_IBareLock_BarelyLock
+  commentId: M:InSync.AsyncSynchronized`1.InSync#IBareLock#BarelyLock
+  name.vb: InSync.IBareLock.BarelyLock()
+  fullName: InSync.AsyncSynchronized<T>.InSync.IBareLock.BarelyLock()
+  fullName.vb: InSync.AsyncSynchronized(Of T).InSync.IBareLock.BarelyLock()
+  nameWithType: AsyncSynchronized<T>.IBareLock.BarelyLock()
+  nameWithType.vb: AsyncSynchronized(Of T).InSync.IBareLock.BarelyLock()
+- uid: InSync.AsyncSynchronized`1.InSync#IBareLock#BarelyLock*
+  name: IBareLock.BarelyLock
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_InSync_IBareLock_BarelyLock_
+  commentId: Overload:InSync.AsyncSynchronized`1.InSync#IBareLock#BarelyLock
+  isSpec: "True"
+  name.vb: InSync.IBareLock.BarelyLock
+  fullName: InSync.AsyncSynchronized<T>.InSync.IBareLock.BarelyLock
+  fullName.vb: InSync.AsyncSynchronized(Of T).InSync.IBareLock.BarelyLock
+  nameWithType: AsyncSynchronized<T>.IBareLock.BarelyLock
+  nameWithType.vb: AsyncSynchronized(Of T).InSync.IBareLock.BarelyLock
+- uid: InSync.AsyncSynchronized`1.InSync#IBareLock#BarelyTryLock(System.Int32,System.Object@)
+  name: IBareLock.BarelyTryLock(Int32, out Object)
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_InSync_IBareLock_BarelyTryLock_System_Int32_System_Object__
+  commentId: M:InSync.AsyncSynchronized`1.InSync#IBareLock#BarelyTryLock(System.Int32,System.Object@)
+  name.vb: InSync.IBareLock.BarelyTryLock(Int32, ByRef Object)
+  fullName: InSync.AsyncSynchronized<T>.InSync.IBareLock.BarelyTryLock(System.Int32, out System.Object)
+  fullName.vb: InSync.AsyncSynchronized(Of T).InSync.IBareLock.BarelyTryLock(System.Int32, ByRef System.Object)
+  nameWithType: AsyncSynchronized<T>.IBareLock.BarelyTryLock(Int32, out Object)
+  nameWithType.vb: AsyncSynchronized(Of T).InSync.IBareLock.BarelyTryLock(Int32, ByRef Object)
+- uid: InSync.AsyncSynchronized`1.InSync#IBareLock#BarelyTryLock(System.Object@)
+  name: IBareLock.BarelyTryLock(out Object)
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_InSync_IBareLock_BarelyTryLock_System_Object__
+  commentId: M:InSync.AsyncSynchronized`1.InSync#IBareLock#BarelyTryLock(System.Object@)
+  name.vb: InSync.IBareLock.BarelyTryLock(ByRef Object)
+  fullName: InSync.AsyncSynchronized<T>.InSync.IBareLock.BarelyTryLock(out System.Object)
+  fullName.vb: InSync.AsyncSynchronized(Of T).InSync.IBareLock.BarelyTryLock(ByRef System.Object)
+  nameWithType: AsyncSynchronized<T>.IBareLock.BarelyTryLock(out Object)
+  nameWithType.vb: AsyncSynchronized(Of T).InSync.IBareLock.BarelyTryLock(ByRef Object)
+- uid: InSync.AsyncSynchronized`1.InSync#IBareLock#BarelyTryLock(System.TimeSpan,System.Object@)
+  name: IBareLock.BarelyTryLock(TimeSpan, out Object)
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_InSync_IBareLock_BarelyTryLock_System_TimeSpan_System_Object__
+  commentId: M:InSync.AsyncSynchronized`1.InSync#IBareLock#BarelyTryLock(System.TimeSpan,System.Object@)
+  name.vb: InSync.IBareLock.BarelyTryLock(TimeSpan, ByRef Object)
+  fullName: InSync.AsyncSynchronized<T>.InSync.IBareLock.BarelyTryLock(System.TimeSpan, out System.Object)
+  fullName.vb: InSync.AsyncSynchronized(Of T).InSync.IBareLock.BarelyTryLock(System.TimeSpan, ByRef System.Object)
+  nameWithType: AsyncSynchronized<T>.IBareLock.BarelyTryLock(TimeSpan, out Object)
+  nameWithType.vb: AsyncSynchronized(Of T).InSync.IBareLock.BarelyTryLock(TimeSpan, ByRef Object)
+- uid: InSync.AsyncSynchronized`1.InSync#IBareLock#BarelyTryLock*
+  name: IBareLock.BarelyTryLock
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_InSync_IBareLock_BarelyTryLock_
+  commentId: Overload:InSync.AsyncSynchronized`1.InSync#IBareLock#BarelyTryLock
+  isSpec: "True"
+  name.vb: InSync.IBareLock.BarelyTryLock
+  fullName: InSync.AsyncSynchronized<T>.InSync.IBareLock.BarelyTryLock
+  fullName.vb: InSync.AsyncSynchronized(Of T).InSync.IBareLock.BarelyTryLock
+  nameWithType: AsyncSynchronized<T>.IBareLock.BarelyTryLock
+  nameWithType.vb: AsyncSynchronized(Of T).InSync.IBareLock.BarelyTryLock
+- uid: InSync.AsyncSynchronized`1.Lock
+  name: Lock()
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_Lock
+  commentId: M:InSync.AsyncSynchronized`1.Lock
+  fullName: InSync.AsyncSynchronized<T>.Lock()
+  fullName.vb: InSync.AsyncSynchronized(Of T).Lock()
+  nameWithType: AsyncSynchronized<T>.Lock()
+  nameWithType.vb: AsyncSynchronized(Of T).Lock()
+- uid: InSync.AsyncSynchronized`1.Lock*
+  name: Lock
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_Lock_
+  commentId: Overload:InSync.AsyncSynchronized`1.Lock
+  isSpec: "True"
+  fullName: InSync.AsyncSynchronized<T>.Lock
+  fullName.vb: InSync.AsyncSynchronized(Of T).Lock
+  nameWithType: AsyncSynchronized<T>.Lock
+  nameWithType.vb: AsyncSynchronized(Of T).Lock
+- uid: InSync.AsyncSynchronized`1.LockAsync
+  name: LockAsync()
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_LockAsync
+  commentId: M:InSync.AsyncSynchronized`1.LockAsync
+  fullName: InSync.AsyncSynchronized<T>.LockAsync()
+  fullName.vb: InSync.AsyncSynchronized(Of T).LockAsync()
+  nameWithType: AsyncSynchronized<T>.LockAsync()
+  nameWithType.vb: AsyncSynchronized(Of T).LockAsync()
+- uid: InSync.AsyncSynchronized`1.LockAsync(System.Threading.CancellationToken)
+  name: LockAsync(CancellationToken)
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_LockAsync_System_Threading_CancellationToken_
+  commentId: M:InSync.AsyncSynchronized`1.LockAsync(System.Threading.CancellationToken)
+  fullName: InSync.AsyncSynchronized<T>.LockAsync(System.Threading.CancellationToken)
+  fullName.vb: InSync.AsyncSynchronized(Of T).LockAsync(System.Threading.CancellationToken)
+  nameWithType: AsyncSynchronized<T>.LockAsync(CancellationToken)
+  nameWithType.vb: AsyncSynchronized(Of T).LockAsync(CancellationToken)
+- uid: InSync.AsyncSynchronized`1.LockAsync*
+  name: LockAsync
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_LockAsync_
+  commentId: Overload:InSync.AsyncSynchronized`1.LockAsync
+  isSpec: "True"
+  fullName: InSync.AsyncSynchronized<T>.LockAsync
+  fullName.vb: InSync.AsyncSynchronized(Of T).LockAsync
+  nameWithType: AsyncSynchronized<T>.LockAsync
+  nameWithType.vb: AsyncSynchronized(Of T).LockAsync
+- uid: InSync.AsyncSynchronized`1.semaphore
+  name: semaphore
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_semaphore
+  commentId: F:InSync.AsyncSynchronized`1.semaphore
+  fullName: InSync.AsyncSynchronized<T>.semaphore
+  fullName.vb: InSync.AsyncSynchronized(Of T).semaphore
+  nameWithType: AsyncSynchronized<T>.semaphore
+  nameWithType.vb: AsyncSynchronized(Of T).semaphore
+- uid: InSync.AsyncSynchronized`1.TryLock
+  name: TryLock()
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_TryLock
+  commentId: M:InSync.AsyncSynchronized`1.TryLock
+  fullName: InSync.AsyncSynchronized<T>.TryLock()
+  fullName.vb: InSync.AsyncSynchronized(Of T).TryLock()
+  nameWithType: AsyncSynchronized<T>.TryLock()
+  nameWithType.vb: AsyncSynchronized(Of T).TryLock()
+- uid: InSync.AsyncSynchronized`1.TryLock(System.Int32)
+  name: TryLock(Int32)
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_TryLock_System_Int32_
+  commentId: M:InSync.AsyncSynchronized`1.TryLock(System.Int32)
+  fullName: InSync.AsyncSynchronized<T>.TryLock(System.Int32)
+  fullName.vb: InSync.AsyncSynchronized(Of T).TryLock(System.Int32)
+  nameWithType: AsyncSynchronized<T>.TryLock(Int32)
+  nameWithType.vb: AsyncSynchronized(Of T).TryLock(Int32)
+- uid: InSync.AsyncSynchronized`1.TryLock(System.TimeSpan)
+  name: TryLock(TimeSpan)
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_TryLock_System_TimeSpan_
+  commentId: M:InSync.AsyncSynchronized`1.TryLock(System.TimeSpan)
+  fullName: InSync.AsyncSynchronized<T>.TryLock(System.TimeSpan)
+  fullName.vb: InSync.AsyncSynchronized(Of T).TryLock(System.TimeSpan)
+  nameWithType: AsyncSynchronized<T>.TryLock(TimeSpan)
+  nameWithType.vb: AsyncSynchronized(Of T).TryLock(TimeSpan)
+- uid: InSync.AsyncSynchronized`1.TryLock*
+  name: TryLock
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_TryLock_
+  commentId: Overload:InSync.AsyncSynchronized`1.TryLock
+  isSpec: "True"
+  fullName: InSync.AsyncSynchronized<T>.TryLock
+  fullName.vb: InSync.AsyncSynchronized(Of T).TryLock
+  nameWithType: AsyncSynchronized<T>.TryLock
+  nameWithType.vb: AsyncSynchronized(Of T).TryLock
+- uid: InSync.AsyncSynchronized`1.TryWithLock(System.Action{`0})
+  name: TryWithLock(Action<T>)
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_TryWithLock_System_Action__0__
+  commentId: M:InSync.AsyncSynchronized`1.TryWithLock(System.Action{`0})
+  name.vb: TryWithLock(Action(Of T))
+  fullName: InSync.AsyncSynchronized<T>.TryWithLock(System.Action<T>)
+  fullName.vb: InSync.AsyncSynchronized(Of T).TryWithLock(System.Action(Of T))
+  nameWithType: AsyncSynchronized<T>.TryWithLock(Action<T>)
+  nameWithType.vb: AsyncSynchronized(Of T).TryWithLock(Action(Of T))
+- uid: InSync.AsyncSynchronized`1.TryWithLock(System.Int32,System.Action{`0})
+  name: TryWithLock(Int32, Action<T>)
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_TryWithLock_System_Int32_System_Action__0__
+  commentId: M:InSync.AsyncSynchronized`1.TryWithLock(System.Int32,System.Action{`0})
+  name.vb: TryWithLock(Int32, Action(Of T))
+  fullName: InSync.AsyncSynchronized<T>.TryWithLock(System.Int32, System.Action<T>)
+  fullName.vb: InSync.AsyncSynchronized(Of T).TryWithLock(System.Int32, System.Action(Of T))
+  nameWithType: AsyncSynchronized<T>.TryWithLock(Int32, Action<T>)
+  nameWithType.vb: AsyncSynchronized(Of T).TryWithLock(Int32, Action(Of T))
+- uid: InSync.AsyncSynchronized`1.TryWithLock(System.TimeSpan,System.Action{`0})
+  name: TryWithLock(TimeSpan, Action<T>)
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_TryWithLock_System_TimeSpan_System_Action__0__
+  commentId: M:InSync.AsyncSynchronized`1.TryWithLock(System.TimeSpan,System.Action{`0})
+  name.vb: TryWithLock(TimeSpan, Action(Of T))
+  fullName: InSync.AsyncSynchronized<T>.TryWithLock(System.TimeSpan, System.Action<T>)
+  fullName.vb: InSync.AsyncSynchronized(Of T).TryWithLock(System.TimeSpan, System.Action(Of T))
+  nameWithType: AsyncSynchronized<T>.TryWithLock(TimeSpan, Action<T>)
+  nameWithType.vb: AsyncSynchronized(Of T).TryWithLock(TimeSpan, Action(Of T))
+- uid: InSync.AsyncSynchronized`1.TryWithLock*
+  name: TryWithLock
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_TryWithLock_
+  commentId: Overload:InSync.AsyncSynchronized`1.TryWithLock
+  isSpec: "True"
+  fullName: InSync.AsyncSynchronized<T>.TryWithLock
+  fullName.vb: InSync.AsyncSynchronized(Of T).TryWithLock
+  nameWithType: AsyncSynchronized<T>.TryWithLock
+  nameWithType.vb: AsyncSynchronized(Of T).TryWithLock
+- uid: InSync.AsyncSynchronized`1.value
+  name: value
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_value
+  commentId: F:InSync.AsyncSynchronized`1.value
+  fullName: InSync.AsyncSynchronized<T>.value
+  fullName.vb: InSync.AsyncSynchronized(Of T).value
+  nameWithType: AsyncSynchronized<T>.value
+  nameWithType.vb: AsyncSynchronized(Of T).value
+- uid: InSync.AsyncSynchronized`1.WithLock(System.Action{`0})
+  name: WithLock(Action<T>)
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_WithLock_System_Action__0__
+  commentId: M:InSync.AsyncSynchronized`1.WithLock(System.Action{`0})
+  name.vb: WithLock(Action(Of T))
+  fullName: InSync.AsyncSynchronized<T>.WithLock(System.Action<T>)
+  fullName.vb: InSync.AsyncSynchronized(Of T).WithLock(System.Action(Of T))
+  nameWithType: AsyncSynchronized<T>.WithLock(Action<T>)
+  nameWithType.vb: AsyncSynchronized(Of T).WithLock(Action(Of T))
+- uid: InSync.AsyncSynchronized`1.WithLock*
+  name: WithLock
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_WithLock_
+  commentId: Overload:InSync.AsyncSynchronized`1.WithLock
+  isSpec: "True"
+  fullName: InSync.AsyncSynchronized<T>.WithLock
+  fullName.vb: InSync.AsyncSynchronized(Of T).WithLock
+  nameWithType: AsyncSynchronized<T>.WithLock
+  nameWithType.vb: AsyncSynchronized(Of T).WithLock
+- uid: InSync.AsyncSynchronized`1.WithLock``1(System.Func{`0,``0})
+  name: WithLock<TResult>(Func<T, TResult>)
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_WithLock__1_System_Func__0___0__
+  commentId: M:InSync.AsyncSynchronized`1.WithLock``1(System.Func{`0,``0})
+  name.vb: WithLock(Of TResult)(Func(Of T, TResult))
+  fullName: InSync.AsyncSynchronized<T>.WithLock<TResult>(System.Func<T, TResult>)
+  fullName.vb: InSync.AsyncSynchronized(Of T).WithLock(Of TResult)(System.Func(Of T, TResult))
+  nameWithType: AsyncSynchronized<T>.WithLock<TResult>(Func<T, TResult>)
+  nameWithType.vb: AsyncSynchronized(Of T).WithLock(Of TResult)(Func(Of T, TResult))
+- uid: InSync.AsyncSynchronized`1.WithLockAsync(System.Action{`0})
+  name: WithLockAsync(Action<T>)
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_WithLockAsync_System_Action__0__
+  commentId: M:InSync.AsyncSynchronized`1.WithLockAsync(System.Action{`0})
+  name.vb: WithLockAsync(Action(Of T))
+  fullName: InSync.AsyncSynchronized<T>.WithLockAsync(System.Action<T>)
+  fullName.vb: InSync.AsyncSynchronized(Of T).WithLockAsync(System.Action(Of T))
+  nameWithType: AsyncSynchronized<T>.WithLockAsync(Action<T>)
+  nameWithType.vb: AsyncSynchronized(Of T).WithLockAsync(Action(Of T))
+- uid: InSync.AsyncSynchronized`1.WithLockAsync(System.Action{`0},System.Boolean)
+  name: WithLockAsync(Action<T>, Boolean)
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_WithLockAsync_System_Action__0__System_Boolean_
+  commentId: M:InSync.AsyncSynchronized`1.WithLockAsync(System.Action{`0},System.Boolean)
+  name.vb: WithLockAsync(Action(Of T), Boolean)
+  fullName: InSync.AsyncSynchronized<T>.WithLockAsync(System.Action<T>, System.Boolean)
+  fullName.vb: InSync.AsyncSynchronized(Of T).WithLockAsync(System.Action(Of T), System.Boolean)
+  nameWithType: AsyncSynchronized<T>.WithLockAsync(Action<T>, Boolean)
+  nameWithType.vb: AsyncSynchronized(Of T).WithLockAsync(Action(Of T), Boolean)
+- uid: InSync.AsyncSynchronized`1.WithLockAsync(System.Action{`0},System.Threading.CancellationToken)
+  name: WithLockAsync(Action<T>, CancellationToken)
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_WithLockAsync_System_Action__0__System_Threading_CancellationToken_
+  commentId: M:InSync.AsyncSynchronized`1.WithLockAsync(System.Action{`0},System.Threading.CancellationToken)
+  name.vb: WithLockAsync(Action(Of T), CancellationToken)
+  fullName: InSync.AsyncSynchronized<T>.WithLockAsync(System.Action<T>, System.Threading.CancellationToken)
+  fullName.vb: InSync.AsyncSynchronized(Of T).WithLockAsync(System.Action(Of T), System.Threading.CancellationToken)
+  nameWithType: AsyncSynchronized<T>.WithLockAsync(Action<T>, CancellationToken)
+  nameWithType.vb: AsyncSynchronized(Of T).WithLockAsync(Action(Of T), CancellationToken)
+- uid: InSync.AsyncSynchronized`1.WithLockAsync(System.Action{`0},System.Threading.CancellationToken,System.Boolean)
+  name: WithLockAsync(Action<T>, CancellationToken, Boolean)
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_WithLockAsync_System_Action__0__System_Threading_CancellationToken_System_Boolean_
+  commentId: M:InSync.AsyncSynchronized`1.WithLockAsync(System.Action{`0},System.Threading.CancellationToken,System.Boolean)
+  name.vb: WithLockAsync(Action(Of T), CancellationToken, Boolean)
+  fullName: InSync.AsyncSynchronized<T>.WithLockAsync(System.Action<T>, System.Threading.CancellationToken, System.Boolean)
+  fullName.vb: InSync.AsyncSynchronized(Of T).WithLockAsync(System.Action(Of T), System.Threading.CancellationToken, System.Boolean)
+  nameWithType: AsyncSynchronized<T>.WithLockAsync(Action<T>, CancellationToken, Boolean)
+  nameWithType.vb: AsyncSynchronized(Of T).WithLockAsync(Action(Of T), CancellationToken, Boolean)
+- uid: InSync.AsyncSynchronized`1.WithLockAsync(System.Func{`0,System.Threading.Tasks.Task})
+  name: WithLockAsync(Func<T, Task>)
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_WithLockAsync_System_Func__0_System_Threading_Tasks_Task__
+  commentId: M:InSync.AsyncSynchronized`1.WithLockAsync(System.Func{`0,System.Threading.Tasks.Task})
+  name.vb: WithLockAsync(Func(Of T, Task))
+  fullName: InSync.AsyncSynchronized<T>.WithLockAsync(System.Func<T, System.Threading.Tasks.Task>)
+  fullName.vb: InSync.AsyncSynchronized(Of T).WithLockAsync(System.Func(Of T, System.Threading.Tasks.Task))
+  nameWithType: AsyncSynchronized<T>.WithLockAsync(Func<T, Task>)
+  nameWithType.vb: AsyncSynchronized(Of T).WithLockAsync(Func(Of T, Task))
+- uid: InSync.AsyncSynchronized`1.WithLockAsync(System.Func{`0,System.Threading.Tasks.Task},System.Boolean)
+  name: WithLockAsync(Func<T, Task>, Boolean)
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_WithLockAsync_System_Func__0_System_Threading_Tasks_Task__System_Boolean_
+  commentId: M:InSync.AsyncSynchronized`1.WithLockAsync(System.Func{`0,System.Threading.Tasks.Task},System.Boolean)
+  name.vb: WithLockAsync(Func(Of T, Task), Boolean)
+  fullName: InSync.AsyncSynchronized<T>.WithLockAsync(System.Func<T, System.Threading.Tasks.Task>, System.Boolean)
+  fullName.vb: InSync.AsyncSynchronized(Of T).WithLockAsync(System.Func(Of T, System.Threading.Tasks.Task), System.Boolean)
+  nameWithType: AsyncSynchronized<T>.WithLockAsync(Func<T, Task>, Boolean)
+  nameWithType.vb: AsyncSynchronized(Of T).WithLockAsync(Func(Of T, Task), Boolean)
+- uid: InSync.AsyncSynchronized`1.WithLockAsync(System.Func{`0,System.Threading.Tasks.Task},System.Threading.CancellationToken)
+  name: WithLockAsync(Func<T, Task>, CancellationToken)
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_WithLockAsync_System_Func__0_System_Threading_Tasks_Task__System_Threading_CancellationToken_
+  commentId: M:InSync.AsyncSynchronized`1.WithLockAsync(System.Func{`0,System.Threading.Tasks.Task},System.Threading.CancellationToken)
+  name.vb: WithLockAsync(Func(Of T, Task), CancellationToken)
+  fullName: InSync.AsyncSynchronized<T>.WithLockAsync(System.Func<T, System.Threading.Tasks.Task>, System.Threading.CancellationToken)
+  fullName.vb: InSync.AsyncSynchronized(Of T).WithLockAsync(System.Func(Of T, System.Threading.Tasks.Task), System.Threading.CancellationToken)
+  nameWithType: AsyncSynchronized<T>.WithLockAsync(Func<T, Task>, CancellationToken)
+  nameWithType.vb: AsyncSynchronized(Of T).WithLockAsync(Func(Of T, Task), CancellationToken)
+- uid: InSync.AsyncSynchronized`1.WithLockAsync(System.Func{`0,System.Threading.Tasks.Task},System.Threading.CancellationToken,System.Boolean)
+  name: WithLockAsync(Func<T, Task>, CancellationToken, Boolean)
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_WithLockAsync_System_Func__0_System_Threading_Tasks_Task__System_Threading_CancellationToken_System_Boolean_
+  commentId: M:InSync.AsyncSynchronized`1.WithLockAsync(System.Func{`0,System.Threading.Tasks.Task},System.Threading.CancellationToken,System.Boolean)
+  name.vb: WithLockAsync(Func(Of T, Task), CancellationToken, Boolean)
+  fullName: InSync.AsyncSynchronized<T>.WithLockAsync(System.Func<T, System.Threading.Tasks.Task>, System.Threading.CancellationToken, System.Boolean)
+  fullName.vb: InSync.AsyncSynchronized(Of T).WithLockAsync(System.Func(Of T, System.Threading.Tasks.Task), System.Threading.CancellationToken, System.Boolean)
+  nameWithType: AsyncSynchronized<T>.WithLockAsync(Func<T, Task>, CancellationToken, Boolean)
+  nameWithType.vb: AsyncSynchronized(Of T).WithLockAsync(Func(Of T, Task), CancellationToken, Boolean)
+- uid: InSync.AsyncSynchronized`1.WithLockAsync*
+  name: WithLockAsync
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_WithLockAsync_
+  commentId: Overload:InSync.AsyncSynchronized`1.WithLockAsync
+  isSpec: "True"
+  fullName: InSync.AsyncSynchronized<T>.WithLockAsync
+  fullName.vb: InSync.AsyncSynchronized(Of T).WithLockAsync
+  nameWithType: AsyncSynchronized<T>.WithLockAsync
+  nameWithType.vb: AsyncSynchronized(Of T).WithLockAsync
+- uid: InSync.AsyncSynchronized`1.WithLockAsync``1(System.Func{`0,``0})
+  name: WithLockAsync<TResult>(Func<T, TResult>)
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_WithLockAsync__1_System_Func__0___0__
+  commentId: M:InSync.AsyncSynchronized`1.WithLockAsync``1(System.Func{`0,``0})
+  name.vb: WithLockAsync(Of TResult)(Func(Of T, TResult))
+  fullName: InSync.AsyncSynchronized<T>.WithLockAsync<TResult>(System.Func<T, TResult>)
+  fullName.vb: InSync.AsyncSynchronized(Of T).WithLockAsync(Of TResult)(System.Func(Of T, TResult))
+  nameWithType: AsyncSynchronized<T>.WithLockAsync<TResult>(Func<T, TResult>)
+  nameWithType.vb: AsyncSynchronized(Of T).WithLockAsync(Of TResult)(Func(Of T, TResult))
+- uid: InSync.AsyncSynchronized`1.WithLockAsync``1(System.Func{`0,``0},System.Boolean)
+  name: WithLockAsync<TResult>(Func<T, TResult>, Boolean)
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_WithLockAsync__1_System_Func__0___0__System_Boolean_
+  commentId: M:InSync.AsyncSynchronized`1.WithLockAsync``1(System.Func{`0,``0},System.Boolean)
+  name.vb: WithLockAsync(Of TResult)(Func(Of T, TResult), Boolean)
+  fullName: InSync.AsyncSynchronized<T>.WithLockAsync<TResult>(System.Func<T, TResult>, System.Boolean)
+  fullName.vb: InSync.AsyncSynchronized(Of T).WithLockAsync(Of TResult)(System.Func(Of T, TResult), System.Boolean)
+  nameWithType: AsyncSynchronized<T>.WithLockAsync<TResult>(Func<T, TResult>, Boolean)
+  nameWithType.vb: AsyncSynchronized(Of T).WithLockAsync(Of TResult)(Func(Of T, TResult), Boolean)
+- uid: InSync.AsyncSynchronized`1.WithLockAsync``1(System.Func{`0,``0},System.Threading.CancellationToken)
+  name: WithLockAsync<TResult>(Func<T, TResult>, CancellationToken)
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_WithLockAsync__1_System_Func__0___0__System_Threading_CancellationToken_
+  commentId: M:InSync.AsyncSynchronized`1.WithLockAsync``1(System.Func{`0,``0},System.Threading.CancellationToken)
+  name.vb: WithLockAsync(Of TResult)(Func(Of T, TResult), CancellationToken)
+  fullName: InSync.AsyncSynchronized<T>.WithLockAsync<TResult>(System.Func<T, TResult>, System.Threading.CancellationToken)
+  fullName.vb: InSync.AsyncSynchronized(Of T).WithLockAsync(Of TResult)(System.Func(Of T, TResult), System.Threading.CancellationToken)
+  nameWithType: AsyncSynchronized<T>.WithLockAsync<TResult>(Func<T, TResult>, CancellationToken)
+  nameWithType.vb: AsyncSynchronized(Of T).WithLockAsync(Of TResult)(Func(Of T, TResult), CancellationToken)
+- uid: InSync.AsyncSynchronized`1.WithLockAsync``1(System.Func{`0,``0},System.Threading.CancellationToken,System.Boolean)
+  name: WithLockAsync<TResult>(Func<T, TResult>, CancellationToken, Boolean)
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_WithLockAsync__1_System_Func__0___0__System_Threading_CancellationToken_System_Boolean_
+  commentId: M:InSync.AsyncSynchronized`1.WithLockAsync``1(System.Func{`0,``0},System.Threading.CancellationToken,System.Boolean)
+  name.vb: WithLockAsync(Of TResult)(Func(Of T, TResult), CancellationToken, Boolean)
+  fullName: InSync.AsyncSynchronized<T>.WithLockAsync<TResult>(System.Func<T, TResult>, System.Threading.CancellationToken, System.Boolean)
+  fullName.vb: InSync.AsyncSynchronized(Of T).WithLockAsync(Of TResult)(System.Func(Of T, TResult), System.Threading.CancellationToken, System.Boolean)
+  nameWithType: AsyncSynchronized<T>.WithLockAsync<TResult>(Func<T, TResult>, CancellationToken, Boolean)
+  nameWithType.vb: AsyncSynchronized(Of T).WithLockAsync(Of TResult)(Func(Of T, TResult), CancellationToken, Boolean)
+- uid: InSync.AsyncSynchronized`1.WithLockAsync``1(System.Func{`0,System.Threading.Tasks.Task{``0}})
+  name: WithLockAsync<TResult>(Func<T, Task<TResult>>)
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_WithLockAsync__1_System_Func__0_System_Threading_Tasks_Task___0___
+  commentId: M:InSync.AsyncSynchronized`1.WithLockAsync``1(System.Func{`0,System.Threading.Tasks.Task{``0}})
+  name.vb: WithLockAsync(Of TResult)(Func(Of T, Task(Of TResult)))
+  fullName: InSync.AsyncSynchronized<T>.WithLockAsync<TResult>(System.Func<T, System.Threading.Tasks.Task<TResult>>)
+  fullName.vb: InSync.AsyncSynchronized(Of T).WithLockAsync(Of TResult)(System.Func(Of T, System.Threading.Tasks.Task(Of TResult)))
+  nameWithType: AsyncSynchronized<T>.WithLockAsync<TResult>(Func<T, Task<TResult>>)
+  nameWithType.vb: AsyncSynchronized(Of T).WithLockAsync(Of TResult)(Func(Of T, Task(Of TResult)))
+- uid: InSync.AsyncSynchronized`1.WithLockAsync``1(System.Func{`0,System.Threading.Tasks.Task{``0}},System.Boolean)
+  name: WithLockAsync<TResult>(Func<T, Task<TResult>>, Boolean)
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_WithLockAsync__1_System_Func__0_System_Threading_Tasks_Task___0___System_Boolean_
+  commentId: M:InSync.AsyncSynchronized`1.WithLockAsync``1(System.Func{`0,System.Threading.Tasks.Task{``0}},System.Boolean)
+  name.vb: WithLockAsync(Of TResult)(Func(Of T, Task(Of TResult)), Boolean)
+  fullName: InSync.AsyncSynchronized<T>.WithLockAsync<TResult>(System.Func<T, System.Threading.Tasks.Task<TResult>>, System.Boolean)
+  fullName.vb: InSync.AsyncSynchronized(Of T).WithLockAsync(Of TResult)(System.Func(Of T, System.Threading.Tasks.Task(Of TResult)), System.Boolean)
+  nameWithType: AsyncSynchronized<T>.WithLockAsync<TResult>(Func<T, Task<TResult>>, Boolean)
+  nameWithType.vb: AsyncSynchronized(Of T).WithLockAsync(Of TResult)(Func(Of T, Task(Of TResult)), Boolean)
+- uid: InSync.AsyncSynchronized`1.WithLockAsync``1(System.Func{`0,System.Threading.Tasks.Task{``0}},System.Threading.CancellationToken)
+  name: WithLockAsync<TResult>(Func<T, Task<TResult>>, CancellationToken)
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_WithLockAsync__1_System_Func__0_System_Threading_Tasks_Task___0___System_Threading_CancellationToken_
+  commentId: M:InSync.AsyncSynchronized`1.WithLockAsync``1(System.Func{`0,System.Threading.Tasks.Task{``0}},System.Threading.CancellationToken)
+  name.vb: WithLockAsync(Of TResult)(Func(Of T, Task(Of TResult)), CancellationToken)
+  fullName: InSync.AsyncSynchronized<T>.WithLockAsync<TResult>(System.Func<T, System.Threading.Tasks.Task<TResult>>, System.Threading.CancellationToken)
+  fullName.vb: InSync.AsyncSynchronized(Of T).WithLockAsync(Of TResult)(System.Func(Of T, System.Threading.Tasks.Task(Of TResult)), System.Threading.CancellationToken)
+  nameWithType: AsyncSynchronized<T>.WithLockAsync<TResult>(Func<T, Task<TResult>>, CancellationToken)
+  nameWithType.vb: AsyncSynchronized(Of T).WithLockAsync(Of TResult)(Func(Of T, Task(Of TResult)), CancellationToken)
+- uid: InSync.AsyncSynchronized`1.WithLockAsync``1(System.Func{`0,System.Threading.Tasks.Task{``0}},System.Threading.CancellationToken,System.Boolean)
+  name: WithLockAsync<TResult>(Func<T, Task<TResult>>, CancellationToken, Boolean)
+  href: api/InSync.AsyncSynchronized-1.html#InSync_AsyncSynchronized_1_WithLockAsync__1_System_Func__0_System_Threading_Tasks_Task___0___System_Threading_CancellationToken_System_Boolean_
+  commentId: M:InSync.AsyncSynchronized`1.WithLockAsync``1(System.Func{`0,System.Threading.Tasks.Task{``0}},System.Threading.CancellationToken,System.Boolean)
+  name.vb: WithLockAsync(Of TResult)(Func(Of T, Task(Of TResult)), CancellationToken, Boolean)
+  fullName: InSync.AsyncSynchronized<T>.WithLockAsync<TResult>(System.Func<T, System.Threading.Tasks.Task<TResult>>, System.Threading.CancellationToken, System.Boolean)
+  fullName.vb: InSync.AsyncSynchronized(Of T).WithLockAsync(Of TResult)(System.Func(Of T, System.Threading.Tasks.Task(Of TResult)), System.Threading.CancellationToken, System.Boolean)
+  nameWithType: AsyncSynchronized<T>.WithLockAsync<TResult>(Func<T, Task<TResult>>, CancellationToken, Boolean)
+  nameWithType.vb: AsyncSynchronized(Of T).WithLockAsync(Of TResult)(Func(Of T, Task(Of TResult)), CancellationToken, Boolean)
+- uid: InSync.GuardedValue`1
+  name: GuardedValue<T>
+  href: api/InSync.GuardedValue-1.html
+  commentId: T:InSync.GuardedValue`1
+  name.vb: GuardedValue(Of T)
+  fullName: InSync.GuardedValue<T>
+  fullName.vb: InSync.GuardedValue(Of T)
+  nameWithType: GuardedValue<T>
+  nameWithType.vb: GuardedValue(Of T)
+- uid: InSync.GuardedValue`1.#ctor(`0,System.Action)
+  name: GuardedValue(T, Action)
+  href: api/InSync.GuardedValue-1.html#InSync_GuardedValue_1__ctor__0_System_Action_
+  commentId: M:InSync.GuardedValue`1.#ctor(`0,System.Action)
+  fullName: InSync.GuardedValue<T>.GuardedValue(T, System.Action)
+  fullName.vb: InSync.GuardedValue(Of T).GuardedValue(T, System.Action)
+  nameWithType: GuardedValue<T>.GuardedValue(T, Action)
+  nameWithType.vb: GuardedValue(Of T).GuardedValue(T, Action)
+- uid: InSync.GuardedValue`1.#ctor*
+  name: GuardedValue
+  href: api/InSync.GuardedValue-1.html#InSync_GuardedValue_1__ctor_
+  commentId: Overload:InSync.GuardedValue`1.#ctor
+  isSpec: "True"
+  fullName: InSync.GuardedValue<T>.GuardedValue
+  fullName.vb: InSync.GuardedValue(Of T).GuardedValue
+  nameWithType: GuardedValue<T>.GuardedValue
+  nameWithType.vb: GuardedValue(Of T).GuardedValue
+- uid: InSync.GuardedValue`1.Dispose
+  name: Dispose()
+  href: api/InSync.GuardedValue-1.html#InSync_GuardedValue_1_Dispose
+  commentId: M:InSync.GuardedValue`1.Dispose
+  fullName: InSync.GuardedValue<T>.Dispose()
+  fullName.vb: InSync.GuardedValue(Of T).Dispose()
+  nameWithType: GuardedValue<T>.Dispose()
+  nameWithType.vb: GuardedValue(Of T).Dispose()
+- uid: InSync.GuardedValue`1.Dispose(System.Boolean)
+  name: Dispose(Boolean)
+  href: api/InSync.GuardedValue-1.html#InSync_GuardedValue_1_Dispose_System_Boolean_
+  commentId: M:InSync.GuardedValue`1.Dispose(System.Boolean)
+  fullName: InSync.GuardedValue<T>.Dispose(System.Boolean)
+  fullName.vb: InSync.GuardedValue(Of T).Dispose(System.Boolean)
+  nameWithType: GuardedValue<T>.Dispose(Boolean)
+  nameWithType.vb: GuardedValue(Of T).Dispose(Boolean)
+- uid: InSync.GuardedValue`1.Dispose*
+  name: Dispose
+  href: api/InSync.GuardedValue-1.html#InSync_GuardedValue_1_Dispose_
+  commentId: Overload:InSync.GuardedValue`1.Dispose
+  isSpec: "True"
+  fullName: InSync.GuardedValue<T>.Dispose
+  fullName.vb: InSync.GuardedValue(Of T).Dispose
+  nameWithType: GuardedValue<T>.Dispose
+  nameWithType.vb: GuardedValue(Of T).Dispose
+- uid: InSync.GuardedValue`1.Value
+  name: Value
+  href: api/InSync.GuardedValue-1.html#InSync_GuardedValue_1_Value
+  commentId: P:InSync.GuardedValue`1.Value
+  fullName: InSync.GuardedValue<T>.Value
+  fullName.vb: InSync.GuardedValue(Of T).Value
+  nameWithType: GuardedValue<T>.Value
+  nameWithType.vb: GuardedValue(Of T).Value
+- uid: InSync.GuardedValue`1.Value*
+  name: Value
+  href: api/InSync.GuardedValue-1.html#InSync_GuardedValue_1_Value_
+  commentId: Overload:InSync.GuardedValue`1.Value
+  isSpec: "True"
+  fullName: InSync.GuardedValue<T>.Value
+  fullName.vb: InSync.GuardedValue(Of T).Value
+  nameWithType: GuardedValue<T>.Value
+  nameWithType.vb: GuardedValue(Of T).Value
+- uid: InSync.IAsyncSynchronized`1
+  name: IAsyncSynchronized<T>
+  href: api/InSync.IAsyncSynchronized-1.html
+  commentId: T:InSync.IAsyncSynchronized`1
+  name.vb: IAsyncSynchronized(Of T)
+  fullName: InSync.IAsyncSynchronized<T>
+  fullName.vb: InSync.IAsyncSynchronized(Of T)
+  nameWithType: IAsyncSynchronized<T>
+  nameWithType.vb: IAsyncSynchronized(Of T)
+- uid: InSync.IAsyncSynchronized`1.LockAsync
+  name: LockAsync()
+  href: api/InSync.IAsyncSynchronized-1.html#InSync_IAsyncSynchronized_1_LockAsync
+  commentId: M:InSync.IAsyncSynchronized`1.LockAsync
+  fullName: InSync.IAsyncSynchronized<T>.LockAsync()
+  fullName.vb: InSync.IAsyncSynchronized(Of T).LockAsync()
+  nameWithType: IAsyncSynchronized<T>.LockAsync()
+  nameWithType.vb: IAsyncSynchronized(Of T).LockAsync()
+- uid: InSync.IAsyncSynchronized`1.LockAsync(System.Threading.CancellationToken)
+  name: LockAsync(CancellationToken)
+  href: api/InSync.IAsyncSynchronized-1.html#InSync_IAsyncSynchronized_1_LockAsync_System_Threading_CancellationToken_
+  commentId: M:InSync.IAsyncSynchronized`1.LockAsync(System.Threading.CancellationToken)
+  fullName: InSync.IAsyncSynchronized<T>.LockAsync(System.Threading.CancellationToken)
+  fullName.vb: InSync.IAsyncSynchronized(Of T).LockAsync(System.Threading.CancellationToken)
+  nameWithType: IAsyncSynchronized<T>.LockAsync(CancellationToken)
+  nameWithType.vb: IAsyncSynchronized(Of T).LockAsync(CancellationToken)
+- uid: InSync.IAsyncSynchronized`1.LockAsync*
+  name: LockAsync
+  href: api/InSync.IAsyncSynchronized-1.html#InSync_IAsyncSynchronized_1_LockAsync_
+  commentId: Overload:InSync.IAsyncSynchronized`1.LockAsync
+  isSpec: "True"
+  fullName: InSync.IAsyncSynchronized<T>.LockAsync
+  fullName.vb: InSync.IAsyncSynchronized(Of T).LockAsync
+  nameWithType: IAsyncSynchronized<T>.LockAsync
+  nameWithType.vb: IAsyncSynchronized(Of T).LockAsync
+- uid: InSync.IAsyncSynchronized`1.WithLockAsync(System.Action{`0})
+  name: WithLockAsync(Action<T>)
+  href: api/InSync.IAsyncSynchronized-1.html#InSync_IAsyncSynchronized_1_WithLockAsync_System_Action__0__
+  commentId: M:InSync.IAsyncSynchronized`1.WithLockAsync(System.Action{`0})
+  name.vb: WithLockAsync(Action(Of T))
+  fullName: InSync.IAsyncSynchronized<T>.WithLockAsync(System.Action<T>)
+  fullName.vb: InSync.IAsyncSynchronized(Of T).WithLockAsync(System.Action(Of T))
+  nameWithType: IAsyncSynchronized<T>.WithLockAsync(Action<T>)
+  nameWithType.vb: IAsyncSynchronized(Of T).WithLockAsync(Action(Of T))
+- uid: InSync.IAsyncSynchronized`1.WithLockAsync(System.Action{`0},System.Boolean)
+  name: WithLockAsync(Action<T>, Boolean)
+  href: api/InSync.IAsyncSynchronized-1.html#InSync_IAsyncSynchronized_1_WithLockAsync_System_Action__0__System_Boolean_
+  commentId: M:InSync.IAsyncSynchronized`1.WithLockAsync(System.Action{`0},System.Boolean)
+  name.vb: WithLockAsync(Action(Of T), Boolean)
+  fullName: InSync.IAsyncSynchronized<T>.WithLockAsync(System.Action<T>, System.Boolean)
+  fullName.vb: InSync.IAsyncSynchronized(Of T).WithLockAsync(System.Action(Of T), System.Boolean)
+  nameWithType: IAsyncSynchronized<T>.WithLockAsync(Action<T>, Boolean)
+  nameWithType.vb: IAsyncSynchronized(Of T).WithLockAsync(Action(Of T), Boolean)
+- uid: InSync.IAsyncSynchronized`1.WithLockAsync(System.Action{`0},System.Threading.CancellationToken)
+  name: WithLockAsync(Action<T>, CancellationToken)
+  href: api/InSync.IAsyncSynchronized-1.html#InSync_IAsyncSynchronized_1_WithLockAsync_System_Action__0__System_Threading_CancellationToken_
+  commentId: M:InSync.IAsyncSynchronized`1.WithLockAsync(System.Action{`0},System.Threading.CancellationToken)
+  name.vb: WithLockAsync(Action(Of T), CancellationToken)
+  fullName: InSync.IAsyncSynchronized<T>.WithLockAsync(System.Action<T>, System.Threading.CancellationToken)
+  fullName.vb: InSync.IAsyncSynchronized(Of T).WithLockAsync(System.Action(Of T), System.Threading.CancellationToken)
+  nameWithType: IAsyncSynchronized<T>.WithLockAsync(Action<T>, CancellationToken)
+  nameWithType.vb: IAsyncSynchronized(Of T).WithLockAsync(Action(Of T), CancellationToken)
+- uid: InSync.IAsyncSynchronized`1.WithLockAsync(System.Action{`0},System.Threading.CancellationToken,System.Boolean)
+  name: WithLockAsync(Action<T>, CancellationToken, Boolean)
+  href: api/InSync.IAsyncSynchronized-1.html#InSync_IAsyncSynchronized_1_WithLockAsync_System_Action__0__System_Threading_CancellationToken_System_Boolean_
+  commentId: M:InSync.IAsyncSynchronized`1.WithLockAsync(System.Action{`0},System.Threading.CancellationToken,System.Boolean)
+  name.vb: WithLockAsync(Action(Of T), CancellationToken, Boolean)
+  fullName: InSync.IAsyncSynchronized<T>.WithLockAsync(System.Action<T>, System.Threading.CancellationToken, System.Boolean)
+  fullName.vb: InSync.IAsyncSynchronized(Of T).WithLockAsync(System.Action(Of T), System.Threading.CancellationToken, System.Boolean)
+  nameWithType: IAsyncSynchronized<T>.WithLockAsync(Action<T>, CancellationToken, Boolean)
+  nameWithType.vb: IAsyncSynchronized(Of T).WithLockAsync(Action(Of T), CancellationToken, Boolean)
+- uid: InSync.IAsyncSynchronized`1.WithLockAsync(System.Func{`0,System.Threading.Tasks.Task})
+  name: WithLockAsync(Func<T, Task>)
+  href: api/InSync.IAsyncSynchronized-1.html#InSync_IAsyncSynchronized_1_WithLockAsync_System_Func__0_System_Threading_Tasks_Task__
+  commentId: M:InSync.IAsyncSynchronized`1.WithLockAsync(System.Func{`0,System.Threading.Tasks.Task})
+  name.vb: WithLockAsync(Func(Of T, Task))
+  fullName: InSync.IAsyncSynchronized<T>.WithLockAsync(System.Func<T, System.Threading.Tasks.Task>)
+  fullName.vb: InSync.IAsyncSynchronized(Of T).WithLockAsync(System.Func(Of T, System.Threading.Tasks.Task))
+  nameWithType: IAsyncSynchronized<T>.WithLockAsync(Func<T, Task>)
+  nameWithType.vb: IAsyncSynchronized(Of T).WithLockAsync(Func(Of T, Task))
+- uid: InSync.IAsyncSynchronized`1.WithLockAsync(System.Func{`0,System.Threading.Tasks.Task},System.Boolean)
+  name: WithLockAsync(Func<T, Task>, Boolean)
+  href: api/InSync.IAsyncSynchronized-1.html#InSync_IAsyncSynchronized_1_WithLockAsync_System_Func__0_System_Threading_Tasks_Task__System_Boolean_
+  commentId: M:InSync.IAsyncSynchronized`1.WithLockAsync(System.Func{`0,System.Threading.Tasks.Task},System.Boolean)
+  name.vb: WithLockAsync(Func(Of T, Task), Boolean)
+  fullName: InSync.IAsyncSynchronized<T>.WithLockAsync(System.Func<T, System.Threading.Tasks.Task>, System.Boolean)
+  fullName.vb: InSync.IAsyncSynchronized(Of T).WithLockAsync(System.Func(Of T, System.Threading.Tasks.Task), System.Boolean)
+  nameWithType: IAsyncSynchronized<T>.WithLockAsync(Func<T, Task>, Boolean)
+  nameWithType.vb: IAsyncSynchronized(Of T).WithLockAsync(Func(Of T, Task), Boolean)
+- uid: InSync.IAsyncSynchronized`1.WithLockAsync(System.Func{`0,System.Threading.Tasks.Task},System.Threading.CancellationToken)
+  name: WithLockAsync(Func<T, Task>, CancellationToken)
+  href: api/InSync.IAsyncSynchronized-1.html#InSync_IAsyncSynchronized_1_WithLockAsync_System_Func__0_System_Threading_Tasks_Task__System_Threading_CancellationToken_
+  commentId: M:InSync.IAsyncSynchronized`1.WithLockAsync(System.Func{`0,System.Threading.Tasks.Task},System.Threading.CancellationToken)
+  name.vb: WithLockAsync(Func(Of T, Task), CancellationToken)
+  fullName: InSync.IAsyncSynchronized<T>.WithLockAsync(System.Func<T, System.Threading.Tasks.Task>, System.Threading.CancellationToken)
+  fullName.vb: InSync.IAsyncSynchronized(Of T).WithLockAsync(System.Func(Of T, System.Threading.Tasks.Task), System.Threading.CancellationToken)
+  nameWithType: IAsyncSynchronized<T>.WithLockAsync(Func<T, Task>, CancellationToken)
+  nameWithType.vb: IAsyncSynchronized(Of T).WithLockAsync(Func(Of T, Task), CancellationToken)
+- uid: InSync.IAsyncSynchronized`1.WithLockAsync(System.Func{`0,System.Threading.Tasks.Task},System.Threading.CancellationToken,System.Boolean)
+  name: WithLockAsync(Func<T, Task>, CancellationToken, Boolean)
+  href: api/InSync.IAsyncSynchronized-1.html#InSync_IAsyncSynchronized_1_WithLockAsync_System_Func__0_System_Threading_Tasks_Task__System_Threading_CancellationToken_System_Boolean_
+  commentId: M:InSync.IAsyncSynchronized`1.WithLockAsync(System.Func{`0,System.Threading.Tasks.Task},System.Threading.CancellationToken,System.Boolean)
+  name.vb: WithLockAsync(Func(Of T, Task), CancellationToken, Boolean)
+  fullName: InSync.IAsyncSynchronized<T>.WithLockAsync(System.Func<T, System.Threading.Tasks.Task>, System.Threading.CancellationToken, System.Boolean)
+  fullName.vb: InSync.IAsyncSynchronized(Of T).WithLockAsync(System.Func(Of T, System.Threading.Tasks.Task), System.Threading.CancellationToken, System.Boolean)
+  nameWithType: IAsyncSynchronized<T>.WithLockAsync(Func<T, Task>, CancellationToken, Boolean)
+  nameWithType.vb: IAsyncSynchronized(Of T).WithLockAsync(Func(Of T, Task), CancellationToken, Boolean)
+- uid: InSync.IAsyncSynchronized`1.WithLockAsync*
+  name: WithLockAsync
+  href: api/InSync.IAsyncSynchronized-1.html#InSync_IAsyncSynchronized_1_WithLockAsync_
+  commentId: Overload:InSync.IAsyncSynchronized`1.WithLockAsync
+  isSpec: "True"
+  fullName: InSync.IAsyncSynchronized<T>.WithLockAsync
+  fullName.vb: InSync.IAsyncSynchronized(Of T).WithLockAsync
+  nameWithType: IAsyncSynchronized<T>.WithLockAsync
+  nameWithType.vb: IAsyncSynchronized(Of T).WithLockAsync
+- uid: InSync.IAsyncSynchronized`1.WithLockAsync``1(System.Func{`0,``0})
+  name: WithLockAsync<TResult>(Func<T, TResult>)
+  href: api/InSync.IAsyncSynchronized-1.html#InSync_IAsyncSynchronized_1_WithLockAsync__1_System_Func__0___0__
+  commentId: M:InSync.IAsyncSynchronized`1.WithLockAsync``1(System.Func{`0,``0})
+  name.vb: WithLockAsync(Of TResult)(Func(Of T, TResult))
+  fullName: InSync.IAsyncSynchronized<T>.WithLockAsync<TResult>(System.Func<T, TResult>)
+  fullName.vb: InSync.IAsyncSynchronized(Of T).WithLockAsync(Of TResult)(System.Func(Of T, TResult))
+  nameWithType: IAsyncSynchronized<T>.WithLockAsync<TResult>(Func<T, TResult>)
+  nameWithType.vb: IAsyncSynchronized(Of T).WithLockAsync(Of TResult)(Func(Of T, TResult))
+- uid: InSync.IAsyncSynchronized`1.WithLockAsync``1(System.Func{`0,``0},System.Boolean)
+  name: WithLockAsync<TResult>(Func<T, TResult>, Boolean)
+  href: api/InSync.IAsyncSynchronized-1.html#InSync_IAsyncSynchronized_1_WithLockAsync__1_System_Func__0___0__System_Boolean_
+  commentId: M:InSync.IAsyncSynchronized`1.WithLockAsync``1(System.Func{`0,``0},System.Boolean)
+  name.vb: WithLockAsync(Of TResult)(Func(Of T, TResult), Boolean)
+  fullName: InSync.IAsyncSynchronized<T>.WithLockAsync<TResult>(System.Func<T, TResult>, System.Boolean)
+  fullName.vb: InSync.IAsyncSynchronized(Of T).WithLockAsync(Of TResult)(System.Func(Of T, TResult), System.Boolean)
+  nameWithType: IAsyncSynchronized<T>.WithLockAsync<TResult>(Func<T, TResult>, Boolean)
+  nameWithType.vb: IAsyncSynchronized(Of T).WithLockAsync(Of TResult)(Func(Of T, TResult), Boolean)
+- uid: InSync.IAsyncSynchronized`1.WithLockAsync``1(System.Func{`0,``0},System.Threading.CancellationToken)
+  name: WithLockAsync<TResult>(Func<T, TResult>, CancellationToken)
+  href: api/InSync.IAsyncSynchronized-1.html#InSync_IAsyncSynchronized_1_WithLockAsync__1_System_Func__0___0__System_Threading_CancellationToken_
+  commentId: M:InSync.IAsyncSynchronized`1.WithLockAsync``1(System.Func{`0,``0},System.Threading.CancellationToken)
+  name.vb: WithLockAsync(Of TResult)(Func(Of T, TResult), CancellationToken)
+  fullName: InSync.IAsyncSynchronized<T>.WithLockAsync<TResult>(System.Func<T, TResult>, System.Threading.CancellationToken)
+  fullName.vb: InSync.IAsyncSynchronized(Of T).WithLockAsync(Of TResult)(System.Func(Of T, TResult), System.Threading.CancellationToken)
+  nameWithType: IAsyncSynchronized<T>.WithLockAsync<TResult>(Func<T, TResult>, CancellationToken)
+  nameWithType.vb: IAsyncSynchronized(Of T).WithLockAsync(Of TResult)(Func(Of T, TResult), CancellationToken)
+- uid: InSync.IAsyncSynchronized`1.WithLockAsync``1(System.Func{`0,``0},System.Threading.CancellationToken,System.Boolean)
+  name: WithLockAsync<TResult>(Func<T, TResult>, CancellationToken, Boolean)
+  href: api/InSync.IAsyncSynchronized-1.html#InSync_IAsyncSynchronized_1_WithLockAsync__1_System_Func__0___0__System_Threading_CancellationToken_System_Boolean_
+  commentId: M:InSync.IAsyncSynchronized`1.WithLockAsync``1(System.Func{`0,``0},System.Threading.CancellationToken,System.Boolean)
+  name.vb: WithLockAsync(Of TResult)(Func(Of T, TResult), CancellationToken, Boolean)
+  fullName: InSync.IAsyncSynchronized<T>.WithLockAsync<TResult>(System.Func<T, TResult>, System.Threading.CancellationToken, System.Boolean)
+  fullName.vb: InSync.IAsyncSynchronized(Of T).WithLockAsync(Of TResult)(System.Func(Of T, TResult), System.Threading.CancellationToken, System.Boolean)
+  nameWithType: IAsyncSynchronized<T>.WithLockAsync<TResult>(Func<T, TResult>, CancellationToken, Boolean)
+  nameWithType.vb: IAsyncSynchronized(Of T).WithLockAsync(Of TResult)(Func(Of T, TResult), CancellationToken, Boolean)
+- uid: InSync.IAsyncSynchronized`1.WithLockAsync``1(System.Func{`0,System.Threading.Tasks.Task{``0}})
+  name: WithLockAsync<TResult>(Func<T, Task<TResult>>)
+  href: api/InSync.IAsyncSynchronized-1.html#InSync_IAsyncSynchronized_1_WithLockAsync__1_System_Func__0_System_Threading_Tasks_Task___0___
+  commentId: M:InSync.IAsyncSynchronized`1.WithLockAsync``1(System.Func{`0,System.Threading.Tasks.Task{``0}})
+  name.vb: WithLockAsync(Of TResult)(Func(Of T, Task(Of TResult)))
+  fullName: InSync.IAsyncSynchronized<T>.WithLockAsync<TResult>(System.Func<T, System.Threading.Tasks.Task<TResult>>)
+  fullName.vb: InSync.IAsyncSynchronized(Of T).WithLockAsync(Of TResult)(System.Func(Of T, System.Threading.Tasks.Task(Of TResult)))
+  nameWithType: IAsyncSynchronized<T>.WithLockAsync<TResult>(Func<T, Task<TResult>>)
+  nameWithType.vb: IAsyncSynchronized(Of T).WithLockAsync(Of TResult)(Func(Of T, Task(Of TResult)))
+- uid: InSync.IAsyncSynchronized`1.WithLockAsync``1(System.Func{`0,System.Threading.Tasks.Task{``0}},System.Boolean)
+  name: WithLockAsync<TResult>(Func<T, Task<TResult>>, Boolean)
+  href: api/InSync.IAsyncSynchronized-1.html#InSync_IAsyncSynchronized_1_WithLockAsync__1_System_Func__0_System_Threading_Tasks_Task___0___System_Boolean_
+  commentId: M:InSync.IAsyncSynchronized`1.WithLockAsync``1(System.Func{`0,System.Threading.Tasks.Task{``0}},System.Boolean)
+  name.vb: WithLockAsync(Of TResult)(Func(Of T, Task(Of TResult)), Boolean)
+  fullName: InSync.IAsyncSynchronized<T>.WithLockAsync<TResult>(System.Func<T, System.Threading.Tasks.Task<TResult>>, System.Boolean)
+  fullName.vb: InSync.IAsyncSynchronized(Of T).WithLockAsync(Of TResult)(System.Func(Of T, System.Threading.Tasks.Task(Of TResult)), System.Boolean)
+  nameWithType: IAsyncSynchronized<T>.WithLockAsync<TResult>(Func<T, Task<TResult>>, Boolean)
+  nameWithType.vb: IAsyncSynchronized(Of T).WithLockAsync(Of TResult)(Func(Of T, Task(Of TResult)), Boolean)
+- uid: InSync.IAsyncSynchronized`1.WithLockAsync``1(System.Func{`0,System.Threading.Tasks.Task{``0}},System.Threading.CancellationToken)
+  name: WithLockAsync<TResult>(Func<T, Task<TResult>>, CancellationToken)
+  href: api/InSync.IAsyncSynchronized-1.html#InSync_IAsyncSynchronized_1_WithLockAsync__1_System_Func__0_System_Threading_Tasks_Task___0___System_Threading_CancellationToken_
+  commentId: M:InSync.IAsyncSynchronized`1.WithLockAsync``1(System.Func{`0,System.Threading.Tasks.Task{``0}},System.Threading.CancellationToken)
+  name.vb: WithLockAsync(Of TResult)(Func(Of T, Task(Of TResult)), CancellationToken)
+  fullName: InSync.IAsyncSynchronized<T>.WithLockAsync<TResult>(System.Func<T, System.Threading.Tasks.Task<TResult>>, System.Threading.CancellationToken)
+  fullName.vb: InSync.IAsyncSynchronized(Of T).WithLockAsync(Of TResult)(System.Func(Of T, System.Threading.Tasks.Task(Of TResult)), System.Threading.CancellationToken)
+  nameWithType: IAsyncSynchronized<T>.WithLockAsync<TResult>(Func<T, Task<TResult>>, CancellationToken)
+  nameWithType.vb: IAsyncSynchronized(Of T).WithLockAsync(Of TResult)(Func(Of T, Task(Of TResult)), CancellationToken)
+- uid: InSync.IAsyncSynchronized`1.WithLockAsync``1(System.Func{`0,System.Threading.Tasks.Task{``0}},System.Threading.CancellationToken,System.Boolean)
+  name: WithLockAsync<TResult>(Func<T, Task<TResult>>, CancellationToken, Boolean)
+  href: api/InSync.IAsyncSynchronized-1.html#InSync_IAsyncSynchronized_1_WithLockAsync__1_System_Func__0_System_Threading_Tasks_Task___0___System_Threading_CancellationToken_System_Boolean_
+  commentId: M:InSync.IAsyncSynchronized`1.WithLockAsync``1(System.Func{`0,System.Threading.Tasks.Task{``0}},System.Threading.CancellationToken,System.Boolean)
+  name.vb: WithLockAsync(Of TResult)(Func(Of T, Task(Of TResult)), CancellationToken, Boolean)
+  fullName: InSync.IAsyncSynchronized<T>.WithLockAsync<TResult>(System.Func<T, System.Threading.Tasks.Task<TResult>>, System.Threading.CancellationToken, System.Boolean)
+  fullName.vb: InSync.IAsyncSynchronized(Of T).WithLockAsync(Of TResult)(System.Func(Of T, System.Threading.Tasks.Task(Of TResult)), System.Threading.CancellationToken, System.Boolean)
+  nameWithType: IAsyncSynchronized<T>.WithLockAsync<TResult>(Func<T, Task<TResult>>, CancellationToken, Boolean)
+  nameWithType.vb: IAsyncSynchronized(Of T).WithLockAsync(Of TResult)(Func(Of T, Task(Of TResult)), CancellationToken, Boolean)
+- uid: InSync.IBareAsyncLock
+  name: IBareAsyncLock
+  href: api/InSync.IBareAsyncLock.html
+  commentId: T:InSync.IBareAsyncLock
+  fullName: InSync.IBareAsyncLock
+  nameWithType: IBareAsyncLock
+- uid: InSync.IBareAsyncLock.BarelyLockAsync
+  name: BarelyLockAsync()
+  href: api/InSync.IBareAsyncLock.html#InSync_IBareAsyncLock_BarelyLockAsync
+  commentId: M:InSync.IBareAsyncLock.BarelyLockAsync
+  fullName: InSync.IBareAsyncLock.BarelyLockAsync()
+  nameWithType: IBareAsyncLock.BarelyLockAsync()
+- uid: InSync.IBareAsyncLock.BarelyLockAsync(System.Threading.CancellationToken)
+  name: BarelyLockAsync(CancellationToken)
+  href: api/InSync.IBareAsyncLock.html#InSync_IBareAsyncLock_BarelyLockAsync_System_Threading_CancellationToken_
+  commentId: M:InSync.IBareAsyncLock.BarelyLockAsync(System.Threading.CancellationToken)
+  fullName: InSync.IBareAsyncLock.BarelyLockAsync(System.Threading.CancellationToken)
+  nameWithType: IBareAsyncLock.BarelyLockAsync(CancellationToken)
+- uid: InSync.IBareAsyncLock.BarelyLockAsync*
+  name: BarelyLockAsync
+  href: api/InSync.IBareAsyncLock.html#InSync_IBareAsyncLock_BarelyLockAsync_
+  commentId: Overload:InSync.IBareAsyncLock.BarelyLockAsync
+  isSpec: "True"
+  fullName: InSync.IBareAsyncLock.BarelyLockAsync
+  nameWithType: IBareAsyncLock.BarelyLockAsync
+- uid: InSync.IBareAsyncLock.BarelyTryLock(System.Object@)
+  name: BarelyTryLock(out Object)
+  href: api/InSync.IBareAsyncLock.html#InSync_IBareAsyncLock_BarelyTryLock_System_Object__
+  commentId: M:InSync.IBareAsyncLock.BarelyTryLock(System.Object@)
+  name.vb: BarelyTryLock(ByRef Object)
+  fullName: InSync.IBareAsyncLock.BarelyTryLock(out System.Object)
+  fullName.vb: InSync.IBareAsyncLock.BarelyTryLock(ByRef System.Object)
+  nameWithType: IBareAsyncLock.BarelyTryLock(out Object)
+  nameWithType.vb: IBareAsyncLock.BarelyTryLock(ByRef Object)
+- uid: InSync.IBareAsyncLock.BarelyTryLock*
+  name: BarelyTryLock
+  href: api/InSync.IBareAsyncLock.html#InSync_IBareAsyncLock_BarelyTryLock_
+  commentId: Overload:InSync.IBareAsyncLock.BarelyTryLock
+  isSpec: "True"
+  fullName: InSync.IBareAsyncLock.BarelyTryLock
+  nameWithType: IBareAsyncLock.BarelyTryLock
+- uid: InSync.IBareAsyncLock.BarelyUnlock
+  name: BarelyUnlock()
+  href: api/InSync.IBareAsyncLock.html#InSync_IBareAsyncLock_BarelyUnlock
+  commentId: M:InSync.IBareAsyncLock.BarelyUnlock
+  fullName: InSync.IBareAsyncLock.BarelyUnlock()
+  nameWithType: IBareAsyncLock.BarelyUnlock()
+- uid: InSync.IBareAsyncLock.BarelyUnlock*
+  name: BarelyUnlock
+  href: api/InSync.IBareAsyncLock.html#InSync_IBareAsyncLock_BarelyUnlock_
+  commentId: Overload:InSync.IBareAsyncLock.BarelyUnlock
+  isSpec: "True"
+  fullName: InSync.IBareAsyncLock.BarelyUnlock
+  nameWithType: IBareAsyncLock.BarelyUnlock
+- uid: InSync.IBareAsyncLock`1
+  name: IBareAsyncLock<T>
+  href: api/InSync.IBareAsyncLock-1.html
+  commentId: T:InSync.IBareAsyncLock`1
+  name.vb: IBareAsyncLock(Of T)
+  fullName: InSync.IBareAsyncLock<T>
+  fullName.vb: InSync.IBareAsyncLock(Of T)
+  nameWithType: IBareAsyncLock<T>
+  nameWithType.vb: IBareAsyncLock(Of T)
+- uid: InSync.IBareAsyncLock`1.BarelyLockAsync
+  name: BarelyLockAsync()
+  href: api/InSync.IBareAsyncLock-1.html#InSync_IBareAsyncLock_1_BarelyLockAsync
+  commentId: M:InSync.IBareAsyncLock`1.BarelyLockAsync
+  fullName: InSync.IBareAsyncLock<T>.BarelyLockAsync()
+  fullName.vb: InSync.IBareAsyncLock(Of T).BarelyLockAsync()
+  nameWithType: IBareAsyncLock<T>.BarelyLockAsync()
+  nameWithType.vb: IBareAsyncLock(Of T).BarelyLockAsync()
+- uid: InSync.IBareAsyncLock`1.BarelyLockAsync(System.Threading.CancellationToken)
+  name: BarelyLockAsync(CancellationToken)
+  href: api/InSync.IBareAsyncLock-1.html#InSync_IBareAsyncLock_1_BarelyLockAsync_System_Threading_CancellationToken_
+  commentId: M:InSync.IBareAsyncLock`1.BarelyLockAsync(System.Threading.CancellationToken)
+  fullName: InSync.IBareAsyncLock<T>.BarelyLockAsync(System.Threading.CancellationToken)
+  fullName.vb: InSync.IBareAsyncLock(Of T).BarelyLockAsync(System.Threading.CancellationToken)
+  nameWithType: IBareAsyncLock<T>.BarelyLockAsync(CancellationToken)
+  nameWithType.vb: IBareAsyncLock(Of T).BarelyLockAsync(CancellationToken)
+- uid: InSync.IBareAsyncLock`1.BarelyLockAsync*
+  name: BarelyLockAsync
+  href: api/InSync.IBareAsyncLock-1.html#InSync_IBareAsyncLock_1_BarelyLockAsync_
+  commentId: Overload:InSync.IBareAsyncLock`1.BarelyLockAsync
+  isSpec: "True"
+  fullName: InSync.IBareAsyncLock<T>.BarelyLockAsync
+  fullName.vb: InSync.IBareAsyncLock(Of T).BarelyLockAsync
+  nameWithType: IBareAsyncLock<T>.BarelyLockAsync
+  nameWithType.vb: IBareAsyncLock(Of T).BarelyLockAsync
+- uid: InSync.IBareAsyncLock`1.BarelyTryLock(`0@)
+  name: BarelyTryLock(out T)
+  href: api/InSync.IBareAsyncLock-1.html#InSync_IBareAsyncLock_1_BarelyTryLock__0__
+  commentId: M:InSync.IBareAsyncLock`1.BarelyTryLock(`0@)
+  name.vb: BarelyTryLock(ByRef T)
+  fullName: InSync.IBareAsyncLock<T>.BarelyTryLock(out T)
+  fullName.vb: InSync.IBareAsyncLock(Of T).BarelyTryLock(ByRef T)
+  nameWithType: IBareAsyncLock<T>.BarelyTryLock(out T)
+  nameWithType.vb: IBareAsyncLock(Of T).BarelyTryLock(ByRef T)
+- uid: InSync.IBareAsyncLock`1.BarelyTryLock*
+  name: BarelyTryLock
+  href: api/InSync.IBareAsyncLock-1.html#InSync_IBareAsyncLock_1_BarelyTryLock_
+  commentId: Overload:InSync.IBareAsyncLock`1.BarelyTryLock
+  isSpec: "True"
+  fullName: InSync.IBareAsyncLock<T>.BarelyTryLock
+  fullName.vb: InSync.IBareAsyncLock(Of T).BarelyTryLock
+  nameWithType: IBareAsyncLock<T>.BarelyTryLock
+  nameWithType.vb: IBareAsyncLock(Of T).BarelyTryLock
+- uid: InSync.IBareLock
+  name: IBareLock
+  href: api/InSync.IBareLock.html
+  commentId: T:InSync.IBareLock
+  fullName: InSync.IBareLock
+  nameWithType: IBareLock
+- uid: InSync.IBareLock.BarelyLock
+  name: BarelyLock()
+  href: api/InSync.IBareLock.html#InSync_IBareLock_BarelyLock
+  commentId: M:InSync.IBareLock.BarelyLock
+  fullName: InSync.IBareLock.BarelyLock()
+  nameWithType: IBareLock.BarelyLock()
+- uid: InSync.IBareLock.BarelyLock*
+  name: BarelyLock
+  href: api/InSync.IBareLock.html#InSync_IBareLock_BarelyLock_
+  commentId: Overload:InSync.IBareLock.BarelyLock
+  isSpec: "True"
+  fullName: InSync.IBareLock.BarelyLock
+  nameWithType: IBareLock.BarelyLock
+- uid: InSync.IBareLock.BarelyTryLock(System.Int32,System.Object@)
+  name: BarelyTryLock(Int32, out Object)
+  href: api/InSync.IBareLock.html#InSync_IBareLock_BarelyTryLock_System_Int32_System_Object__
+  commentId: M:InSync.IBareLock.BarelyTryLock(System.Int32,System.Object@)
+  name.vb: BarelyTryLock(Int32, ByRef Object)
+  fullName: InSync.IBareLock.BarelyTryLock(System.Int32, out System.Object)
+  fullName.vb: InSync.IBareLock.BarelyTryLock(System.Int32, ByRef System.Object)
+  nameWithType: IBareLock.BarelyTryLock(Int32, out Object)
+  nameWithType.vb: IBareLock.BarelyTryLock(Int32, ByRef Object)
+- uid: InSync.IBareLock.BarelyTryLock(System.Object@)
+  name: BarelyTryLock(out Object)
+  href: api/InSync.IBareLock.html#InSync_IBareLock_BarelyTryLock_System_Object__
+  commentId: M:InSync.IBareLock.BarelyTryLock(System.Object@)
+  name.vb: BarelyTryLock(ByRef Object)
+  fullName: InSync.IBareLock.BarelyTryLock(out System.Object)
+  fullName.vb: InSync.IBareLock.BarelyTryLock(ByRef System.Object)
+  nameWithType: IBareLock.BarelyTryLock(out Object)
+  nameWithType.vb: IBareLock.BarelyTryLock(ByRef Object)
+- uid: InSync.IBareLock.BarelyTryLock(System.TimeSpan,System.Object@)
+  name: BarelyTryLock(TimeSpan, out Object)
+  href: api/InSync.IBareLock.html#InSync_IBareLock_BarelyTryLock_System_TimeSpan_System_Object__
+  commentId: M:InSync.IBareLock.BarelyTryLock(System.TimeSpan,System.Object@)
+  name.vb: BarelyTryLock(TimeSpan, ByRef Object)
+  fullName: InSync.IBareLock.BarelyTryLock(System.TimeSpan, out System.Object)
+  fullName.vb: InSync.IBareLock.BarelyTryLock(System.TimeSpan, ByRef System.Object)
+  nameWithType: IBareLock.BarelyTryLock(TimeSpan, out Object)
+  nameWithType.vb: IBareLock.BarelyTryLock(TimeSpan, ByRef Object)
+- uid: InSync.IBareLock.BarelyTryLock*
+  name: BarelyTryLock
+  href: api/InSync.IBareLock.html#InSync_IBareLock_BarelyTryLock_
+  commentId: Overload:InSync.IBareLock.BarelyTryLock
+  isSpec: "True"
+  fullName: InSync.IBareLock.BarelyTryLock
+  nameWithType: IBareLock.BarelyTryLock
+- uid: InSync.IBareLock.BarelyUnlock
+  name: BarelyUnlock()
+  href: api/InSync.IBareLock.html#InSync_IBareLock_BarelyUnlock
+  commentId: M:InSync.IBareLock.BarelyUnlock
+  fullName: InSync.IBareLock.BarelyUnlock()
+  nameWithType: IBareLock.BarelyUnlock()
+- uid: InSync.IBareLock.BarelyUnlock*
+  name: BarelyUnlock
+  href: api/InSync.IBareLock.html#InSync_IBareLock_BarelyUnlock_
+  commentId: Overload:InSync.IBareLock.BarelyUnlock
+  isSpec: "True"
+  fullName: InSync.IBareLock.BarelyUnlock
+  nameWithType: IBareLock.BarelyUnlock
+- uid: InSync.IBareLock`1
+  name: IBareLock<T>
+  href: api/InSync.IBareLock-1.html
+  commentId: T:InSync.IBareLock`1
+  name.vb: IBareLock(Of T)
+  fullName: InSync.IBareLock<T>
+  fullName.vb: InSync.IBareLock(Of T)
+  nameWithType: IBareLock<T>
+  nameWithType.vb: IBareLock(Of T)
+- uid: InSync.IBareLock`1.BarelyLock
+  name: BarelyLock()
+  href: api/InSync.IBareLock-1.html#InSync_IBareLock_1_BarelyLock
+  commentId: M:InSync.IBareLock`1.BarelyLock
+  fullName: InSync.IBareLock<T>.BarelyLock()
+  fullName.vb: InSync.IBareLock(Of T).BarelyLock()
+  nameWithType: IBareLock<T>.BarelyLock()
+  nameWithType.vb: IBareLock(Of T).BarelyLock()
+- uid: InSync.IBareLock`1.BarelyLock*
+  name: BarelyLock
+  href: api/InSync.IBareLock-1.html#InSync_IBareLock_1_BarelyLock_
+  commentId: Overload:InSync.IBareLock`1.BarelyLock
+  isSpec: "True"
+  fullName: InSync.IBareLock<T>.BarelyLock
+  fullName.vb: InSync.IBareLock(Of T).BarelyLock
+  nameWithType: IBareLock<T>.BarelyLock
+  nameWithType.vb: IBareLock(Of T).BarelyLock
+- uid: InSync.IBareLock`1.BarelyTryLock(`0@)
+  name: BarelyTryLock(out T)
+  href: api/InSync.IBareLock-1.html#InSync_IBareLock_1_BarelyTryLock__0__
+  commentId: M:InSync.IBareLock`1.BarelyTryLock(`0@)
+  name.vb: BarelyTryLock(ByRef T)
+  fullName: InSync.IBareLock<T>.BarelyTryLock(out T)
+  fullName.vb: InSync.IBareLock(Of T).BarelyTryLock(ByRef T)
+  nameWithType: IBareLock<T>.BarelyTryLock(out T)
+  nameWithType.vb: IBareLock(Of T).BarelyTryLock(ByRef T)
+- uid: InSync.IBareLock`1.BarelyTryLock(System.Int32,`0@)
+  name: BarelyTryLock(Int32, out T)
+  href: api/InSync.IBareLock-1.html#InSync_IBareLock_1_BarelyTryLock_System_Int32__0__
+  commentId: M:InSync.IBareLock`1.BarelyTryLock(System.Int32,`0@)
+  name.vb: BarelyTryLock(Int32, ByRef T)
+  fullName: InSync.IBareLock<T>.BarelyTryLock(System.Int32, out T)
+  fullName.vb: InSync.IBareLock(Of T).BarelyTryLock(System.Int32, ByRef T)
+  nameWithType: IBareLock<T>.BarelyTryLock(Int32, out T)
+  nameWithType.vb: IBareLock(Of T).BarelyTryLock(Int32, ByRef T)
+- uid: InSync.IBareLock`1.BarelyTryLock(System.TimeSpan,`0@)
+  name: BarelyTryLock(TimeSpan, out T)
+  href: api/InSync.IBareLock-1.html#InSync_IBareLock_1_BarelyTryLock_System_TimeSpan__0__
+  commentId: M:InSync.IBareLock`1.BarelyTryLock(System.TimeSpan,`0@)
+  name.vb: BarelyTryLock(TimeSpan, ByRef T)
+  fullName: InSync.IBareLock<T>.BarelyTryLock(System.TimeSpan, out T)
+  fullName.vb: InSync.IBareLock(Of T).BarelyTryLock(System.TimeSpan, ByRef T)
+  nameWithType: IBareLock<T>.BarelyTryLock(TimeSpan, out T)
+  nameWithType.vb: IBareLock(Of T).BarelyTryLock(TimeSpan, ByRef T)
+- uid: InSync.IBareLock`1.BarelyTryLock*
+  name: BarelyTryLock
+  href: api/InSync.IBareLock-1.html#InSync_IBareLock_1_BarelyTryLock_
+  commentId: Overload:InSync.IBareLock`1.BarelyTryLock
+  isSpec: "True"
+  fullName: InSync.IBareLock<T>.BarelyTryLock
+  fullName.vb: InSync.IBareLock(Of T).BarelyTryLock
+  nameWithType: IBareLock<T>.BarelyTryLock
+  nameWithType.vb: IBareLock(Of T).BarelyTryLock
+- uid: InSync.ISynchronized`1
+  name: ISynchronized<T>
+  href: api/InSync.ISynchronized-1.html
+  commentId: T:InSync.ISynchronized`1
+  name.vb: ISynchronized(Of T)
+  fullName: InSync.ISynchronized<T>
+  fullName.vb: InSync.ISynchronized(Of T)
+  nameWithType: ISynchronized<T>
+  nameWithType.vb: ISynchronized(Of T)
+- uid: InSync.ISynchronized`1.Lock
+  name: Lock()
+  href: api/InSync.ISynchronized-1.html#InSync_ISynchronized_1_Lock
+  commentId: M:InSync.ISynchronized`1.Lock
+  fullName: InSync.ISynchronized<T>.Lock()
+  fullName.vb: InSync.ISynchronized(Of T).Lock()
+  nameWithType: ISynchronized<T>.Lock()
+  nameWithType.vb: ISynchronized(Of T).Lock()
+- uid: InSync.ISynchronized`1.Lock*
+  name: Lock
+  href: api/InSync.ISynchronized-1.html#InSync_ISynchronized_1_Lock_
+  commentId: Overload:InSync.ISynchronized`1.Lock
+  isSpec: "True"
+  fullName: InSync.ISynchronized<T>.Lock
+  fullName.vb: InSync.ISynchronized(Of T).Lock
+  nameWithType: ISynchronized<T>.Lock
+  nameWithType.vb: ISynchronized(Of T).Lock
+- uid: InSync.ISynchronized`1.TryLock
+  name: TryLock()
+  href: api/InSync.ISynchronized-1.html#InSync_ISynchronized_1_TryLock
+  commentId: M:InSync.ISynchronized`1.TryLock
+  fullName: InSync.ISynchronized<T>.TryLock()
+  fullName.vb: InSync.ISynchronized(Of T).TryLock()
+  nameWithType: ISynchronized<T>.TryLock()
+  nameWithType.vb: ISynchronized(Of T).TryLock()
+- uid: InSync.ISynchronized`1.TryLock(System.Int32)
+  name: TryLock(Int32)
+  href: api/InSync.ISynchronized-1.html#InSync_ISynchronized_1_TryLock_System_Int32_
+  commentId: M:InSync.ISynchronized`1.TryLock(System.Int32)
+  fullName: InSync.ISynchronized<T>.TryLock(System.Int32)
+  fullName.vb: InSync.ISynchronized(Of T).TryLock(System.Int32)
+  nameWithType: ISynchronized<T>.TryLock(Int32)
+  nameWithType.vb: ISynchronized(Of T).TryLock(Int32)
+- uid: InSync.ISynchronized`1.TryLock(System.TimeSpan)
+  name: TryLock(TimeSpan)
+  href: api/InSync.ISynchronized-1.html#InSync_ISynchronized_1_TryLock_System_TimeSpan_
+  commentId: M:InSync.ISynchronized`1.TryLock(System.TimeSpan)
+  fullName: InSync.ISynchronized<T>.TryLock(System.TimeSpan)
+  fullName.vb: InSync.ISynchronized(Of T).TryLock(System.TimeSpan)
+  nameWithType: ISynchronized<T>.TryLock(TimeSpan)
+  nameWithType.vb: ISynchronized(Of T).TryLock(TimeSpan)
+- uid: InSync.ISynchronized`1.TryLock*
+  name: TryLock
+  href: api/InSync.ISynchronized-1.html#InSync_ISynchronized_1_TryLock_
+  commentId: Overload:InSync.ISynchronized`1.TryLock
+  isSpec: "True"
+  fullName: InSync.ISynchronized<T>.TryLock
+  fullName.vb: InSync.ISynchronized(Of T).TryLock
+  nameWithType: ISynchronized<T>.TryLock
+  nameWithType.vb: ISynchronized(Of T).TryLock
+- uid: InSync.ISynchronized`1.TryWithLock(System.Action{`0})
+  name: TryWithLock(Action<T>)
+  href: api/InSync.ISynchronized-1.html#InSync_ISynchronized_1_TryWithLock_System_Action__0__
+  commentId: M:InSync.ISynchronized`1.TryWithLock(System.Action{`0})
+  name.vb: TryWithLock(Action(Of T))
+  fullName: InSync.ISynchronized<T>.TryWithLock(System.Action<T>)
+  fullName.vb: InSync.ISynchronized(Of T).TryWithLock(System.Action(Of T))
+  nameWithType: ISynchronized<T>.TryWithLock(Action<T>)
+  nameWithType.vb: ISynchronized(Of T).TryWithLock(Action(Of T))
+- uid: InSync.ISynchronized`1.TryWithLock(System.Int32,System.Action{`0})
+  name: TryWithLock(Int32, Action<T>)
+  href: api/InSync.ISynchronized-1.html#InSync_ISynchronized_1_TryWithLock_System_Int32_System_Action__0__
+  commentId: M:InSync.ISynchronized`1.TryWithLock(System.Int32,System.Action{`0})
+  name.vb: TryWithLock(Int32, Action(Of T))
+  fullName: InSync.ISynchronized<T>.TryWithLock(System.Int32, System.Action<T>)
+  fullName.vb: InSync.ISynchronized(Of T).TryWithLock(System.Int32, System.Action(Of T))
+  nameWithType: ISynchronized<T>.TryWithLock(Int32, Action<T>)
+  nameWithType.vb: ISynchronized(Of T).TryWithLock(Int32, Action(Of T))
+- uid: InSync.ISynchronized`1.TryWithLock(System.TimeSpan,System.Action{`0})
+  name: TryWithLock(TimeSpan, Action<T>)
+  href: api/InSync.ISynchronized-1.html#InSync_ISynchronized_1_TryWithLock_System_TimeSpan_System_Action__0__
+  commentId: M:InSync.ISynchronized`1.TryWithLock(System.TimeSpan,System.Action{`0})
+  name.vb: TryWithLock(TimeSpan, Action(Of T))
+  fullName: InSync.ISynchronized<T>.TryWithLock(System.TimeSpan, System.Action<T>)
+  fullName.vb: InSync.ISynchronized(Of T).TryWithLock(System.TimeSpan, System.Action(Of T))
+  nameWithType: ISynchronized<T>.TryWithLock(TimeSpan, Action<T>)
+  nameWithType.vb: ISynchronized(Of T).TryWithLock(TimeSpan, Action(Of T))
+- uid: InSync.ISynchronized`1.TryWithLock*
+  name: TryWithLock
+  href: api/InSync.ISynchronized-1.html#InSync_ISynchronized_1_TryWithLock_
+  commentId: Overload:InSync.ISynchronized`1.TryWithLock
+  isSpec: "True"
+  fullName: InSync.ISynchronized<T>.TryWithLock
+  fullName.vb: InSync.ISynchronized(Of T).TryWithLock
+  nameWithType: ISynchronized<T>.TryWithLock
+  nameWithType.vb: ISynchronized(Of T).TryWithLock
+- uid: InSync.ISynchronized`1.WithLock(System.Action{`0})
+  name: WithLock(Action<T>)
+  href: api/InSync.ISynchronized-1.html#InSync_ISynchronized_1_WithLock_System_Action__0__
+  commentId: M:InSync.ISynchronized`1.WithLock(System.Action{`0})
+  name.vb: WithLock(Action(Of T))
+  fullName: InSync.ISynchronized<T>.WithLock(System.Action<T>)
+  fullName.vb: InSync.ISynchronized(Of T).WithLock(System.Action(Of T))
+  nameWithType: ISynchronized<T>.WithLock(Action<T>)
+  nameWithType.vb: ISynchronized(Of T).WithLock(Action(Of T))
+- uid: InSync.ISynchronized`1.WithLock*
+  name: WithLock
+  href: api/InSync.ISynchronized-1.html#InSync_ISynchronized_1_WithLock_
+  commentId: Overload:InSync.ISynchronized`1.WithLock
+  isSpec: "True"
+  fullName: InSync.ISynchronized<T>.WithLock
+  fullName.vb: InSync.ISynchronized(Of T).WithLock
+  nameWithType: ISynchronized<T>.WithLock
+  nameWithType.vb: ISynchronized(Of T).WithLock
+- uid: InSync.ISynchronized`1.WithLock``1(System.Func{`0,``0})
+  name: WithLock<TResult>(Func<T, TResult>)
+  href: api/InSync.ISynchronized-1.html#InSync_ISynchronized_1_WithLock__1_System_Func__0___0__
+  commentId: M:InSync.ISynchronized`1.WithLock``1(System.Func{`0,``0})
+  name.vb: WithLock(Of TResult)(Func(Of T, TResult))
+  fullName: InSync.ISynchronized<T>.WithLock<TResult>(System.Func<T, TResult>)
+  fullName.vb: InSync.ISynchronized(Of T).WithLock(Of TResult)(System.Func(Of T, TResult))
+  nameWithType: ISynchronized<T>.WithLock<TResult>(Func<T, TResult>)
+  nameWithType.vb: ISynchronized(Of T).WithLock(Of TResult)(Func(Of T, TResult))
+- uid: InSync.LockException
+  name: LockException
+  href: api/InSync.LockException.html
+  commentId: T:InSync.LockException
+  fullName: InSync.LockException
+  nameWithType: LockException
+- uid: InSync.LockException.#ctor(System.Exception)
+  name: LockException(Exception)
+  href: api/InSync.LockException.html#InSync_LockException__ctor_System_Exception_
+  commentId: M:InSync.LockException.#ctor(System.Exception)
+  fullName: InSync.LockException.LockException(System.Exception)
+  nameWithType: LockException.LockException(Exception)
+- uid: InSync.LockException.#ctor*
+  name: LockException
+  href: api/InSync.LockException.html#InSync_LockException__ctor_
+  commentId: Overload:InSync.LockException.#ctor
+  isSpec: "True"
+  fullName: InSync.LockException.LockException
+  nameWithType: LockException.LockException
+- uid: InSync.MultiSync
+  name: MultiSync
+  href: api/InSync.MultiSync.html
+  commentId: T:InSync.MultiSync
+  fullName: InSync.MultiSync
+  nameWithType: MultiSync
+- uid: InSync.MultiSync.All(System.Collections.Generic.IReadOnlyList{InSync.IBareLock})
+  name: All(IReadOnlyList<IBareLock>)
+  href: api/InSync.MultiSync.html#InSync_MultiSync_All_System_Collections_Generic_IReadOnlyList_InSync_IBareLock__
+  commentId: M:InSync.MultiSync.All(System.Collections.Generic.IReadOnlyList{InSync.IBareLock})
+  name.vb: All(IReadOnlyList(Of IBareLock))
+  fullName: InSync.MultiSync.All(System.Collections.Generic.IReadOnlyList<InSync.IBareLock>)
+  fullName.vb: InSync.MultiSync.All(System.Collections.Generic.IReadOnlyList(Of InSync.IBareLock))
+  nameWithType: MultiSync.All(IReadOnlyList<IBareLock>)
+  nameWithType.vb: MultiSync.All(IReadOnlyList(Of IBareLock))
+- uid: InSync.MultiSync.All*
+  name: All
+  href: api/InSync.MultiSync.html#InSync_MultiSync_All_
+  commentId: Overload:InSync.MultiSync.All
+  isSpec: "True"
+  fullName: InSync.MultiSync.All
+  nameWithType: MultiSync.All
+- uid: InSync.MultiSync.All``1(System.Collections.Generic.IReadOnlyList{InSync.IBareLock{``0}})
+  name: All<T>(IReadOnlyList<IBareLock<T>>)
+  href: api/InSync.MultiSync.html#InSync_MultiSync_All__1_System_Collections_Generic_IReadOnlyList_InSync_IBareLock___0___
+  commentId: M:InSync.MultiSync.All``1(System.Collections.Generic.IReadOnlyList{InSync.IBareLock{``0}})
+  name.vb: All(Of T)(IReadOnlyList(Of IBareLock(Of T)))
+  fullName: InSync.MultiSync.All<T>(System.Collections.Generic.IReadOnlyList<InSync.IBareLock<T>>)
+  fullName.vb: InSync.MultiSync.All(Of T)(System.Collections.Generic.IReadOnlyList(Of InSync.IBareLock(Of T)))
+  nameWithType: MultiSync.All<T>(IReadOnlyList<IBareLock<T>>)
+  nameWithType.vb: MultiSync.All(Of T)(IReadOnlyList(Of IBareLock(Of T)))
+- uid: InSync.MultiSync.AllAsync(System.Collections.Generic.IReadOnlyList{InSync.IBareAsyncLock})
+  name: AllAsync(IReadOnlyList<IBareAsyncLock>)
+  href: api/InSync.MultiSync.html#InSync_MultiSync_AllAsync_System_Collections_Generic_IReadOnlyList_InSync_IBareAsyncLock__
+  commentId: M:InSync.MultiSync.AllAsync(System.Collections.Generic.IReadOnlyList{InSync.IBareAsyncLock})
+  name.vb: AllAsync(IReadOnlyList(Of IBareAsyncLock))
+  fullName: InSync.MultiSync.AllAsync(System.Collections.Generic.IReadOnlyList<InSync.IBareAsyncLock>)
+  fullName.vb: InSync.MultiSync.AllAsync(System.Collections.Generic.IReadOnlyList(Of InSync.IBareAsyncLock))
+  nameWithType: MultiSync.AllAsync(IReadOnlyList<IBareAsyncLock>)
+  nameWithType.vb: MultiSync.AllAsync(IReadOnlyList(Of IBareAsyncLock))
+- uid: InSync.MultiSync.AllAsync(System.Collections.Generic.IReadOnlyList{InSync.IBareAsyncLock},System.Threading.CancellationToken)
+  name: AllAsync(IReadOnlyList<IBareAsyncLock>, CancellationToken)
+  href: api/InSync.MultiSync.html#InSync_MultiSync_AllAsync_System_Collections_Generic_IReadOnlyList_InSync_IBareAsyncLock__System_Threading_CancellationToken_
+  commentId: M:InSync.MultiSync.AllAsync(System.Collections.Generic.IReadOnlyList{InSync.IBareAsyncLock},System.Threading.CancellationToken)
+  name.vb: AllAsync(IReadOnlyList(Of IBareAsyncLock), CancellationToken)
+  fullName: InSync.MultiSync.AllAsync(System.Collections.Generic.IReadOnlyList<InSync.IBareAsyncLock>, System.Threading.CancellationToken)
+  fullName.vb: InSync.MultiSync.AllAsync(System.Collections.Generic.IReadOnlyList(Of InSync.IBareAsyncLock), System.Threading.CancellationToken)
+  nameWithType: MultiSync.AllAsync(IReadOnlyList<IBareAsyncLock>, CancellationToken)
+  nameWithType.vb: MultiSync.AllAsync(IReadOnlyList(Of IBareAsyncLock), CancellationToken)
+- uid: InSync.MultiSync.AllAsync*
+  name: AllAsync
+  href: api/InSync.MultiSync.html#InSync_MultiSync_AllAsync_
+  commentId: Overload:InSync.MultiSync.AllAsync
+  isSpec: "True"
+  fullName: InSync.MultiSync.AllAsync
+  nameWithType: MultiSync.AllAsync
+- uid: InSync.MultiSync.AllAsync``1(System.Collections.Generic.IReadOnlyList{InSync.IBareAsyncLock{``0}})
+  name: AllAsync<T>(IReadOnlyList<IBareAsyncLock<T>>)
+  href: api/InSync.MultiSync.html#InSync_MultiSync_AllAsync__1_System_Collections_Generic_IReadOnlyList_InSync_IBareAsyncLock___0___
+  commentId: M:InSync.MultiSync.AllAsync``1(System.Collections.Generic.IReadOnlyList{InSync.IBareAsyncLock{``0}})
+  name.vb: AllAsync(Of T)(IReadOnlyList(Of IBareAsyncLock(Of T)))
+  fullName: InSync.MultiSync.AllAsync<T>(System.Collections.Generic.IReadOnlyList<InSync.IBareAsyncLock<T>>)
+  fullName.vb: InSync.MultiSync.AllAsync(Of T)(System.Collections.Generic.IReadOnlyList(Of InSync.IBareAsyncLock(Of T)))
+  nameWithType: MultiSync.AllAsync<T>(IReadOnlyList<IBareAsyncLock<T>>)
+  nameWithType.vb: MultiSync.AllAsync(Of T)(IReadOnlyList(Of IBareAsyncLock(Of T)))
+- uid: InSync.MultiSync.AllAsync``1(System.Collections.Generic.IReadOnlyList{InSync.IBareAsyncLock{``0}},System.Threading.CancellationToken)
+  name: AllAsync<T>(IReadOnlyList<IBareAsyncLock<T>>, CancellationToken)
+  href: api/InSync.MultiSync.html#InSync_MultiSync_AllAsync__1_System_Collections_Generic_IReadOnlyList_InSync_IBareAsyncLock___0___System_Threading_CancellationToken_
+  commentId: M:InSync.MultiSync.AllAsync``1(System.Collections.Generic.IReadOnlyList{InSync.IBareAsyncLock{``0}},System.Threading.CancellationToken)
+  name.vb: AllAsync(Of T)(IReadOnlyList(Of IBareAsyncLock(Of T)), CancellationToken)
+  fullName: InSync.MultiSync.AllAsync<T>(System.Collections.Generic.IReadOnlyList<InSync.IBareAsyncLock<T>>, System.Threading.CancellationToken)
+  fullName.vb: InSync.MultiSync.AllAsync(Of T)(System.Collections.Generic.IReadOnlyList(Of InSync.IBareAsyncLock(Of T)), System.Threading.CancellationToken)
+  nameWithType: MultiSync.AllAsync<T>(IReadOnlyList<IBareAsyncLock<T>>, CancellationToken)
+  nameWithType.vb: MultiSync.AllAsync(Of T)(IReadOnlyList(Of IBareAsyncLock(Of T)), CancellationToken)
+- uid: InSync.ReaderSynchronized`1
+  name: ReaderSynchronized<TRead>
+  href: api/InSync.ReaderSynchronized-1.html
+  commentId: T:InSync.ReaderSynchronized`1
+  name.vb: ReaderSynchronized(Of TRead)
+  fullName: InSync.ReaderSynchronized<TRead>
+  fullName.vb: InSync.ReaderSynchronized(Of TRead)
+  nameWithType: ReaderSynchronized<TRead>
+  nameWithType.vb: ReaderSynchronized(Of TRead)
+- uid: InSync.ReaderSynchronized`1.#ctor(System.Threading.ReaderWriterLockSlim,`0)
+  name: ReaderSynchronized(ReaderWriterLockSlim, TRead)
+  href: api/InSync.ReaderSynchronized-1.html#InSync_ReaderSynchronized_1__ctor_System_Threading_ReaderWriterLockSlim__0_
+  commentId: M:InSync.ReaderSynchronized`1.#ctor(System.Threading.ReaderWriterLockSlim,`0)
+  fullName: InSync.ReaderSynchronized<TRead>.ReaderSynchronized(System.Threading.ReaderWriterLockSlim, TRead)
+  fullName.vb: InSync.ReaderSynchronized(Of TRead).ReaderSynchronized(System.Threading.ReaderWriterLockSlim, TRead)
+  nameWithType: ReaderSynchronized<TRead>.ReaderSynchronized(ReaderWriterLockSlim, TRead)
+  nameWithType.vb: ReaderSynchronized(Of TRead).ReaderSynchronized(ReaderWriterLockSlim, TRead)
+- uid: InSync.ReaderSynchronized`1.#ctor*
+  name: ReaderSynchronized
+  href: api/InSync.ReaderSynchronized-1.html#InSync_ReaderSynchronized_1__ctor_
+  commentId: Overload:InSync.ReaderSynchronized`1.#ctor
+  isSpec: "True"
+  fullName: InSync.ReaderSynchronized<TRead>.ReaderSynchronized
+  fullName.vb: InSync.ReaderSynchronized(Of TRead).ReaderSynchronized
+  nameWithType: ReaderSynchronized<TRead>.ReaderSynchronized
+  nameWithType.vb: ReaderSynchronized(Of TRead).ReaderSynchronized
+- uid: InSync.ReaderSynchronized`1.BarelyLock
+  name: BarelyLock()
+  href: api/InSync.ReaderSynchronized-1.html#InSync_ReaderSynchronized_1_BarelyLock
+  commentId: M:InSync.ReaderSynchronized`1.BarelyLock
+  fullName: InSync.ReaderSynchronized<TRead>.BarelyLock()
+  fullName.vb: InSync.ReaderSynchronized(Of TRead).BarelyLock()
+  nameWithType: ReaderSynchronized<TRead>.BarelyLock()
+  nameWithType.vb: ReaderSynchronized(Of TRead).BarelyLock()
+- uid: InSync.ReaderSynchronized`1.BarelyLock*
+  name: BarelyLock
+  href: api/InSync.ReaderSynchronized-1.html#InSync_ReaderSynchronized_1_BarelyLock_
+  commentId: Overload:InSync.ReaderSynchronized`1.BarelyLock
+  isSpec: "True"
+  fullName: InSync.ReaderSynchronized<TRead>.BarelyLock
+  fullName.vb: InSync.ReaderSynchronized(Of TRead).BarelyLock
+  nameWithType: ReaderSynchronized<TRead>.BarelyLock
+  nameWithType.vb: ReaderSynchronized(Of TRead).BarelyLock
+- uid: InSync.ReaderSynchronized`1.BarelyTryLock(`0@)
+  name: BarelyTryLock(out TRead)
+  href: api/InSync.ReaderSynchronized-1.html#InSync_ReaderSynchronized_1_BarelyTryLock__0__
+  commentId: M:InSync.ReaderSynchronized`1.BarelyTryLock(`0@)
+  name.vb: BarelyTryLock(ByRef TRead)
+  fullName: InSync.ReaderSynchronized<TRead>.BarelyTryLock(out TRead)
+  fullName.vb: InSync.ReaderSynchronized(Of TRead).BarelyTryLock(ByRef TRead)
+  nameWithType: ReaderSynchronized<TRead>.BarelyTryLock(out TRead)
+  nameWithType.vb: ReaderSynchronized(Of TRead).BarelyTryLock(ByRef TRead)
+- uid: InSync.ReaderSynchronized`1.BarelyTryLock(System.Int32,`0@)
+  name: BarelyTryLock(Int32, out TRead)
+  href: api/InSync.ReaderSynchronized-1.html#InSync_ReaderSynchronized_1_BarelyTryLock_System_Int32__0__
+  commentId: M:InSync.ReaderSynchronized`1.BarelyTryLock(System.Int32,`0@)
+  name.vb: BarelyTryLock(Int32, ByRef TRead)
+  fullName: InSync.ReaderSynchronized<TRead>.BarelyTryLock(System.Int32, out TRead)
+  fullName.vb: InSync.ReaderSynchronized(Of TRead).BarelyTryLock(System.Int32, ByRef TRead)
+  nameWithType: ReaderSynchronized<TRead>.BarelyTryLock(Int32, out TRead)
+  nameWithType.vb: ReaderSynchronized(Of TRead).BarelyTryLock(Int32, ByRef TRead)
+- uid: InSync.ReaderSynchronized`1.BarelyTryLock(System.TimeSpan,`0@)
+  name: BarelyTryLock(TimeSpan, out TRead)
+  href: api/InSync.ReaderSynchronized-1.html#InSync_ReaderSynchronized_1_BarelyTryLock_System_TimeSpan__0__
+  commentId: M:InSync.ReaderSynchronized`1.BarelyTryLock(System.TimeSpan,`0@)
+  name.vb: BarelyTryLock(TimeSpan, ByRef TRead)
+  fullName: InSync.ReaderSynchronized<TRead>.BarelyTryLock(System.TimeSpan, out TRead)
+  fullName.vb: InSync.ReaderSynchronized(Of TRead).BarelyTryLock(System.TimeSpan, ByRef TRead)
+  nameWithType: ReaderSynchronized<TRead>.BarelyTryLock(TimeSpan, out TRead)
+  nameWithType.vb: ReaderSynchronized(Of TRead).BarelyTryLock(TimeSpan, ByRef TRead)
+- uid: InSync.ReaderSynchronized`1.BarelyTryLock*
+  name: BarelyTryLock
+  href: api/InSync.ReaderSynchronized-1.html#InSync_ReaderSynchronized_1_BarelyTryLock_
+  commentId: Overload:InSync.ReaderSynchronized`1.BarelyTryLock
+  isSpec: "True"
+  fullName: InSync.ReaderSynchronized<TRead>.BarelyTryLock
+  fullName.vb: InSync.ReaderSynchronized(Of TRead).BarelyTryLock
+  nameWithType: ReaderSynchronized<TRead>.BarelyTryLock
+  nameWithType.vb: ReaderSynchronized(Of TRead).BarelyTryLock
+- uid: InSync.ReaderSynchronized`1.BarelyUnlock
+  name: BarelyUnlock()
+  href: api/InSync.ReaderSynchronized-1.html#InSync_ReaderSynchronized_1_BarelyUnlock
+  commentId: M:InSync.ReaderSynchronized`1.BarelyUnlock
+  fullName: InSync.ReaderSynchronized<TRead>.BarelyUnlock()
+  fullName.vb: InSync.ReaderSynchronized(Of TRead).BarelyUnlock()
+  nameWithType: ReaderSynchronized<TRead>.BarelyUnlock()
+  nameWithType.vb: ReaderSynchronized(Of TRead).BarelyUnlock()
+- uid: InSync.ReaderSynchronized`1.BarelyUnlock*
+  name: BarelyUnlock
+  href: api/InSync.ReaderSynchronized-1.html#InSync_ReaderSynchronized_1_BarelyUnlock_
+  commentId: Overload:InSync.ReaderSynchronized`1.BarelyUnlock
+  isSpec: "True"
+  fullName: InSync.ReaderSynchronized<TRead>.BarelyUnlock
+  fullName.vb: InSync.ReaderSynchronized(Of TRead).BarelyUnlock
+  nameWithType: ReaderSynchronized<TRead>.BarelyUnlock
+  nameWithType.vb: ReaderSynchronized(Of TRead).BarelyUnlock
+- uid: InSync.ReaderSynchronized`1.InSync#IBareLock#BarelyLock
+  name: IBareLock.BarelyLock()
+  href: api/InSync.ReaderSynchronized-1.html#InSync_ReaderSynchronized_1_InSync_IBareLock_BarelyLock
+  commentId: M:InSync.ReaderSynchronized`1.InSync#IBareLock#BarelyLock
+  name.vb: InSync.IBareLock.BarelyLock()
+  fullName: InSync.ReaderSynchronized<TRead>.InSync.IBareLock.BarelyLock()
+  fullName.vb: InSync.ReaderSynchronized(Of TRead).InSync.IBareLock.BarelyLock()
+  nameWithType: ReaderSynchronized<TRead>.IBareLock.BarelyLock()
+  nameWithType.vb: ReaderSynchronized(Of TRead).InSync.IBareLock.BarelyLock()
+- uid: InSync.ReaderSynchronized`1.InSync#IBareLock#BarelyLock*
+  name: IBareLock.BarelyLock
+  href: api/InSync.ReaderSynchronized-1.html#InSync_ReaderSynchronized_1_InSync_IBareLock_BarelyLock_
+  commentId: Overload:InSync.ReaderSynchronized`1.InSync#IBareLock#BarelyLock
+  isSpec: "True"
+  name.vb: InSync.IBareLock.BarelyLock
+  fullName: InSync.ReaderSynchronized<TRead>.InSync.IBareLock.BarelyLock
+  fullName.vb: InSync.ReaderSynchronized(Of TRead).InSync.IBareLock.BarelyLock
+  nameWithType: ReaderSynchronized<TRead>.IBareLock.BarelyLock
+  nameWithType.vb: ReaderSynchronized(Of TRead).InSync.IBareLock.BarelyLock
+- uid: InSync.ReaderSynchronized`1.InSync#IBareLock#BarelyTryLock(System.Int32,System.Object@)
+  name: IBareLock.BarelyTryLock(Int32, out Object)
+  href: api/InSync.ReaderSynchronized-1.html#InSync_ReaderSynchronized_1_InSync_IBareLock_BarelyTryLock_System_Int32_System_Object__
+  commentId: M:InSync.ReaderSynchronized`1.InSync#IBareLock#BarelyTryLock(System.Int32,System.Object@)
+  name.vb: InSync.IBareLock.BarelyTryLock(Int32, ByRef Object)
+  fullName: InSync.ReaderSynchronized<TRead>.InSync.IBareLock.BarelyTryLock(System.Int32, out System.Object)
+  fullName.vb: InSync.ReaderSynchronized(Of TRead).InSync.IBareLock.BarelyTryLock(System.Int32, ByRef System.Object)
+  nameWithType: ReaderSynchronized<TRead>.IBareLock.BarelyTryLock(Int32, out Object)
+  nameWithType.vb: ReaderSynchronized(Of TRead).InSync.IBareLock.BarelyTryLock(Int32, ByRef Object)
+- uid: InSync.ReaderSynchronized`1.InSync#IBareLock#BarelyTryLock(System.Object@)
+  name: IBareLock.BarelyTryLock(out Object)
+  href: api/InSync.ReaderSynchronized-1.html#InSync_ReaderSynchronized_1_InSync_IBareLock_BarelyTryLock_System_Object__
+  commentId: M:InSync.ReaderSynchronized`1.InSync#IBareLock#BarelyTryLock(System.Object@)
+  name.vb: InSync.IBareLock.BarelyTryLock(ByRef Object)
+  fullName: InSync.ReaderSynchronized<TRead>.InSync.IBareLock.BarelyTryLock(out System.Object)
+  fullName.vb: InSync.ReaderSynchronized(Of TRead).InSync.IBareLock.BarelyTryLock(ByRef System.Object)
+  nameWithType: ReaderSynchronized<TRead>.IBareLock.BarelyTryLock(out Object)
+  nameWithType.vb: ReaderSynchronized(Of TRead).InSync.IBareLock.BarelyTryLock(ByRef Object)
+- uid: InSync.ReaderSynchronized`1.InSync#IBareLock#BarelyTryLock(System.TimeSpan,System.Object@)
+  name: IBareLock.BarelyTryLock(TimeSpan, out Object)
+  href: api/InSync.ReaderSynchronized-1.html#InSync_ReaderSynchronized_1_InSync_IBareLock_BarelyTryLock_System_TimeSpan_System_Object__
+  commentId: M:InSync.ReaderSynchronized`1.InSync#IBareLock#BarelyTryLock(System.TimeSpan,System.Object@)
+  name.vb: InSync.IBareLock.BarelyTryLock(TimeSpan, ByRef Object)
+  fullName: InSync.ReaderSynchronized<TRead>.InSync.IBareLock.BarelyTryLock(System.TimeSpan, out System.Object)
+  fullName.vb: InSync.ReaderSynchronized(Of TRead).InSync.IBareLock.BarelyTryLock(System.TimeSpan, ByRef System.Object)
+  nameWithType: ReaderSynchronized<TRead>.IBareLock.BarelyTryLock(TimeSpan, out Object)
+  nameWithType.vb: ReaderSynchronized(Of TRead).InSync.IBareLock.BarelyTryLock(TimeSpan, ByRef Object)
+- uid: InSync.ReaderSynchronized`1.InSync#IBareLock#BarelyTryLock*
+  name: IBareLock.BarelyTryLock
+  href: api/InSync.ReaderSynchronized-1.html#InSync_ReaderSynchronized_1_InSync_IBareLock_BarelyTryLock_
+  commentId: Overload:InSync.ReaderSynchronized`1.InSync#IBareLock#BarelyTryLock
+  isSpec: "True"
+  name.vb: InSync.IBareLock.BarelyTryLock
+  fullName: InSync.ReaderSynchronized<TRead>.InSync.IBareLock.BarelyTryLock
+  fullName.vb: InSync.ReaderSynchronized(Of TRead).InSync.IBareLock.BarelyTryLock
+  nameWithType: ReaderSynchronized<TRead>.IBareLock.BarelyTryLock
+  nameWithType.vb: ReaderSynchronized(Of TRead).InSync.IBareLock.BarelyTryLock
+- uid: InSync.ReaderSynchronized`1.Lock
+  name: Lock()
+  href: api/InSync.ReaderSynchronized-1.html#InSync_ReaderSynchronized_1_Lock
+  commentId: M:InSync.ReaderSynchronized`1.Lock
+  fullName: InSync.ReaderSynchronized<TRead>.Lock()
+  fullName.vb: InSync.ReaderSynchronized(Of TRead).Lock()
+  nameWithType: ReaderSynchronized<TRead>.Lock()
+  nameWithType.vb: ReaderSynchronized(Of TRead).Lock()
+- uid: InSync.ReaderSynchronized`1.Lock*
+  name: Lock
+  href: api/InSync.ReaderSynchronized-1.html#InSync_ReaderSynchronized_1_Lock_
+  commentId: Overload:InSync.ReaderSynchronized`1.Lock
+  isSpec: "True"
+  fullName: InSync.ReaderSynchronized<TRead>.Lock
+  fullName.vb: InSync.ReaderSynchronized(Of TRead).Lock
+  nameWithType: ReaderSynchronized<TRead>.Lock
+  nameWithType.vb: ReaderSynchronized(Of TRead).Lock
+- uid: InSync.ReaderSynchronized`1.reader
+  name: reader
+  href: api/InSync.ReaderSynchronized-1.html#InSync_ReaderSynchronized_1_reader
+  commentId: F:InSync.ReaderSynchronized`1.reader
+  fullName: InSync.ReaderSynchronized<TRead>.reader
+  fullName.vb: InSync.ReaderSynchronized(Of TRead).reader
+  nameWithType: ReaderSynchronized<TRead>.reader
+  nameWithType.vb: ReaderSynchronized(Of TRead).reader
+- uid: InSync.ReaderSynchronized`1.readerWriterLockSlim
+  name: readerWriterLockSlim
+  href: api/InSync.ReaderSynchronized-1.html#InSync_ReaderSynchronized_1_readerWriterLockSlim
+  commentId: F:InSync.ReaderSynchronized`1.readerWriterLockSlim
+  fullName: InSync.ReaderSynchronized<TRead>.readerWriterLockSlim
+  fullName.vb: InSync.ReaderSynchronized(Of TRead).readerWriterLockSlim
+  nameWithType: ReaderSynchronized<TRead>.readerWriterLockSlim
+  nameWithType.vb: ReaderSynchronized(Of TRead).readerWriterLockSlim
+- uid: InSync.ReaderSynchronized`1.TryLock
+  name: TryLock()
+  href: api/InSync.ReaderSynchronized-1.html#InSync_ReaderSynchronized_1_TryLock
+  commentId: M:InSync.ReaderSynchronized`1.TryLock
+  fullName: InSync.ReaderSynchronized<TRead>.TryLock()
+  fullName.vb: InSync.ReaderSynchronized(Of TRead).TryLock()
+  nameWithType: ReaderSynchronized<TRead>.TryLock()
+  nameWithType.vb: ReaderSynchronized(Of TRead).TryLock()
+- uid: InSync.ReaderSynchronized`1.TryLock(System.Int32)
+  name: TryLock(Int32)
+  href: api/InSync.ReaderSynchronized-1.html#InSync_ReaderSynchronized_1_TryLock_System_Int32_
+  commentId: M:InSync.ReaderSynchronized`1.TryLock(System.Int32)
+  fullName: InSync.ReaderSynchronized<TRead>.TryLock(System.Int32)
+  fullName.vb: InSync.ReaderSynchronized(Of TRead).TryLock(System.Int32)
+  nameWithType: ReaderSynchronized<TRead>.TryLock(Int32)
+  nameWithType.vb: ReaderSynchronized(Of TRead).TryLock(Int32)
+- uid: InSync.ReaderSynchronized`1.TryLock(System.TimeSpan)
+  name: TryLock(TimeSpan)
+  href: api/InSync.ReaderSynchronized-1.html#InSync_ReaderSynchronized_1_TryLock_System_TimeSpan_
+  commentId: M:InSync.ReaderSynchronized`1.TryLock(System.TimeSpan)
+  fullName: InSync.ReaderSynchronized<TRead>.TryLock(System.TimeSpan)
+  fullName.vb: InSync.ReaderSynchronized(Of TRead).TryLock(System.TimeSpan)
+  nameWithType: ReaderSynchronized<TRead>.TryLock(TimeSpan)
+  nameWithType.vb: ReaderSynchronized(Of TRead).TryLock(TimeSpan)
+- uid: InSync.ReaderSynchronized`1.TryLock*
+  name: TryLock
+  href: api/InSync.ReaderSynchronized-1.html#InSync_ReaderSynchronized_1_TryLock_
+  commentId: Overload:InSync.ReaderSynchronized`1.TryLock
+  isSpec: "True"
+  fullName: InSync.ReaderSynchronized<TRead>.TryLock
+  fullName.vb: InSync.ReaderSynchronized(Of TRead).TryLock
+  nameWithType: ReaderSynchronized<TRead>.TryLock
+  nameWithType.vb: ReaderSynchronized(Of TRead).TryLock
+- uid: InSync.ReaderSynchronized`1.TryWithLock(System.Action{`0})
+  name: TryWithLock(Action<TRead>)
+  href: api/InSync.ReaderSynchronized-1.html#InSync_ReaderSynchronized_1_TryWithLock_System_Action__0__
+  commentId: M:InSync.ReaderSynchronized`1.TryWithLock(System.Action{`0})
+  name.vb: TryWithLock(Action(Of TRead))
+  fullName: InSync.ReaderSynchronized<TRead>.TryWithLock(System.Action<TRead>)
+  fullName.vb: InSync.ReaderSynchronized(Of TRead).TryWithLock(System.Action(Of TRead))
+  nameWithType: ReaderSynchronized<TRead>.TryWithLock(Action<TRead>)
+  nameWithType.vb: ReaderSynchronized(Of TRead).TryWithLock(Action(Of TRead))
+- uid: InSync.ReaderSynchronized`1.TryWithLock(System.Int32,System.Action{`0})
+  name: TryWithLock(Int32, Action<TRead>)
+  href: api/InSync.ReaderSynchronized-1.html#InSync_ReaderSynchronized_1_TryWithLock_System_Int32_System_Action__0__
+  commentId: M:InSync.ReaderSynchronized`1.TryWithLock(System.Int32,System.Action{`0})
+  name.vb: TryWithLock(Int32, Action(Of TRead))
+  fullName: InSync.ReaderSynchronized<TRead>.TryWithLock(System.Int32, System.Action<TRead>)
+  fullName.vb: InSync.ReaderSynchronized(Of TRead).TryWithLock(System.Int32, System.Action(Of TRead))
+  nameWithType: ReaderSynchronized<TRead>.TryWithLock(Int32, Action<TRead>)
+  nameWithType.vb: ReaderSynchronized(Of TRead).TryWithLock(Int32, Action(Of TRead))
+- uid: InSync.ReaderSynchronized`1.TryWithLock(System.TimeSpan,System.Action{`0})
+  name: TryWithLock(TimeSpan, Action<TRead>)
+  href: api/InSync.ReaderSynchronized-1.html#InSync_ReaderSynchronized_1_TryWithLock_System_TimeSpan_System_Action__0__
+  commentId: M:InSync.ReaderSynchronized`1.TryWithLock(System.TimeSpan,System.Action{`0})
+  name.vb: TryWithLock(TimeSpan, Action(Of TRead))
+  fullName: InSync.ReaderSynchronized<TRead>.TryWithLock(System.TimeSpan, System.Action<TRead>)
+  fullName.vb: InSync.ReaderSynchronized(Of TRead).TryWithLock(System.TimeSpan, System.Action(Of TRead))
+  nameWithType: ReaderSynchronized<TRead>.TryWithLock(TimeSpan, Action<TRead>)
+  nameWithType.vb: ReaderSynchronized(Of TRead).TryWithLock(TimeSpan, Action(Of TRead))
+- uid: InSync.ReaderSynchronized`1.TryWithLock*
+  name: TryWithLock
+  href: api/InSync.ReaderSynchronized-1.html#InSync_ReaderSynchronized_1_TryWithLock_
+  commentId: Overload:InSync.ReaderSynchronized`1.TryWithLock
+  isSpec: "True"
+  fullName: InSync.ReaderSynchronized<TRead>.TryWithLock
+  fullName.vb: InSync.ReaderSynchronized(Of TRead).TryWithLock
+  nameWithType: ReaderSynchronized<TRead>.TryWithLock
+  nameWithType.vb: ReaderSynchronized(Of TRead).TryWithLock
+- uid: InSync.ReaderSynchronized`1.WithLock(System.Action{`0})
+  name: WithLock(Action<TRead>)
+  href: api/InSync.ReaderSynchronized-1.html#InSync_ReaderSynchronized_1_WithLock_System_Action__0__
+  commentId: M:InSync.ReaderSynchronized`1.WithLock(System.Action{`0})
+  name.vb: WithLock(Action(Of TRead))
+  fullName: InSync.ReaderSynchronized<TRead>.WithLock(System.Action<TRead>)
+  fullName.vb: InSync.ReaderSynchronized(Of TRead).WithLock(System.Action(Of TRead))
+  nameWithType: ReaderSynchronized<TRead>.WithLock(Action<TRead>)
+  nameWithType.vb: ReaderSynchronized(Of TRead).WithLock(Action(Of TRead))
+- uid: InSync.ReaderSynchronized`1.WithLock*
+  name: WithLock
+  href: api/InSync.ReaderSynchronized-1.html#InSync_ReaderSynchronized_1_WithLock_
+  commentId: Overload:InSync.ReaderSynchronized`1.WithLock
+  isSpec: "True"
+  fullName: InSync.ReaderSynchronized<TRead>.WithLock
+  fullName.vb: InSync.ReaderSynchronized(Of TRead).WithLock
+  nameWithType: ReaderSynchronized<TRead>.WithLock
+  nameWithType.vb: ReaderSynchronized(Of TRead).WithLock
+- uid: InSync.ReaderSynchronized`1.WithLock``1(System.Func{`0,``0})
+  name: WithLock<TResult>(Func<TRead, TResult>)
+  href: api/InSync.ReaderSynchronized-1.html#InSync_ReaderSynchronized_1_WithLock__1_System_Func__0___0__
+  commentId: M:InSync.ReaderSynchronized`1.WithLock``1(System.Func{`0,``0})
+  name.vb: WithLock(Of TResult)(Func(Of TRead, TResult))
+  fullName: InSync.ReaderSynchronized<TRead>.WithLock<TResult>(System.Func<TRead, TResult>)
+  fullName.vb: InSync.ReaderSynchronized(Of TRead).WithLock(Of TResult)(System.Func(Of TRead, TResult))
+  nameWithType: ReaderSynchronized<TRead>.WithLock<TResult>(Func<TRead, TResult>)
+  nameWithType.vb: ReaderSynchronized(Of TRead).WithLock(Of TResult)(Func(Of TRead, TResult))
+- uid: InSync.ReaderWriterSynchronized`1
+  name: ReaderWriterSynchronized<T>
+  href: api/InSync.ReaderWriterSynchronized-1.html
+  commentId: T:InSync.ReaderWriterSynchronized`1
+  name.vb: ReaderWriterSynchronized(Of T)
+  fullName: InSync.ReaderWriterSynchronized<T>
+  fullName.vb: InSync.ReaderWriterSynchronized(Of T)
+  nameWithType: ReaderWriterSynchronized<T>
+  nameWithType.vb: ReaderWriterSynchronized(Of T)
+- uid: InSync.ReaderWriterSynchronized`1.#ctor(System.Threading.ReaderWriterLockSlim,`0)
+  name: ReaderWriterSynchronized(ReaderWriterLockSlim, T)
+  href: api/InSync.ReaderWriterSynchronized-1.html#InSync_ReaderWriterSynchronized_1__ctor_System_Threading_ReaderWriterLockSlim__0_
+  commentId: M:InSync.ReaderWriterSynchronized`1.#ctor(System.Threading.ReaderWriterLockSlim,`0)
+  fullName: InSync.ReaderWriterSynchronized<T>.ReaderWriterSynchronized(System.Threading.ReaderWriterLockSlim, T)
+  fullName.vb: InSync.ReaderWriterSynchronized(Of T).ReaderWriterSynchronized(System.Threading.ReaderWriterLockSlim, T)
+  nameWithType: ReaderWriterSynchronized<T>.ReaderWriterSynchronized(ReaderWriterLockSlim, T)
+  nameWithType.vb: ReaderWriterSynchronized(Of T).ReaderWriterSynchronized(ReaderWriterLockSlim, T)
+- uid: InSync.ReaderWriterSynchronized`1.#ctor*
+  name: ReaderWriterSynchronized
+  href: api/InSync.ReaderWriterSynchronized-1.html#InSync_ReaderWriterSynchronized_1__ctor_
+  commentId: Overload:InSync.ReaderWriterSynchronized`1.#ctor
+  isSpec: "True"
+  fullName: InSync.ReaderWriterSynchronized<T>.ReaderWriterSynchronized
+  fullName.vb: InSync.ReaderWriterSynchronized(Of T).ReaderWriterSynchronized
+  nameWithType: ReaderWriterSynchronized<T>.ReaderWriterSynchronized
+  nameWithType.vb: ReaderWriterSynchronized(Of T).ReaderWriterSynchronized
+- uid: InSync.ReaderWriterSynchronized`2
+  name: ReaderWriterSynchronized<TWrite, TRead>
+  href: api/InSync.ReaderWriterSynchronized-2.html
+  commentId: T:InSync.ReaderWriterSynchronized`2
+  name.vb: ReaderWriterSynchronized(Of TWrite, TRead)
+  fullName: InSync.ReaderWriterSynchronized<TWrite, TRead>
+  fullName.vb: InSync.ReaderWriterSynchronized(Of TWrite, TRead)
+  nameWithType: ReaderWriterSynchronized<TWrite, TRead>
+  nameWithType.vb: ReaderWriterSynchronized(Of TWrite, TRead)
+- uid: InSync.ReaderWriterSynchronized`2.#ctor(System.Threading.ReaderWriterLockSlim,`0,`1)
+  name: ReaderWriterSynchronized(ReaderWriterLockSlim, TWrite, TRead)
+  href: api/InSync.ReaderWriterSynchronized-2.html#InSync_ReaderWriterSynchronized_2__ctor_System_Threading_ReaderWriterLockSlim__0__1_
+  commentId: M:InSync.ReaderWriterSynchronized`2.#ctor(System.Threading.ReaderWriterLockSlim,`0,`1)
+  fullName: InSync.ReaderWriterSynchronized<TWrite, TRead>.ReaderWriterSynchronized(System.Threading.ReaderWriterLockSlim, TWrite, TRead)
+  fullName.vb: InSync.ReaderWriterSynchronized(Of TWrite, TRead).ReaderWriterSynchronized(System.Threading.ReaderWriterLockSlim, TWrite, TRead)
+  nameWithType: ReaderWriterSynchronized<TWrite, TRead>.ReaderWriterSynchronized(ReaderWriterLockSlim, TWrite, TRead)
+  nameWithType.vb: ReaderWriterSynchronized(Of TWrite, TRead).ReaderWriterSynchronized(ReaderWriterLockSlim, TWrite, TRead)
+- uid: InSync.ReaderWriterSynchronized`2.#ctor*
+  name: ReaderWriterSynchronized
+  href: api/InSync.ReaderWriterSynchronized-2.html#InSync_ReaderWriterSynchronized_2__ctor_
+  commentId: Overload:InSync.ReaderWriterSynchronized`2.#ctor
+  isSpec: "True"
+  fullName: InSync.ReaderWriterSynchronized<TWrite, TRead>.ReaderWriterSynchronized
+  fullName.vb: InSync.ReaderWriterSynchronized(Of TWrite, TRead).ReaderWriterSynchronized
+  nameWithType: ReaderWriterSynchronized<TWrite, TRead>.ReaderWriterSynchronized
+  nameWithType.vb: ReaderWriterSynchronized(Of TWrite, TRead).ReaderWriterSynchronized
+- uid: InSync.ReaderWriterSynchronized`2.BarelyLock
+  name: BarelyLock()
+  href: api/InSync.ReaderWriterSynchronized-2.html#InSync_ReaderWriterSynchronized_2_BarelyLock
+  commentId: M:InSync.ReaderWriterSynchronized`2.BarelyLock
+  fullName: InSync.ReaderWriterSynchronized<TWrite, TRead>.BarelyLock()
+  fullName.vb: InSync.ReaderWriterSynchronized(Of TWrite, TRead).BarelyLock()
+  nameWithType: ReaderWriterSynchronized<TWrite, TRead>.BarelyLock()
+  nameWithType.vb: ReaderWriterSynchronized(Of TWrite, TRead).BarelyLock()
+- uid: InSync.ReaderWriterSynchronized`2.BarelyLock*
+  name: BarelyLock
+  href: api/InSync.ReaderWriterSynchronized-2.html#InSync_ReaderWriterSynchronized_2_BarelyLock_
+  commentId: Overload:InSync.ReaderWriterSynchronized`2.BarelyLock
+  isSpec: "True"
+  fullName: InSync.ReaderWriterSynchronized<TWrite, TRead>.BarelyLock
+  fullName.vb: InSync.ReaderWriterSynchronized(Of TWrite, TRead).BarelyLock
+  nameWithType: ReaderWriterSynchronized<TWrite, TRead>.BarelyLock
+  nameWithType.vb: ReaderWriterSynchronized(Of TWrite, TRead).BarelyLock
+- uid: InSync.ReaderWriterSynchronized`2.BarelyTryLock(`0@)
+  name: BarelyTryLock(out TWrite)
+  href: api/InSync.ReaderWriterSynchronized-2.html#InSync_ReaderWriterSynchronized_2_BarelyTryLock__0__
+  commentId: M:InSync.ReaderWriterSynchronized`2.BarelyTryLock(`0@)
+  name.vb: BarelyTryLock(ByRef TWrite)
+  fullName: InSync.ReaderWriterSynchronized<TWrite, TRead>.BarelyTryLock(out TWrite)
+  fullName.vb: InSync.ReaderWriterSynchronized(Of TWrite, TRead).BarelyTryLock(ByRef TWrite)
+  nameWithType: ReaderWriterSynchronized<TWrite, TRead>.BarelyTryLock(out TWrite)
+  nameWithType.vb: ReaderWriterSynchronized(Of TWrite, TRead).BarelyTryLock(ByRef TWrite)
+- uid: InSync.ReaderWriterSynchronized`2.BarelyTryLock(System.Int32,`0@)
+  name: BarelyTryLock(Int32, out TWrite)
+  href: api/InSync.ReaderWriterSynchronized-2.html#InSync_ReaderWriterSynchronized_2_BarelyTryLock_System_Int32__0__
+  commentId: M:InSync.ReaderWriterSynchronized`2.BarelyTryLock(System.Int32,`0@)
+  name.vb: BarelyTryLock(Int32, ByRef TWrite)
+  fullName: InSync.ReaderWriterSynchronized<TWrite, TRead>.BarelyTryLock(System.Int32, out TWrite)
+  fullName.vb: InSync.ReaderWriterSynchronized(Of TWrite, TRead).BarelyTryLock(System.Int32, ByRef TWrite)
+  nameWithType: ReaderWriterSynchronized<TWrite, TRead>.BarelyTryLock(Int32, out TWrite)
+  nameWithType.vb: ReaderWriterSynchronized(Of TWrite, TRead).BarelyTryLock(Int32, ByRef TWrite)
+- uid: InSync.ReaderWriterSynchronized`2.BarelyTryLock(System.TimeSpan,`0@)
+  name: BarelyTryLock(TimeSpan, out TWrite)
+  href: api/InSync.ReaderWriterSynchronized-2.html#InSync_ReaderWriterSynchronized_2_BarelyTryLock_System_TimeSpan__0__
+  commentId: M:InSync.ReaderWriterSynchronized`2.BarelyTryLock(System.TimeSpan,`0@)
+  name.vb: BarelyTryLock(TimeSpan, ByRef TWrite)
+  fullName: InSync.ReaderWriterSynchronized<TWrite, TRead>.BarelyTryLock(System.TimeSpan, out TWrite)
+  fullName.vb: InSync.ReaderWriterSynchronized(Of TWrite, TRead).BarelyTryLock(System.TimeSpan, ByRef TWrite)
+  nameWithType: ReaderWriterSynchronized<TWrite, TRead>.BarelyTryLock(TimeSpan, out TWrite)
+  nameWithType.vb: ReaderWriterSynchronized(Of TWrite, TRead).BarelyTryLock(TimeSpan, ByRef TWrite)
+- uid: InSync.ReaderWriterSynchronized`2.BarelyTryLock*
+  name: BarelyTryLock
+  href: api/InSync.ReaderWriterSynchronized-2.html#InSync_ReaderWriterSynchronized_2_BarelyTryLock_
+  commentId: Overload:InSync.ReaderWriterSynchronized`2.BarelyTryLock
+  isSpec: "True"
+  fullName: InSync.ReaderWriterSynchronized<TWrite, TRead>.BarelyTryLock
+  fullName.vb: InSync.ReaderWriterSynchronized(Of TWrite, TRead).BarelyTryLock
+  nameWithType: ReaderWriterSynchronized<TWrite, TRead>.BarelyTryLock
+  nameWithType.vb: ReaderWriterSynchronized(Of TWrite, TRead).BarelyTryLock
+- uid: InSync.ReaderWriterSynchronized`2.BarelyUnlock
+  name: BarelyUnlock()
+  href: api/InSync.ReaderWriterSynchronized-2.html#InSync_ReaderWriterSynchronized_2_BarelyUnlock
+  commentId: M:InSync.ReaderWriterSynchronized`2.BarelyUnlock
+  fullName: InSync.ReaderWriterSynchronized<TWrite, TRead>.BarelyUnlock()
+  fullName.vb: InSync.ReaderWriterSynchronized(Of TWrite, TRead).BarelyUnlock()
+  nameWithType: ReaderWriterSynchronized<TWrite, TRead>.BarelyUnlock()
+  nameWithType.vb: ReaderWriterSynchronized(Of TWrite, TRead).BarelyUnlock()
+- uid: InSync.ReaderWriterSynchronized`2.BarelyUnlock*
+  name: BarelyUnlock
+  href: api/InSync.ReaderWriterSynchronized-2.html#InSync_ReaderWriterSynchronized_2_BarelyUnlock_
+  commentId: Overload:InSync.ReaderWriterSynchronized`2.BarelyUnlock
+  isSpec: "True"
+  fullName: InSync.ReaderWriterSynchronized<TWrite, TRead>.BarelyUnlock
+  fullName.vb: InSync.ReaderWriterSynchronized(Of TWrite, TRead).BarelyUnlock
+  nameWithType: ReaderWriterSynchronized<TWrite, TRead>.BarelyUnlock
+  nameWithType.vb: ReaderWriterSynchronized(Of TWrite, TRead).BarelyUnlock
+- uid: InSync.ReaderWriterSynchronized`2.InSync#IBareLock#BarelyLock
+  name: IBareLock.BarelyLock()
+  href: api/InSync.ReaderWriterSynchronized-2.html#InSync_ReaderWriterSynchronized_2_InSync_IBareLock_BarelyLock
+  commentId: M:InSync.ReaderWriterSynchronized`2.InSync#IBareLock#BarelyLock
+  name.vb: InSync.IBareLock.BarelyLock()
+  fullName: InSync.ReaderWriterSynchronized<TWrite, TRead>.InSync.IBareLock.BarelyLock()
+  fullName.vb: InSync.ReaderWriterSynchronized(Of TWrite, TRead).InSync.IBareLock.BarelyLock()
+  nameWithType: ReaderWriterSynchronized<TWrite, TRead>.IBareLock.BarelyLock()
+  nameWithType.vb: ReaderWriterSynchronized(Of TWrite, TRead).InSync.IBareLock.BarelyLock()
+- uid: InSync.ReaderWriterSynchronized`2.InSync#IBareLock#BarelyLock*
+  name: IBareLock.BarelyLock
+  href: api/InSync.ReaderWriterSynchronized-2.html#InSync_ReaderWriterSynchronized_2_InSync_IBareLock_BarelyLock_
+  commentId: Overload:InSync.ReaderWriterSynchronized`2.InSync#IBareLock#BarelyLock
+  isSpec: "True"
+  name.vb: InSync.IBareLock.BarelyLock
+  fullName: InSync.ReaderWriterSynchronized<TWrite, TRead>.InSync.IBareLock.BarelyLock
+  fullName.vb: InSync.ReaderWriterSynchronized(Of TWrite, TRead).InSync.IBareLock.BarelyLock
+  nameWithType: ReaderWriterSynchronized<TWrite, TRead>.IBareLock.BarelyLock
+  nameWithType.vb: ReaderWriterSynchronized(Of TWrite, TRead).InSync.IBareLock.BarelyLock
+- uid: InSync.ReaderWriterSynchronized`2.InSync#IBareLock#BarelyTryLock(System.Int32,System.Object@)
+  name: IBareLock.BarelyTryLock(Int32, out Object)
+  href: api/InSync.ReaderWriterSynchronized-2.html#InSync_ReaderWriterSynchronized_2_InSync_IBareLock_BarelyTryLock_System_Int32_System_Object__
+  commentId: M:InSync.ReaderWriterSynchronized`2.InSync#IBareLock#BarelyTryLock(System.Int32,System.Object@)
+  name.vb: InSync.IBareLock.BarelyTryLock(Int32, ByRef Object)
+  fullName: InSync.ReaderWriterSynchronized<TWrite, TRead>.InSync.IBareLock.BarelyTryLock(System.Int32, out System.Object)
+  fullName.vb: InSync.ReaderWriterSynchronized(Of TWrite, TRead).InSync.IBareLock.BarelyTryLock(System.Int32, ByRef System.Object)
+  nameWithType: ReaderWriterSynchronized<TWrite, TRead>.IBareLock.BarelyTryLock(Int32, out Object)
+  nameWithType.vb: ReaderWriterSynchronized(Of TWrite, TRead).InSync.IBareLock.BarelyTryLock(Int32, ByRef Object)
+- uid: InSync.ReaderWriterSynchronized`2.InSync#IBareLock#BarelyTryLock(System.Object@)
+  name: IBareLock.BarelyTryLock(out Object)
+  href: api/InSync.ReaderWriterSynchronized-2.html#InSync_ReaderWriterSynchronized_2_InSync_IBareLock_BarelyTryLock_System_Object__
+  commentId: M:InSync.ReaderWriterSynchronized`2.InSync#IBareLock#BarelyTryLock(System.Object@)
+  name.vb: InSync.IBareLock.BarelyTryLock(ByRef Object)
+  fullName: InSync.ReaderWriterSynchronized<TWrite, TRead>.InSync.IBareLock.BarelyTryLock(out System.Object)
+  fullName.vb: InSync.ReaderWriterSynchronized(Of TWrite, TRead).InSync.IBareLock.BarelyTryLock(ByRef System.Object)
+  nameWithType: ReaderWriterSynchronized<TWrite, TRead>.IBareLock.BarelyTryLock(out Object)
+  nameWithType.vb: ReaderWriterSynchronized(Of TWrite, TRead).InSync.IBareLock.BarelyTryLock(ByRef Object)
+- uid: InSync.ReaderWriterSynchronized`2.InSync#IBareLock#BarelyTryLock(System.TimeSpan,System.Object@)
+  name: IBareLock.BarelyTryLock(TimeSpan, out Object)
+  href: api/InSync.ReaderWriterSynchronized-2.html#InSync_ReaderWriterSynchronized_2_InSync_IBareLock_BarelyTryLock_System_TimeSpan_System_Object__
+  commentId: M:InSync.ReaderWriterSynchronized`2.InSync#IBareLock#BarelyTryLock(System.TimeSpan,System.Object@)
+  name.vb: InSync.IBareLock.BarelyTryLock(TimeSpan, ByRef Object)
+  fullName: InSync.ReaderWriterSynchronized<TWrite, TRead>.InSync.IBareLock.BarelyTryLock(System.TimeSpan, out System.Object)
+  fullName.vb: InSync.ReaderWriterSynchronized(Of TWrite, TRead).InSync.IBareLock.BarelyTryLock(System.TimeSpan, ByRef System.Object)
+  nameWithType: ReaderWriterSynchronized<TWrite, TRead>.IBareLock.BarelyTryLock(TimeSpan, out Object)
+  nameWithType.vb: ReaderWriterSynchronized(Of TWrite, TRead).InSync.IBareLock.BarelyTryLock(TimeSpan, ByRef Object)
+- uid: InSync.ReaderWriterSynchronized`2.InSync#IBareLock#BarelyTryLock*
+  name: IBareLock.BarelyTryLock
+  href: api/InSync.ReaderWriterSynchronized-2.html#InSync_ReaderWriterSynchronized_2_InSync_IBareLock_BarelyTryLock_
+  commentId: Overload:InSync.ReaderWriterSynchronized`2.InSync#IBareLock#BarelyTryLock
+  isSpec: "True"
+  name.vb: InSync.IBareLock.BarelyTryLock
+  fullName: InSync.ReaderWriterSynchronized<TWrite, TRead>.InSync.IBareLock.BarelyTryLock
+  fullName.vb: InSync.ReaderWriterSynchronized(Of TWrite, TRead).InSync.IBareLock.BarelyTryLock
+  nameWithType: ReaderWriterSynchronized<TWrite, TRead>.IBareLock.BarelyTryLock
+  nameWithType.vb: ReaderWriterSynchronized(Of TWrite, TRead).InSync.IBareLock.BarelyTryLock
+- uid: InSync.ReaderWriterSynchronized`2.Lock
+  name: Lock()
+  href: api/InSync.ReaderWriterSynchronized-2.html#InSync_ReaderWriterSynchronized_2_Lock
+  commentId: M:InSync.ReaderWriterSynchronized`2.Lock
+  fullName: InSync.ReaderWriterSynchronized<TWrite, TRead>.Lock()
+  fullName.vb: InSync.ReaderWriterSynchronized(Of TWrite, TRead).Lock()
+  nameWithType: ReaderWriterSynchronized<TWrite, TRead>.Lock()
+  nameWithType.vb: ReaderWriterSynchronized(Of TWrite, TRead).Lock()
+- uid: InSync.ReaderWriterSynchronized`2.Lock*
+  name: Lock
+  href: api/InSync.ReaderWriterSynchronized-2.html#InSync_ReaderWriterSynchronized_2_Lock_
+  commentId: Overload:InSync.ReaderWriterSynchronized`2.Lock
+  isSpec: "True"
+  fullName: InSync.ReaderWriterSynchronized<TWrite, TRead>.Lock
+  fullName.vb: InSync.ReaderWriterSynchronized(Of TWrite, TRead).Lock
+  nameWithType: ReaderWriterSynchronized<TWrite, TRead>.Lock
+  nameWithType.vb: ReaderWriterSynchronized(Of TWrite, TRead).Lock
+- uid: InSync.ReaderWriterSynchronized`2.reader
+  name: reader
+  href: api/InSync.ReaderWriterSynchronized-2.html#InSync_ReaderWriterSynchronized_2_reader
+  commentId: F:InSync.ReaderWriterSynchronized`2.reader
+  fullName: InSync.ReaderWriterSynchronized<TWrite, TRead>.reader
+  fullName.vb: InSync.ReaderWriterSynchronized(Of TWrite, TRead).reader
+  nameWithType: ReaderWriterSynchronized<TWrite, TRead>.reader
+  nameWithType.vb: ReaderWriterSynchronized(Of TWrite, TRead).reader
+- uid: InSync.ReaderWriterSynchronized`2.Reader
+  name: Reader
+  href: api/InSync.ReaderWriterSynchronized-2.html#InSync_ReaderWriterSynchronized_2_Reader
+  commentId: P:InSync.ReaderWriterSynchronized`2.Reader
+  fullName: InSync.ReaderWriterSynchronized<TWrite, TRead>.Reader
+  fullName.vb: InSync.ReaderWriterSynchronized(Of TWrite, TRead).Reader
+  nameWithType: ReaderWriterSynchronized<TWrite, TRead>.Reader
+  nameWithType.vb: ReaderWriterSynchronized(Of TWrite, TRead).Reader
+- uid: InSync.ReaderWriterSynchronized`2.Reader*
+  name: Reader
+  href: api/InSync.ReaderWriterSynchronized-2.html#InSync_ReaderWriterSynchronized_2_Reader_
+  commentId: Overload:InSync.ReaderWriterSynchronized`2.Reader
+  isSpec: "True"
+  fullName: InSync.ReaderWriterSynchronized<TWrite, TRead>.Reader
+  fullName.vb: InSync.ReaderWriterSynchronized(Of TWrite, TRead).Reader
+  nameWithType: ReaderWriterSynchronized<TWrite, TRead>.Reader
+  nameWithType.vb: ReaderWriterSynchronized(Of TWrite, TRead).Reader
+- uid: InSync.ReaderWriterSynchronized`2.readerWriterLockSlim
+  name: readerWriterLockSlim
+  href: api/InSync.ReaderWriterSynchronized-2.html#InSync_ReaderWriterSynchronized_2_readerWriterLockSlim
+  commentId: F:InSync.ReaderWriterSynchronized`2.readerWriterLockSlim
+  fullName: InSync.ReaderWriterSynchronized<TWrite, TRead>.readerWriterLockSlim
+  fullName.vb: InSync.ReaderWriterSynchronized(Of TWrite, TRead).readerWriterLockSlim
+  nameWithType: ReaderWriterSynchronized<TWrite, TRead>.readerWriterLockSlim
+  nameWithType.vb: ReaderWriterSynchronized(Of TWrite, TRead).readerWriterLockSlim
+- uid: InSync.ReaderWriterSynchronized`2.TryLock
+  name: TryLock()
+  href: api/InSync.ReaderWriterSynchronized-2.html#InSync_ReaderWriterSynchronized_2_TryLock
+  commentId: M:InSync.ReaderWriterSynchronized`2.TryLock
+  fullName: InSync.ReaderWriterSynchronized<TWrite, TRead>.TryLock()
+  fullName.vb: InSync.ReaderWriterSynchronized(Of TWrite, TRead).TryLock()
+  nameWithType: ReaderWriterSynchronized<TWrite, TRead>.TryLock()
+  nameWithType.vb: ReaderWriterSynchronized(Of TWrite, TRead).TryLock()
+- uid: InSync.ReaderWriterSynchronized`2.TryLock(System.Int32)
+  name: TryLock(Int32)
+  href: api/InSync.ReaderWriterSynchronized-2.html#InSync_ReaderWriterSynchronized_2_TryLock_System_Int32_
+  commentId: M:InSync.ReaderWriterSynchronized`2.TryLock(System.Int32)
+  fullName: InSync.ReaderWriterSynchronized<TWrite, TRead>.TryLock(System.Int32)
+  fullName.vb: InSync.ReaderWriterSynchronized(Of TWrite, TRead).TryLock(System.Int32)
+  nameWithType: ReaderWriterSynchronized<TWrite, TRead>.TryLock(Int32)
+  nameWithType.vb: ReaderWriterSynchronized(Of TWrite, TRead).TryLock(Int32)
+- uid: InSync.ReaderWriterSynchronized`2.TryLock(System.TimeSpan)
+  name: TryLock(TimeSpan)
+  href: api/InSync.ReaderWriterSynchronized-2.html#InSync_ReaderWriterSynchronized_2_TryLock_System_TimeSpan_
+  commentId: M:InSync.ReaderWriterSynchronized`2.TryLock(System.TimeSpan)
+  fullName: InSync.ReaderWriterSynchronized<TWrite, TRead>.TryLock(System.TimeSpan)
+  fullName.vb: InSync.ReaderWriterSynchronized(Of TWrite, TRead).TryLock(System.TimeSpan)
+  nameWithType: ReaderWriterSynchronized<TWrite, TRead>.TryLock(TimeSpan)
+  nameWithType.vb: ReaderWriterSynchronized(Of TWrite, TRead).TryLock(TimeSpan)
+- uid: InSync.ReaderWriterSynchronized`2.TryLock*
+  name: TryLock
+  href: api/InSync.ReaderWriterSynchronized-2.html#InSync_ReaderWriterSynchronized_2_TryLock_
+  commentId: Overload:InSync.ReaderWriterSynchronized`2.TryLock
+  isSpec: "True"
+  fullName: InSync.ReaderWriterSynchronized<TWrite, TRead>.TryLock
+  fullName.vb: InSync.ReaderWriterSynchronized(Of TWrite, TRead).TryLock
+  nameWithType: ReaderWriterSynchronized<TWrite, TRead>.TryLock
+  nameWithType.vb: ReaderWriterSynchronized(Of TWrite, TRead).TryLock
+- uid: InSync.ReaderWriterSynchronized`2.TryWithLock(System.Action{`0})
+  name: TryWithLock(Action<TWrite>)
+  href: api/InSync.ReaderWriterSynchronized-2.html#InSync_ReaderWriterSynchronized_2_TryWithLock_System_Action__0__
+  commentId: M:InSync.ReaderWriterSynchronized`2.TryWithLock(System.Action{`0})
+  name.vb: TryWithLock(Action(Of TWrite))
+  fullName: InSync.ReaderWriterSynchronized<TWrite, TRead>.TryWithLock(System.Action<TWrite>)
+  fullName.vb: InSync.ReaderWriterSynchronized(Of TWrite, TRead).TryWithLock(System.Action(Of TWrite))
+  nameWithType: ReaderWriterSynchronized<TWrite, TRead>.TryWithLock(Action<TWrite>)
+  nameWithType.vb: ReaderWriterSynchronized(Of TWrite, TRead).TryWithLock(Action(Of TWrite))
+- uid: InSync.ReaderWriterSynchronized`2.TryWithLock(System.Int32,System.Action{`0})
+  name: TryWithLock(Int32, Action<TWrite>)
+  href: api/InSync.ReaderWriterSynchronized-2.html#InSync_ReaderWriterSynchronized_2_TryWithLock_System_Int32_System_Action__0__
+  commentId: M:InSync.ReaderWriterSynchronized`2.TryWithLock(System.Int32,System.Action{`0})
+  name.vb: TryWithLock(Int32, Action(Of TWrite))
+  fullName: InSync.ReaderWriterSynchronized<TWrite, TRead>.TryWithLock(System.Int32, System.Action<TWrite>)
+  fullName.vb: InSync.ReaderWriterSynchronized(Of TWrite, TRead).TryWithLock(System.Int32, System.Action(Of TWrite))
+  nameWithType: ReaderWriterSynchronized<TWrite, TRead>.TryWithLock(Int32, Action<TWrite>)
+  nameWithType.vb: ReaderWriterSynchronized(Of TWrite, TRead).TryWithLock(Int32, Action(Of TWrite))
+- uid: InSync.ReaderWriterSynchronized`2.TryWithLock(System.TimeSpan,System.Action{`0})
+  name: TryWithLock(TimeSpan, Action<TWrite>)
+  href: api/InSync.ReaderWriterSynchronized-2.html#InSync_ReaderWriterSynchronized_2_TryWithLock_System_TimeSpan_System_Action__0__
+  commentId: M:InSync.ReaderWriterSynchronized`2.TryWithLock(System.TimeSpan,System.Action{`0})
+  name.vb: TryWithLock(TimeSpan, Action(Of TWrite))
+  fullName: InSync.ReaderWriterSynchronized<TWrite, TRead>.TryWithLock(System.TimeSpan, System.Action<TWrite>)
+  fullName.vb: InSync.ReaderWriterSynchronized(Of TWrite, TRead).TryWithLock(System.TimeSpan, System.Action(Of TWrite))
+  nameWithType: ReaderWriterSynchronized<TWrite, TRead>.TryWithLock(TimeSpan, Action<TWrite>)
+  nameWithType.vb: ReaderWriterSynchronized(Of TWrite, TRead).TryWithLock(TimeSpan, Action(Of TWrite))
+- uid: InSync.ReaderWriterSynchronized`2.TryWithLock*
+  name: TryWithLock
+  href: api/InSync.ReaderWriterSynchronized-2.html#InSync_ReaderWriterSynchronized_2_TryWithLock_
+  commentId: Overload:InSync.ReaderWriterSynchronized`2.TryWithLock
+  isSpec: "True"
+  fullName: InSync.ReaderWriterSynchronized<TWrite, TRead>.TryWithLock
+  fullName.vb: InSync.ReaderWriterSynchronized(Of TWrite, TRead).TryWithLock
+  nameWithType: ReaderWriterSynchronized<TWrite, TRead>.TryWithLock
+  nameWithType.vb: ReaderWriterSynchronized(Of TWrite, TRead).TryWithLock
+- uid: InSync.ReaderWriterSynchronized`2.UpgradeableReader
+  name: UpgradeableReader
+  href: api/InSync.ReaderWriterSynchronized-2.html#InSync_ReaderWriterSynchronized_2_UpgradeableReader
+  commentId: P:InSync.ReaderWriterSynchronized`2.UpgradeableReader
+  fullName: InSync.ReaderWriterSynchronized<TWrite, TRead>.UpgradeableReader
+  fullName.vb: InSync.ReaderWriterSynchronized(Of TWrite, TRead).UpgradeableReader
+  nameWithType: ReaderWriterSynchronized<TWrite, TRead>.UpgradeableReader
+  nameWithType.vb: ReaderWriterSynchronized(Of TWrite, TRead).UpgradeableReader
+- uid: InSync.ReaderWriterSynchronized`2.UpgradeableReader*
+  name: UpgradeableReader
+  href: api/InSync.ReaderWriterSynchronized-2.html#InSync_ReaderWriterSynchronized_2_UpgradeableReader_
+  commentId: Overload:InSync.ReaderWriterSynchronized`2.UpgradeableReader
+  isSpec: "True"
+  fullName: InSync.ReaderWriterSynchronized<TWrite, TRead>.UpgradeableReader
+  fullName.vb: InSync.ReaderWriterSynchronized(Of TWrite, TRead).UpgradeableReader
+  nameWithType: ReaderWriterSynchronized<TWrite, TRead>.UpgradeableReader
+  nameWithType.vb: ReaderWriterSynchronized(Of TWrite, TRead).UpgradeableReader
+- uid: InSync.ReaderWriterSynchronized`2.WithLock(System.Action{`0})
+  name: WithLock(Action<TWrite>)
+  href: api/InSync.ReaderWriterSynchronized-2.html#InSync_ReaderWriterSynchronized_2_WithLock_System_Action__0__
+  commentId: M:InSync.ReaderWriterSynchronized`2.WithLock(System.Action{`0})
+  name.vb: WithLock(Action(Of TWrite))
+  fullName: InSync.ReaderWriterSynchronized<TWrite, TRead>.WithLock(System.Action<TWrite>)
+  fullName.vb: InSync.ReaderWriterSynchronized(Of TWrite, TRead).WithLock(System.Action(Of TWrite))
+  nameWithType: ReaderWriterSynchronized<TWrite, TRead>.WithLock(Action<TWrite>)
+  nameWithType.vb: ReaderWriterSynchronized(Of TWrite, TRead).WithLock(Action(Of TWrite))
+- uid: InSync.ReaderWriterSynchronized`2.WithLock*
+  name: WithLock
+  href: api/InSync.ReaderWriterSynchronized-2.html#InSync_ReaderWriterSynchronized_2_WithLock_
+  commentId: Overload:InSync.ReaderWriterSynchronized`2.WithLock
+  isSpec: "True"
+  fullName: InSync.ReaderWriterSynchronized<TWrite, TRead>.WithLock
+  fullName.vb: InSync.ReaderWriterSynchronized(Of TWrite, TRead).WithLock
+  nameWithType: ReaderWriterSynchronized<TWrite, TRead>.WithLock
+  nameWithType.vb: ReaderWriterSynchronized(Of TWrite, TRead).WithLock
+- uid: InSync.ReaderWriterSynchronized`2.WithLock``1(System.Func{`0,``0})
+  name: WithLock<TResult>(Func<TWrite, TResult>)
+  href: api/InSync.ReaderWriterSynchronized-2.html#InSync_ReaderWriterSynchronized_2_WithLock__1_System_Func__0___0__
+  commentId: M:InSync.ReaderWriterSynchronized`2.WithLock``1(System.Func{`0,``0})
+  name.vb: WithLock(Of TResult)(Func(Of TWrite, TResult))
+  fullName: InSync.ReaderWriterSynchronized<TWrite, TRead>.WithLock<TResult>(System.Func<TWrite, TResult>)
+  fullName.vb: InSync.ReaderWriterSynchronized(Of TWrite, TRead).WithLock(Of TResult)(System.Func(Of TWrite, TResult))
+  nameWithType: ReaderWriterSynchronized<TWrite, TRead>.WithLock<TResult>(Func<TWrite, TResult>)
+  nameWithType.vb: ReaderWriterSynchronized(Of TWrite, TRead).WithLock(Of TResult)(Func(Of TWrite, TResult))
+- uid: InSync.ReaderWriterSynchronized`2.writer
+  name: writer
+  href: api/InSync.ReaderWriterSynchronized-2.html#InSync_ReaderWriterSynchronized_2_writer
+  commentId: F:InSync.ReaderWriterSynchronized`2.writer
+  fullName: InSync.ReaderWriterSynchronized<TWrite, TRead>.writer
+  fullName.vb: InSync.ReaderWriterSynchronized(Of TWrite, TRead).writer
+  nameWithType: ReaderWriterSynchronized<TWrite, TRead>.writer
+  nameWithType.vb: ReaderWriterSynchronized(Of TWrite, TRead).writer
+- uid: InSync.ReaderWriterSynchronizedFactory
+  name: ReaderWriterSynchronizedFactory
+  href: api/InSync.ReaderWriterSynchronizedFactory.html
+  commentId: T:InSync.ReaderWriterSynchronizedFactory
+  fullName: InSync.ReaderWriterSynchronizedFactory
+  nameWithType: ReaderWriterSynchronizedFactory
+- uid: InSync.ReaderWriterSynchronizedFactory.Create*
+  name: Create
+  href: api/InSync.ReaderWriterSynchronizedFactory.html#InSync_ReaderWriterSynchronizedFactory_Create_
+  commentId: Overload:InSync.ReaderWriterSynchronizedFactory.Create
+  isSpec: "True"
+  fullName: InSync.ReaderWriterSynchronizedFactory.Create
+  nameWithType: ReaderWriterSynchronizedFactory.Create
+- uid: InSync.ReaderWriterSynchronizedFactory.Create``1(``0)
+  name: Create<T>(T)
+  href: api/InSync.ReaderWriterSynchronizedFactory.html#InSync_ReaderWriterSynchronizedFactory_Create__1___0_
+  commentId: M:InSync.ReaderWriterSynchronizedFactory.Create``1(``0)
+  name.vb: Create(Of T)(T)
+  fullName: InSync.ReaderWriterSynchronizedFactory.Create<T>(T)
+  fullName.vb: InSync.ReaderWriterSynchronizedFactory.Create(Of T)(T)
+  nameWithType: ReaderWriterSynchronizedFactory.Create<T>(T)
+  nameWithType.vb: ReaderWriterSynchronizedFactory.Create(Of T)(T)
+- uid: InSync.ReaderWriterSynchronizedFactory.Create``1(System.Threading.ReaderWriterLockSlim,``0)
+  name: Create<T>(ReaderWriterLockSlim, T)
+  href: api/InSync.ReaderWriterSynchronizedFactory.html#InSync_ReaderWriterSynchronizedFactory_Create__1_System_Threading_ReaderWriterLockSlim___0_
+  commentId: M:InSync.ReaderWriterSynchronizedFactory.Create``1(System.Threading.ReaderWriterLockSlim,``0)
+  name.vb: Create(Of T)(ReaderWriterLockSlim, T)
+  fullName: InSync.ReaderWriterSynchronizedFactory.Create<T>(System.Threading.ReaderWriterLockSlim, T)
+  fullName.vb: InSync.ReaderWriterSynchronizedFactory.Create(Of T)(System.Threading.ReaderWriterLockSlim, T)
+  nameWithType: ReaderWriterSynchronizedFactory.Create<T>(ReaderWriterLockSlim, T)
+  nameWithType.vb: ReaderWriterSynchronizedFactory.Create(Of T)(ReaderWriterLockSlim, T)
+- uid: InSync.ReaderWriterSynchronizedFactory.Create``2(``0,``1)
+  name: Create<TWrite, TRead>(TWrite, TRead)
+  href: api/InSync.ReaderWriterSynchronizedFactory.html#InSync_ReaderWriterSynchronizedFactory_Create__2___0___1_
+  commentId: M:InSync.ReaderWriterSynchronizedFactory.Create``2(``0,``1)
+  name.vb: Create(Of TWrite, TRead)(TWrite, TRead)
+  fullName: InSync.ReaderWriterSynchronizedFactory.Create<TWrite, TRead>(TWrite, TRead)
+  fullName.vb: InSync.ReaderWriterSynchronizedFactory.Create(Of TWrite, TRead)(TWrite, TRead)
+  nameWithType: ReaderWriterSynchronizedFactory.Create<TWrite, TRead>(TWrite, TRead)
+  nameWithType.vb: ReaderWriterSynchronizedFactory.Create(Of TWrite, TRead)(TWrite, TRead)
+- uid: InSync.ReaderWriterSynchronizedFactory.Create``2(System.Threading.ReaderWriterLockSlim,``0,``1)
+  name: Create<TWrite, TRead>(ReaderWriterLockSlim, TWrite, TRead)
+  href: api/InSync.ReaderWriterSynchronizedFactory.html#InSync_ReaderWriterSynchronizedFactory_Create__2_System_Threading_ReaderWriterLockSlim___0___1_
+  commentId: M:InSync.ReaderWriterSynchronizedFactory.Create``2(System.Threading.ReaderWriterLockSlim,``0,``1)
+  name.vb: Create(Of TWrite, TRead)(ReaderWriterLockSlim, TWrite, TRead)
+  fullName: InSync.ReaderWriterSynchronizedFactory.Create<TWrite, TRead>(System.Threading.ReaderWriterLockSlim, TWrite, TRead)
+  fullName.vb: InSync.ReaderWriterSynchronizedFactory.Create(Of TWrite, TRead)(System.Threading.ReaderWriterLockSlim, TWrite, TRead)
+  nameWithType: ReaderWriterSynchronizedFactory.Create<TWrite, TRead>(ReaderWriterLockSlim, TWrite, TRead)
+  nameWithType.vb: ReaderWriterSynchronizedFactory.Create(Of TWrite, TRead)(ReaderWriterLockSlim, TWrite, TRead)
+- uid: InSync.Synchronized
+  name: Synchronized
+  href: api/InSync.Synchronized.html
+  commentId: T:InSync.Synchronized
+  fullName: InSync.Synchronized
+  nameWithType: Synchronized
+- uid: InSync.Synchronized.Create*
+  name: Create
+  href: api/InSync.Synchronized.html#InSync_Synchronized_Create_
+  commentId: Overload:InSync.Synchronized.Create
+  isSpec: "True"
+  fullName: InSync.Synchronized.Create
+  nameWithType: Synchronized.Create
+- uid: InSync.Synchronized.Create``1(``0)
+  name: Create<T>(T)
+  href: api/InSync.Synchronized.html#InSync_Synchronized_Create__1___0_
+  commentId: M:InSync.Synchronized.Create``1(``0)
+  name.vb: Create(Of T)(T)
+  fullName: InSync.Synchronized.Create<T>(T)
+  fullName.vb: InSync.Synchronized.Create(Of T)(T)
+  nameWithType: Synchronized.Create<T>(T)
+  nameWithType.vb: Synchronized.Create(Of T)(T)
+- uid: InSync.Synchronized.Create``1(System.Object,``0)
+  name: Create<T>(Object, T)
+  href: api/InSync.Synchronized.html#InSync_Synchronized_Create__1_System_Object___0_
+  commentId: M:InSync.Synchronized.Create``1(System.Object,``0)
+  name.vb: Create(Of T)(Object, T)
+  fullName: InSync.Synchronized.Create<T>(System.Object, T)
+  fullName.vb: InSync.Synchronized.Create(Of T)(System.Object, T)
+  nameWithType: Synchronized.Create<T>(Object, T)
+  nameWithType.vb: Synchronized.Create(Of T)(Object, T)
+- uid: InSync.Synchronized`1
+  name: Synchronized<T>
+  href: api/InSync.Synchronized-1.html
+  commentId: T:InSync.Synchronized`1
+  name.vb: Synchronized(Of T)
+  fullName: InSync.Synchronized<T>
+  fullName.vb: InSync.Synchronized(Of T)
+  nameWithType: Synchronized<T>
+  nameWithType.vb: Synchronized(Of T)
+- uid: InSync.Synchronized`1.#ctor(System.Object,`0)
+  name: Synchronized(Object, T)
+  href: api/InSync.Synchronized-1.html#InSync_Synchronized_1__ctor_System_Object__0_
+  commentId: M:InSync.Synchronized`1.#ctor(System.Object,`0)
+  fullName: InSync.Synchronized<T>.Synchronized(System.Object, T)
+  fullName.vb: InSync.Synchronized(Of T).Synchronized(System.Object, T)
+  nameWithType: Synchronized<T>.Synchronized(Object, T)
+  nameWithType.vb: Synchronized(Of T).Synchronized(Object, T)
+- uid: InSync.Synchronized`1.#ctor*
+  name: Synchronized
+  href: api/InSync.Synchronized-1.html#InSync_Synchronized_1__ctor_
+  commentId: Overload:InSync.Synchronized`1.#ctor
+  isSpec: "True"
+  fullName: InSync.Synchronized<T>.Synchronized
+  fullName.vb: InSync.Synchronized(Of T).Synchronized
+  nameWithType: Synchronized<T>.Synchronized
+  nameWithType.vb: Synchronized(Of T).Synchronized
+- uid: InSync.Synchronized`1.BarelyLock
+  name: BarelyLock()
+  href: api/InSync.Synchronized-1.html#InSync_Synchronized_1_BarelyLock
+  commentId: M:InSync.Synchronized`1.BarelyLock
+  fullName: InSync.Synchronized<T>.BarelyLock()
+  fullName.vb: InSync.Synchronized(Of T).BarelyLock()
+  nameWithType: Synchronized<T>.BarelyLock()
+  nameWithType.vb: Synchronized(Of T).BarelyLock()
+- uid: InSync.Synchronized`1.BarelyLock*
+  name: BarelyLock
+  href: api/InSync.Synchronized-1.html#InSync_Synchronized_1_BarelyLock_
+  commentId: Overload:InSync.Synchronized`1.BarelyLock
+  isSpec: "True"
+  fullName: InSync.Synchronized<T>.BarelyLock
+  fullName.vb: InSync.Synchronized(Of T).BarelyLock
+  nameWithType: Synchronized<T>.BarelyLock
+  nameWithType.vb: Synchronized(Of T).BarelyLock
+- uid: InSync.Synchronized`1.BarelyTryLock(`0@)
+  name: BarelyTryLock(out T)
+  href: api/InSync.Synchronized-1.html#InSync_Synchronized_1_BarelyTryLock__0__
+  commentId: M:InSync.Synchronized`1.BarelyTryLock(`0@)
+  name.vb: BarelyTryLock(ByRef T)
+  fullName: InSync.Synchronized<T>.BarelyTryLock(out T)
+  fullName.vb: InSync.Synchronized(Of T).BarelyTryLock(ByRef T)
+  nameWithType: Synchronized<T>.BarelyTryLock(out T)
+  nameWithType.vb: Synchronized(Of T).BarelyTryLock(ByRef T)
+- uid: InSync.Synchronized`1.BarelyTryLock(System.Int32,`0@)
+  name: BarelyTryLock(Int32, out T)
+  href: api/InSync.Synchronized-1.html#InSync_Synchronized_1_BarelyTryLock_System_Int32__0__
+  commentId: M:InSync.Synchronized`1.BarelyTryLock(System.Int32,`0@)
+  name.vb: BarelyTryLock(Int32, ByRef T)
+  fullName: InSync.Synchronized<T>.BarelyTryLock(System.Int32, out T)
+  fullName.vb: InSync.Synchronized(Of T).BarelyTryLock(System.Int32, ByRef T)
+  nameWithType: Synchronized<T>.BarelyTryLock(Int32, out T)
+  nameWithType.vb: Synchronized(Of T).BarelyTryLock(Int32, ByRef T)
+- uid: InSync.Synchronized`1.BarelyTryLock(System.TimeSpan,`0@)
+  name: BarelyTryLock(TimeSpan, out T)
+  href: api/InSync.Synchronized-1.html#InSync_Synchronized_1_BarelyTryLock_System_TimeSpan__0__
+  commentId: M:InSync.Synchronized`1.BarelyTryLock(System.TimeSpan,`0@)
+  name.vb: BarelyTryLock(TimeSpan, ByRef T)
+  fullName: InSync.Synchronized<T>.BarelyTryLock(System.TimeSpan, out T)
+  fullName.vb: InSync.Synchronized(Of T).BarelyTryLock(System.TimeSpan, ByRef T)
+  nameWithType: Synchronized<T>.BarelyTryLock(TimeSpan, out T)
+  nameWithType.vb: Synchronized(Of T).BarelyTryLock(TimeSpan, ByRef T)
+- uid: InSync.Synchronized`1.BarelyTryLock*
+  name: BarelyTryLock
+  href: api/InSync.Synchronized-1.html#InSync_Synchronized_1_BarelyTryLock_
+  commentId: Overload:InSync.Synchronized`1.BarelyTryLock
+  isSpec: "True"
+  fullName: InSync.Synchronized<T>.BarelyTryLock
+  fullName.vb: InSync.Synchronized(Of T).BarelyTryLock
+  nameWithType: Synchronized<T>.BarelyTryLock
+  nameWithType.vb: Synchronized(Of T).BarelyTryLock
+- uid: InSync.Synchronized`1.BarelyUnlock
+  name: BarelyUnlock()
+  href: api/InSync.Synchronized-1.html#InSync_Synchronized_1_BarelyUnlock
+  commentId: M:InSync.Synchronized`1.BarelyUnlock
+  fullName: InSync.Synchronized<T>.BarelyUnlock()
+  fullName.vb: InSync.Synchronized(Of T).BarelyUnlock()
+  nameWithType: Synchronized<T>.BarelyUnlock()
+  nameWithType.vb: Synchronized(Of T).BarelyUnlock()
+- uid: InSync.Synchronized`1.BarelyUnlock*
+  name: BarelyUnlock
+  href: api/InSync.Synchronized-1.html#InSync_Synchronized_1_BarelyUnlock_
+  commentId: Overload:InSync.Synchronized`1.BarelyUnlock
+  isSpec: "True"
+  fullName: InSync.Synchronized<T>.BarelyUnlock
+  fullName.vb: InSync.Synchronized(Of T).BarelyUnlock
+  nameWithType: Synchronized<T>.BarelyUnlock
+  nameWithType.vb: Synchronized(Of T).BarelyUnlock
+- uid: InSync.Synchronized`1.InSync#IBareLock#BarelyLock
+  name: IBareLock.BarelyLock()
+  href: api/InSync.Synchronized-1.html#InSync_Synchronized_1_InSync_IBareLock_BarelyLock
+  commentId: M:InSync.Synchronized`1.InSync#IBareLock#BarelyLock
+  name.vb: InSync.IBareLock.BarelyLock()
+  fullName: InSync.Synchronized<T>.InSync.IBareLock.BarelyLock()
+  fullName.vb: InSync.Synchronized(Of T).InSync.IBareLock.BarelyLock()
+  nameWithType: Synchronized<T>.IBareLock.BarelyLock()
+  nameWithType.vb: Synchronized(Of T).InSync.IBareLock.BarelyLock()
+- uid: InSync.Synchronized`1.InSync#IBareLock#BarelyLock*
+  name: IBareLock.BarelyLock
+  href: api/InSync.Synchronized-1.html#InSync_Synchronized_1_InSync_IBareLock_BarelyLock_
+  commentId: Overload:InSync.Synchronized`1.InSync#IBareLock#BarelyLock
+  isSpec: "True"
+  name.vb: InSync.IBareLock.BarelyLock
+  fullName: InSync.Synchronized<T>.InSync.IBareLock.BarelyLock
+  fullName.vb: InSync.Synchronized(Of T).InSync.IBareLock.BarelyLock
+  nameWithType: Synchronized<T>.IBareLock.BarelyLock
+  nameWithType.vb: Synchronized(Of T).InSync.IBareLock.BarelyLock
+- uid: InSync.Synchronized`1.InSync#IBareLock#BarelyTryLock(System.Int32,System.Object@)
+  name: IBareLock.BarelyTryLock(Int32, out Object)
+  href: api/InSync.Synchronized-1.html#InSync_Synchronized_1_InSync_IBareLock_BarelyTryLock_System_Int32_System_Object__
+  commentId: M:InSync.Synchronized`1.InSync#IBareLock#BarelyTryLock(System.Int32,System.Object@)
+  name.vb: InSync.IBareLock.BarelyTryLock(Int32, ByRef Object)
+  fullName: InSync.Synchronized<T>.InSync.IBareLock.BarelyTryLock(System.Int32, out System.Object)
+  fullName.vb: InSync.Synchronized(Of T).InSync.IBareLock.BarelyTryLock(System.Int32, ByRef System.Object)
+  nameWithType: Synchronized<T>.IBareLock.BarelyTryLock(Int32, out Object)
+  nameWithType.vb: Synchronized(Of T).InSync.IBareLock.BarelyTryLock(Int32, ByRef Object)
+- uid: InSync.Synchronized`1.InSync#IBareLock#BarelyTryLock(System.Object@)
+  name: IBareLock.BarelyTryLock(out Object)
+  href: api/InSync.Synchronized-1.html#InSync_Synchronized_1_InSync_IBareLock_BarelyTryLock_System_Object__
+  commentId: M:InSync.Synchronized`1.InSync#IBareLock#BarelyTryLock(System.Object@)
+  name.vb: InSync.IBareLock.BarelyTryLock(ByRef Object)
+  fullName: InSync.Synchronized<T>.InSync.IBareLock.BarelyTryLock(out System.Object)
+  fullName.vb: InSync.Synchronized(Of T).InSync.IBareLock.BarelyTryLock(ByRef System.Object)
+  nameWithType: Synchronized<T>.IBareLock.BarelyTryLock(out Object)
+  nameWithType.vb: Synchronized(Of T).InSync.IBareLock.BarelyTryLock(ByRef Object)
+- uid: InSync.Synchronized`1.InSync#IBareLock#BarelyTryLock(System.TimeSpan,System.Object@)
+  name: IBareLock.BarelyTryLock(TimeSpan, out Object)
+  href: api/InSync.Synchronized-1.html#InSync_Synchronized_1_InSync_IBareLock_BarelyTryLock_System_TimeSpan_System_Object__
+  commentId: M:InSync.Synchronized`1.InSync#IBareLock#BarelyTryLock(System.TimeSpan,System.Object@)
+  name.vb: InSync.IBareLock.BarelyTryLock(TimeSpan, ByRef Object)
+  fullName: InSync.Synchronized<T>.InSync.IBareLock.BarelyTryLock(System.TimeSpan, out System.Object)
+  fullName.vb: InSync.Synchronized(Of T).InSync.IBareLock.BarelyTryLock(System.TimeSpan, ByRef System.Object)
+  nameWithType: Synchronized<T>.IBareLock.BarelyTryLock(TimeSpan, out Object)
+  nameWithType.vb: Synchronized(Of T).InSync.IBareLock.BarelyTryLock(TimeSpan, ByRef Object)
+- uid: InSync.Synchronized`1.InSync#IBareLock#BarelyTryLock*
+  name: IBareLock.BarelyTryLock
+  href: api/InSync.Synchronized-1.html#InSync_Synchronized_1_InSync_IBareLock_BarelyTryLock_
+  commentId: Overload:InSync.Synchronized`1.InSync#IBareLock#BarelyTryLock
+  isSpec: "True"
+  name.vb: InSync.IBareLock.BarelyTryLock
+  fullName: InSync.Synchronized<T>.InSync.IBareLock.BarelyTryLock
+  fullName.vb: InSync.Synchronized(Of T).InSync.IBareLock.BarelyTryLock
+  nameWithType: Synchronized<T>.IBareLock.BarelyTryLock
+  nameWithType.vb: Synchronized(Of T).InSync.IBareLock.BarelyTryLock
+- uid: InSync.Synchronized`1.Lock
+  name: Lock()
+  href: api/InSync.Synchronized-1.html#InSync_Synchronized_1_Lock
+  commentId: M:InSync.Synchronized`1.Lock
+  fullName: InSync.Synchronized<T>.Lock()
+  fullName.vb: InSync.Synchronized(Of T).Lock()
+  nameWithType: Synchronized<T>.Lock()
+  nameWithType.vb: Synchronized(Of T).Lock()
+- uid: InSync.Synchronized`1.Lock*
+  name: Lock
+  href: api/InSync.Synchronized-1.html#InSync_Synchronized_1_Lock_
+  commentId: Overload:InSync.Synchronized`1.Lock
+  isSpec: "True"
+  fullName: InSync.Synchronized<T>.Lock
+  fullName.vb: InSync.Synchronized(Of T).Lock
+  nameWithType: Synchronized<T>.Lock
+  nameWithType.vb: Synchronized(Of T).Lock
+- uid: InSync.Synchronized`1.padLock
+  name: padLock
+  href: api/InSync.Synchronized-1.html#InSync_Synchronized_1_padLock
+  commentId: F:InSync.Synchronized`1.padLock
+  fullName: InSync.Synchronized<T>.padLock
+  fullName.vb: InSync.Synchronized(Of T).padLock
+  nameWithType: Synchronized<T>.padLock
+  nameWithType.vb: Synchronized(Of T).padLock
+- uid: InSync.Synchronized`1.TryLock
+  name: TryLock()
+  href: api/InSync.Synchronized-1.html#InSync_Synchronized_1_TryLock
+  commentId: M:InSync.Synchronized`1.TryLock
+  fullName: InSync.Synchronized<T>.TryLock()
+  fullName.vb: InSync.Synchronized(Of T).TryLock()
+  nameWithType: Synchronized<T>.TryLock()
+  nameWithType.vb: Synchronized(Of T).TryLock()
+- uid: InSync.Synchronized`1.TryLock(System.Int32)
+  name: TryLock(Int32)
+  href: api/InSync.Synchronized-1.html#InSync_Synchronized_1_TryLock_System_Int32_
+  commentId: M:InSync.Synchronized`1.TryLock(System.Int32)
+  fullName: InSync.Synchronized<T>.TryLock(System.Int32)
+  fullName.vb: InSync.Synchronized(Of T).TryLock(System.Int32)
+  nameWithType: Synchronized<T>.TryLock(Int32)
+  nameWithType.vb: Synchronized(Of T).TryLock(Int32)
+- uid: InSync.Synchronized`1.TryLock(System.TimeSpan)
+  name: TryLock(TimeSpan)
+  href: api/InSync.Synchronized-1.html#InSync_Synchronized_1_TryLock_System_TimeSpan_
+  commentId: M:InSync.Synchronized`1.TryLock(System.TimeSpan)
+  fullName: InSync.Synchronized<T>.TryLock(System.TimeSpan)
+  fullName.vb: InSync.Synchronized(Of T).TryLock(System.TimeSpan)
+  nameWithType: Synchronized<T>.TryLock(TimeSpan)
+  nameWithType.vb: Synchronized(Of T).TryLock(TimeSpan)
+- uid: InSync.Synchronized`1.TryLock*
+  name: TryLock
+  href: api/InSync.Synchronized-1.html#InSync_Synchronized_1_TryLock_
+  commentId: Overload:InSync.Synchronized`1.TryLock
+  isSpec: "True"
+  fullName: InSync.Synchronized<T>.TryLock
+  fullName.vb: InSync.Synchronized(Of T).TryLock
+  nameWithType: Synchronized<T>.TryLock
+  nameWithType.vb: Synchronized(Of T).TryLock
+- uid: InSync.Synchronized`1.TryWithLock(System.Action{`0})
+  name: TryWithLock(Action<T>)
+  href: api/InSync.Synchronized-1.html#InSync_Synchronized_1_TryWithLock_System_Action__0__
+  commentId: M:InSync.Synchronized`1.TryWithLock(System.Action{`0})
+  name.vb: TryWithLock(Action(Of T))
+  fullName: InSync.Synchronized<T>.TryWithLock(System.Action<T>)
+  fullName.vb: InSync.Synchronized(Of T).TryWithLock(System.Action(Of T))
+  nameWithType: Synchronized<T>.TryWithLock(Action<T>)
+  nameWithType.vb: Synchronized(Of T).TryWithLock(Action(Of T))
+- uid: InSync.Synchronized`1.TryWithLock(System.Int32,System.Action{`0})
+  name: TryWithLock(Int32, Action<T>)
+  href: api/InSync.Synchronized-1.html#InSync_Synchronized_1_TryWithLock_System_Int32_System_Action__0__
+  commentId: M:InSync.Synchronized`1.TryWithLock(System.Int32,System.Action{`0})
+  name.vb: TryWithLock(Int32, Action(Of T))
+  fullName: InSync.Synchronized<T>.TryWithLock(System.Int32, System.Action<T>)
+  fullName.vb: InSync.Synchronized(Of T).TryWithLock(System.Int32, System.Action(Of T))
+  nameWithType: Synchronized<T>.TryWithLock(Int32, Action<T>)
+  nameWithType.vb: Synchronized(Of T).TryWithLock(Int32, Action(Of T))
+- uid: InSync.Synchronized`1.TryWithLock(System.TimeSpan,System.Action{`0})
+  name: TryWithLock(TimeSpan, Action<T>)
+  href: api/InSync.Synchronized-1.html#InSync_Synchronized_1_TryWithLock_System_TimeSpan_System_Action__0__
+  commentId: M:InSync.Synchronized`1.TryWithLock(System.TimeSpan,System.Action{`0})
+  name.vb: TryWithLock(TimeSpan, Action(Of T))
+  fullName: InSync.Synchronized<T>.TryWithLock(System.TimeSpan, System.Action<T>)
+  fullName.vb: InSync.Synchronized(Of T).TryWithLock(System.TimeSpan, System.Action(Of T))
+  nameWithType: Synchronized<T>.TryWithLock(TimeSpan, Action<T>)
+  nameWithType.vb: Synchronized(Of T).TryWithLock(TimeSpan, Action(Of T))
+- uid: InSync.Synchronized`1.TryWithLock*
+  name: TryWithLock
+  href: api/InSync.Synchronized-1.html#InSync_Synchronized_1_TryWithLock_
+  commentId: Overload:InSync.Synchronized`1.TryWithLock
+  isSpec: "True"
+  fullName: InSync.Synchronized<T>.TryWithLock
+  fullName.vb: InSync.Synchronized(Of T).TryWithLock
+  nameWithType: Synchronized<T>.TryWithLock
+  nameWithType.vb: Synchronized(Of T).TryWithLock
+- uid: InSync.Synchronized`1.value
+  name: value
+  href: api/InSync.Synchronized-1.html#InSync_Synchronized_1_value
+  commentId: F:InSync.Synchronized`1.value
+  fullName: InSync.Synchronized<T>.value
+  fullName.vb: InSync.Synchronized(Of T).value
+  nameWithType: Synchronized<T>.value
+  nameWithType.vb: Synchronized(Of T).value
+- uid: InSync.Synchronized`1.WithLock(System.Action{`0})
+  name: WithLock(Action<T>)
+  href: api/InSync.Synchronized-1.html#InSync_Synchronized_1_WithLock_System_Action__0__
+  commentId: M:InSync.Synchronized`1.WithLock(System.Action{`0})
+  name.vb: WithLock(Action(Of T))
+  fullName: InSync.Synchronized<T>.WithLock(System.Action<T>)
+  fullName.vb: InSync.Synchronized(Of T).WithLock(System.Action(Of T))
+  nameWithType: Synchronized<T>.WithLock(Action<T>)
+  nameWithType.vb: Synchronized(Of T).WithLock(Action(Of T))
+- uid: InSync.Synchronized`1.WithLock*
+  name: WithLock
+  href: api/InSync.Synchronized-1.html#InSync_Synchronized_1_WithLock_
+  commentId: Overload:InSync.Synchronized`1.WithLock
+  isSpec: "True"
+  fullName: InSync.Synchronized<T>.WithLock
+  fullName.vb: InSync.Synchronized(Of T).WithLock
+  nameWithType: Synchronized<T>.WithLock
+  nameWithType.vb: Synchronized(Of T).WithLock
+- uid: InSync.Synchronized`1.WithLock``1(System.Func{`0,``0})
+  name: WithLock<TResult>(Func<T, TResult>)
+  href: api/InSync.Synchronized-1.html#InSync_Synchronized_1_WithLock__1_System_Func__0___0__
+  commentId: M:InSync.Synchronized`1.WithLock``1(System.Func{`0,``0})
+  name.vb: WithLock(Of TResult)(Func(Of T, TResult))
+  fullName: InSync.Synchronized<T>.WithLock<TResult>(System.Func<T, TResult>)
+  fullName.vb: InSync.Synchronized(Of T).WithLock(Of TResult)(System.Func(Of T, TResult))
+  nameWithType: Synchronized<T>.WithLock<TResult>(Func<T, TResult>)
+  nameWithType.vb: Synchronized(Of T).WithLock(Of TResult)(Func(Of T, TResult))
+- uid: InSync.UnlockException
+  name: UnlockException
+  href: api/InSync.UnlockException.html
+  commentId: T:InSync.UnlockException
+  fullName: InSync.UnlockException
+  nameWithType: UnlockException
+- uid: InSync.UnlockException.#ctor(System.Collections.Generic.IDictionary{System.Int32,System.Exception})
+  name: UnlockException(IDictionary<Int32, Exception>)
+  href: api/InSync.UnlockException.html#InSync_UnlockException__ctor_System_Collections_Generic_IDictionary_System_Int32_System_Exception__
+  commentId: M:InSync.UnlockException.#ctor(System.Collections.Generic.IDictionary{System.Int32,System.Exception})
+  name.vb: UnlockException(IDictionary(Of Int32, Exception))
+  fullName: InSync.UnlockException.UnlockException(System.Collections.Generic.IDictionary<System.Int32, System.Exception>)
+  fullName.vb: InSync.UnlockException.UnlockException(System.Collections.Generic.IDictionary(Of System.Int32, System.Exception))
+  nameWithType: UnlockException.UnlockException(IDictionary<Int32, Exception>)
+  nameWithType.vb: UnlockException.UnlockException(IDictionary(Of Int32, Exception))
+- uid: InSync.UnlockException.#ctor(System.Exception)
+  name: UnlockException(Exception)
+  href: api/InSync.UnlockException.html#InSync_UnlockException__ctor_System_Exception_
+  commentId: M:InSync.UnlockException.#ctor(System.Exception)
+  fullName: InSync.UnlockException.UnlockException(System.Exception)
+  nameWithType: UnlockException.UnlockException(Exception)
+- uid: InSync.UnlockException.#ctor(System.Exception,System.Collections.Generic.IDictionary{System.Int32,System.Exception})
+  name: UnlockException(Exception, IDictionary<Int32, Exception>)
+  href: api/InSync.UnlockException.html#InSync_UnlockException__ctor_System_Exception_System_Collections_Generic_IDictionary_System_Int32_System_Exception__
+  commentId: M:InSync.UnlockException.#ctor(System.Exception,System.Collections.Generic.IDictionary{System.Int32,System.Exception})
+  name.vb: UnlockException(Exception, IDictionary(Of Int32, Exception))
+  fullName: InSync.UnlockException.UnlockException(System.Exception, System.Collections.Generic.IDictionary<System.Int32, System.Exception>)
+  fullName.vb: InSync.UnlockException.UnlockException(System.Exception, System.Collections.Generic.IDictionary(Of System.Int32, System.Exception))
+  nameWithType: UnlockException.UnlockException(Exception, IDictionary<Int32, Exception>)
+  nameWithType.vb: UnlockException.UnlockException(Exception, IDictionary(Of Int32, Exception))
+- uid: InSync.UnlockException.#ctor(System.Exception,System.Exception)
+  name: UnlockException(Exception, Exception)
+  href: api/InSync.UnlockException.html#InSync_UnlockException__ctor_System_Exception_System_Exception_
+  commentId: M:InSync.UnlockException.#ctor(System.Exception,System.Exception)
+  fullName: InSync.UnlockException.UnlockException(System.Exception, System.Exception)
+  nameWithType: UnlockException.UnlockException(Exception, Exception)
+- uid: InSync.UnlockException.#ctor*
+  name: UnlockException
+  href: api/InSync.UnlockException.html#InSync_UnlockException__ctor_
+  commentId: Overload:InSync.UnlockException.#ctor
+  isSpec: "True"
+  fullName: InSync.UnlockException.UnlockException
+  nameWithType: UnlockException.UnlockException
+- uid: InSync.UnlockException.InnerExceptions
+  name: InnerExceptions
+  href: api/InSync.UnlockException.html#InSync_UnlockException_InnerExceptions
+  commentId: P:InSync.UnlockException.InnerExceptions
+  fullName: InSync.UnlockException.InnerExceptions
+  nameWithType: UnlockException.InnerExceptions
+- uid: InSync.UnlockException.InnerExceptions*
+  name: InnerExceptions
+  href: api/InSync.UnlockException.html#InSync_UnlockException_InnerExceptions_
+  commentId: Overload:InSync.UnlockException.InnerExceptions
+  isSpec: "True"
+  fullName: InSync.UnlockException.InnerExceptions
+  nameWithType: UnlockException.InnerExceptions
+- uid: InSync.UnlockException.PriorException
+  name: PriorException
+  href: api/InSync.UnlockException.html#InSync_UnlockException_PriorException
+  commentId: P:InSync.UnlockException.PriorException
+  fullName: InSync.UnlockException.PriorException
+  nameWithType: UnlockException.PriorException
+- uid: InSync.UnlockException.PriorException*
+  name: PriorException
+  href: api/InSync.UnlockException.html#InSync_UnlockException_PriorException_
+  commentId: Overload:InSync.UnlockException.PriorException
+  isSpec: "True"
+  fullName: InSync.UnlockException.PriorException
+  nameWithType: UnlockException.PriorException
+- uid: InSync.UnlockException.ToString
+  name: ToString()
+  href: api/InSync.UnlockException.html#InSync_UnlockException_ToString
+  commentId: M:InSync.UnlockException.ToString
+  fullName: InSync.UnlockException.ToString()
+  nameWithType: UnlockException.ToString()
+- uid: InSync.UnlockException.ToString*
+  name: ToString
+  href: api/InSync.UnlockException.html#InSync_UnlockException_ToString_
+  commentId: Overload:InSync.UnlockException.ToString
+  isSpec: "True"
+  fullName: InSync.UnlockException.ToString
+  nameWithType: UnlockException.ToString
+- uid: InSync.UpgradeableReaderSynchronized`1
+  name: UpgradeableReaderSynchronized<TRead>
+  href: api/InSync.UpgradeableReaderSynchronized-1.html
+  commentId: T:InSync.UpgradeableReaderSynchronized`1
+  name.vb: UpgradeableReaderSynchronized(Of TRead)
+  fullName: InSync.UpgradeableReaderSynchronized<TRead>
+  fullName.vb: InSync.UpgradeableReaderSynchronized(Of TRead)
+  nameWithType: UpgradeableReaderSynchronized<TRead>
+  nameWithType.vb: UpgradeableReaderSynchronized(Of TRead)
+- uid: InSync.UpgradeableReaderSynchronized`1.#ctor(System.Threading.ReaderWriterLockSlim,`0)
+  name: UpgradeableReaderSynchronized(ReaderWriterLockSlim, TRead)
+  href: api/InSync.UpgradeableReaderSynchronized-1.html#InSync_UpgradeableReaderSynchronized_1__ctor_System_Threading_ReaderWriterLockSlim__0_
+  commentId: M:InSync.UpgradeableReaderSynchronized`1.#ctor(System.Threading.ReaderWriterLockSlim,`0)
+  fullName: InSync.UpgradeableReaderSynchronized<TRead>.UpgradeableReaderSynchronized(System.Threading.ReaderWriterLockSlim, TRead)
+  fullName.vb: InSync.UpgradeableReaderSynchronized(Of TRead).UpgradeableReaderSynchronized(System.Threading.ReaderWriterLockSlim, TRead)
+  nameWithType: UpgradeableReaderSynchronized<TRead>.UpgradeableReaderSynchronized(ReaderWriterLockSlim, TRead)
+  nameWithType.vb: UpgradeableReaderSynchronized(Of TRead).UpgradeableReaderSynchronized(ReaderWriterLockSlim, TRead)
+- uid: InSync.UpgradeableReaderSynchronized`1.#ctor*
+  name: UpgradeableReaderSynchronized
+  href: api/InSync.UpgradeableReaderSynchronized-1.html#InSync_UpgradeableReaderSynchronized_1__ctor_
+  commentId: Overload:InSync.UpgradeableReaderSynchronized`1.#ctor
+  isSpec: "True"
+  fullName: InSync.UpgradeableReaderSynchronized<TRead>.UpgradeableReaderSynchronized
+  fullName.vb: InSync.UpgradeableReaderSynchronized(Of TRead).UpgradeableReaderSynchronized
+  nameWithType: UpgradeableReaderSynchronized<TRead>.UpgradeableReaderSynchronized
+  nameWithType.vb: UpgradeableReaderSynchronized(Of TRead).UpgradeableReaderSynchronized
+- uid: InSync.UpgradeableReaderSynchronized`1.BarelyLock
+  name: BarelyLock()
+  href: api/InSync.UpgradeableReaderSynchronized-1.html#InSync_UpgradeableReaderSynchronized_1_BarelyLock
+  commentId: M:InSync.UpgradeableReaderSynchronized`1.BarelyLock
+  fullName: InSync.UpgradeableReaderSynchronized<TRead>.BarelyLock()
+  fullName.vb: InSync.UpgradeableReaderSynchronized(Of TRead).BarelyLock()
+  nameWithType: UpgradeableReaderSynchronized<TRead>.BarelyLock()
+  nameWithType.vb: UpgradeableReaderSynchronized(Of TRead).BarelyLock()
+- uid: InSync.UpgradeableReaderSynchronized`1.BarelyLock*
+  name: BarelyLock
+  href: api/InSync.UpgradeableReaderSynchronized-1.html#InSync_UpgradeableReaderSynchronized_1_BarelyLock_
+  commentId: Overload:InSync.UpgradeableReaderSynchronized`1.BarelyLock
+  isSpec: "True"
+  fullName: InSync.UpgradeableReaderSynchronized<TRead>.BarelyLock
+  fullName.vb: InSync.UpgradeableReaderSynchronized(Of TRead).BarelyLock
+  nameWithType: UpgradeableReaderSynchronized<TRead>.BarelyLock
+  nameWithType.vb: UpgradeableReaderSynchronized(Of TRead).BarelyLock
+- uid: InSync.UpgradeableReaderSynchronized`1.BarelyTryLock(`0@)
+  name: BarelyTryLock(out TRead)
+  href: api/InSync.UpgradeableReaderSynchronized-1.html#InSync_UpgradeableReaderSynchronized_1_BarelyTryLock__0__
+  commentId: M:InSync.UpgradeableReaderSynchronized`1.BarelyTryLock(`0@)
+  name.vb: BarelyTryLock(ByRef TRead)
+  fullName: InSync.UpgradeableReaderSynchronized<TRead>.BarelyTryLock(out TRead)
+  fullName.vb: InSync.UpgradeableReaderSynchronized(Of TRead).BarelyTryLock(ByRef TRead)
+  nameWithType: UpgradeableReaderSynchronized<TRead>.BarelyTryLock(out TRead)
+  nameWithType.vb: UpgradeableReaderSynchronized(Of TRead).BarelyTryLock(ByRef TRead)
+- uid: InSync.UpgradeableReaderSynchronized`1.BarelyTryLock(System.Int32,`0@)
+  name: BarelyTryLock(Int32, out TRead)
+  href: api/InSync.UpgradeableReaderSynchronized-1.html#InSync_UpgradeableReaderSynchronized_1_BarelyTryLock_System_Int32__0__
+  commentId: M:InSync.UpgradeableReaderSynchronized`1.BarelyTryLock(System.Int32,`0@)
+  name.vb: BarelyTryLock(Int32, ByRef TRead)
+  fullName: InSync.UpgradeableReaderSynchronized<TRead>.BarelyTryLock(System.Int32, out TRead)
+  fullName.vb: InSync.UpgradeableReaderSynchronized(Of TRead).BarelyTryLock(System.Int32, ByRef TRead)
+  nameWithType: UpgradeableReaderSynchronized<TRead>.BarelyTryLock(Int32, out TRead)
+  nameWithType.vb: UpgradeableReaderSynchronized(Of TRead).BarelyTryLock(Int32, ByRef TRead)
+- uid: InSync.UpgradeableReaderSynchronized`1.BarelyTryLock(System.TimeSpan,`0@)
+  name: BarelyTryLock(TimeSpan, out TRead)
+  href: api/InSync.UpgradeableReaderSynchronized-1.html#InSync_UpgradeableReaderSynchronized_1_BarelyTryLock_System_TimeSpan__0__
+  commentId: M:InSync.UpgradeableReaderSynchronized`1.BarelyTryLock(System.TimeSpan,`0@)
+  name.vb: BarelyTryLock(TimeSpan, ByRef TRead)
+  fullName: InSync.UpgradeableReaderSynchronized<TRead>.BarelyTryLock(System.TimeSpan, out TRead)
+  fullName.vb: InSync.UpgradeableReaderSynchronized(Of TRead).BarelyTryLock(System.TimeSpan, ByRef TRead)
+  nameWithType: UpgradeableReaderSynchronized<TRead>.BarelyTryLock(TimeSpan, out TRead)
+  nameWithType.vb: UpgradeableReaderSynchronized(Of TRead).BarelyTryLock(TimeSpan, ByRef TRead)
+- uid: InSync.UpgradeableReaderSynchronized`1.BarelyTryLock*
+  name: BarelyTryLock
+  href: api/InSync.UpgradeableReaderSynchronized-1.html#InSync_UpgradeableReaderSynchronized_1_BarelyTryLock_
+  commentId: Overload:InSync.UpgradeableReaderSynchronized`1.BarelyTryLock
+  isSpec: "True"
+  fullName: InSync.UpgradeableReaderSynchronized<TRead>.BarelyTryLock
+  fullName.vb: InSync.UpgradeableReaderSynchronized(Of TRead).BarelyTryLock
+  nameWithType: UpgradeableReaderSynchronized<TRead>.BarelyTryLock
+  nameWithType.vb: UpgradeableReaderSynchronized(Of TRead).BarelyTryLock
+- uid: InSync.UpgradeableReaderSynchronized`1.BarelyUnlock
+  name: BarelyUnlock()
+  href: api/InSync.UpgradeableReaderSynchronized-1.html#InSync_UpgradeableReaderSynchronized_1_BarelyUnlock
+  commentId: M:InSync.UpgradeableReaderSynchronized`1.BarelyUnlock
+  fullName: InSync.UpgradeableReaderSynchronized<TRead>.BarelyUnlock()
+  fullName.vb: InSync.UpgradeableReaderSynchronized(Of TRead).BarelyUnlock()
+  nameWithType: UpgradeableReaderSynchronized<TRead>.BarelyUnlock()
+  nameWithType.vb: UpgradeableReaderSynchronized(Of TRead).BarelyUnlock()
+- uid: InSync.UpgradeableReaderSynchronized`1.BarelyUnlock*
+  name: BarelyUnlock
+  href: api/InSync.UpgradeableReaderSynchronized-1.html#InSync_UpgradeableReaderSynchronized_1_BarelyUnlock_
+  commentId: Overload:InSync.UpgradeableReaderSynchronized`1.BarelyUnlock
+  isSpec: "True"
+  fullName: InSync.UpgradeableReaderSynchronized<TRead>.BarelyUnlock
+  fullName.vb: InSync.UpgradeableReaderSynchronized(Of TRead).BarelyUnlock
+  nameWithType: UpgradeableReaderSynchronized<TRead>.BarelyUnlock
+  nameWithType.vb: UpgradeableReaderSynchronized(Of TRead).BarelyUnlock
+- uid: InSync.UpgradeableReaderSynchronized`1.InSync#IBareLock#BarelyLock
+  name: IBareLock.BarelyLock()
+  href: api/InSync.UpgradeableReaderSynchronized-1.html#InSync_UpgradeableReaderSynchronized_1_InSync_IBareLock_BarelyLock
+  commentId: M:InSync.UpgradeableReaderSynchronized`1.InSync#IBareLock#BarelyLock
+  name.vb: InSync.IBareLock.BarelyLock()
+  fullName: InSync.UpgradeableReaderSynchronized<TRead>.InSync.IBareLock.BarelyLock()
+  fullName.vb: InSync.UpgradeableReaderSynchronized(Of TRead).InSync.IBareLock.BarelyLock()
+  nameWithType: UpgradeableReaderSynchronized<TRead>.IBareLock.BarelyLock()
+  nameWithType.vb: UpgradeableReaderSynchronized(Of TRead).InSync.IBareLock.BarelyLock()
+- uid: InSync.UpgradeableReaderSynchronized`1.InSync#IBareLock#BarelyLock*
+  name: IBareLock.BarelyLock
+  href: api/InSync.UpgradeableReaderSynchronized-1.html#InSync_UpgradeableReaderSynchronized_1_InSync_IBareLock_BarelyLock_
+  commentId: Overload:InSync.UpgradeableReaderSynchronized`1.InSync#IBareLock#BarelyLock
+  isSpec: "True"
+  name.vb: InSync.IBareLock.BarelyLock
+  fullName: InSync.UpgradeableReaderSynchronized<TRead>.InSync.IBareLock.BarelyLock
+  fullName.vb: InSync.UpgradeableReaderSynchronized(Of TRead).InSync.IBareLock.BarelyLock
+  nameWithType: UpgradeableReaderSynchronized<TRead>.IBareLock.BarelyLock
+  nameWithType.vb: UpgradeableReaderSynchronized(Of TRead).InSync.IBareLock.BarelyLock
+- uid: InSync.UpgradeableReaderSynchronized`1.InSync#IBareLock#BarelyTryLock(System.Int32,System.Object@)
+  name: IBareLock.BarelyTryLock(Int32, out Object)
+  href: api/InSync.UpgradeableReaderSynchronized-1.html#InSync_UpgradeableReaderSynchronized_1_InSync_IBareLock_BarelyTryLock_System_Int32_System_Object__
+  commentId: M:InSync.UpgradeableReaderSynchronized`1.InSync#IBareLock#BarelyTryLock(System.Int32,System.Object@)
+  name.vb: InSync.IBareLock.BarelyTryLock(Int32, ByRef Object)
+  fullName: InSync.UpgradeableReaderSynchronized<TRead>.InSync.IBareLock.BarelyTryLock(System.Int32, out System.Object)
+  fullName.vb: InSync.UpgradeableReaderSynchronized(Of TRead).InSync.IBareLock.BarelyTryLock(System.Int32, ByRef System.Object)
+  nameWithType: UpgradeableReaderSynchronized<TRead>.IBareLock.BarelyTryLock(Int32, out Object)
+  nameWithType.vb: UpgradeableReaderSynchronized(Of TRead).InSync.IBareLock.BarelyTryLock(Int32, ByRef Object)
+- uid: InSync.UpgradeableReaderSynchronized`1.InSync#IBareLock#BarelyTryLock(System.Object@)
+  name: IBareLock.BarelyTryLock(out Object)
+  href: api/InSync.UpgradeableReaderSynchronized-1.html#InSync_UpgradeableReaderSynchronized_1_InSync_IBareLock_BarelyTryLock_System_Object__
+  commentId: M:InSync.UpgradeableReaderSynchronized`1.InSync#IBareLock#BarelyTryLock(System.Object@)
+  name.vb: InSync.IBareLock.BarelyTryLock(ByRef Object)
+  fullName: InSync.UpgradeableReaderSynchronized<TRead>.InSync.IBareLock.BarelyTryLock(out System.Object)
+  fullName.vb: InSync.UpgradeableReaderSynchronized(Of TRead).InSync.IBareLock.BarelyTryLock(ByRef System.Object)
+  nameWithType: UpgradeableReaderSynchronized<TRead>.IBareLock.BarelyTryLock(out Object)
+  nameWithType.vb: UpgradeableReaderSynchronized(Of TRead).InSync.IBareLock.BarelyTryLock(ByRef Object)
+- uid: InSync.UpgradeableReaderSynchronized`1.InSync#IBareLock#BarelyTryLock(System.TimeSpan,System.Object@)
+  name: IBareLock.BarelyTryLock(TimeSpan, out Object)
+  href: api/InSync.UpgradeableReaderSynchronized-1.html#InSync_UpgradeableReaderSynchronized_1_InSync_IBareLock_BarelyTryLock_System_TimeSpan_System_Object__
+  commentId: M:InSync.UpgradeableReaderSynchronized`1.InSync#IBareLock#BarelyTryLock(System.TimeSpan,System.Object@)
+  name.vb: InSync.IBareLock.BarelyTryLock(TimeSpan, ByRef Object)
+  fullName: InSync.UpgradeableReaderSynchronized<TRead>.InSync.IBareLock.BarelyTryLock(System.TimeSpan, out System.Object)
+  fullName.vb: InSync.UpgradeableReaderSynchronized(Of TRead).InSync.IBareLock.BarelyTryLock(System.TimeSpan, ByRef System.Object)
+  nameWithType: UpgradeableReaderSynchronized<TRead>.IBareLock.BarelyTryLock(TimeSpan, out Object)
+  nameWithType.vb: UpgradeableReaderSynchronized(Of TRead).InSync.IBareLock.BarelyTryLock(TimeSpan, ByRef Object)
+- uid: InSync.UpgradeableReaderSynchronized`1.InSync#IBareLock#BarelyTryLock*
+  name: IBareLock.BarelyTryLock
+  href: api/InSync.UpgradeableReaderSynchronized-1.html#InSync_UpgradeableReaderSynchronized_1_InSync_IBareLock_BarelyTryLock_
+  commentId: Overload:InSync.UpgradeableReaderSynchronized`1.InSync#IBareLock#BarelyTryLock
+  isSpec: "True"
+  name.vb: InSync.IBareLock.BarelyTryLock
+  fullName: InSync.UpgradeableReaderSynchronized<TRead>.InSync.IBareLock.BarelyTryLock
+  fullName.vb: InSync.UpgradeableReaderSynchronized(Of TRead).InSync.IBareLock.BarelyTryLock
+  nameWithType: UpgradeableReaderSynchronized<TRead>.IBareLock.BarelyTryLock
+  nameWithType.vb: UpgradeableReaderSynchronized(Of TRead).InSync.IBareLock.BarelyTryLock
+- uid: InSync.UpgradeableReaderSynchronized`1.Lock
+  name: Lock()
+  href: api/InSync.UpgradeableReaderSynchronized-1.html#InSync_UpgradeableReaderSynchronized_1_Lock
+  commentId: M:InSync.UpgradeableReaderSynchronized`1.Lock
+  fullName: InSync.UpgradeableReaderSynchronized<TRead>.Lock()
+  fullName.vb: InSync.UpgradeableReaderSynchronized(Of TRead).Lock()
+  nameWithType: UpgradeableReaderSynchronized<TRead>.Lock()
+  nameWithType.vb: UpgradeableReaderSynchronized(Of TRead).Lock()
+- uid: InSync.UpgradeableReaderSynchronized`1.Lock*
+  name: Lock
+  href: api/InSync.UpgradeableReaderSynchronized-1.html#InSync_UpgradeableReaderSynchronized_1_Lock_
+  commentId: Overload:InSync.UpgradeableReaderSynchronized`1.Lock
+  isSpec: "True"
+  fullName: InSync.UpgradeableReaderSynchronized<TRead>.Lock
+  fullName.vb: InSync.UpgradeableReaderSynchronized(Of TRead).Lock
+  nameWithType: UpgradeableReaderSynchronized<TRead>.Lock
+  nameWithType.vb: UpgradeableReaderSynchronized(Of TRead).Lock
+- uid: InSync.UpgradeableReaderSynchronized`1.reader
+  name: reader
+  href: api/InSync.UpgradeableReaderSynchronized-1.html#InSync_UpgradeableReaderSynchronized_1_reader
+  commentId: F:InSync.UpgradeableReaderSynchronized`1.reader
+  fullName: InSync.UpgradeableReaderSynchronized<TRead>.reader
+  fullName.vb: InSync.UpgradeableReaderSynchronized(Of TRead).reader
+  nameWithType: UpgradeableReaderSynchronized<TRead>.reader
+  nameWithType.vb: UpgradeableReaderSynchronized(Of TRead).reader
+- uid: InSync.UpgradeableReaderSynchronized`1.readerWriterLockSlim
+  name: readerWriterLockSlim
+  href: api/InSync.UpgradeableReaderSynchronized-1.html#InSync_UpgradeableReaderSynchronized_1_readerWriterLockSlim
+  commentId: F:InSync.UpgradeableReaderSynchronized`1.readerWriterLockSlim
+  fullName: InSync.UpgradeableReaderSynchronized<TRead>.readerWriterLockSlim
+  fullName.vb: InSync.UpgradeableReaderSynchronized(Of TRead).readerWriterLockSlim
+  nameWithType: UpgradeableReaderSynchronized<TRead>.readerWriterLockSlim
+  nameWithType.vb: UpgradeableReaderSynchronized(Of TRead).readerWriterLockSlim
+- uid: InSync.UpgradeableReaderSynchronized`1.TryLock
+  name: TryLock()
+  href: api/InSync.UpgradeableReaderSynchronized-1.html#InSync_UpgradeableReaderSynchronized_1_TryLock
+  commentId: M:InSync.UpgradeableReaderSynchronized`1.TryLock
+  fullName: InSync.UpgradeableReaderSynchronized<TRead>.TryLock()
+  fullName.vb: InSync.UpgradeableReaderSynchronized(Of TRead).TryLock()
+  nameWithType: UpgradeableReaderSynchronized<TRead>.TryLock()
+  nameWithType.vb: UpgradeableReaderSynchronized(Of TRead).TryLock()
+- uid: InSync.UpgradeableReaderSynchronized`1.TryLock(System.Int32)
+  name: TryLock(Int32)
+  href: api/InSync.UpgradeableReaderSynchronized-1.html#InSync_UpgradeableReaderSynchronized_1_TryLock_System_Int32_
+  commentId: M:InSync.UpgradeableReaderSynchronized`1.TryLock(System.Int32)
+  fullName: InSync.UpgradeableReaderSynchronized<TRead>.TryLock(System.Int32)
+  fullName.vb: InSync.UpgradeableReaderSynchronized(Of TRead).TryLock(System.Int32)
+  nameWithType: UpgradeableReaderSynchronized<TRead>.TryLock(Int32)
+  nameWithType.vb: UpgradeableReaderSynchronized(Of TRead).TryLock(Int32)
+- uid: InSync.UpgradeableReaderSynchronized`1.TryLock(System.TimeSpan)
+  name: TryLock(TimeSpan)
+  href: api/InSync.UpgradeableReaderSynchronized-1.html#InSync_UpgradeableReaderSynchronized_1_TryLock_System_TimeSpan_
+  commentId: M:InSync.UpgradeableReaderSynchronized`1.TryLock(System.TimeSpan)
+  fullName: InSync.UpgradeableReaderSynchronized<TRead>.TryLock(System.TimeSpan)
+  fullName.vb: InSync.UpgradeableReaderSynchronized(Of TRead).TryLock(System.TimeSpan)
+  nameWithType: UpgradeableReaderSynchronized<TRead>.TryLock(TimeSpan)
+  nameWithType.vb: UpgradeableReaderSynchronized(Of TRead).TryLock(TimeSpan)
+- uid: InSync.UpgradeableReaderSynchronized`1.TryLock*
+  name: TryLock
+  href: api/InSync.UpgradeableReaderSynchronized-1.html#InSync_UpgradeableReaderSynchronized_1_TryLock_
+  commentId: Overload:InSync.UpgradeableReaderSynchronized`1.TryLock
+  isSpec: "True"
+  fullName: InSync.UpgradeableReaderSynchronized<TRead>.TryLock
+  fullName.vb: InSync.UpgradeableReaderSynchronized(Of TRead).TryLock
+  nameWithType: UpgradeableReaderSynchronized<TRead>.TryLock
+  nameWithType.vb: UpgradeableReaderSynchronized(Of TRead).TryLock
+- uid: InSync.UpgradeableReaderSynchronized`1.TryWithLock(System.Action{`0})
+  name: TryWithLock(Action<TRead>)
+  href: api/InSync.UpgradeableReaderSynchronized-1.html#InSync_UpgradeableReaderSynchronized_1_TryWithLock_System_Action__0__
+  commentId: M:InSync.UpgradeableReaderSynchronized`1.TryWithLock(System.Action{`0})
+  name.vb: TryWithLock(Action(Of TRead))
+  fullName: InSync.UpgradeableReaderSynchronized<TRead>.TryWithLock(System.Action<TRead>)
+  fullName.vb: InSync.UpgradeableReaderSynchronized(Of TRead).TryWithLock(System.Action(Of TRead))
+  nameWithType: UpgradeableReaderSynchronized<TRead>.TryWithLock(Action<TRead>)
+  nameWithType.vb: UpgradeableReaderSynchronized(Of TRead).TryWithLock(Action(Of TRead))
+- uid: InSync.UpgradeableReaderSynchronized`1.TryWithLock(System.Int32,System.Action{`0})
+  name: TryWithLock(Int32, Action<TRead>)
+  href: api/InSync.UpgradeableReaderSynchronized-1.html#InSync_UpgradeableReaderSynchronized_1_TryWithLock_System_Int32_System_Action__0__
+  commentId: M:InSync.UpgradeableReaderSynchronized`1.TryWithLock(System.Int32,System.Action{`0})
+  name.vb: TryWithLock(Int32, Action(Of TRead))
+  fullName: InSync.UpgradeableReaderSynchronized<TRead>.TryWithLock(System.Int32, System.Action<TRead>)
+  fullName.vb: InSync.UpgradeableReaderSynchronized(Of TRead).TryWithLock(System.Int32, System.Action(Of TRead))
+  nameWithType: UpgradeableReaderSynchronized<TRead>.TryWithLock(Int32, Action<TRead>)
+  nameWithType.vb: UpgradeableReaderSynchronized(Of TRead).TryWithLock(Int32, Action(Of TRead))
+- uid: InSync.UpgradeableReaderSynchronized`1.TryWithLock(System.TimeSpan,System.Action{`0})
+  name: TryWithLock(TimeSpan, Action<TRead>)
+  href: api/InSync.UpgradeableReaderSynchronized-1.html#InSync_UpgradeableReaderSynchronized_1_TryWithLock_System_TimeSpan_System_Action__0__
+  commentId: M:InSync.UpgradeableReaderSynchronized`1.TryWithLock(System.TimeSpan,System.Action{`0})
+  name.vb: TryWithLock(TimeSpan, Action(Of TRead))
+  fullName: InSync.UpgradeableReaderSynchronized<TRead>.TryWithLock(System.TimeSpan, System.Action<TRead>)
+  fullName.vb: InSync.UpgradeableReaderSynchronized(Of TRead).TryWithLock(System.TimeSpan, System.Action(Of TRead))
+  nameWithType: UpgradeableReaderSynchronized<TRead>.TryWithLock(TimeSpan, Action<TRead>)
+  nameWithType.vb: UpgradeableReaderSynchronized(Of TRead).TryWithLock(TimeSpan, Action(Of TRead))
+- uid: InSync.UpgradeableReaderSynchronized`1.TryWithLock*
+  name: TryWithLock
+  href: api/InSync.UpgradeableReaderSynchronized-1.html#InSync_UpgradeableReaderSynchronized_1_TryWithLock_
+  commentId: Overload:InSync.UpgradeableReaderSynchronized`1.TryWithLock
+  isSpec: "True"
+  fullName: InSync.UpgradeableReaderSynchronized<TRead>.TryWithLock
+  fullName.vb: InSync.UpgradeableReaderSynchronized(Of TRead).TryWithLock
+  nameWithType: UpgradeableReaderSynchronized<TRead>.TryWithLock
+  nameWithType.vb: UpgradeableReaderSynchronized(Of TRead).TryWithLock
+- uid: InSync.UpgradeableReaderSynchronized`1.WithLock(System.Action{`0})
+  name: WithLock(Action<TRead>)
+  href: api/InSync.UpgradeableReaderSynchronized-1.html#InSync_UpgradeableReaderSynchronized_1_WithLock_System_Action__0__
+  commentId: M:InSync.UpgradeableReaderSynchronized`1.WithLock(System.Action{`0})
+  name.vb: WithLock(Action(Of TRead))
+  fullName: InSync.UpgradeableReaderSynchronized<TRead>.WithLock(System.Action<TRead>)
+  fullName.vb: InSync.UpgradeableReaderSynchronized(Of TRead).WithLock(System.Action(Of TRead))
+  nameWithType: UpgradeableReaderSynchronized<TRead>.WithLock(Action<TRead>)
+  nameWithType.vb: UpgradeableReaderSynchronized(Of TRead).WithLock(Action(Of TRead))
+- uid: InSync.UpgradeableReaderSynchronized`1.WithLock*
+  name: WithLock
+  href: api/InSync.UpgradeableReaderSynchronized-1.html#InSync_UpgradeableReaderSynchronized_1_WithLock_
+  commentId: Overload:InSync.UpgradeableReaderSynchronized`1.WithLock
+  isSpec: "True"
+  fullName: InSync.UpgradeableReaderSynchronized<TRead>.WithLock
+  fullName.vb: InSync.UpgradeableReaderSynchronized(Of TRead).WithLock
+  nameWithType: UpgradeableReaderSynchronized<TRead>.WithLock
+  nameWithType.vb: UpgradeableReaderSynchronized(Of TRead).WithLock
+- uid: InSync.UpgradeableReaderSynchronized`1.WithLock``1(System.Func{`0,``0})
+  name: WithLock<TResult>(Func<TRead, TResult>)
+  href: api/InSync.UpgradeableReaderSynchronized-1.html#InSync_UpgradeableReaderSynchronized_1_WithLock__1_System_Func__0___0__
+  commentId: M:InSync.UpgradeableReaderSynchronized`1.WithLock``1(System.Func{`0,``0})
+  name.vb: WithLock(Of TResult)(Func(Of TRead, TResult))
+  fullName: InSync.UpgradeableReaderSynchronized<TRead>.WithLock<TResult>(System.Func<TRead, TResult>)
+  fullName.vb: InSync.UpgradeableReaderSynchronized(Of TRead).WithLock(Of TResult)(System.Func(Of TRead, TResult))
+  nameWithType: UpgradeableReaderSynchronized<TRead>.WithLock<TResult>(Func<TRead, TResult>)
+  nameWithType.vb: UpgradeableReaderSynchronized(Of TRead).WithLock(Of TResult)(Func(Of TRead, TResult))
+- uid: InSync.ValueContainer`1
+  name: ValueContainer<T>
+  href: api/InSync.ValueContainer-1.html
+  commentId: T:InSync.ValueContainer`1
+  name.vb: ValueContainer(Of T)
+  fullName: InSync.ValueContainer<T>
+  fullName.vb: InSync.ValueContainer(Of T)
+  nameWithType: ValueContainer<T>
+  nameWithType.vb: ValueContainer(Of T)
+- uid: InSync.ValueContainer`1.Value
+  name: Value
+  href: api/InSync.ValueContainer-1.html#InSync_ValueContainer_1_Value
+  commentId: F:InSync.ValueContainer`1.Value
+  fullName: InSync.ValueContainer<T>.Value
+  fullName.vb: InSync.ValueContainer(Of T).Value
+  nameWithType: ValueContainer<T>.Value
+  nameWithType.vb: ValueContainer(Of T).Value
