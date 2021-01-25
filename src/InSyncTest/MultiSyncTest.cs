@@ -16,6 +16,7 @@ namespace InSyncTest
     public class MultiSyncTest
     {
         private delegate bool TryLockDelegate(out object value);
+        private delegate bool TryLockTimeoutDelegate(int timeout, out object value);
 
         public static IEnumerable AcquireCases(string name)
         {
@@ -44,6 +45,50 @@ namespace InSyncTest
         [TestCaseSource(nameof(AcquireCases), new object[] { nameof(AllBareLock_Acquire) })]
         public void AllBareLock_Acquire(int[][] lockStates)
         {
+            AllBareLock_Acquire(lockStates, locks => MultiSync.All(locks));
+        }
+
+        public static IEnumerable AcquireWithTimeoutCases(string name)
+        {
+            var cases = new int[][][]
+            {
+                new[] { new[] { 0, 0, 0 } },
+                new[] { new[] { 0, 1, 0 } },
+                new[] { new[] { 0, 0, 1 } },
+
+                new[] { new[] { 0, 1, 0 }, new[] { 1, 0, 0 } },
+                new[] { new[] { 0, 1, 0 }, new[] { 0, 0, 1 } },
+
+                new[] { new[] { 0, 0, 1 }, new[] { 1, 0, 0 } },
+                new[] { new[] { 0, 0, 1 }, new[] { 0, 1, 0 } },
+
+                new[] { new[] { 0, 1, 0 }, new[] { 1, 0, 0 }, new[] { 0, 1, 0 } },
+                new[] { new[] { 0, 1, 0 }, new[] { 1, 0, 0 }, new[] { 0, 0, 1 } },
+            };
+            var methods = new[]
+            {
+                TimingMethod.Stopwatch,
+                TimingMethod.EnvironmentTick,
+                TimingMethod.DateTime
+            };
+            foreach (var method in methods)
+            {
+                foreach (var data in cases)
+                {
+                    yield return new TestCaseData(new object[] { method, data })
+                        .SetName($"{name}({method}, {string.Join(", ", data.Select(d => $"[{string.Join(", ", d)}]"))})");
+                }
+            }
+        }
+
+        [TestCaseSource(nameof(AcquireWithTimeoutCases), new object[] { nameof(AllBareLockTimeout_InfiniteTimeout_Acquire) })]
+        public void AllBareLockTimeout_InfiniteTimeout_Acquire(TimingMethod timingMethod, int[][] lockStates)
+        {
+            AllBareLock_Acquire(lockStates, locks => MultiSync.All(locks, -1, timingMethod));
+        }
+
+        private void AllBareLock_Acquire(int[][] lockStates, Func<List<IBareLock>, GuardedValue<IReadOnlyList<object>>> func)
+        {
             // setup
             var remainingStates = lockStates.ToList();
             var locks = new List<IBareLock>();
@@ -60,8 +105,7 @@ namespace InSyncTest
                     ++currentStates[iCopy];
                     return iCopy.ToString();
                 });
-                object valueToken;
-                l.Setup(x => x.BarelyTryLock(out valueToken)).Returns(new TryLockDelegate((out object v) =>
+                var tryLockDelegate = new TryLockDelegate((out object v) =>
                 {
                     if (currentStates[iCopy] > 0)
                     {
@@ -82,17 +126,70 @@ namespace InSyncTest
                     ++currentStates[iCopy];
                     v = iCopy.ToString();
                     return true;
-                }));
+                });
+                object valueToken;
+                l.Setup(x => x.BarelyTryLock(out valueToken)).Returns(tryLockDelegate);
+                var tryLockTimeoutDelegate = new TryLockTimeoutDelegate((int _, out object v) =>
+                {
+                    return tryLockDelegate(out v);
+                });
+                l.Setup(x => x.BarelyTryLock(It.IsAny<int>(), out valueToken)).Returns(tryLockTimeoutDelegate);
                 l.Setup(x => x.BarelyUnlock()).Callback(() => --currentStates[iCopy]);
                 locks.Add(l.Object);
             }
 
             // act
-            var guard = MultiSync.All(locks);
+            var guard = func(locks);
 
             // assert
             currentStates.ShouldBe(Enumerable.Repeat(1, count));
             guard.Value.ShouldBe(Enumerable.Range(0, count).Select(x => x.ToString()));
+        }
+
+        [TestCase(60_000, TimingMethod.Stopwatch)]
+        [TestCase(60_000, TimingMethod.EnvironmentTick)]
+        [TestCase(60_000, TimingMethod.DateTime)]
+        [TestCase(int.MaxValue, TimingMethod.Stopwatch)]
+        [TestCase(int.MaxValue, TimingMethod.EnvironmentTick)]
+        [TestCase(int.MaxValue, TimingMethod.DateTime)]
+        public void AllBareLockTimeout_MaxTimeout_Acquire(int timeoutMs, TimingMethod timingMethod)
+        {
+            AllBareLock_Acquire(new[] { new[] { 0, 0, 0 } }, locks => MultiSync.All(locks, timeoutMs, timingMethod));
+        }
+
+        [TestCase(TimingMethod.Stopwatch, 10)]
+        [TestCase(TimingMethod.EnvironmentTick, 100)]
+        [TestCase(TimingMethod.DateTime, 100)]
+        public void AllBareLockTimeout_Timeout_NotAcquire(TimingMethod timingMethod, int sleepMs)
+        {
+            // setup
+            var locks = new List<IBareLock>();
+            object valueToken = null;
+            {
+                var l = new Mock<IBareLock>(MockBehavior.Strict);
+                l.Setup(x => x.BarelyTryLock(1, out valueToken)).Returns(new TryLockTimeoutDelegate((int _, out object v) =>
+                {
+                    Thread.Sleep(sleepMs);
+                    v = new object();
+                    return true;
+                }));
+                l.Setup(x => x.BarelyUnlock());
+                locks.Add(l.Object);
+            }
+            {
+                var l = new Mock<IBareLock>(MockBehavior.Strict);
+                l.Setup(x => x.BarelyTryLock(out valueToken)).Returns(false);
+                l.Setup(x => x.BarelyTryLock(0, out valueToken)).Returns(false);
+                l.Setup(x => x.BarelyUnlock());
+                locks.Add(l.Object);
+            }
+            locks.Add(new Mock<IBareLock>(MockBehavior.Strict).Object); // prevent infinite loop
+
+            // act
+            var guard = MultiSync.All(locks, 1, timingMethod);
+
+            // assert
+            guard.ShouldBeNull();
         }
 
         [Test]

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -27,6 +28,23 @@ namespace InSync
         }
 
         /// <summary>
+        /// Acquires the locks unorderly. <seealso cref="TimingMethod.EnvironmentTick"/> is good enough for general usages. This method detects an increase in remaining time and continue the counting from there.<br/>
+        /// Although <seealso cref="TimingMethod.EnvironmentTick"/> uses <seealso cref="Environment.TickCount"/> which is 32-bits (representing 49.8 days), it is practically safe. The wrap around problem is only effective if an execution is suspended for 49.8 days subtracting the timeout, at least 24.9 days.<br/>
+        /// <seealso cref="TimingMethod.DateTime"/> is affected by system clock changes. A clock may change several minutes for a low quality system in a network time synchronization. An user may change their system clock to an arbitrary time.<br/>
+        /// See <seealso cref="MultiSync"/> for more details.<br/>
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="locks">The locks to acquire.</param>
+        /// <param name="millisecondsTimeout">The number of milliseconds to wait. A negative value specifies an infinite wait.</param>
+        /// <param name="timingMethod">The method of counting time. See <seealso cref="TimingMethod"/> for more details.</param>
+        /// <returns>An <seealso cref="IDisposable"/> containing the protected objects if all the locks are acquired; otherwise, <code>null</code> is returned.</returns>
+        public static GuardedValue<IReadOnlyList<T>> All<T>(IReadOnlyList<IBareLock<T>> locks, int millisecondsTimeout, TimingMethod timingMethod)
+            where T : class
+        {
+            return AcquireAll<T>(locks, millisecondsTimeout, timingMethod);
+        }
+
+        /// <summary>
         /// Acquires the locks unorderly. <seealso cref="MultiSync"/> for more details.
         /// </summary>
         /// <param name="locks">The locks to acquire.</param>
@@ -35,7 +53,22 @@ namespace InSync
         {
             return AcquireAll<object>(locks);
         }
-        
+
+        /// <summary>
+        /// Acquires the locks unorderly. <seealso cref="TimingMethod.EnvironmentTick"/> is good enough for general usages. This method detects an increase in remaining time and continue the counting from there.<br/>
+        /// Although <seealso cref="TimingMethod.EnvironmentTick"/> uses <seealso cref="Environment.TickCount"/> which is 32-bits (representing 49.8 days), it is practically safe. The wrap around problem is only effective if an execution is suspended for 49.8 days subtracting the timeout, at least 24.9 days.<br/>
+        /// <seealso cref="TimingMethod.DateTime"/> is affected by system clock changes. A clock may change several minutes for a low quality system in a network time synchronization. An user may change their system clock to an arbitrary time.<br/>
+        /// See <seealso cref="MultiSync"/> for more details.<br/>
+        /// </summary>
+        /// <param name="locks">The locks to acquire.</param>
+        /// <param name="millisecondsTimeout">The number of milliseconds to wait. A negative value specifies an infinite wait.</param>
+        /// <param name="timingMethod">The method of counting time. See <seealso cref="TimingMethod"/> for more details.</param>
+        /// <returns>An <seealso cref="IDisposable"/> containing the protected objects if all the locks are acquired; otherwise, <code>null</code> is returned.</returns>
+        public static GuardedValue<IReadOnlyList<object>> All(IReadOnlyList<IBareLock> locks, int millisecondsTimeout, TimingMethod timingMethod)
+        {
+            return AcquireAll<object>(locks, millisecondsTimeout, timingMethod);
+        }
+
         private static GuardedValue<IReadOnlyList<T>> AcquireAll<T>(IReadOnlyList<IBareLock> locks)
             where T : class
         {
@@ -116,6 +149,192 @@ namespace InSync
                             Thread.Yield();
                             values[i] = (T)locks[i].BarelyLock();
                             lockedCount = 1;
+                        }
+                    }
+                }
+                return new GuardedValue<IReadOnlyList<T>>(values, () => Unlock(null));
+            }
+            catch (Exception e)
+            {
+                Unlock(e);
+                throw;
+            }
+        }
+
+        private static GuardedValue<IReadOnlyList<T>> AcquireAll<T>(IReadOnlyList<IBareLock> locks, int millisecondsTimeout, TimingMethod timingMethod)
+            where T : class
+        {
+            if (locks == null)
+            {
+                throw new ArgumentNullException(nameof(locks));
+            }
+            var count = locks.Count;
+            if (count == 0)
+            {
+                return new GuardedValue<IReadOnlyList<T>>(new T[0], null);
+            }
+
+            var values = new T[count];
+            void Unlock(Exception priorException)
+            {
+                Dictionary<int, Exception> exceptions = null;
+                for (var i = 0; i < count; ++i)
+                {
+                    if (values[i] != null)
+                    {
+                        try
+                        {
+                            locks[i].BarelyUnlock();
+                        }
+                        catch (UnlockException e)
+                        {
+                            if (exceptions == null)
+                            {
+                                exceptions = new Dictionary<int, Exception>();
+                            }
+                            exceptions[i] = e.InnerException;
+                        }
+                        catch (Exception e)
+                        {
+                            if (exceptions == null)
+                            {
+                                exceptions = new Dictionary<int, Exception>();
+                            }
+                            exceptions[i] = e;
+                        }
+                    }
+                }
+                if (exceptions != null)
+                {
+                    throw new UnlockException(priorException, exceptions);
+                }
+            }
+
+            var beginTicks = 0;
+            Stopwatch stopwatch = null;
+            DateTime beginDateTime = DateTime.MinValue;
+            if (millisecondsTimeout > 0)
+            {
+                switch (timingMethod)
+                {
+                    case TimingMethod.Stopwatch:
+                        stopwatch = new Stopwatch();
+                        stopwatch.Start();
+                        break;
+                    case TimingMethod.EnvironmentTick:
+                        beginTicks = Environment.TickCount;
+                        break;
+                    case TimingMethod.DateTime:
+                        beginDateTime = DateTime.UtcNow;
+                        break;
+                }
+            }
+
+            if (locks[0].BarelyTryLock(millisecondsTimeout, out var value))
+            {
+                values[0] = (T)value;
+            }
+            else
+            {
+                return null;
+            }
+
+            try
+            {
+                if (count > 1)
+                {
+                    var maxI = count - 1;
+                    var lockedCount = 1;
+                    var previousRemainingTimeMs = millisecondsTimeout;
+                    for (var i = 1; ; i = i >= maxI ? 0 : i + 1)
+                    {
+                        if (locks[i].BarelyTryLock(out value))
+                        {
+                            values[i] = (T)value;
+                            ++lockedCount;
+                            if (lockedCount == count)
+                            {
+                                break;
+                            }
+                        }
+                        else
+                        {
+                            Unlock(null);
+                            for (var u = 0; u < count; ++u)
+                            {
+                                values[u] = null;
+                            }
+                            Thread.Yield();
+
+                            int remainingTimeMs;
+                            if (millisecondsTimeout > 0)
+                            {
+                                if (timingMethod == TimingMethod.Stopwatch)
+                                {
+                                    var elapsed = stopwatch.ElapsedMilliseconds;
+                                    if (elapsed >= int.MaxValue)
+                                    {
+                                        remainingTimeMs = 0;
+                                    }
+                                    else
+                                    {
+                                        remainingTimeMs = millisecondsTimeout - (int)elapsed;
+                                        remainingTimeMs = remainingTimeMs > 0 ? remainingTimeMs : 0;
+                                    }
+                                }
+                                else if (timingMethod == TimingMethod.EnvironmentTick)
+                                {
+                                    unchecked
+                                    {
+                                        // millisecondsTimeout is non-negative here
+                                        remainingTimeMs = beginTicks + millisecondsTimeout - Environment.TickCount;
+                                        if (remainingTimeMs > previousRemainingTimeMs)
+                                        {
+                                            beginTicks -= remainingTimeMs - previousRemainingTimeMs;
+                                            remainingTimeMs = previousRemainingTimeMs;
+                                        }
+                                        remainingTimeMs = remainingTimeMs > 0 ? remainingTimeMs : 0;
+                                    }
+                                }
+                                else if (timingMethod == TimingMethod.DateTime)
+                                {
+                                    var elapsed = (DateTime.UtcNow - beginDateTime).TotalMilliseconds;
+                                    if (elapsed >= int.MaxValue)
+                                    {
+                                        remainingTimeMs = 0;
+                                    }
+                                    else
+                                    {
+                                        remainingTimeMs = millisecondsTimeout - (int)elapsed;
+                                        if (remainingTimeMs > previousRemainingTimeMs)
+                                        {
+                                            beginDateTime -= TimeSpan.FromMilliseconds(remainingTimeMs - previousRemainingTimeMs);
+                                            remainingTimeMs = previousRemainingTimeMs;
+                                        }
+                                        remainingTimeMs = remainingTimeMs > 0 ? remainingTimeMs : 0;
+                                    }
+                                }
+                                else
+                                {
+                                    remainingTimeMs = -1;
+                                }
+                            }
+                            else
+                            {
+                                remainingTimeMs = millisecondsTimeout;
+                            }
+                            previousRemainingTimeMs = remainingTimeMs;
+
+                            if (locks[i].BarelyTryLock(remainingTimeMs, out value))
+                            {
+                                values[i] = (T)value;
+                                lockedCount = 1;
+                            }
+                            else
+                            {
+                                Unlock(null);
+                                return null;
+                            }
                         }
                     }
                 }
