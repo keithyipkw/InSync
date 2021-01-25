@@ -138,13 +138,10 @@ namespace InSync
                         }
                         else
                         {
+                            Unlock(null);
                             for (var u = 0; u < count; ++u)
                             {
-                                if (values[u] != null)
-                                {
-                                    values[u] = null;
-                                    locks[u].BarelyUnlock();
-                                }
+                                values[u] = null;
                             }
                             Thread.Yield();
                             values[i] = (T)locks[i].BarelyLock();
@@ -462,13 +459,10 @@ namespace InSync
                         }
                         else
                         {
+                            Unlock(null);
                             for (var u = 0; u < count; ++u)
                             {
-                                if (values[u] != null)
-                                {
-                                    values[u] = null;
-                                    locks[u].BarelyUnlock();
-                                }
+                                values[u] = null;
                             }
                             Task<object> Acquire()
                             {
