@@ -9,7 +9,7 @@
     <Description>InSync is a general purpose library providing easy ways to correctly write thread-safe code for .NET.</Description>
     <PackageTags>concurrency multithread synchronization lock async</PackageTags>
     <Company />
-    <PackageProjectUrl>https://github.com/keithyipkw/InSync</PackageProjectUrl>
+    <PackageProjectUrl>https://keithyipkw.github.io/InSync/</PackageProjectUrl>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <Copyright></Copyright>
     <Version>2.1.0</Version>
