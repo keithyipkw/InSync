@@ -44,7 +44,7 @@ namespace InSyncBenchmark
                 {
                 }
                 stopwatch.Stop();
-            });
+            }).ConfigureAwait(false);
             totalEatingTimeMs += time;
         }
     }

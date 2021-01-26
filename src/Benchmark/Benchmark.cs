@@ -211,7 +211,7 @@ namespace InSyncBenchmark
             watch.Restart();
             for (int i = 0; i < repeat; ++i)
             {
-                await syncSemaphore.WithLockAsync((v) => v.Value += sqrt);
+                await syncSemaphore.WithLockAsync((v) => v.Value += sqrt).ConfigureAwait(false);
             }
             watch.Stop();
             if (output)
@@ -223,7 +223,7 @@ namespace InSyncBenchmark
             watch.Restart();
             for (int i = 0; i < repeat; ++i)
             {
-                using (var guard = await syncSemaphore.LockAsync())
+                using (var guard = await syncSemaphore.LockAsync().ConfigureAwait(false))
                 {
                     guard.Value.Value += sqrt;
                 }
@@ -360,7 +360,7 @@ namespace InSyncBenchmark
             watch.Restart();
             for (int i = 0; i < repeat; ++i)
             {
-                using (var guard = await MultiSync.AllAsync(new[] { syncSemaphore1, syncSemaphore2 }))
+                using (var guard = await MultiSync.AllAsync(new[] { syncSemaphore1, syncSemaphore2 }).ConfigureAwait(false))
                 {
                     guard.Value[0].Value += sqrt;
                     guard.Value[1].Value += sqrt;
@@ -492,7 +492,7 @@ namespace InSyncBenchmark
                                     locks = locks.OrderBy(x => lockOrders[x]).ToList();
                                     foreach (var l in locks)
                                     {
-                                        await l.BarelyLockAsync();
+                                        await l.BarelyLockAsync().ConfigureAwait(false);
                                     }
                                     eat();
                                     foreach (var l in locks)
@@ -504,7 +504,7 @@ namespace InSyncBenchmark
                             case Method.SmartAndPolite:
                                 lockToEat = async (locks, eat) =>
                                 {
-                                    using (await MultiSync.AllAsync(locks))
+                                    using (await MultiSync.AllAsync(locks).ConfigureAwait(false))
                                     {
                                         eat();
                                     }
@@ -520,7 +520,7 @@ namespace InSyncBenchmark
                     {
                         tasks.Add(Task.Run(diners[i].DineAsync));
                     }
-                    await Task.WhenAll(tasks);
+                    await Task.WhenAll(tasks).ConfigureAwait(false);
                     stopwatch.Stop();
                     Console.WriteLine($"{method},{nt},{stopwatch.Elapsed.TotalSeconds}");
                 }
