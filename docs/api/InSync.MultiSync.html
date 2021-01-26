@@ -141,6 +141,9 @@
                             <a href="InSync.Synchronized-1.html" title="Synchronized&lt;T&gt;" class="">Synchronized&lt;T&gt;</a>
                           </li>
                           <li class="">
+                            <a href="InSync.TimingMethod.html" title="TimingMethod" class="">TimingMethod</a>
+                          </li>
+                          <li class="">
                             <a href="InSync.UnlockException.html" title="UnlockException" class="">UnlockException</a>
                           </li>
                           <li class="">
@@ -247,6 +250,64 @@
     </tbody>
   </table>
   <a id="InSync_MultiSync_All_" data-uid="InSync.MultiSync.All*"></a>
+  <h4 id="InSync_MultiSync_All_System_Collections_Generic_IReadOnlyList_InSync_IBareLock__System_Int32_InSync_TimingMethod_" data-uid="InSync.MultiSync.All(System.Collections.Generic.IReadOnlyList{InSync.IBareLock},System.Int32,InSync.TimingMethod)">All(IReadOnlyList&lt;IBareLock&gt;, Int32, TimingMethod)</h4>
+  <div class="markdown level1 summary"><p>Acquires the locks unorderly. <a class="xref" href="InSync.TimingMethod.html#InSync_TimingMethod_EnvironmentTick">EnvironmentTick</a> is good enough for general usages. This method detects an increase in remaining time and continue the counting from there.<br>
+Although <a class="xref" href="InSync.TimingMethod.html#InSync_TimingMethod_EnvironmentTick">EnvironmentTick</a> uses <span class="xref">System.Environment.TickCount</span> which is 32-bits (representing 49.8 days), it is practically safe. The wrap around problem is only effective if an execution is suspended for 49.8 days subtracting the timeout, at least 24.9 days.<br>
+<a class="xref" href="InSync.TimingMethod.html#InSync_TimingMethod_DateTime">DateTime</a> is affected by system clock changes. A clock may change several minutes for a low quality system in a network time synchronization. An user may change their system clock to an arbitrary time.<br>
+See <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.<br></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GuardedValue&lt;IReadOnlyList&lt;object&gt;&gt; All(IReadOnlyList&lt;IBareLock&gt; locks, int millisecondsTimeout, TimingMethod timingMethod)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IReadOnlyList</span>&lt;<a class="xref" href="InSync.IBareLock.html">IBareLock</a>&gt;</td>
+        <td><span class="parametername">locks</span></td>
+        <td><p>The locks to acquire.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">millisecondsTimeout</span></td>
+        <td><p>The number of milliseconds to wait. A negative value specifies an infinite wait.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="InSync.TimingMethod.html">TimingMethod</a></td>
+        <td><span class="parametername">timingMethod</span></td>
+        <td><p>The method of counting time. See <a class="xref" href="InSync.TimingMethod.html">TimingMethod</a> for more details.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InSync.GuardedValue-1.html">GuardedValue</a>&lt;<span class="xref">System.Collections.Generic.IReadOnlyList</span>&lt;<span class="xref">System.Object</span>&gt;&gt;</td>
+        <td><p>An <span class="xref">System.IDisposable</span> containing the protected objects if all the locks are acquired; otherwise, <pre><code>null</code></pre> is returned.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="InSync_MultiSync_All_" data-uid="InSync.MultiSync.All*"></a>
   <h4 id="InSync_MultiSync_All__1_System_Collections_Generic_IReadOnlyList_InSync_IBareLock___0___" data-uid="InSync.MultiSync.All``1(System.Collections.Generic.IReadOnlyList{InSync.IBareLock{``0}})">All&lt;T&gt;(IReadOnlyList&lt;IBareLock&lt;T&gt;&gt;)</h4>
   <div class="markdown level1 summary"><p>Acquires the locks unorderly. <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.</p>
 </div>
@@ -303,6 +364,80 @@
         <td><span class="parametername">T</span></td>
         <td><p>The type of the protected objects.</p>
 </td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="InSync_MultiSync_All_" data-uid="InSync.MultiSync.All*"></a>
+  <h4 id="InSync_MultiSync_All__1_System_Collections_Generic_IReadOnlyList_InSync_IBareLock___0___System_Int32_InSync_TimingMethod_" data-uid="InSync.MultiSync.All``1(System.Collections.Generic.IReadOnlyList{InSync.IBareLock{``0}},System.Int32,InSync.TimingMethod)">All&lt;T&gt;(IReadOnlyList&lt;IBareLock&lt;T&gt;&gt;, Int32, TimingMethod)</h4>
+  <div class="markdown level1 summary"><p>Acquires the locks unorderly. <a class="xref" href="InSync.TimingMethod.html#InSync_TimingMethod_EnvironmentTick">EnvironmentTick</a> is good enough for general usages. This method detects an increase in remaining time and continue the counting from there.<br>
+Although <a class="xref" href="InSync.TimingMethod.html#InSync_TimingMethod_EnvironmentTick">EnvironmentTick</a> uses <span class="xref">System.Environment.TickCount</span> which is 32-bits (representing 49.8 days), it is practically safe. The wrap around problem is only effective if an execution is suspended for 49.8 days subtracting the timeout, at least 24.9 days.<br>
+<a class="xref" href="InSync.TimingMethod.html#InSync_TimingMethod_DateTime">DateTime</a> is affected by system clock changes. A clock may change several minutes for a low quality system in a network time synchronization. An user may change their system clock to an arbitrary time.<br>
+See <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.<br></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GuardedValue&lt;IReadOnlyList&lt;T&gt;&gt; All&lt;T&gt;(IReadOnlyList&lt;IBareLock&lt;T&gt;&gt; locks, int millisecondsTimeout, TimingMethod timingMethod)
+    where T : class</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IReadOnlyList</span>&lt;<a class="xref" href="InSync.IBareLock-1.html">IBareLock</a>&lt;T&gt;&gt;</td>
+        <td><span class="parametername">locks</span></td>
+        <td><p>The locks to acquire.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">millisecondsTimeout</span></td>
+        <td><p>The number of milliseconds to wait. A negative value specifies an infinite wait.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="InSync.TimingMethod.html">TimingMethod</a></td>
+        <td><span class="parametername">timingMethod</span></td>
+        <td><p>The method of counting time. See <a class="xref" href="InSync.TimingMethod.html">TimingMethod</a> for more details.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InSync.GuardedValue-1.html">GuardedValue</a>&lt;<span class="xref">System.Collections.Generic.IReadOnlyList</span>&lt;T&gt;&gt;</td>
+        <td><p>An <span class="xref">System.IDisposable</span> containing the protected objects if all the locks are acquired; otherwise, <pre><code>null</code></pre> is returned.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
       </tr>
     </tbody>
   </table>

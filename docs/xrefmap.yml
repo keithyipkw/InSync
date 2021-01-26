@@ -1214,6 +1214,15 @@ references:
   fullName.vb: InSync.MultiSync.All(System.Collections.Generic.IReadOnlyList(Of InSync.IBareLock))
   nameWithType: MultiSync.All(IReadOnlyList<IBareLock>)
   nameWithType.vb: MultiSync.All(IReadOnlyList(Of IBareLock))
+- uid: InSync.MultiSync.All(System.Collections.Generic.IReadOnlyList{InSync.IBareLock},System.Int32,InSync.TimingMethod)
+  name: All(IReadOnlyList<IBareLock>, Int32, TimingMethod)
+  href: api/InSync.MultiSync.html#InSync_MultiSync_All_System_Collections_Generic_IReadOnlyList_InSync_IBareLock__System_Int32_InSync_TimingMethod_
+  commentId: M:InSync.MultiSync.All(System.Collections.Generic.IReadOnlyList{InSync.IBareLock},System.Int32,InSync.TimingMethod)
+  name.vb: All(IReadOnlyList(Of IBareLock), Int32, TimingMethod)
+  fullName: InSync.MultiSync.All(System.Collections.Generic.IReadOnlyList<InSync.IBareLock>, System.Int32, InSync.TimingMethod)
+  fullName.vb: InSync.MultiSync.All(System.Collections.Generic.IReadOnlyList(Of InSync.IBareLock), System.Int32, InSync.TimingMethod)
+  nameWithType: MultiSync.All(IReadOnlyList<IBareLock>, Int32, TimingMethod)
+  nameWithType.vb: MultiSync.All(IReadOnlyList(Of IBareLock), Int32, TimingMethod)
 - uid: InSync.MultiSync.All*
   name: All
   href: api/InSync.MultiSync.html#InSync_MultiSync_All_
@@ -1230,6 +1239,15 @@ references:
   fullName.vb: InSync.MultiSync.All(Of T)(System.Collections.Generic.IReadOnlyList(Of InSync.IBareLock(Of T)))
   nameWithType: MultiSync.All<T>(IReadOnlyList<IBareLock<T>>)
   nameWithType.vb: MultiSync.All(Of T)(IReadOnlyList(Of IBareLock(Of T)))
+- uid: InSync.MultiSync.All``1(System.Collections.Generic.IReadOnlyList{InSync.IBareLock{``0}},System.Int32,InSync.TimingMethod)
+  name: All<T>(IReadOnlyList<IBareLock<T>>, Int32, TimingMethod)
+  href: api/InSync.MultiSync.html#InSync_MultiSync_All__1_System_Collections_Generic_IReadOnlyList_InSync_IBareLock___0___System_Int32_InSync_TimingMethod_
+  commentId: M:InSync.MultiSync.All``1(System.Collections.Generic.IReadOnlyList{InSync.IBareLock{``0}},System.Int32,InSync.TimingMethod)
+  name.vb: All(Of T)(IReadOnlyList(Of IBareLock(Of T)), Int32, TimingMethod)
+  fullName: InSync.MultiSync.All<T>(System.Collections.Generic.IReadOnlyList<InSync.IBareLock<T>>, System.Int32, InSync.TimingMethod)
+  fullName.vb: InSync.MultiSync.All(Of T)(System.Collections.Generic.IReadOnlyList(Of InSync.IBareLock(Of T)), System.Int32, InSync.TimingMethod)
+  nameWithType: MultiSync.All<T>(IReadOnlyList<IBareLock<T>>, Int32, TimingMethod)
+  nameWithType.vb: MultiSync.All(Of T)(IReadOnlyList(Of IBareLock(Of T)), Int32, TimingMethod)
 - uid: InSync.MultiSync.AllAsync(System.Collections.Generic.IReadOnlyList{InSync.IBareAsyncLock})
   name: AllAsync(IReadOnlyList<IBareAsyncLock>)
   href: api/InSync.MultiSync.html#InSync_MultiSync_AllAsync_System_Collections_Generic_IReadOnlyList_InSync_IBareAsyncLock__
@@ -2264,6 +2282,30 @@ references:
   fullName.vb: InSync.Synchronized(Of T).WithLock(Of TResult)(System.Func(Of T, TResult))
   nameWithType: Synchronized<T>.WithLock<TResult>(Func<T, TResult>)
   nameWithType.vb: Synchronized(Of T).WithLock(Of TResult)(Func(Of T, TResult))
+- uid: InSync.TimingMethod
+  name: TimingMethod
+  href: api/InSync.TimingMethod.html
+  commentId: T:InSync.TimingMethod
+  fullName: InSync.TimingMethod
+  nameWithType: TimingMethod
+- uid: InSync.TimingMethod.DateTime
+  name: DateTime
+  href: api/InSync.TimingMethod.html#InSync_TimingMethod_DateTime
+  commentId: F:InSync.TimingMethod.DateTime
+  fullName: InSync.TimingMethod.DateTime
+  nameWithType: TimingMethod.DateTime
+- uid: InSync.TimingMethod.EnvironmentTick
+  name: EnvironmentTick
+  href: api/InSync.TimingMethod.html#InSync_TimingMethod_EnvironmentTick
+  commentId: F:InSync.TimingMethod.EnvironmentTick
+  fullName: InSync.TimingMethod.EnvironmentTick
+  nameWithType: TimingMethod.EnvironmentTick
+- uid: InSync.TimingMethod.Stopwatch
+  name: Stopwatch
+  href: api/InSync.TimingMethod.html#InSync_TimingMethod_Stopwatch
+  commentId: F:InSync.TimingMethod.Stopwatch
+  fullName: InSync.TimingMethod.Stopwatch
+  nameWithType: TimingMethod.Stopwatch
 - uid: InSync.UnlockException
   name: UnlockException
   href: api/InSync.UnlockException.html

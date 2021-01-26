@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class GuardedValue&lt;T&gt;
+    <title>Enum TimingMethod
    | InSync </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class GuardedValue&lt;T&gt;
+    <meta name="title" content="Enum TimingMethod
    | InSync ">
     <meta name="generator" content="docfx 2.56.6.0">
     
@@ -95,8 +95,8 @@
                           <li class="">
                             <a href="InSync.AsyncSynchronized-1.html" title="AsyncSynchronized&lt;T&gt;" class="">AsyncSynchronized&lt;T&gt;</a>
                           </li>
-                          <li class="active">
-                            <a href="InSync.GuardedValue-1.html" title="GuardedValue&lt;T&gt;" class="active">GuardedValue&lt;T&gt;</a>
+                          <li class="">
+                            <a href="InSync.GuardedValue-1.html" title="GuardedValue&lt;T&gt;" class="">GuardedValue&lt;T&gt;</a>
                           </li>
                           <li class="">
                             <a href="InSync.IAsyncSynchronized-1.html" title="IAsyncSynchronized&lt;T&gt;" class="">IAsyncSynchronized&lt;T&gt;</a>
@@ -140,8 +140,8 @@
                           <li class="">
                             <a href="InSync.Synchronized-1.html" title="Synchronized&lt;T&gt;" class="">Synchronized&lt;T&gt;</a>
                           </li>
-                          <li class="">
-                            <a href="InSync.TimingMethod.html" title="TimingMethod" class="">TimingMethod</a>
+                          <li class="active">
+                            <a href="InSync.TimingMethod.html" title="TimingMethod" class="active">TimingMethod</a>
                           </li>
                           <li class="">
                             <a href="InSync.UnlockException.html" title="UnlockException" class="">UnlockException</a>
@@ -160,170 +160,46 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="InSync.GuardedValue`1">
+            <article class="content wrap" id="_content" data-uid="InSync.TimingMethod">
   
   
-  <h1 id="InSync_GuardedValue_1" data-uid="InSync.GuardedValue`1" class="text-break">Class GuardedValue&lt;T&gt;
+  <h1 id="InSync_TimingMethod" data-uid="InSync.TimingMethod" class="text-break">Enum TimingMethod
   </h1>
-  <div class="markdown level0 summary"><p>Holds a value and cleans up when <span class="xref">System.IDisposable.Dispose()</span> is called.</p>
-</div>
+  <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
-  <div class="inheritance">
-    <h5>Inheritance</h5>
-    <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">GuardedValue&lt;T&gt;</span></div>
-  </div>
-  <div classs="implements">
-    <h5>Implements</h5>
-    <div><span class="xref">System.IDisposable</span></div>
-  </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
-    <div>
-      <span class="xref">System.Object.Equals(System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.GetHashCode()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.GetType()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.MemberwiseClone()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.ToString()</span>
-    </div>
-  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="InSync.html">InSync</a></h6>
   <h6><strong>Assembly</strong>: InSync.dll</h6>
-  <h5 id="InSync_GuardedValue_1_syntax">Syntax</h5>
+  <h5 id="InSync_TimingMethod_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class GuardedValue&lt;T&gt; : IDisposable</code></pre>
+    <pre><code class="lang-csharp hljs">public enum TimingMethod</code></pre>
   </div>
-  <h5 class="typeParameters">Type Parameters</h5>
+  <h3 id="fields">Fields
+  </h3>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
         <th>Name</th>
         <th>Description</th>
       </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">T</span></td>
-        <td><p>The type of the value.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="constructors">Constructors
-  </h3>
-  <a id="InSync_GuardedValue_1__ctor_" data-uid="InSync.GuardedValue`1.#ctor*"></a>
-  <h4 id="InSync_GuardedValue_1__ctor__0_System_Action_" data-uid="InSync.GuardedValue`1.#ctor(`0,System.Action)">GuardedValue(T, Action)</h4>
-  <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="InSync.GuardedValue-1.html">GuardedValue&lt;T&gt;</a> with the specified value and clean-up action.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public GuardedValue(T value, Action dispose)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
     <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
     <tbody>
       <tr>
-        <td><span class="xref">T</span></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>The value to hold.</p>
+        <td id="InSync_TimingMethod_DateTime">DateTime</td>
+        <td><p>Specifies to use <span class="xref">System.DateTime.UtcNow</span> to count time. The order of magnitude of the resolution may be from 1ms to 10ms. A clock change, such as a network time synchronization, messes up the counting.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Action</span></td>
-        <td><span class="parametername">dispose</span></td>
-        <td><p>The clean-up action.</p>
+        <td id="InSync_TimingMethod_EnvironmentTick">EnvironmentTick</td>
+        <td><p>Specifies to use <span class="xref">System.Environment.TickCount</span> to count time. The order of magnitude of the resolution may be 10ms. It overflows every 49.8 days.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="InSync_TimingMethod_Stopwatch">Stopwatch</td>
+        <td><p>Specifies to use <span class="xref">System.Diagnostics.Stopwatch</span> to count time. It usually has the best resolution without overflow. However, it does not work in some multi-processor systems. The resolution may be the same as <a class="xref" href="InSync.TimingMethod.html#InSync_TimingMethod_EnvironmentTick">EnvironmentTick</a> if a system does not support high precision timer.</p>
 </td>
       </tr>
     </tbody>
-  </table>
-  <h3 id="properties">Properties
-  </h3>
-  <a id="InSync_GuardedValue_1_Value_" data-uid="InSync.GuardedValue`1.Value*"></a>
-  <h4 id="InSync_GuardedValue_1_Value" data-uid="InSync.GuardedValue`1.Value">Value</h4>
-  <div class="markdown level1 summary"><p>Gets the value it is holding.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public T Value { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">T</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="methods">Methods
-  </h3>
-  <a id="InSync_GuardedValue_1_Dispose_" data-uid="InSync.GuardedValue`1.Dispose*"></a>
-  <h4 id="InSync_GuardedValue_1_Dispose" data-uid="InSync.GuardedValue`1.Dispose">Dispose()</h4>
-  <div class="markdown level1 summary"><p>Performs the clean-up action.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Dispose()</code></pre>
-  </div>
-  <a id="InSync_GuardedValue_1_Dispose_" data-uid="InSync.GuardedValue`1.Dispose*"></a>
-  <h4 id="InSync_GuardedValue_1_Dispose_System_Boolean_" data-uid="InSync.GuardedValue`1.Dispose(System.Boolean)">Dispose(Boolean)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected virtual void Dispose(bool disposing)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td><span class="parametername">disposing</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="implements">Implements</h3>
-  <div>
-      <span class="xref">System.IDisposable</span>
-  </div>
+  </thead></thead></table>
 </article>
           </div>
           
