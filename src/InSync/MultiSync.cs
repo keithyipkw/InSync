@@ -16,7 +16,7 @@ namespace InSync
     public static class MultiSync
     {
         /// <summary>
-        /// Acquires the locks unorderly. <seealso cref="MultiSync"/> for more details.
+        /// Acquires the locks unorderly. See <seealso cref="MultiSync"/> for more details.
         /// </summary>
         /// <typeparam name="T">The type of the protected objects.</typeparam>
         /// <param name="locks">The locks to acquire.</param>
@@ -45,7 +45,7 @@ namespace InSync
         }
 
         /// <summary>
-        /// Acquires the locks unorderly. <seealso cref="MultiSync"/> for more details.
+        /// Acquires the locks unorderly. See <seealso cref="MultiSync"/> for more details.
         /// </summary>
         /// <param name="locks">The locks to acquire.</param>
         /// <returns>An <seealso cref="IDisposable"/> containing the protected objects.</returns>
@@ -345,7 +345,7 @@ namespace InSync
         }
 
         /// <summary>
-        /// Acquires the locks unorderly. <seealso cref="MultiSync"/> for more details.
+        /// Acquires the locks unorderly. See <seealso cref="MultiSync"/> for more details.
         /// </summary>
         /// <typeparam name="T">The type of the protected objects.</typeparam>
         /// <param name="locks">The locks to acquire.</param>
@@ -357,7 +357,7 @@ namespace InSync
         }
 
         /// <summary>
-        /// Acquires the locks unorderly. <seealso cref="MultiSync"/> for more details.
+        /// Acquires the locks unorderly. See <seealso cref="MultiSync"/> for more details.
         /// </summary>
         /// <typeparam name="T">The type of the protected objects.</typeparam>
         /// <param name="locks">The locks to acquire.</param>
@@ -370,7 +370,7 @@ namespace InSync
         }
 
         /// <summary>
-        /// Acquires the locks unorderly. <seealso cref="MultiSync"/> for more details.
+        /// Acquires the locks unorderly. See <seealso cref="MultiSync"/> for more details.
         /// </summary>
         /// <param name="locks">The locks to acquire.</param>
         /// <returns>An <seealso cref="IDisposable"/> containing the protected objects.</returns>
@@ -380,7 +380,7 @@ namespace InSync
         }
 
         /// <summary>
-        /// Acquires the locks unorderly. <seealso cref="MultiSync"/> for more details.
+        /// Acquires the locks unorderly. See <seealso cref="MultiSync"/> for more details.
         /// </summary>
         /// <param name="locks">The locks to acquire.</param>
         /// <param name="cancellationToken">A <seealso cref="CancellationToken"/> to observe while waiting for the tasks to complete.</param>
