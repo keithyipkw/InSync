@@ -10,7 +10,7 @@ namespace Example
     {
         class Wrong
         {
-            private Synchronized<object> obj;
+            private Synchronized<object>? obj;
 
             public void Foo()
             {
@@ -28,7 +28,7 @@ namespace Example
 
         class Correct
         {
-            volatile Synchronized<object> obj; // volatile is sufficient for this usage
+            volatile Synchronized<object>? obj; // volatile is sufficient for this usage
 
             public void Foo()
             {
@@ -46,7 +46,7 @@ namespace Example
 
         class Correct2
         {
-            private readonly Synchronized<ValueContainer<object>> obj = Synchronized.Create(new ValueContainer<object>());
+            private readonly Synchronized<ValueContainer<object>> obj = Synchronized.Create(new ValueContainer<object>(new object()));
 
             public void Foo()
             {

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -34,7 +35,7 @@ namespace InSync
         /// <param name="value">The protected non-null object if the lock is acquired, otherwise, <c>null</c> is returned.</param>
         /// <returns><c>true</c> if the lock is acquired.</returns>
         /// <exception cref="LockException"></exception>
-        bool BarelyTryLock(out object value);
+        bool BarelyTryLock([NotNullWhen(true)] out object? value);
 
         /// <summary>
         /// Releases the lock.
@@ -72,6 +73,6 @@ namespace InSync
         /// <param name="value">The protected non-null value if the lock is acquired, otherwise, <c>null</c> is returned.</param>
         /// <returns><c>true</c> if the lock is acquired.</returns>
         /// <exception cref="LockException"></exception>
-        bool BarelyTryLock(out T value);
+        bool BarelyTryLock([NotNullWhen(true)] out T? value);
     }
 }

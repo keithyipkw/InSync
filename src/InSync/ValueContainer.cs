@@ -11,6 +11,15 @@ namespace InSync
     public class ValueContainer<T>
     {
         /// <summary>
+        /// Initializes a new instance of <seealso cref="ValueContainer{T}"/> that contains the value.
+        /// </summary>
+        /// <param name="value"></param>
+        public ValueContainer(T value)
+        {
+            Value = value;
+        }
+
+        /// <summary>
         /// The value to protect.
         /// </summary>
         public T Value;

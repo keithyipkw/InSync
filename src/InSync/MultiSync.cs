@@ -38,7 +38,7 @@ namespace InSync
         /// <param name="millisecondsTimeout">The number of milliseconds to wait. A negative value specifies an infinite wait.</param>
         /// <param name="timingMethod">The method of counting time. See <seealso cref="TimingMethod"/> for more details.</param>
         /// <returns>An <seealso cref="IDisposable"/> containing the protected objects if all the locks are acquired; otherwise, <code>null</code> is returned.</returns>
-        public static GuardedValue<IReadOnlyList<T>> All<T>(IReadOnlyList<IBareLock<T>> locks, int millisecondsTimeout, TimingMethod timingMethod)
+        public static GuardedValue<IReadOnlyList<T>>? All<T>(IReadOnlyList<IBareLock<T>> locks, int millisecondsTimeout, TimingMethod timingMethod)
             where T : class
         {
             return AcquireAll<T>(locks, millisecondsTimeout, timingMethod);
@@ -64,7 +64,7 @@ namespace InSync
         /// <param name="millisecondsTimeout">The number of milliseconds to wait. A negative value specifies an infinite wait.</param>
         /// <param name="timingMethod">The method of counting time. See <seealso cref="TimingMethod"/> for more details.</param>
         /// <returns>An <seealso cref="IDisposable"/> containing the protected objects if all the locks are acquired; otherwise, <code>null</code> is returned.</returns>
-        public static GuardedValue<IReadOnlyList<object>> All(IReadOnlyList<IBareLock> locks, int millisecondsTimeout, TimingMethod timingMethod)
+        public static GuardedValue<IReadOnlyList<object>>? All(IReadOnlyList<IBareLock> locks, int millisecondsTimeout, TimingMethod timingMethod)
         {
             return AcquireAll<object>(locks, millisecondsTimeout, timingMethod);
         }
@@ -82,10 +82,10 @@ namespace InSync
                 return new GuardedValue<IReadOnlyList<T>>(new T[0], null);
             }
 
-            var values = new T[count];
-            void Unlock(Exception priorException)
+            T?[] values = new T?[count];
+            void Unlock(Exception? priorException)
             {
-                Dictionary<int, Exception> exceptions = null;
+                Dictionary<int, Exception>? exceptions = null;
                 for (var i = 0; i < count; ++i)
                 {
                     if (values[i] != null)
@@ -149,7 +149,7 @@ namespace InSync
                         }
                     }
                 }
-                return new GuardedValue<IReadOnlyList<T>>(values, () => Unlock(null));
+                return new GuardedValue<IReadOnlyList<T>>(values!, () => Unlock(null));
             }
             catch (Exception e)
             {
@@ -158,7 +158,7 @@ namespace InSync
             }
         }
 
-        private static GuardedValue<IReadOnlyList<T>> AcquireAll<T>(IReadOnlyList<IBareLock> locks, int millisecondsTimeout, TimingMethod timingMethod)
+        private static GuardedValue<IReadOnlyList<T>>? AcquireAll<T>(IReadOnlyList<IBareLock> locks, int millisecondsTimeout, TimingMethod timingMethod)
             where T : class
         {
             if (locks == null)
@@ -171,10 +171,10 @@ namespace InSync
                 return new GuardedValue<IReadOnlyList<T>>(new T[0], null);
             }
 
-            var values = new T[count];
-            void Unlock(Exception priorException)
+            var values = new T?[count];
+            void Unlock(Exception? priorException)
             {
-                Dictionary<int, Exception> exceptions = null;
+                Dictionary<int, Exception>? exceptions = null;
                 for (var i = 0; i < count; ++i)
                 {
                     if (values[i] != null)
@@ -208,7 +208,7 @@ namespace InSync
             }
 
             var beginTicks = 0;
-            Stopwatch stopwatch = null;
+            Stopwatch? stopwatch = null;
             DateTime beginDateTime = DateTime.MinValue;
             if (millisecondsTimeout > 0)
             {
@@ -268,7 +268,7 @@ namespace InSync
                             {
                                 if (timingMethod == TimingMethod.Stopwatch)
                                 {
-                                    var elapsed = stopwatch.ElapsedMilliseconds;
+                                    var elapsed = stopwatch!.ElapsedMilliseconds;
                                     if (elapsed >= int.MaxValue)
                                     {
                                         remainingTimeMs = 0;
@@ -335,7 +335,7 @@ namespace InSync
                         }
                     }
                 }
-                return new GuardedValue<IReadOnlyList<T>>(values, () => Unlock(null));
+                return new GuardedValue<IReadOnlyList<T>>(values!, () => Unlock(null));
             }
             catch (Exception e)
             {
@@ -403,10 +403,10 @@ namespace InSync
                 return new GuardedValue<IReadOnlyList<T>>(new T[0], null);
             }
 
-            var values = new T[count];
-            void Unlock(Exception priorException)
+            var values = new T?[count];
+            void Unlock(Exception? priorException)
             {
-                Dictionary<int, Exception> exceptions = null;
+                Dictionary<int, Exception>? exceptions = null;
                 for (var i = 0; i < count; ++i)
                 {
                     if (values[i] != null)
@@ -477,7 +477,7 @@ namespace InSync
                         }
                     }
                 }
-                return new GuardedValue<IReadOnlyList<T>>(values, () => Unlock(null));
+                return new GuardedValue<IReadOnlyList<T>>(values!, () => Unlock(null));
             }
             catch (Exception e)
             {

@@ -16,7 +16,7 @@ namespace InSync
         /// <param name="priorException">The exception thrown before releasing the locks.</param>
         /// <param name="exceptionsDuringUnlock">The exceptions thrown during releasing the locks at the indices in the collection of the locks.</param>
         /// <exception cref="ArgumentNullException"><paramref name="exceptionsDuringUnlock"/> is <c>null</c>.</exception>
-        public UnlockException(Exception priorException, IDictionary<int, Exception> exceptionsDuringUnlock)
+        public UnlockException(Exception? priorException, IDictionary<int, Exception> exceptionsDuringUnlock)
             : this(priorException, exceptionsDuringUnlock, "An exception occurred then other exceptions occurred when releasing locks")
         {
         }
@@ -37,7 +37,7 @@ namespace InSync
         /// <param name="priorException">The exception thrown before releasing the lock.</param>
         /// <param name="exceptionDuringUnlock">The exception thrown when releasing the lock.</param>
         /// <exception cref="ArgumentNullException"><paramref name="exceptionDuringUnlock"/> is <c>null</c>.</exception>
-        public UnlockException(Exception priorException, Exception exceptionDuringUnlock)
+        public UnlockException(Exception? priorException, Exception exceptionDuringUnlock)
             : this(priorException, exceptionDuringUnlock, "An exception occurred then another exception occurred when releasing locks")
         {
         }
@@ -52,7 +52,7 @@ namespace InSync
         {
         }
 
-        private UnlockException(Exception priorException, IDictionary<int, Exception> exceptionsDuringUnlock, string message)
+        private UnlockException(Exception? priorException, IDictionary<int, Exception> exceptionsDuringUnlock, string message)
             : base(message,
                   (exceptionsDuringUnlock ?? throw new ArgumentNullException(nameof(exceptionsDuringUnlock)))
                   .OrderBy(kv => kv.Key)
@@ -62,7 +62,7 @@ namespace InSync
             InnerExceptions = new Dictionary<int, Exception>(exceptionsDuringUnlock);
         }
 
-        private UnlockException(Exception priorException, Exception exceptionDurationUnlock, string message)
+        private UnlockException(Exception? priorException, Exception exceptionDurationUnlock, string message)
             : base(message, exceptionDurationUnlock)
         {
             PriorException = priorException;
@@ -75,7 +75,7 @@ namespace InSync
         /// <summary>
         /// The exception thrown before releasing the locks.
         /// </summary>
-        public Exception PriorException { get; }
+        public Exception? PriorException { get; }
 
         /// <summary>
         /// The exceptions thrown during releasing the locks at the indices in the collection of the locks.

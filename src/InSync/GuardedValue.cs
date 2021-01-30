@@ -15,7 +15,7 @@ namespace InSync
         /// </summary>
         /// <param name="value">The value to hold.</param>
         /// <param name="dispose">The clean-up action.</param>
-        public GuardedValue(T value, Action dispose)
+        public GuardedValue(T value, Action? dispose)
         {
             this.value = value;
             this.dispose = dispose;
@@ -38,7 +38,7 @@ namespace InSync
             }
         }
 
-        private readonly Action dispose;
+        private readonly Action? dispose;
 
         #region IDisposable Support
         private bool disposedValue = false; // To detect redundant calls

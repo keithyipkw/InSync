@@ -54,7 +54,7 @@ namespace Example
             }
         }
 
-        private readonly Synchronized<ValueContainer<int>> container = Synchronized.Create(new ValueContainer<int>());
+        private readonly Synchronized<ValueContainer<int>> container = Synchronized.Create(new ValueContainer<int>(0));
 
         public void Increase()
         {

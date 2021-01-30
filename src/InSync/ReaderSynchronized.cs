@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -97,7 +98,7 @@ namespace InSync
         }
 
         /// <inheritdoc/>
-        public bool BarelyTryLock(out TRead value)
+        public bool BarelyTryLock([NotNullWhen(true)] out TRead? value)
         {
             if (TryAcquire(0))
             {
@@ -109,7 +110,7 @@ namespace InSync
         }
 
         /// <inheritdoc/>
-        public bool BarelyTryLock(int millisecondsTimeout, out TRead value)
+        public bool BarelyTryLock(int millisecondsTimeout, [NotNullWhen(true)] out TRead? value)
         {
             if (TryAcquire(millisecondsTimeout))
             {
@@ -121,7 +122,7 @@ namespace InSync
         }
 
         /// <inheritdoc/>
-        public bool BarelyTryLock(TimeSpan timeout, out TRead value)
+        public bool BarelyTryLock(TimeSpan timeout, [NotNullWhen(true)] out TRead? value)
         {
             if (TryAcquire(timeout))
             {
@@ -133,25 +134,25 @@ namespace InSync
         }
 
         /// <inheritdoc/>
-        bool IBareLock.BarelyTryLock(out object value)
+        bool IBareLock.BarelyTryLock([NotNullWhen(true)] out object? value)
         {
-            var result = BarelyTryLock(out TRead tmp);
+            var result = BarelyTryLock(out TRead? tmp);
             value = tmp;
             return result;
         }
 
         /// <inheritdoc/>
-        bool IBareLock.BarelyTryLock(int millisecondsTimeout, out object value)
+        bool IBareLock.BarelyTryLock(int millisecondsTimeout, [NotNullWhen(true)] out object? value)
         {
-            var result = BarelyTryLock(millisecondsTimeout, out TRead tmp);
+            var result = BarelyTryLock(millisecondsTimeout, out TRead? tmp);
             value = tmp;
             return result;
         }
 
         /// <inheritdoc/>
-        bool IBareLock.BarelyTryLock(TimeSpan timeout, out object value)
+        bool IBareLock.BarelyTryLock(TimeSpan timeout, [NotNullWhen(true)] out object? value)
         {
-            var result = BarelyTryLock(timeout, out TRead tmp);
+            var result = BarelyTryLock(timeout, out TRead? tmp);
             value = tmp;
             return result;
         }
@@ -271,7 +272,7 @@ namespace InSync
         }
 
         /// <inheritdoc/>
-        public GuardedValue<TRead> TryLock()
+        public GuardedValue<TRead>? TryLock()
         {
             if (TryAcquire(0))
             {
@@ -281,7 +282,7 @@ namespace InSync
         }
 
         /// <inheritdoc/>
-        public GuardedValue<TRead> TryLock(int millisecondsTimeout)
+        public GuardedValue<TRead>? TryLock(int millisecondsTimeout)
         {
             if (TryAcquire(millisecondsTimeout))
             {
@@ -291,7 +292,7 @@ namespace InSync
         }
 
         /// <inheritdoc/>
-        public GuardedValue<TRead> TryLock(TimeSpan timeout)
+        public GuardedValue<TRead>? TryLock(TimeSpan timeout)
         {
             if (TryAcquire(timeout))
             {
