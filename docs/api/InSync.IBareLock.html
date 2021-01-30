@@ -218,13 +218,13 @@
     </tbody>
   </table>
   <a id="InSync_IBareLock_BarelyTryLock_" data-uid="InSync.IBareLock.BarelyTryLock*"></a>
-  <h4 id="InSync_IBareLock_BarelyTryLock_System_Int32_System_Object__" data-uid="InSync.IBareLock.BarelyTryLock(System.Int32,System.Object@)">BarelyTryLock(Int32, out Object)</h4>
+  <h4 id="InSync_IBareLock_BarelyTryLock_System_Int32_System_Nullable_System_Object___" data-uid="InSync.IBareLock.BarelyTryLock(System.Int32,System.Nullable{System.Object}@)">BarelyTryLock(Int32, out Nullable&lt;Object&gt;)</h4>
   <div class="markdown level1 summary"><p>Tries to acquire the lock. It returns <code>true</code> and the protected non-null object if the lock is acquired.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool BarelyTryLock(int millisecondsTimeout, out object value)</code></pre>
+    <pre><code class="lang-csharp hljs">bool BarelyTryLock(int millisecondsTimeout, out object? value)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -239,11 +239,11 @@
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">millisecondsTimeout</span></td>
-        <td><p>The number of milliseconds to wait, <span class="xref">System.Threading.Timeout.Infinite</span> (-1) to wait indefinitely, or zero to test the state of the wait handle and return immediately.</p>
+        <td><p>The number of milliseconds to wait, <seealso cref="!:System.Threading.Timeout.Infinite"></seealso> (-1) to wait indefinitely, or zero to test the state of the wait handle and return immediately.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Object</span></td>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Object</span>&gt;</td>
         <td><span class="parametername">value</span></td>
         <td><p>The protected non-null object if the lock is acquired, otherwise, <code>null</code> is returned.</p>
 </td>
@@ -282,13 +282,13 @@
     </tbody>
   </table>
   <a id="InSync_IBareLock_BarelyTryLock_" data-uid="InSync.IBareLock.BarelyTryLock*"></a>
-  <h4 id="InSync_IBareLock_BarelyTryLock_System_Object__" data-uid="InSync.IBareLock.BarelyTryLock(System.Object@)">BarelyTryLock(out Object)</h4>
+  <h4 id="InSync_IBareLock_BarelyTryLock_System_Nullable_System_Object___" data-uid="InSync.IBareLock.BarelyTryLock(System.Nullable{System.Object}@)">BarelyTryLock(out Nullable&lt;Object&gt;)</h4>
   <div class="markdown level1 summary"><p>Tries to acquire the lock. It returns <code>true</code> and the protected non-null object if the lock is acquired.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool BarelyTryLock(out object value)</code></pre>
+    <pre><code class="lang-csharp hljs">bool BarelyTryLock(out object? value)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -301,7 +301,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Object</span></td>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Object</span>&gt;</td>
         <td><span class="parametername">value</span></td>
         <td><p>The protected non-null object if the lock is acquired, otherwise, <code>null</code> is returned.</p>
 </td>
@@ -340,13 +340,13 @@
     </tbody>
   </table>
   <a id="InSync_IBareLock_BarelyTryLock_" data-uid="InSync.IBareLock.BarelyTryLock*"></a>
-  <h4 id="InSync_IBareLock_BarelyTryLock_System_TimeSpan_System_Object__" data-uid="InSync.IBareLock.BarelyTryLock(System.TimeSpan,System.Object@)">BarelyTryLock(TimeSpan, out Object)</h4>
+  <h4 id="InSync_IBareLock_BarelyTryLock_TimeSpan_System_Nullable_System_Object___" data-uid="InSync.IBareLock.BarelyTryLock(TimeSpan,System.Nullable{System.Object}@)">BarelyTryLock(TimeSpan, out Nullable&lt;Object&gt;)</h4>
   <div class="markdown level1 summary"><p>Tries to acquire the lock. It returns <code>true</code> and the protected non-null object if the lock is acquired.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool BarelyTryLock(TimeSpan timeout, out object value)</code></pre>
+    <pre><code class="lang-csharp hljs">bool BarelyTryLock(TimeSpan timeout, out object? value)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -359,13 +359,13 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.TimeSpan</span></td>
+        <td><span class="xref">TimeSpan</span></td>
         <td><span class="parametername">timeout</span></td>
-        <td><p>A <span class="xref">System.TimeSpan</span> that represents the number of milliseconds to wait, a <span class="xref">System.TimeSpan</span> that represents -1 milliseconds to wait indefinitely, or a <span class="xref">System.TimeSpan</span> that represents 0 milliseconds to test the wait handle and return immediately.</p>
+        <td><p>A <seealso cref="!:TimeSpan"></seealso> that represents the number of milliseconds to wait, a <seealso cref="!:TimeSpan"></seealso> that represents -1 milliseconds to wait indefinitely, or a <seealso cref="!:TimeSpan"></seealso> that represents 0 milliseconds to test the wait handle and return immediately.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Object</span></td>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Object</span>&gt;</td>
         <td><span class="parametername">value</span></td>
         <td><p>The protected non-null object if the lock is acquired, otherwise, <code>null</code> is returned.</p>
 </td>

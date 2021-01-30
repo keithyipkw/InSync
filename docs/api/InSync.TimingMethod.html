@@ -171,7 +171,7 @@
   <h6><strong>Assembly</strong>: InSync.dll</h6>
   <h5 id="InSync_TimingMethod_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public enum TimingMethod</code></pre>
+    <pre><code class="lang-csharp hljs">public enum TimingMethod : int</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
@@ -185,17 +185,17 @@
     <tbody>
       <tr>
         <td id="InSync_TimingMethod_DateTime">DateTime</td>
-        <td><p>Specifies to use <span class="xref">System.DateTime.UtcNow</span> to count time. The order of magnitude of the resolution may be from 1ms to 10ms. A clock change, such as a network time synchronization, messes up the counting.</p>
+        <td><p>Specifies to use <seealso cref="!:System.DateTime.UtcNow"></seealso> to count time. The order of magnitude of the resolution may be from 1ms to 10ms. A clock change, such as a network time synchronization, messes up the counting.</p>
 </td>
       </tr>
       <tr>
         <td id="InSync_TimingMethod_EnvironmentTick">EnvironmentTick</td>
-        <td><p>Specifies to use <span class="xref">System.Environment.TickCount</span> to count time. The order of magnitude of the resolution may be 10ms. It overflows every 49.8 days.</p>
+        <td><p>Specifies to use <seealso cref="!:System.Environment.TickCount"></seealso> to count time. The order of magnitude of the resolution may be 10ms. It overflows every 49.8 days.</p>
 </td>
       </tr>
       <tr>
         <td id="InSync_TimingMethod_Stopwatch">Stopwatch</td>
-        <td><p>Specifies to use <span class="xref">System.Diagnostics.Stopwatch</span> to count time. It usually has the best resolution without overflow. However, it does not work in some multi-processor systems. The resolution may be the same as <a class="xref" href="InSync.TimingMethod.html#InSync_TimingMethod_EnvironmentTick">EnvironmentTick</a> if a system does not support high precision timer.</p>
+        <td><p>Specifies to use <seealso cref="!:System.Diagnostics.Stopwatch"></seealso> to count time. It usually has the best resolution without overflow. However, it does not work in some multi-processor systems. The resolution may be the same as <a class="xref" href="InSync.TimingMethod.html#InSync_TimingMethod_EnvironmentTick">EnvironmentTick</a> if a system does not support high precision timer.</p>
 </td>
       </tr>
     </tbody>

@@ -196,7 +196,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Object</span>&gt;</td>
+        <td><span class="xref">Task</span>&lt;<span class="xref">System.Object</span>&gt;</td>
         <td><p>The protected non-null object.</p>
 </td>
       </tr>
@@ -218,7 +218,7 @@
     </tbody>
   </table>
   <a id="InSync_IBareAsyncLock_BarelyLockAsync_" data-uid="InSync.IBareAsyncLock.BarelyLockAsync*"></a>
-  <h4 id="InSync_IBareAsyncLock_BarelyLockAsync_System_Threading_CancellationToken_" data-uid="InSync.IBareAsyncLock.BarelyLockAsync(System.Threading.CancellationToken)">BarelyLockAsync(CancellationToken)</h4>
+  <h4 id="InSync_IBareAsyncLock_BarelyLockAsync_CancellationToken_" data-uid="InSync.IBareAsyncLock.BarelyLockAsync(CancellationToken)">BarelyLockAsync(CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Asynchronously acquires the lock and returns the protected non-null object.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -237,7 +237,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.CancellationToken</span></td>
+        <td><span class="xref">CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>
         <td></td>
       </tr>
@@ -253,7 +253,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Object</span>&gt;</td>
+        <td><span class="xref">Task</span>&lt;<span class="xref">System.Object</span>&gt;</td>
         <td><p>The protected non-null object.</p>
 </td>
       </tr>
@@ -269,23 +269,19 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.OperationCanceledException</span></td>
-        <td></td>
-      </tr>
-      <tr>
         <td><a class="xref" href="InSync.LockException.html">LockException</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <a id="InSync_IBareAsyncLock_BarelyTryLock_" data-uid="InSync.IBareAsyncLock.BarelyTryLock*"></a>
-  <h4 id="InSync_IBareAsyncLock_BarelyTryLock_System_Object__" data-uid="InSync.IBareAsyncLock.BarelyTryLock(System.Object@)">BarelyTryLock(out Object)</h4>
+  <h4 id="InSync_IBareAsyncLock_BarelyTryLock_System_Nullable_System_Object___" data-uid="InSync.IBareAsyncLock.BarelyTryLock(System.Nullable{System.Object}@)">BarelyTryLock(out Nullable&lt;Object&gt;)</h4>
   <div class="markdown level1 summary"><p>Tries to acquire the lock. It returns <code>true</code> and the protected non-null object if the lock is acquired.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool BarelyTryLock(out object value)</code></pre>
+    <pre><code class="lang-csharp hljs">bool BarelyTryLock(out object? value)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -298,7 +294,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Object</span></td>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Object</span>&gt;</td>
         <td><span class="parametername">value</span></td>
         <td><p>The protected non-null object if the lock is acquired, otherwise, <code>null</code> is returned.</p>
 </td>

@@ -173,17 +173,17 @@
       <section><p>Provides static methods for creating <a class="xref" href="InSync.AsyncSynchronized-1.html">AsyncSynchronized&lt;T&gt;</a> without explicitly specifying the type of the protected object.</p>
 </section>
       <h4><a class="xref" href="InSync.AsyncSynchronized-1.html">AsyncSynchronized&lt;T&gt;</a></h4>
-      <section><p>Uses <span class="xref">System.Threading.SemaphoreSlim</span> to synchronize and only expose its protected object after a synchronization begins.</p>
+      <section><p>Uses <seealso cref="!:SemaphoreSlim"></seealso> to synchronize and only expose its protected object after a synchronization begins.</p>
 <p>Various asynchronous operations are supported. Reentrant is not supported. The protected object is non-null.</p>
 </section>
       <h4><a class="xref" href="InSync.GuardedValue-1.html">GuardedValue&lt;T&gt;</a></h4>
-      <section><p>Holds a value and cleans up when <span class="xref">System.IDisposable.Dispose()</span> is called.</p>
+      <section><p>Holds a value and cleans up when <seealso cref="!:IDisposable.Dispose"></seealso> is called.</p>
 </section>
       <h4><a class="xref" href="InSync.LockException.html">LockException</a></h4>
       <section><p>The exception that is thrown when an exception is thrown when acquiring a lock.</p>
 </section>
       <h4><a class="xref" href="InSync.MultiSync.html">MultiSync</a></h4>
-      <section><p>Provides easy ways to acquire multiple locks without deadlocks. It does not require any setup nor lock organizations. Fairness is thread-based and provided by the OS because <span class="xref">System.Threading.Thread.Yield</span> is used. Livelock may occur for a very short period under high contention. In such case, CPU power is wasted.</p>
+      <section><p>Provides easy ways to acquire multiple locks without deadlocks. It does not require any setup nor lock organizations. Fairness is thread-based and provided by the OS because <see cref="!:Thread.Yield"></see> is used. Livelock may occur for a very short period under high contention. In such case, CPU power is wasted.</p>
 <p>It uses the smart and polite method described in https://howardhinnant.github.io/dining_philosophers.html#Polite. Basically, it tries to acquire the locks one by one. If an acquisition fails, it releases all acquired locks. Before a blocking retry of the last acquisition, it yields to let other threads to process first.</p>
 </section>
       <h4><a class="xref" href="InSync.ReaderSynchronized-1.html">ReaderSynchronized&lt;TRead&gt;</a></h4>
@@ -193,7 +193,7 @@
       <section><p>Provides a simpler version of <a class="xref" href="InSync.ReaderWriterSynchronized-2.html">ReaderWriterSynchronized&lt;TWrite, TRead&gt;</a> where the reader and writer are the same object.</p>
 </section>
       <h4><a class="xref" href="InSync.ReaderWriterSynchronized-2.html">ReaderWriterSynchronized&lt;TWrite, TRead&gt;</a></h4>
-      <section><p>Uses <span class="xref">System.Threading.ReaderWriterLockSlim</span> to synchronize and only expose its protected reader or writer after a respective read or write synchronization begins. All the methods implementing its interfaces refer to the writer part. The readers are accessible via <a class="xref" href="InSync.ReaderWriterSynchronized-2.html#InSync_ReaderWriterSynchronized_2_Reader">Reader</a> and <a class="xref" href="InSync.ReaderWriterSynchronized-2.html#InSync_ReaderWriterSynchronized_2_UpgradeableReader">UpgradeableReader</a>.</p>
+      <section><p>Uses <seealso cref="!:ReaderWriterLockSlim"></seealso> to synchronize and only expose its protected reader or writer after a respective read or write synchronization begins. All the methods implementing its interfaces refer to the writer part. The readers are accessible via <a class="xref" href="InSync.ReaderWriterSynchronized-2.html#InSync_ReaderWriterSynchronized_2_Reader">Reader</a> and <a class="xref" href="InSync.ReaderWriterSynchronized-2.html#InSync_ReaderWriterSynchronized_2_UpgradeableReader">UpgradeableReader</a>.</p>
 <p>Asynchronous operations are not supported. The protected reader and writer are non-null.</p>
 </section>
       <h4><a class="xref" href="InSync.ReaderWriterSynchronizedFactory.html">ReaderWriterSynchronizedFactory</a></h4>
@@ -203,11 +203,11 @@
       <section><p>Provides static methods for creating <a class="xref" href="InSync.Synchronized-1.html">Synchronized&lt;T&gt;</a> without explicitly specifying the type of the protected object.</p>
 </section>
       <h4><a class="xref" href="InSync.Synchronized-1.html">Synchronized&lt;T&gt;</a></h4>
-      <section><p>Uses <span class="xref">System.Threading.Monitor</span> to synchronize and only expose its protected object after a synchronization begins.</p>
+      <section><p>Uses <seealso cref="!:Monitor"></seealso> to synchronize and only expose its protected object after a synchronization begins.</p>
 <p>Asynchronous operations are not supported. The protected object is non-null.</p>
 </section>
       <h4><a class="xref" href="InSync.UnlockException.html">UnlockException</a></h4>
-      <section><p>The exception that is thrown when an exception is thrown releasing some locks. There may be another exception thrown before releasing the locks. It is stored in <span class="xref">System.Exception.InnerException</span>.</p>
+      <section><p>The exception that is thrown when an exception is thrown releasing some locks. There may be another exception thrown before releasing the locks. It is stored in <seealso cref="!:Exception.InnerException"></seealso>.</p>
 </section>
       <h4><a class="xref" href="InSync.UpgradeableReaderSynchronized-1.html">UpgradeableReaderSynchronized&lt;TRead&gt;</a></h4>
       <section><p>Represents the upgradeable reader part of <a class="xref" href="InSync.ReaderWriterSynchronized-2.html">ReaderWriterSynchronized&lt;TWrite, TRead&gt;</a>.</p>

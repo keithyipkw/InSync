@@ -9,10 +9,10 @@
       "output": {
         ".html": {
           "relative_path": "api/InSync.AsyncSynchronized-1.html",
-          "hash": "jOHFOB0gY4BxaEE7b2Of7Q=="
+          "hash": "AXvyh0kalP8WFLy0goGk6Q=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -21,10 +21,10 @@
       "output": {
         ".html": {
           "relative_path": "api/InSync.AsyncSynchronized.html",
-          "hash": "BIZeJJlt1MtrBju6CNZ6Jw=="
+          "hash": "53n1QA0QDdQEh/jBAa9KPA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -33,10 +33,10 @@
       "output": {
         ".html": {
           "relative_path": "api/InSync.GuardedValue-1.html",
-          "hash": "gZ4RWfc6SCz4XC1W9wX3wg=="
+          "hash": "plw0l82CSV2e9rVtO+1wjQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -45,10 +45,10 @@
       "output": {
         ".html": {
           "relative_path": "api/InSync.IAsyncSynchronized-1.html",
-          "hash": "dCLV2JFhkR5NmfZOXMIxlQ=="
+          "hash": "Ur5mGQlAfxS15YFuHRUXnA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -57,10 +57,10 @@
       "output": {
         ".html": {
           "relative_path": "api/InSync.IBareAsyncLock-1.html",
-          "hash": "zfg4o76c0rG0r1mkhRBnJQ=="
+          "hash": "yCybYm7TjlIsUoYW2UjF5Q=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -69,10 +69,10 @@
       "output": {
         ".html": {
           "relative_path": "api/InSync.IBareAsyncLock.html",
-          "hash": "8JEVkRG2qvHVNCh/l8/uJw=="
+          "hash": "CjLV0JhmY2j3rfHL72gsMg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -81,10 +81,10 @@
       "output": {
         ".html": {
           "relative_path": "api/InSync.IBareLock-1.html",
-          "hash": "nXTj+G1kH8vdAod2nXk7kQ=="
+          "hash": "MvdTlyH4ibiwq5Gu8tFt8g=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -93,10 +93,10 @@
       "output": {
         ".html": {
           "relative_path": "api/InSync.IBareLock.html",
-          "hash": "/VeeTmTU4ELZsVqH7nB0og=="
+          "hash": "bq668mWmTTdE6LL1UmCRNQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -105,10 +105,10 @@
       "output": {
         ".html": {
           "relative_path": "api/InSync.ISynchronized-1.html",
-          "hash": "7Gqck/6FT9LA8h/V5xnWoQ=="
+          "hash": "kd7IVs4DwWWm3Z871mTU5w=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -117,10 +117,10 @@
       "output": {
         ".html": {
           "relative_path": "api/InSync.LockException.html",
-          "hash": "puluha6XsrLx+S4RjJn4YA=="
+          "hash": "P2QfE5s/GEJywOyl9fgh6g=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -129,7 +129,7 @@
       "output": {
         ".html": {
           "relative_path": "api/InSync.MultiSync.html",
-          "hash": "p2rOJpR5w/O4yWVdU5LTJQ=="
+          "hash": "s9YAoa/uZaPWwbT0nWTQGw=="
         }
       },
       "is_incremental": false,
@@ -141,10 +141,10 @@
       "output": {
         ".html": {
           "relative_path": "api/InSync.ReaderSynchronized-1.html",
-          "hash": "U6R6o2F8qte9VYLQeEgaxw=="
+          "hash": "6GQjUWeTT7SZmSy61iUs7g=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -153,10 +153,10 @@
       "output": {
         ".html": {
           "relative_path": "api/InSync.ReaderWriterSynchronized-1.html",
-          "hash": "2d1Hkxfhi8NwvYBVHUB6jQ=="
+          "hash": "u59WrS0zpTNHgd+zxXGAQQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -165,10 +165,10 @@
       "output": {
         ".html": {
           "relative_path": "api/InSync.ReaderWriterSynchronized-2.html",
-          "hash": "PJ+Z8XecD/REH5OPTSzuWQ=="
+          "hash": "L+EJGd5yGq4037RcFb0yEA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -177,10 +177,10 @@
       "output": {
         ".html": {
           "relative_path": "api/InSync.ReaderWriterSynchronizedFactory.html",
-          "hash": "U0+7QbViQ1K3A5dJRE+AFw=="
+          "hash": "9xoKNWUh+aHBFz071j4Rlw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -189,10 +189,10 @@
       "output": {
         ".html": {
           "relative_path": "api/InSync.Synchronized-1.html",
-          "hash": "uTEuGD5pO4Gruw/bhanz2g=="
+          "hash": "JeRJpqyQNEClgy0KXRQatg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -201,10 +201,10 @@
       "output": {
         ".html": {
           "relative_path": "api/InSync.Synchronized.html",
-          "hash": "iAYSx9TCj+HxUt/VWcYdSg=="
+          "hash": "nXLEGb8CbeLbpDjozDb7kA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -213,10 +213,10 @@
       "output": {
         ".html": {
           "relative_path": "api/InSync.TimingMethod.html",
-          "hash": "O2fgfn9kAE42iry+fDxWrA=="
+          "hash": "NdKVnIvgBkL24ADOdQHCcQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -225,10 +225,10 @@
       "output": {
         ".html": {
           "relative_path": "api/InSync.UnlockException.html",
-          "hash": "Kd4W9lfGVTpu8k+nwhrsnw=="
+          "hash": "oNKeOcg1IMLJCynBK3W8rw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -237,10 +237,10 @@
       "output": {
         ".html": {
           "relative_path": "api/InSync.UpgradeableReaderSynchronized-1.html",
-          "hash": "Pjk/qYUAfEAD4FkJxaBSxw=="
+          "hash": "68Ye92fVzZwVF5/KsH7EVQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -249,10 +249,10 @@
       "output": {
         ".html": {
           "relative_path": "api/InSync.ValueContainer-1.html",
-          "hash": "TfUlrDS4priD7BqW4/wHoA=="
+          "hash": "djMz59j88rpRsNkmFyEYiA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -261,7 +261,7 @@
       "output": {
         ".html": {
           "relative_path": "api/InSync.html",
-          "hash": "N8O2SJcd2zm4AyJIG/t0Ww=="
+          "hash": "noPDbgt68a82NJ1NThpfHg=="
         }
       },
       "is_incremental": false,
@@ -287,7 +287,7 @@
           "hash": "8dFSmJdZrqxDrrF/8dDBtA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -310,30 +310,32 @@
           "hash": "XsiNxMTjV5OX8lPXk9ESPw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     }
   ],
   "incremental_info": [
     {
       "status": {
-        "can_incremental": true,
+        "can_incremental": false,
+        "details": "Disable incremental build by force rebuild option.",
         "incrementalPhase": "build",
         "total_file_count": 0,
-        "skipped_file_count": 0
+        "skipped_file_count": 0,
+        "full_build_reason_code": "ForceRebuild"
       },
       "processors": {
         "ConceptualDocumentProcessor": {
-          "can_incremental": true,
+          "can_incremental": false,
           "incrementalPhase": "build",
           "total_file_count": 2,
-          "skipped_file_count": 2
+          "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {
-          "can_incremental": true,
+          "can_incremental": false,
           "incrementalPhase": "build",
           "total_file_count": 22,
-          "skipped_file_count": 21
+          "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
           "can_incremental": false,
@@ -353,8 +355,8 @@
     },
     {
       "status": {
-        "can_incremental": true,
-        "details": "Can support incremental post processing.",
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: it's disabled.",
         "incrementalPhase": "postProcessing",
         "total_file_count": 0,
         "skipped_file_count": 0

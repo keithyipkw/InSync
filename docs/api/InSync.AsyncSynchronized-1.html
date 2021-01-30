@@ -165,7 +165,7 @@
   
   <h1 id="InSync_AsyncSynchronized_1" data-uid="InSync.AsyncSynchronized`1" class="text-break">Class AsyncSynchronized&lt;T&gt;
   </h1>
-  <div class="markdown level0 summary"><p>Uses <span class="xref">System.Threading.SemaphoreSlim</span> to synchronize and only expose its protected object after a synchronization begins.</p>
+  <div class="markdown level0 summary"><p>Uses <seealso cref="!:SemaphoreSlim"></seealso> to synchronize and only expose its protected object after a synchronization begins.</p>
 <p>Various asynchronous operations are supported. Reentrant is not supported. The protected object is non-null.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
@@ -183,35 +183,11 @@
     <div><a class="xref" href="InSync.IBareAsyncLock-1.html">IBareAsyncLock</a>&lt;T&gt;</div>
     <div><a class="xref" href="InSync.IBareAsyncLock.html">IBareAsyncLock</a></div>
   </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
-    <div>
-      <span class="xref">System.Object.Equals(System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.GetHashCode()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.GetType()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.MemberwiseClone()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.ToString()</span>
-    </div>
-  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="InSync.html">InSync</a></h6>
   <h6><strong>Assembly</strong>: InSync.dll</h6>
   <h5 id="InSync_AsyncSynchronized_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class AsyncSynchronized&lt;T&gt; : ISynchronized&lt;T&gt;, IAsyncSynchronized&lt;T&gt;, IBareLock&lt;T&gt;, IBareLock, IBareAsyncLock&lt;T&gt;, IBareAsyncLock where T : class</code></pre>
+    <pre><code class="lang-csharp hljs">public class AsyncSynchronized&lt;T&gt; : object, ISynchronized&lt;T&gt;, IAsyncSynchronized&lt;T&gt;, IBareLock&lt;T&gt;, IBareLock, IBareAsyncLock&lt;T&gt;, IBareAsyncLock where T : class</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -232,8 +208,8 @@
   <h3 id="constructors">Constructors
   </h3>
   <a id="InSync_AsyncSynchronized_1__ctor_" data-uid="InSync.AsyncSynchronized`1.#ctor*"></a>
-  <h4 id="InSync_AsyncSynchronized_1__ctor_System_Threading_SemaphoreSlim__0_" data-uid="InSync.AsyncSynchronized`1.#ctor(System.Threading.SemaphoreSlim,`0)">AsyncSynchronized(SemaphoreSlim, T)</h4>
-  <div class="markdown level1 summary"><p>Initializes a <a class="xref" href="InSync.AsyncSynchronized-1.html">AsyncSynchronized&lt;T&gt;</a> with the specified <span class="xref">System.Threading.SemaphoreSlim</span> and object to protect.</p>
+  <h4 id="InSync_AsyncSynchronized_1__ctor_SemaphoreSlim__0_" data-uid="InSync.AsyncSynchronized`1.#ctor(SemaphoreSlim,`0)">AsyncSynchronized(SemaphoreSlim, T)</h4>
+  <div class="markdown level1 summary"><p>Initializes a <a class="xref" href="InSync.AsyncSynchronized-1.html">AsyncSynchronized&lt;T&gt;</a> with the specified <seealso cref="!:SemaphoreSlim"></seealso> and object to protect.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -251,7 +227,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.SemaphoreSlim</span></td>
+        <td><span class="xref">SemaphoreSlim</span></td>
         <td><span class="parametername">semaphore</span></td>
         <td><p>The semaphore for synchronization.</p>
 </td>
@@ -260,27 +236,6 @@
         <td><span class="xref">T</span></td>
         <td><span class="parametername">value</span></td>
         <td><p>The object to protect.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.ArgumentNullException</span></td>
-        <td><p><code data-dev-comment-type="paramref" class="paramref">semaphore</code> is <code>null</code>.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.ArgumentNullException</span></td>
-        <td><p><code data-dev-comment-type="paramref" class="paramref">value</code> is <code>null</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -305,7 +260,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.SemaphoreSlim</span></td>
+        <td><span class="xref">SemaphoreSlim</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -394,7 +349,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;T&gt;</td>
+        <td><span class="xref">Task</span>&lt;T&gt;</td>
         <td><p>The protected non-null value.</p>
 </td>
       </tr>
@@ -416,7 +371,7 @@
     </tbody>
   </table>
   <a id="InSync_AsyncSynchronized_1_BarelyLockAsync_" data-uid="InSync.AsyncSynchronized`1.BarelyLockAsync*"></a>
-  <h4 id="InSync_AsyncSynchronized_1_BarelyLockAsync_System_Threading_CancellationToken_" data-uid="InSync.AsyncSynchronized`1.BarelyLockAsync(System.Threading.CancellationToken)">BarelyLockAsync(CancellationToken)</h4>
+  <h4 id="InSync_AsyncSynchronized_1_BarelyLockAsync_CancellationToken_" data-uid="InSync.AsyncSynchronized`1.BarelyLockAsync(CancellationToken)">BarelyLockAsync(CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Asynchronously acquires the lock and returns the protected non-null value.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -435,7 +390,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.CancellationToken</span></td>
+        <td><span class="xref">CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>
         <td></td>
       </tr>
@@ -451,7 +406,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;T&gt;</td>
+        <td><span class="xref">Task</span>&lt;T&gt;</td>
         <td><p>The protected non-null value.</p>
 </td>
       </tr>
@@ -466,10 +421,6 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td><span class="xref">System.OperationCanceledException</span></td>
-        <td></td>
-      </tr>
       <tr>
         <td><a class="xref" href="InSync.LockException.html">LockException</a></td>
         <td></td>
@@ -556,7 +507,7 @@
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">millisecondsTimeout</span></td>
-        <td><p>The number of milliseconds to wait, <span class="xref">System.Threading.Timeout.Infinite</span> (-1) to wait indefinitely, or zero to test the state of the wait handle and return immediately.</p>
+        <td><p>The number of milliseconds to wait, <seealso cref="!:System.Threading.Timeout.Infinite"></seealso> (-1) to wait indefinitely, or zero to test the state of the wait handle and return immediately.</p>
 </td>
       </tr>
       <tr>
@@ -599,7 +550,7 @@
     </tbody>
   </table>
   <a id="InSync_AsyncSynchronized_1_BarelyTryLock_" data-uid="InSync.AsyncSynchronized`1.BarelyTryLock*"></a>
-  <h4 id="InSync_AsyncSynchronized_1_BarelyTryLock_System_TimeSpan__0__" data-uid="InSync.AsyncSynchronized`1.BarelyTryLock(System.TimeSpan,`0@)">BarelyTryLock(TimeSpan, out T)</h4>
+  <h4 id="InSync_AsyncSynchronized_1_BarelyTryLock_TimeSpan__0__" data-uid="InSync.AsyncSynchronized`1.BarelyTryLock(TimeSpan,`0@)">BarelyTryLock(TimeSpan, out T)</h4>
   <div class="markdown level1 summary"><p>Tries to acquire the lock. It returns <code>true</code> and the protected non-null object if the lock is acquired.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -618,9 +569,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.TimeSpan</span></td>
+        <td><span class="xref">TimeSpan</span></td>
         <td><span class="parametername">timeout</span></td>
-        <td><p>A <span class="xref">System.TimeSpan</span> that represents the number of milliseconds to wait, a <span class="xref">System.TimeSpan</span> that represents -1 milliseconds to wait indefinitely, or a <span class="xref">System.TimeSpan</span> that represents 0 milliseconds to test the wait handle and return immediately.</p>
+        <td><p>A <seealso cref="!:TimeSpan"></seealso> that represents the number of milliseconds to wait, a <seealso cref="!:TimeSpan"></seealso> that represents -1 milliseconds to wait indefinitely, or a <seealso cref="!:TimeSpan"></seealso> that represents 0 milliseconds to test the wait handle and return immediately.</p>
 </td>
       </tr>
       <tr>
@@ -744,7 +695,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="InSync.GuardedValue-1.html">GuardedValue</a>&lt;T&gt;&gt;</td>
+        <td><span class="xref">Task</span>&lt;<a class="xref" href="InSync.GuardedValue-1.html">GuardedValue</a>&lt;T&gt;&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -765,7 +716,7 @@
     </tbody>
   </table>
   <a id="InSync_AsyncSynchronized_1_LockAsync_" data-uid="InSync.AsyncSynchronized`1.LockAsync*"></a>
-  <h4 id="InSync_AsyncSynchronized_1_LockAsync_System_Threading_CancellationToken_" data-uid="InSync.AsyncSynchronized`1.LockAsync(System.Threading.CancellationToken)">LockAsync(CancellationToken)</h4>
+  <h4 id="InSync_AsyncSynchronized_1_LockAsync_CancellationToken_" data-uid="InSync.AsyncSynchronized`1.LockAsync(CancellationToken)">LockAsync(CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Asynchronously locks and returns a guard to allow access of the protected object and unlocking.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -784,7 +735,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.CancellationToken</span></td>
+        <td><span class="xref">CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>
         <td></td>
       </tr>
@@ -800,7 +751,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="InSync.GuardedValue-1.html">GuardedValue</a>&lt;T&gt;&gt;</td>
+        <td><span class="xref">Task</span>&lt;<a class="xref" href="InSync.GuardedValue-1.html">GuardedValue</a>&lt;T&gt;&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -814,10 +765,6 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td><span class="xref">System.OperationCanceledException</span></td>
-        <td></td>
-      </tr>
       <tr>
         <td><a class="xref" href="InSync.LockException.html">LockException</a></td>
         <td></td>
@@ -886,7 +833,7 @@
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">millisecondsTimeout</span></td>
-        <td><p>The number of milliseconds to wait, <span class="xref">System.Threading.Timeout.Infinite</span> (-1) to wait indefinitely, or zero to test the state of the wait handle and return immediately.</p>
+        <td><p>The number of milliseconds to wait, <seealso cref="!:System.Threading.Timeout.Infinite"></seealso> (-1) to wait indefinitely, or zero to test the state of the wait handle and return immediately.</p>
 </td>
       </tr>
     </tbody>
@@ -923,7 +870,7 @@
     </tbody>
   </table>
   <a id="InSync_AsyncSynchronized_1_TryLock_" data-uid="InSync.AsyncSynchronized`1.TryLock*"></a>
-  <h4 id="InSync_AsyncSynchronized_1_TryLock_System_TimeSpan_" data-uid="InSync.AsyncSynchronized`1.TryLock(System.TimeSpan)">TryLock(TimeSpan)</h4>
+  <h4 id="InSync_AsyncSynchronized_1_TryLock_TimeSpan_" data-uid="InSync.AsyncSynchronized`1.TryLock(TimeSpan)">TryLock(TimeSpan)</h4>
   <div class="markdown level1 summary"><p>Tries to lock and returns a guard to allow access of the protected object and unlocking. If the lock is not acquired, this method returns null immediately.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -942,9 +889,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.TimeSpan</span></td>
+        <td><span class="xref">TimeSpan</span></td>
         <td><span class="parametername">timeout</span></td>
-        <td><p>A <span class="xref">System.TimeSpan</span> that represents the number of milliseconds to wait, a <span class="xref">System.TimeSpan</span> that represents -1 milliseconds to wait indefinitely, or a <span class="xref">System.TimeSpan</span> that represents 0 milliseconds to test the wait handle and return immediately.</p>
+        <td><p>A <seealso cref="!:TimeSpan"></seealso> that represents the number of milliseconds to wait, a <seealso cref="!:TimeSpan"></seealso> that represents -1 milliseconds to wait indefinitely, or a <seealso cref="!:TimeSpan"></seealso> that represents 0 milliseconds to test the wait handle and return immediately.</p>
 </td>
       </tr>
     </tbody>
@@ -981,7 +928,7 @@
     </tbody>
   </table>
   <a id="InSync_AsyncSynchronized_1_TryWithLock_" data-uid="InSync.AsyncSynchronized`1.TryWithLock*"></a>
-  <h4 id="InSync_AsyncSynchronized_1_TryWithLock_System_Action__0__" data-uid="InSync.AsyncSynchronized`1.TryWithLock(System.Action{`0})">TryWithLock(Action&lt;T&gt;)</h4>
+  <h4 id="InSync_AsyncSynchronized_1_TryWithLock_Action__0__" data-uid="InSync.AsyncSynchronized`1.TryWithLock(Action{`0})">TryWithLock(Action&lt;T&gt;)</h4>
   <div class="markdown level1 summary"><p>Tries to lock and performs the action then unlocks. If the lock is not acquired, this method returns immediately. If the action throws an exception, the lock is released automatically.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -1000,7 +947,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Action</span>&lt;T&gt;</td>
+        <td><span class="xref">Action</span>&lt;T&gt;</td>
         <td><span class="parametername">action</span></td>
         <td><p>The protected object is supplied as the argument of the action</p>
 </td>
@@ -1043,7 +990,7 @@
     </tbody>
   </table>
   <a id="InSync_AsyncSynchronized_1_TryWithLock_" data-uid="InSync.AsyncSynchronized`1.TryWithLock*"></a>
-  <h4 id="InSync_AsyncSynchronized_1_TryWithLock_System_Int32_System_Action__0__" data-uid="InSync.AsyncSynchronized`1.TryWithLock(System.Int32,System.Action{`0})">TryWithLock(Int32, Action&lt;T&gt;)</h4>
+  <h4 id="InSync_AsyncSynchronized_1_TryWithLock_System_Int32_Action__0__" data-uid="InSync.AsyncSynchronized`1.TryWithLock(System.Int32,Action{`0})">TryWithLock(Int32, Action&lt;T&gt;)</h4>
   <div class="markdown level1 summary"><p>Tries to lock and performs the action then unlocks. If the lock is not acquired, this method returns immediately. If the action throws an exception, the lock is released automatically.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -1064,11 +1011,11 @@
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">millisecondsTimeout</span></td>
-        <td><p>The number of milliseconds to wait, <span class="xref">System.Threading.Timeout.Infinite</span> (-1) to wait indefinitely, or zero to test the state of the wait handle and return immediately.</p>
+        <td><p>The number of milliseconds to wait, <seealso cref="!:System.Threading.Timeout.Infinite"></seealso> (-1) to wait indefinitely, or zero to test the state of the wait handle and return immediately.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Action</span>&lt;T&gt;</td>
+        <td><span class="xref">Action</span>&lt;T&gt;</td>
         <td><span class="parametername">action</span></td>
         <td><p>The protected object is supplied as the argument of the action</p>
 </td>
@@ -1111,7 +1058,7 @@
     </tbody>
   </table>
   <a id="InSync_AsyncSynchronized_1_TryWithLock_" data-uid="InSync.AsyncSynchronized`1.TryWithLock*"></a>
-  <h4 id="InSync_AsyncSynchronized_1_TryWithLock_System_TimeSpan_System_Action__0__" data-uid="InSync.AsyncSynchronized`1.TryWithLock(System.TimeSpan,System.Action{`0})">TryWithLock(TimeSpan, Action&lt;T&gt;)</h4>
+  <h4 id="InSync_AsyncSynchronized_1_TryWithLock_TimeSpan_Action__0__" data-uid="InSync.AsyncSynchronized`1.TryWithLock(TimeSpan,Action{`0})">TryWithLock(TimeSpan, Action&lt;T&gt;)</h4>
   <div class="markdown level1 summary"><p>Tries to lock and performs the action then unlocks. If the lock is not acquired, this method returns immediately. If the action throws an exception, the lock is released automatically.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -1130,13 +1077,13 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.TimeSpan</span></td>
+        <td><span class="xref">TimeSpan</span></td>
         <td><span class="parametername">timeout</span></td>
-        <td><p>A <span class="xref">System.TimeSpan</span> that represents the number of milliseconds to wait, a <span class="xref">System.TimeSpan</span> that represents -1 milliseconds to wait indefinitely, or a <span class="xref">System.TimeSpan</span> that represents 0 milliseconds to test the wait handle and return immediately.</p>
+        <td><p>A <seealso cref="!:TimeSpan"></seealso> that represents the number of milliseconds to wait, a <seealso cref="!:TimeSpan"></seealso> that represents -1 milliseconds to wait indefinitely, or a <seealso cref="!:TimeSpan"></seealso> that represents 0 milliseconds to test the wait handle and return immediately.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Action</span>&lt;T&gt;</td>
+        <td><span class="xref">Action</span>&lt;T&gt;</td>
         <td><span class="parametername">action</span></td>
         <td><p>The protected object is supplied as the argument of the action</p>
 </td>
@@ -1179,7 +1126,7 @@
     </tbody>
   </table>
   <a id="InSync_AsyncSynchronized_1_WithLock_" data-uid="InSync.AsyncSynchronized`1.WithLock*"></a>
-  <h4 id="InSync_AsyncSynchronized_1_WithLock_System_Action__0__" data-uid="InSync.AsyncSynchronized`1.WithLock(System.Action{`0})">WithLock(Action&lt;T&gt;)</h4>
+  <h4 id="InSync_AsyncSynchronized_1_WithLock_Action__0__" data-uid="InSync.AsyncSynchronized`1.WithLock(Action{`0})">WithLock(Action&lt;T&gt;)</h4>
   <div class="markdown level1 summary"><p>Locks, performs the action then unlocks. If the action throws an exception, the lock is released automatically.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -1198,7 +1145,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Action</span>&lt;T&gt;</td>
+        <td><span class="xref">Action</span>&lt;T&gt;</td>
         <td><span class="parametername">action</span></td>
         <td><p>The protected object is supplied as the argument of the action</p>
 </td>
@@ -1225,7 +1172,7 @@
     </tbody>
   </table>
   <a id="InSync_AsyncSynchronized_1_WithLock_" data-uid="InSync.AsyncSynchronized`1.WithLock*"></a>
-  <h4 id="InSync_AsyncSynchronized_1_WithLock__1_System_Func__0___0__" data-uid="InSync.AsyncSynchronized`1.WithLock``1(System.Func{`0,``0})">WithLock&lt;TResult&gt;(Func&lt;T, TResult&gt;)</h4>
+  <h4 id="InSync_AsyncSynchronized_1_WithLock__1_Func__0___0__" data-uid="InSync.AsyncSynchronized`1.WithLock``1(Func{`0,``0})">WithLock&lt;TResult&gt;(Func&lt;T, TResult&gt;)</h4>
   <div class="markdown level1 summary"><p>Locks, call the function then unlocks. The returned value from the function is returned. If the function throws an exception, the lock is released automatically.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -1244,7 +1191,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Func</span>&lt;T, TResult&gt;</td>
+        <td><span class="xref">Func</span>&lt;T, TResult&gt;</td>
         <td><span class="parametername">func</span></td>
         <td><p>The protected object is supplied as the argument of the function. The returned value is returned by this method.</p>
 </td>
@@ -1302,7 +1249,7 @@
     </tbody>
   </table>
   <a id="InSync_AsyncSynchronized_1_WithLockAsync_" data-uid="InSync.AsyncSynchronized`1.WithLockAsync*"></a>
-  <h4 id="InSync_AsyncSynchronized_1_WithLockAsync_System_Action__0__" data-uid="InSync.AsyncSynchronized`1.WithLockAsync(System.Action{`0})">WithLockAsync(Action&lt;T&gt;)</h4>
+  <h4 id="InSync_AsyncSynchronized_1_WithLockAsync_Action__0__" data-uid="InSync.AsyncSynchronized`1.WithLockAsync(Action{`0})">WithLockAsync(Action&lt;T&gt;)</h4>
   <div class="markdown level1 summary"><p>Asynchronously locks, performs the action on the captured context or task scheduler (if any) then unlocks. If the action throws an exception, the lock is released automatically.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -1321,7 +1268,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Action</span>&lt;T&gt;</td>
+        <td><span class="xref">Action</span>&lt;T&gt;</td>
         <td><span class="parametername">action</span></td>
         <td><p>The protected object is supplied as the argument of the action</p>
 </td>
@@ -1338,7 +1285,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td><span class="xref">Task</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -1363,74 +1310,7 @@
     </tbody>
   </table>
   <a id="InSync_AsyncSynchronized_1_WithLockAsync_" data-uid="InSync.AsyncSynchronized`1.WithLockAsync*"></a>
-  <h4 id="InSync_AsyncSynchronized_1_WithLockAsync_System_Action__0__System_Boolean_" data-uid="InSync.AsyncSynchronized`1.WithLockAsync(System.Action{`0},System.Boolean)">WithLockAsync(Action&lt;T&gt;, Boolean)</h4>
-  <div class="markdown level1 summary"><p>Asynchronously locks, performs the action then unlocks. If the action throws an exception, the lock is released automatically.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task WithLockAsync(Action&lt;T&gt; action, bool onCapturedContext)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Action</span>&lt;T&gt;</td>
-        <td><span class="parametername">action</span></td>
-        <td><p>The protected object is supplied as the argument of the action</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td><span class="parametername">onCapturedContext</span></td>
-        <td><p><code>true</code> to perform the action on the original context or task scheduler if there is a context.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="InSync.LockException.html">LockException</a></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="InSync.UnlockException.html">UnlockException</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="InSync_AsyncSynchronized_1_WithLockAsync_" data-uid="InSync.AsyncSynchronized`1.WithLockAsync*"></a>
-  <h4 id="InSync_AsyncSynchronized_1_WithLockAsync_System_Action__0__System_Threading_CancellationToken_" data-uid="InSync.AsyncSynchronized`1.WithLockAsync(System.Action{`0},System.Threading.CancellationToken)">WithLockAsync(Action&lt;T&gt;, CancellationToken)</h4>
+  <h4 id="InSync_AsyncSynchronized_1_WithLockAsync_Action__0__CancellationToken_" data-uid="InSync.AsyncSynchronized`1.WithLockAsync(Action{`0},CancellationToken)">WithLockAsync(Action&lt;T&gt;, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Asynchronously locks, performs the action on the captured context or task scheduler (if any) then unlocks. If the function throws an exception, the lock is released automatically.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -1449,13 +1329,13 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Action</span>&lt;T&gt;</td>
+        <td><span class="xref">Action</span>&lt;T&gt;</td>
         <td><span class="parametername">action</span></td>
         <td><p>The protected object is supplied as the argument of the action</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Threading.CancellationToken</span></td>
+        <td><span class="xref">CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>
         <td></td>
       </tr>
@@ -1471,7 +1351,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td><span class="xref">Task</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -1486,10 +1366,6 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.OperationCanceledException</span></td>
-        <td></td>
-      </tr>
-      <tr>
         <td><a class="xref" href="InSync.LockException.html">LockException</a></td>
         <td></td>
       </tr>
@@ -1500,7 +1376,7 @@
     </tbody>
   </table>
   <a id="InSync_AsyncSynchronized_1_WithLockAsync_" data-uid="InSync.AsyncSynchronized`1.WithLockAsync*"></a>
-  <h4 id="InSync_AsyncSynchronized_1_WithLockAsync_System_Action__0__System_Threading_CancellationToken_System_Boolean_" data-uid="InSync.AsyncSynchronized`1.WithLockAsync(System.Action{`0},System.Threading.CancellationToken,System.Boolean)">WithLockAsync(Action&lt;T&gt;, CancellationToken, Boolean)</h4>
+  <h4 id="InSync_AsyncSynchronized_1_WithLockAsync_Action__0__CancellationToken_System_Boolean_" data-uid="InSync.AsyncSynchronized`1.WithLockAsync(Action{`0},CancellationToken,System.Boolean)">WithLockAsync(Action&lt;T&gt;, CancellationToken, Boolean)</h4>
   <div class="markdown level1 summary"><p>Asynchronously locks, synchronously performs the action then unlocks. If the function throws an exception, the lock is released automatically.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -1519,13 +1395,13 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Action</span>&lt;T&gt;</td>
+        <td><span class="xref">Action</span>&lt;T&gt;</td>
         <td><span class="parametername">action</span></td>
         <td><p>The protected object is supplied as the argument of the action</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Threading.CancellationToken</span></td>
+        <td><span class="xref">CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>
         <td></td>
       </tr>
@@ -1547,7 +1423,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td><span class="xref">Task</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -1562,9 +1438,72 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.OperationCanceledException</span></td>
+        <td><a class="xref" href="InSync.LockException.html">LockException</a></td>
         <td></td>
       </tr>
+      <tr>
+        <td><a class="xref" href="InSync.UnlockException.html">UnlockException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="InSync_AsyncSynchronized_1_WithLockAsync_" data-uid="InSync.AsyncSynchronized`1.WithLockAsync*"></a>
+  <h4 id="InSync_AsyncSynchronized_1_WithLockAsync_Action__0__System_Boolean_" data-uid="InSync.AsyncSynchronized`1.WithLockAsync(Action{`0},System.Boolean)">WithLockAsync(Action&lt;T&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Asynchronously locks, performs the action then unlocks. If the action throws an exception, the lock is released automatically.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task WithLockAsync(Action&lt;T&gt; action, bool onCapturedContext)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Action</span>&lt;T&gt;</td>
+        <td><span class="parametername">action</span></td>
+        <td><p>The protected object is supplied as the argument of the action</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">onCapturedContext</span></td>
+        <td><p><code>true</code> to perform the action on the original context or task scheduler if there is a context.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
       <tr>
         <td><a class="xref" href="InSync.LockException.html">LockException</a></td>
         <td></td>
@@ -1576,7 +1515,7 @@
     </tbody>
   </table>
   <a id="InSync_AsyncSynchronized_1_WithLockAsync_" data-uid="InSync.AsyncSynchronized`1.WithLockAsync*"></a>
-  <h4 id="InSync_AsyncSynchronized_1_WithLockAsync_System_Func__0_System_Threading_Tasks_Task__" data-uid="InSync.AsyncSynchronized`1.WithLockAsync(System.Func{`0,System.Threading.Tasks.Task})">WithLockAsync(Func&lt;T, Task&gt;)</h4>
+  <h4 id="InSync_AsyncSynchronized_1_WithLockAsync_Func__0_Task__" data-uid="InSync.AsyncSynchronized`1.WithLockAsync(Func{`0,Task})">WithLockAsync(Func&lt;T, Task&gt;)</h4>
   <div class="markdown level1 summary"><p>Asynchronously locks, performs the action on the captured context or task scheduler (if any) then unlocks. If the action throws an exception, the lock is released automatically.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -1595,7 +1534,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Func</span>&lt;T, <span class="xref">System.Threading.Tasks.Task</span>&gt;</td>
+        <td><span class="xref">Func</span>&lt;T, <span class="xref">Task</span>&gt;</td>
         <td><span class="parametername">asyncAction</span></td>
         <td><p>The protected object is supplied as the argument of the action</p>
 </td>
@@ -1612,7 +1551,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td><span class="xref">Task</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -1637,74 +1576,7 @@
     </tbody>
   </table>
   <a id="InSync_AsyncSynchronized_1_WithLockAsync_" data-uid="InSync.AsyncSynchronized`1.WithLockAsync*"></a>
-  <h4 id="InSync_AsyncSynchronized_1_WithLockAsync_System_Func__0_System_Threading_Tasks_Task__System_Boolean_" data-uid="InSync.AsyncSynchronized`1.WithLockAsync(System.Func{`0,System.Threading.Tasks.Task},System.Boolean)">WithLockAsync(Func&lt;T, Task&gt;, Boolean)</h4>
-  <div class="markdown level1 summary"><p>Asynchronously locks, performs the action then unlocks. If the action throws an exception, the lock is released automatically.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task WithLockAsync(Func&lt;T, Task&gt; asyncAction, bool onCapturedContext)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Func</span>&lt;T, <span class="xref">System.Threading.Tasks.Task</span>&gt;</td>
-        <td><span class="parametername">asyncAction</span></td>
-        <td><p>The protected object is supplied as the argument of the action</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td><span class="parametername">onCapturedContext</span></td>
-        <td><p><code>true</code> to perform the action on the original context or task scheduler if there is a context.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="InSync.LockException.html">LockException</a></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="InSync.UnlockException.html">UnlockException</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="InSync_AsyncSynchronized_1_WithLockAsync_" data-uid="InSync.AsyncSynchronized`1.WithLockAsync*"></a>
-  <h4 id="InSync_AsyncSynchronized_1_WithLockAsync_System_Func__0_System_Threading_Tasks_Task__System_Threading_CancellationToken_" data-uid="InSync.AsyncSynchronized`1.WithLockAsync(System.Func{`0,System.Threading.Tasks.Task},System.Threading.CancellationToken)">WithLockAsync(Func&lt;T, Task&gt;, CancellationToken)</h4>
+  <h4 id="InSync_AsyncSynchronized_1_WithLockAsync_Func__0_Task__CancellationToken_" data-uid="InSync.AsyncSynchronized`1.WithLockAsync(Func{`0,Task},CancellationToken)">WithLockAsync(Func&lt;T, Task&gt;, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Asynchronously locks, performs the action on the captured context or task scheduler (if any) then unlocks. If the action throws an exception, the lock is released automatically.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -1723,13 +1595,13 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Func</span>&lt;T, <span class="xref">System.Threading.Tasks.Task</span>&gt;</td>
+        <td><span class="xref">Func</span>&lt;T, <span class="xref">Task</span>&gt;</td>
         <td><span class="parametername">asyncAction</span></td>
         <td><p>The protected object is supplied as the argument of the action</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Threading.CancellationToken</span></td>
+        <td><span class="xref">CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>
         <td></td>
       </tr>
@@ -1745,7 +1617,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td><span class="xref">Task</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -1760,10 +1632,6 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.OperationCanceledException</span></td>
-        <td></td>
-      </tr>
-      <tr>
         <td><a class="xref" href="InSync.LockException.html">LockException</a></td>
         <td></td>
       </tr>
@@ -1774,7 +1642,7 @@
     </tbody>
   </table>
   <a id="InSync_AsyncSynchronized_1_WithLockAsync_" data-uid="InSync.AsyncSynchronized`1.WithLockAsync*"></a>
-  <h4 id="InSync_AsyncSynchronized_1_WithLockAsync_System_Func__0_System_Threading_Tasks_Task__System_Threading_CancellationToken_System_Boolean_" data-uid="InSync.AsyncSynchronized`1.WithLockAsync(System.Func{`0,System.Threading.Tasks.Task},System.Threading.CancellationToken,System.Boolean)">WithLockAsync(Func&lt;T, Task&gt;, CancellationToken, Boolean)</h4>
+  <h4 id="InSync_AsyncSynchronized_1_WithLockAsync_Func__0_Task__CancellationToken_System_Boolean_" data-uid="InSync.AsyncSynchronized`1.WithLockAsync(Func{`0,Task},CancellationToken,System.Boolean)">WithLockAsync(Func&lt;T, Task&gt;, CancellationToken, Boolean)</h4>
   <div class="markdown level1 summary"><p>Asynchronously locks, performs the action then unlocks. If the action throws an exception, the lock is released automatically.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -1793,13 +1661,13 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Func</span>&lt;T, <span class="xref">System.Threading.Tasks.Task</span>&gt;</td>
+        <td><span class="xref">Func</span>&lt;T, <span class="xref">Task</span>&gt;</td>
         <td><span class="parametername">asyncAction</span></td>
         <td><p>The protected object is supplied as the argument of the action</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Threading.CancellationToken</span></td>
+        <td><span class="xref">CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>
         <td></td>
       </tr>
@@ -1821,7 +1689,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td><span class="xref">Task</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -1836,9 +1704,72 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.OperationCanceledException</span></td>
+        <td><a class="xref" href="InSync.LockException.html">LockException</a></td>
         <td></td>
       </tr>
+      <tr>
+        <td><a class="xref" href="InSync.UnlockException.html">UnlockException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="InSync_AsyncSynchronized_1_WithLockAsync_" data-uid="InSync.AsyncSynchronized`1.WithLockAsync*"></a>
+  <h4 id="InSync_AsyncSynchronized_1_WithLockAsync_Func__0_Task__System_Boolean_" data-uid="InSync.AsyncSynchronized`1.WithLockAsync(Func{`0,Task},System.Boolean)">WithLockAsync(Func&lt;T, Task&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Asynchronously locks, performs the action then unlocks. If the action throws an exception, the lock is released automatically.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task WithLockAsync(Func&lt;T, Task&gt; asyncAction, bool onCapturedContext)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Func</span>&lt;T, <span class="xref">Task</span>&gt;</td>
+        <td><span class="parametername">asyncAction</span></td>
+        <td><p>The protected object is supplied as the argument of the action</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">onCapturedContext</span></td>
+        <td><p><code>true</code> to perform the action on the original context or task scheduler if there is a context.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
       <tr>
         <td><a class="xref" href="InSync.LockException.html">LockException</a></td>
         <td></td>
@@ -1850,7 +1781,7 @@
     </tbody>
   </table>
   <a id="InSync_AsyncSynchronized_1_WithLockAsync_" data-uid="InSync.AsyncSynchronized`1.WithLockAsync*"></a>
-  <h4 id="InSync_AsyncSynchronized_1_WithLockAsync__1_System_Func__0___0__" data-uid="InSync.AsyncSynchronized`1.WithLockAsync``1(System.Func{`0,``0})">WithLockAsync&lt;TResult&gt;(Func&lt;T, TResult&gt;)</h4>
+  <h4 id="InSync_AsyncSynchronized_1_WithLockAsync__1_Func__0___0__" data-uid="InSync.AsyncSynchronized`1.WithLockAsync``1(Func{`0,``0})">WithLockAsync&lt;TResult&gt;(Func&lt;T, TResult&gt;)</h4>
   <div class="markdown level1 summary"><p>Asynchronously locks, calls the function on the captured context or task scheduler (if any) then unlocks. The returned value from the function is returned. If the function throws an exception, the lock is released automatically.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -1869,7 +1800,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Func</span>&lt;T, TResult&gt;</td>
+        <td><span class="xref">Func</span>&lt;T, TResult&gt;</td>
         <td><span class="parametername">func</span></td>
         <td><p>The protected object is supplied as the argument of the function. The returned value is returned by this method.</p>
 </td>
@@ -1886,7 +1817,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;TResult&gt;</td>
+        <td><span class="xref">Task</span>&lt;TResult&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -1916,9 +1847,86 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.OperationCanceledException</span></td>
+        <td><a class="xref" href="InSync.LockException.html">LockException</a></td>
         <td></td>
       </tr>
+      <tr>
+        <td><a class="xref" href="InSync.UnlockException.html">UnlockException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="InSync_AsyncSynchronized_1_WithLockAsync_" data-uid="InSync.AsyncSynchronized`1.WithLockAsync*"></a>
+  <h4 id="InSync_AsyncSynchronized_1_WithLockAsync__1_Func__0___0__CancellationToken_" data-uid="InSync.AsyncSynchronized`1.WithLockAsync``1(Func{`0,``0},CancellationToken)">WithLockAsync&lt;TResult&gt;(Func&lt;T, TResult&gt;, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Asynchronously locks, calls the function on the captured context or task scheduler (if any) then unlocks. The returned value from the function is returned. If the function throws an exception, the lock is released automatically.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;TResult&gt; WithLockAsync&lt;TResult&gt;(Func&lt;T, TResult&gt; func, CancellationToken cancellationToken)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Func</span>&lt;T, TResult&gt;</td>
+        <td><span class="parametername">func</span></td>
+        <td><p>The protected object is supplied as the argument of the function. The returned value is returned by this method.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;TResult&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TResult</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
       <tr>
         <td><a class="xref" href="InSync.LockException.html">LockException</a></td>
         <td></td>
@@ -1930,7 +1938,94 @@
     </tbody>
   </table>
   <a id="InSync_AsyncSynchronized_1_WithLockAsync_" data-uid="InSync.AsyncSynchronized`1.WithLockAsync*"></a>
-  <h4 id="InSync_AsyncSynchronized_1_WithLockAsync__1_System_Func__0___0__System_Boolean_" data-uid="InSync.AsyncSynchronized`1.WithLockAsync``1(System.Func{`0,``0},System.Boolean)">WithLockAsync&lt;TResult&gt;(Func&lt;T, TResult&gt;, Boolean)</h4>
+  <h4 id="InSync_AsyncSynchronized_1_WithLockAsync__1_Func__0___0__CancellationToken_System_Boolean_" data-uid="InSync.AsyncSynchronized`1.WithLockAsync``1(Func{`0,``0},CancellationToken,System.Boolean)">WithLockAsync&lt;TResult&gt;(Func&lt;T, TResult&gt;, CancellationToken, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Asynchronously locks, synchronously calls the function then unlocks. The returned value from the function is returned. If the function throws an exception, the lock is released automatically.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;TResult&gt; WithLockAsync&lt;TResult&gt;(Func&lt;T, TResult&gt; func, CancellationToken cancellationToken, bool onCapturedContext)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Func</span>&lt;T, TResult&gt;</td>
+        <td><span class="parametername">func</span></td>
+        <td><p>The protected object is supplied as the argument of the function. The returned value is returned by this method.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">onCapturedContext</span></td>
+        <td><p><code>true</code> to call the function on the original context or task scheduler if there is a context.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;TResult&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TResult</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InSync.LockException.html">LockException</a></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="InSync.UnlockException.html">UnlockException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="InSync_AsyncSynchronized_1_WithLockAsync_" data-uid="InSync.AsyncSynchronized`1.WithLockAsync*"></a>
+  <h4 id="InSync_AsyncSynchronized_1_WithLockAsync__1_Func__0___0__System_Boolean_" data-uid="InSync.AsyncSynchronized`1.WithLockAsync``1(Func{`0,``0},System.Boolean)">WithLockAsync&lt;TResult&gt;(Func&lt;T, TResult&gt;, Boolean)</h4>
   <div class="markdown level1 summary"><p>Asynchronously locks, calls the function then unlocks. The returned value from the function is returned. If the function throws an exception, the lock is released automatically.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -1949,7 +2044,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Func</span>&lt;T, TResult&gt;</td>
+        <td><span class="xref">Func</span>&lt;T, TResult&gt;</td>
         <td><span class="parametername">func</span></td>
         <td><p>The protected object is supplied as the argument of the function. The returned value is returned by this method.</p>
 </td>
@@ -1972,92 +2067,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;TResult&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">TResult</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.OperationCanceledException</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="InSync.LockException.html">LockException</a></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="InSync.UnlockException.html">UnlockException</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="InSync_AsyncSynchronized_1_WithLockAsync_" data-uid="InSync.AsyncSynchronized`1.WithLockAsync*"></a>
-  <h4 id="InSync_AsyncSynchronized_1_WithLockAsync__1_System_Func__0___0__System_Threading_CancellationToken_" data-uid="InSync.AsyncSynchronized`1.WithLockAsync``1(System.Func{`0,``0},System.Threading.CancellationToken)">WithLockAsync&lt;TResult&gt;(Func&lt;T, TResult&gt;, CancellationToken)</h4>
-  <div class="markdown level1 summary"><p>Asynchronously locks, calls the function on the captured context or task scheduler (if any) then unlocks. The returned value from the function is returned. If the function throws an exception, the lock is released automatically.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task&lt;TResult&gt; WithLockAsync&lt;TResult&gt;(Func&lt;T, TResult&gt; func, CancellationToken cancellationToken)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Func</span>&lt;T, TResult&gt;</td>
-        <td><span class="parametername">func</span></td>
-        <td><p>The protected object is supplied as the argument of the function. The returned value is returned by this method.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Threading.CancellationToken</span></td>
-        <td><span class="parametername">cancellationToken</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;TResult&gt;</td>
+        <td><span class="xref">Task</span>&lt;TResult&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -2097,94 +2107,7 @@
     </tbody>
   </table>
   <a id="InSync_AsyncSynchronized_1_WithLockAsync_" data-uid="InSync.AsyncSynchronized`1.WithLockAsync*"></a>
-  <h4 id="InSync_AsyncSynchronized_1_WithLockAsync__1_System_Func__0___0__System_Threading_CancellationToken_System_Boolean_" data-uid="InSync.AsyncSynchronized`1.WithLockAsync``1(System.Func{`0,``0},System.Threading.CancellationToken,System.Boolean)">WithLockAsync&lt;TResult&gt;(Func&lt;T, TResult&gt;, CancellationToken, Boolean)</h4>
-  <div class="markdown level1 summary"><p>Asynchronously locks, synchronously calls the function then unlocks. The returned value from the function is returned. If the function throws an exception, the lock is released automatically.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task&lt;TResult&gt; WithLockAsync&lt;TResult&gt;(Func&lt;T, TResult&gt; func, CancellationToken cancellationToken, bool onCapturedContext)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Func</span>&lt;T, TResult&gt;</td>
-        <td><span class="parametername">func</span></td>
-        <td><p>The protected object is supplied as the argument of the function. The returned value is returned by this method.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Threading.CancellationToken</span></td>
-        <td><span class="parametername">cancellationToken</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td><span class="parametername">onCapturedContext</span></td>
-        <td><p><code>true</code> to call the function on the original context or task scheduler if there is a context.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;TResult&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">TResult</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="InSync.LockException.html">LockException</a></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="InSync.UnlockException.html">UnlockException</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="InSync_AsyncSynchronized_1_WithLockAsync_" data-uid="InSync.AsyncSynchronized`1.WithLockAsync*"></a>
-  <h4 id="InSync_AsyncSynchronized_1_WithLockAsync__1_System_Func__0_System_Threading_Tasks_Task___0___" data-uid="InSync.AsyncSynchronized`1.WithLockAsync``1(System.Func{`0,System.Threading.Tasks.Task{``0}})">WithLockAsync&lt;TResult&gt;(Func&lt;T, Task&lt;TResult&gt;&gt;)</h4>
+  <h4 id="InSync_AsyncSynchronized_1_WithLockAsync__1_Func__0_Task___0___" data-uid="InSync.AsyncSynchronized`1.WithLockAsync``1(Func{`0,Task{``0}})">WithLockAsync&lt;TResult&gt;(Func&lt;T, Task&lt;TResult&gt;&gt;)</h4>
   <div class="markdown level1 summary"><p>Asynchronously locks, calls the function on the captured context or task scheduler (if any) then unlocks. The returned value from the function is returned. If the function throws an exception, the lock is released automatically.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -2203,7 +2126,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Func</span>&lt;T, <span class="xref">System.Threading.Tasks.Task</span>&lt;TResult&gt;&gt;</td>
+        <td><span class="xref">Func</span>&lt;T, <span class="xref">Task</span>&lt;TResult&gt;&gt;</td>
         <td><span class="parametername">asyncFunc</span></td>
         <td><p>The protected object is supplied as the argument of the function. The returned value is returned by this method.</p>
 </td>
@@ -2220,7 +2143,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;TResult&gt;</td>
+        <td><span class="xref">Task</span>&lt;TResult&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -2260,89 +2183,7 @@
     </tbody>
   </table>
   <a id="InSync_AsyncSynchronized_1_WithLockAsync_" data-uid="InSync.AsyncSynchronized`1.WithLockAsync*"></a>
-  <h4 id="InSync_AsyncSynchronized_1_WithLockAsync__1_System_Func__0_System_Threading_Tasks_Task___0___System_Boolean_" data-uid="InSync.AsyncSynchronized`1.WithLockAsync``1(System.Func{`0,System.Threading.Tasks.Task{``0}},System.Boolean)">WithLockAsync&lt;TResult&gt;(Func&lt;T, Task&lt;TResult&gt;&gt;, Boolean)</h4>
-  <div class="markdown level1 summary"><p>Asynchronously locks, calls the function then unlocks. The returned value from the function is returned. If the function throws an exception, the lock is released automatically.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task&lt;TResult&gt; WithLockAsync&lt;TResult&gt;(Func&lt;T, Task&lt;TResult&gt;&gt; asyncFunc, bool onCapturedContext)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Func</span>&lt;T, <span class="xref">System.Threading.Tasks.Task</span>&lt;TResult&gt;&gt;</td>
-        <td><span class="parametername">asyncFunc</span></td>
-        <td><p>The protected object is supplied as the argument of the function. The returned value is returned by this method.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td><span class="parametername">onCapturedContext</span></td>
-        <td><p><code>true</code> to call the function on the original context or task scheduler if there is a context.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;TResult&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">TResult</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="InSync.LockException.html">LockException</a></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="InSync.UnlockException.html">UnlockException</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="InSync_AsyncSynchronized_1_WithLockAsync_" data-uid="InSync.AsyncSynchronized`1.WithLockAsync*"></a>
-  <h4 id="InSync_AsyncSynchronized_1_WithLockAsync__1_System_Func__0_System_Threading_Tasks_Task___0___System_Threading_CancellationToken_" data-uid="InSync.AsyncSynchronized`1.WithLockAsync``1(System.Func{`0,System.Threading.Tasks.Task{``0}},System.Threading.CancellationToken)">WithLockAsync&lt;TResult&gt;(Func&lt;T, Task&lt;TResult&gt;&gt;, CancellationToken)</h4>
+  <h4 id="InSync_AsyncSynchronized_1_WithLockAsync__1_Func__0_Task___0___CancellationToken_" data-uid="InSync.AsyncSynchronized`1.WithLockAsync``1(Func{`0,Task{``0}},CancellationToken)">WithLockAsync&lt;TResult&gt;(Func&lt;T, Task&lt;TResult&gt;&gt;, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Asynchronously locks, calls the function on the captured context or task scheduler (if any) then unlocks. The returned value from the function is returned. If the function throws an exception, the lock is released automatically.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -2361,13 +2202,13 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Func</span>&lt;T, <span class="xref">System.Threading.Tasks.Task</span>&lt;TResult&gt;&gt;</td>
+        <td><span class="xref">Func</span>&lt;T, <span class="xref">Task</span>&lt;TResult&gt;&gt;</td>
         <td><span class="parametername">asyncFunc</span></td>
         <td><p>The protected object is supplied as the argument of the function. The returned value is returned by this method.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Threading.CancellationToken</span></td>
+        <td><span class="xref">CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>
         <td></td>
       </tr>
@@ -2383,7 +2224,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;TResult&gt;</td>
+        <td><span class="xref">Task</span>&lt;TResult&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -2413,10 +2254,6 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.OperationCanceledException</span></td>
-        <td></td>
-      </tr>
-      <tr>
         <td><a class="xref" href="InSync.LockException.html">LockException</a></td>
         <td></td>
       </tr>
@@ -2427,7 +2264,7 @@
     </tbody>
   </table>
   <a id="InSync_AsyncSynchronized_1_WithLockAsync_" data-uid="InSync.AsyncSynchronized`1.WithLockAsync*"></a>
-  <h4 id="InSync_AsyncSynchronized_1_WithLockAsync__1_System_Func__0_System_Threading_Tasks_Task___0___System_Threading_CancellationToken_System_Boolean_" data-uid="InSync.AsyncSynchronized`1.WithLockAsync``1(System.Func{`0,System.Threading.Tasks.Task{``0}},System.Threading.CancellationToken,System.Boolean)">WithLockAsync&lt;TResult&gt;(Func&lt;T, Task&lt;TResult&gt;&gt;, CancellationToken, Boolean)</h4>
+  <h4 id="InSync_AsyncSynchronized_1_WithLockAsync__1_Func__0_Task___0___CancellationToken_System_Boolean_" data-uid="InSync.AsyncSynchronized`1.WithLockAsync``1(Func{`0,Task{``0}},CancellationToken,System.Boolean)">WithLockAsync&lt;TResult&gt;(Func&lt;T, Task&lt;TResult&gt;&gt;, CancellationToken, Boolean)</h4>
   <div class="markdown level1 summary"><p>Asynchronously locks, calls the function then unlocks. The returned value from the function is returned. If the function throws an exception, the lock is released automatically.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -2446,13 +2283,13 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Func</span>&lt;T, <span class="xref">System.Threading.Tasks.Task</span>&lt;TResult&gt;&gt;</td>
+        <td><span class="xref">Func</span>&lt;T, <span class="xref">Task</span>&lt;TResult&gt;&gt;</td>
         <td><span class="parametername">asyncFunc</span></td>
         <td><p>The protected object is supplied as the argument of the function. The returned value is returned by this method.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Threading.CancellationToken</span></td>
+        <td><span class="xref">CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>
         <td></td>
       </tr>
@@ -2474,7 +2311,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;TResult&gt;</td>
+        <td><span class="xref">Task</span>&lt;TResult&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -2504,9 +2341,87 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.OperationCanceledException</span></td>
+        <td><a class="xref" href="InSync.LockException.html">LockException</a></td>
         <td></td>
       </tr>
+      <tr>
+        <td><a class="xref" href="InSync.UnlockException.html">UnlockException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="InSync_AsyncSynchronized_1_WithLockAsync_" data-uid="InSync.AsyncSynchronized`1.WithLockAsync*"></a>
+  <h4 id="InSync_AsyncSynchronized_1_WithLockAsync__1_Func__0_Task___0___System_Boolean_" data-uid="InSync.AsyncSynchronized`1.WithLockAsync``1(Func{`0,Task{``0}},System.Boolean)">WithLockAsync&lt;TResult&gt;(Func&lt;T, Task&lt;TResult&gt;&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Asynchronously locks, calls the function then unlocks. The returned value from the function is returned. If the function throws an exception, the lock is released automatically.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;TResult&gt; WithLockAsync&lt;TResult&gt;(Func&lt;T, Task&lt;TResult&gt;&gt; asyncFunc, bool onCapturedContext)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Func</span>&lt;T, <span class="xref">Task</span>&lt;TResult&gt;&gt;</td>
+        <td><span class="parametername">asyncFunc</span></td>
+        <td><p>The protected object is supplied as the argument of the function. The returned value is returned by this method.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">onCapturedContext</span></td>
+        <td><p><code>true</code> to call the function on the original context or task scheduler if there is a context.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;TResult&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TResult</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
       <tr>
         <td><a class="xref" href="InSync.LockException.html">LockException</a></td>
         <td></td>
@@ -2537,13 +2452,13 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Object</span>&gt;</td>
+        <td><span class="xref">Task</span>&lt;<span class="xref">System.Object</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <a id="InSync_AsyncSynchronized_1_InSync_IBareAsyncLock_BarelyLockAsync_" data-uid="InSync.AsyncSynchronized`1.InSync#IBareAsyncLock#BarelyLockAsync*"></a>
-  <h4 id="InSync_AsyncSynchronized_1_InSync_IBareAsyncLock_BarelyLockAsync_System_Threading_CancellationToken_" data-uid="InSync.AsyncSynchronized`1.InSync#IBareAsyncLock#BarelyLockAsync(System.Threading.CancellationToken)">IBareAsyncLock.BarelyLockAsync(CancellationToken)</h4>
+  <h4 id="InSync_AsyncSynchronized_1_InSync_IBareAsyncLock_BarelyLockAsync_CancellationToken_" data-uid="InSync.AsyncSynchronized`1.InSync#IBareAsyncLock#BarelyLockAsync(CancellationToken)">IBareAsyncLock.BarelyLockAsync(CancellationToken)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -2561,7 +2476,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.CancellationToken</span></td>
+        <td><span class="xref">CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>
         <td></td>
       </tr>
@@ -2577,19 +2492,19 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Object</span>&gt;</td>
+        <td><span class="xref">Task</span>&lt;<span class="xref">System.Object</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <a id="InSync_AsyncSynchronized_1_InSync_IBareAsyncLock_BarelyTryLock_" data-uid="InSync.AsyncSynchronized`1.InSync#IBareAsyncLock#BarelyTryLock*"></a>
-  <h4 id="InSync_AsyncSynchronized_1_InSync_IBareAsyncLock_BarelyTryLock_System_Object__" data-uid="InSync.AsyncSynchronized`1.InSync#IBareAsyncLock#BarelyTryLock(System.Object@)">IBareAsyncLock.BarelyTryLock(out Object)</h4>
+  <h4 id="InSync_AsyncSynchronized_1_InSync_IBareAsyncLock_BarelyTryLock_System_Nullable_System_Object___" data-uid="InSync.AsyncSynchronized`1.InSync#IBareAsyncLock#BarelyTryLock(System.Nullable{System.Object}@)">IBareAsyncLock.BarelyTryLock(out Nullable&lt;Object&gt;)</h4>
   <div class="markdown level1 summary"><p>Tries to acquire the lock. It returns <code>true</code> and the protected non-null object if the lock is acquired.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool IBareAsyncLock.BarelyTryLock(out object value)</code></pre>
+    <pre><code class="lang-csharp hljs">bool IBareAsyncLock.BarelyTryLock(out object? value)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2602,7 +2517,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Object</span></td>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Object</span>&gt;</td>
         <td><span class="parametername">value</span></td>
         <td><p>The protected non-null object if the lock is acquired, otherwise, <code>null</code> is returned.</p>
 </td>
@@ -2664,13 +2579,13 @@
     </tbody>
   </table>
   <a id="InSync_AsyncSynchronized_1_InSync_IBareLock_BarelyTryLock_" data-uid="InSync.AsyncSynchronized`1.InSync#IBareLock#BarelyTryLock*"></a>
-  <h4 id="InSync_AsyncSynchronized_1_InSync_IBareLock_BarelyTryLock_System_Int32_System_Object__" data-uid="InSync.AsyncSynchronized`1.InSync#IBareLock#BarelyTryLock(System.Int32,System.Object@)">IBareLock.BarelyTryLock(Int32, out Object)</h4>
+  <h4 id="InSync_AsyncSynchronized_1_InSync_IBareLock_BarelyTryLock_System_Int32_System_Nullable_System_Object___" data-uid="InSync.AsyncSynchronized`1.InSync#IBareLock#BarelyTryLock(System.Int32,System.Nullable{System.Object}@)">IBareLock.BarelyTryLock(Int32, out Nullable&lt;Object&gt;)</h4>
   <div class="markdown level1 summary"><p>Tries to acquire the lock. It returns <code>true</code> and the protected non-null object if the lock is acquired.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool IBareLock.BarelyTryLock(int millisecondsTimeout, out object value)</code></pre>
+    <pre><code class="lang-csharp hljs">bool IBareLock.BarelyTryLock(int millisecondsTimeout, out object? value)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2685,11 +2600,11 @@
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">millisecondsTimeout</span></td>
-        <td><p>The number of milliseconds to wait, <span class="xref">System.Threading.Timeout.Infinite</span> (-1) to wait indefinitely, or zero to test the state of the wait handle and return immediately.</p>
+        <td><p>The number of milliseconds to wait, <seealso cref="!:System.Threading.Timeout.Infinite"></seealso> (-1) to wait indefinitely, or zero to test the state of the wait handle and return immediately.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Object</span></td>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Object</span>&gt;</td>
         <td><span class="parametername">value</span></td>
         <td><p>The protected non-null object if the lock is acquired, otherwise, <code>null</code> is returned.</p>
 </td>
@@ -2728,13 +2643,13 @@
     </tbody>
   </table>
   <a id="InSync_AsyncSynchronized_1_InSync_IBareLock_BarelyTryLock_" data-uid="InSync.AsyncSynchronized`1.InSync#IBareLock#BarelyTryLock*"></a>
-  <h4 id="InSync_AsyncSynchronized_1_InSync_IBareLock_BarelyTryLock_System_Object__" data-uid="InSync.AsyncSynchronized`1.InSync#IBareLock#BarelyTryLock(System.Object@)">IBareLock.BarelyTryLock(out Object)</h4>
+  <h4 id="InSync_AsyncSynchronized_1_InSync_IBareLock_BarelyTryLock_System_Nullable_System_Object___" data-uid="InSync.AsyncSynchronized`1.InSync#IBareLock#BarelyTryLock(System.Nullable{System.Object}@)">IBareLock.BarelyTryLock(out Nullable&lt;Object&gt;)</h4>
   <div class="markdown level1 summary"><p>Tries to acquire the lock. It returns <code>true</code> and the protected non-null object if the lock is acquired.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool IBareLock.BarelyTryLock(out object value)</code></pre>
+    <pre><code class="lang-csharp hljs">bool IBareLock.BarelyTryLock(out object? value)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2747,7 +2662,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Object</span></td>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Object</span>&gt;</td>
         <td><span class="parametername">value</span></td>
         <td><p>The protected non-null object if the lock is acquired, otherwise, <code>null</code> is returned.</p>
 </td>
@@ -2786,13 +2701,13 @@
     </tbody>
   </table>
   <a id="InSync_AsyncSynchronized_1_InSync_IBareLock_BarelyTryLock_" data-uid="InSync.AsyncSynchronized`1.InSync#IBareLock#BarelyTryLock*"></a>
-  <h4 id="InSync_AsyncSynchronized_1_InSync_IBareLock_BarelyTryLock_System_TimeSpan_System_Object__" data-uid="InSync.AsyncSynchronized`1.InSync#IBareLock#BarelyTryLock(System.TimeSpan,System.Object@)">IBareLock.BarelyTryLock(TimeSpan, out Object)</h4>
+  <h4 id="InSync_AsyncSynchronized_1_InSync_IBareLock_BarelyTryLock_TimeSpan_System_Nullable_System_Object___" data-uid="InSync.AsyncSynchronized`1.InSync#IBareLock#BarelyTryLock(TimeSpan,System.Nullable{System.Object}@)">IBareLock.BarelyTryLock(TimeSpan, out Nullable&lt;Object&gt;)</h4>
   <div class="markdown level1 summary"><p>Tries to acquire the lock. It returns <code>true</code> and the protected non-null object if the lock is acquired.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool IBareLock.BarelyTryLock(TimeSpan timeout, out object value)</code></pre>
+    <pre><code class="lang-csharp hljs">bool IBareLock.BarelyTryLock(TimeSpan timeout, out object? value)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2805,13 +2720,13 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.TimeSpan</span></td>
+        <td><span class="xref">TimeSpan</span></td>
         <td><span class="parametername">timeout</span></td>
-        <td><p>A <span class="xref">System.TimeSpan</span> that represents the number of milliseconds to wait, a <span class="xref">System.TimeSpan</span> that represents -1 milliseconds to wait indefinitely, or a <span class="xref">System.TimeSpan</span> that represents 0 milliseconds to test the wait handle and return immediately.</p>
+        <td><p>A <seealso cref="!:TimeSpan"></seealso> that represents the number of milliseconds to wait, a <seealso cref="!:TimeSpan"></seealso> that represents -1 milliseconds to wait indefinitely, or a <seealso cref="!:TimeSpan"></seealso> that represents 0 milliseconds to test the wait handle and return immediately.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Object</span></td>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Object</span>&gt;</td>
         <td><span class="parametername">value</span></td>
         <td><p>The protected non-null object if the lock is acquired, otherwise, <code>null</code> is returned.</p>
 </td>

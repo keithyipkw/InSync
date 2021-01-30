@@ -173,41 +173,17 @@
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">ReaderWriterSynchronizedFactory</span></div>
   </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
-    <div>
-      <span class="xref">System.Object.Equals(System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.GetHashCode()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.GetType()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.MemberwiseClone()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.ToString()</span>
-    </div>
-  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="InSync.html">InSync</a></h6>
   <h6><strong>Assembly</strong>: InSync.dll</h6>
   <h5 id="InSync_ReaderWriterSynchronizedFactory_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static class ReaderWriterSynchronizedFactory</code></pre>
+    <pre><code class="lang-csharp hljs">public static class ReaderWriterSynchronizedFactory : object</code></pre>
   </div>
   <h3 id="methods">Methods
   </h3>
   <a id="InSync_ReaderWriterSynchronizedFactory_Create_" data-uid="InSync.ReaderWriterSynchronizedFactory.Create*"></a>
   <h4 id="InSync_ReaderWriterSynchronizedFactory_Create__1___0_" data-uid="InSync.ReaderWriterSynchronizedFactory.Create``1(``0)">Create&lt;T&gt;(T)</h4>
-  <div class="markdown level1 summary"><p>Creates a <a class="xref" href="InSync.ReaderWriterSynchronized-1.html">ReaderWriterSynchronized&lt;T&gt;</a> with the specified object to protect. A new <span class="xref">System.Threading.ReaderWriterLockSlim</span> is created with default property values and used.</p>
+  <div class="markdown level1 summary"><p>Creates a <a class="xref" href="InSync.ReaderWriterSynchronized-1.html">ReaderWriterSynchronized&lt;T&gt;</a> with the specified object to protect. A new <seealso cref="!:ReaderWriterLockSlim"></seealso> is created with default property values and used.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -265,25 +241,9 @@
       </tr>
     </tbody>
   </table>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.ArgumentNullException</span></td>
-        <td><p><code data-dev-comment-type="paramref" class="paramref">value</code> is <code>null</code>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
   <a id="InSync_ReaderWriterSynchronizedFactory_Create_" data-uid="InSync.ReaderWriterSynchronizedFactory.Create*"></a>
-  <h4 id="InSync_ReaderWriterSynchronizedFactory_Create__1_System_Threading_ReaderWriterLockSlim___0_" data-uid="InSync.ReaderWriterSynchronizedFactory.Create``1(System.Threading.ReaderWriterLockSlim,``0)">Create&lt;T&gt;(ReaderWriterLockSlim, T)</h4>
-  <div class="markdown level1 summary"><p>Creates a <a class="xref" href="InSync.ReaderWriterSynchronized-1.html">ReaderWriterSynchronized&lt;T&gt;</a> with the specified <span class="xref">System.Threading.ReaderWriterLockSlim</span> and object to protect.</p>
+  <h4 id="InSync_ReaderWriterSynchronizedFactory_Create__1_ReaderWriterLockSlim___0_" data-uid="InSync.ReaderWriterSynchronizedFactory.Create``1(ReaderWriterLockSlim,``0)">Create&lt;T&gt;(ReaderWriterLockSlim, T)</h4>
+  <div class="markdown level1 summary"><p>Creates a <a class="xref" href="InSync.ReaderWriterSynchronized-1.html">ReaderWriterSynchronized&lt;T&gt;</a> with the specified <seealso cref="!:ReaderWriterLockSlim"></seealso> and object to protect.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -302,9 +262,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.ReaderWriterLockSlim</span></td>
+        <td><span class="xref">ReaderWriterLockSlim</span></td>
         <td><span class="parametername">readerWriterLockSlim</span></td>
-        <td><p>The <span class="xref">System.Threading.ReaderWriterLockSlim</span> for synchronization.</p>
+        <td><p>The <seealso cref="!:ReaderWriterLockSlim"></seealso> for synchronization.</p>
 </td>
       </tr>
       <tr>
@@ -347,30 +307,9 @@
       </tr>
     </tbody>
   </table>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.ArgumentNullException</span></td>
-        <td><p><code data-dev-comment-type="paramref" class="paramref">readerWriterLockSlim</code> is <code>null</code>.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.ArgumentNullException</span></td>
-        <td><p><code data-dev-comment-type="paramref" class="paramref">value</code> is <code>null</code>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
   <a id="InSync_ReaderWriterSynchronizedFactory_Create_" data-uid="InSync.ReaderWriterSynchronizedFactory.Create*"></a>
   <h4 id="InSync_ReaderWriterSynchronizedFactory_Create__2___0___1_" data-uid="InSync.ReaderWriterSynchronizedFactory.Create``2(``0,``1)">Create&lt;TWrite, TRead&gt;(TWrite, TRead)</h4>
-  <div class="markdown level1 summary"><p>Creates a <a class="xref" href="InSync.ReaderWriterSynchronized-2.html">ReaderWriterSynchronized&lt;TWrite, TRead&gt;</a> the specified writer to protect and reader to protect. A new <span class="xref">System.Threading.ReaderWriterLockSlim</span> is created with default property values and used.</p>
+  <div class="markdown level1 summary"><p>Creates a <a class="xref" href="InSync.ReaderWriterSynchronized-2.html">ReaderWriterSynchronized&lt;TWrite, TRead&gt;</a> the specified writer to protect and reader to protect. A new <seealso cref="!:ReaderWriterLockSlim"></seealso> is created with default property values and used.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -439,30 +378,9 @@
       </tr>
     </tbody>
   </table>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.ArgumentNullException</span></td>
-        <td><p><code data-dev-comment-type="paramref" class="paramref">writer</code> is <code>null</code>.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.ArgumentNullException</span></td>
-        <td><p><code data-dev-comment-type="paramref" class="paramref">reader</code> is <code>null</code>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
   <a id="InSync_ReaderWriterSynchronizedFactory_Create_" data-uid="InSync.ReaderWriterSynchronizedFactory.Create*"></a>
-  <h4 id="InSync_ReaderWriterSynchronizedFactory_Create__2_System_Threading_ReaderWriterLockSlim___0___1_" data-uid="InSync.ReaderWriterSynchronizedFactory.Create``2(System.Threading.ReaderWriterLockSlim,``0,``1)">Create&lt;TWrite, TRead&gt;(ReaderWriterLockSlim, TWrite, TRead)</h4>
-  <div class="markdown level1 summary"><p>Creates a <a class="xref" href="InSync.ReaderWriterSynchronized-2.html">ReaderWriterSynchronized&lt;TWrite, TRead&gt;</a> with the specified <span class="xref">System.Threading.ReaderWriterLockSlim</span>, writer to protect and reader to protect.</p>
+  <h4 id="InSync_ReaderWriterSynchronizedFactory_Create__2_ReaderWriterLockSlim___0___1_" data-uid="InSync.ReaderWriterSynchronizedFactory.Create``2(ReaderWriterLockSlim,``0,``1)">Create&lt;TWrite, TRead&gt;(ReaderWriterLockSlim, TWrite, TRead)</h4>
+  <div class="markdown level1 summary"><p>Creates a <a class="xref" href="InSync.ReaderWriterSynchronized-2.html">ReaderWriterSynchronized&lt;TWrite, TRead&gt;</a> with the specified <seealso cref="!:ReaderWriterLockSlim"></seealso>, writer to protect and reader to protect.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -481,9 +399,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.ReaderWriterLockSlim</span></td>
+        <td><span class="xref">ReaderWriterLockSlim</span></td>
         <td><span class="parametername">readerWriterLockSlim</span></td>
-        <td><p>The <span class="xref">System.Threading.ReaderWriterLockSlim</span> for synchronization.</p>
+        <td><p>The <seealso cref="!:ReaderWriterLockSlim"></seealso> for synchronization.</p>
 </td>
       </tr>
       <tr>
@@ -533,32 +451,6 @@
       <tr>
         <td><span class="parametername">TRead</span></td>
         <td><p>The type of the reader to protect.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.ArgumentNullException</span></td>
-        <td><p><code data-dev-comment-type="paramref" class="paramref">readerWriterLockSlim</code> is <code>null</code>.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.ArgumentNullException</span></td>
-        <td><p><code data-dev-comment-type="paramref" class="paramref">writer</code> is <code>null</code>.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.ArgumentNullException</span></td>
-        <td><p><code data-dev-comment-type="paramref" class="paramref">reader</code> is <code>null</code>.</p>
 </td>
       </tr>
     </tbody>

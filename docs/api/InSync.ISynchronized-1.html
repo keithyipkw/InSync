@@ -295,7 +295,7 @@
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">millisecondsTimeout</span></td>
-        <td><p>The number of milliseconds to wait, <span class="xref">System.Threading.Timeout.Infinite</span> (-1) to wait indefinitely, or zero to test the state of the wait handle and return immediately.</p>
+        <td><p>The number of milliseconds to wait, <seealso cref="!:System.Threading.Timeout.Infinite"></seealso> (-1) to wait indefinitely, or zero to test the state of the wait handle and return immediately.</p>
 </td>
       </tr>
     </tbody>
@@ -332,7 +332,7 @@
     </tbody>
   </table>
   <a id="InSync_ISynchronized_1_TryLock_" data-uid="InSync.ISynchronized`1.TryLock*"></a>
-  <h4 id="InSync_ISynchronized_1_TryLock_System_TimeSpan_" data-uid="InSync.ISynchronized`1.TryLock(System.TimeSpan)">TryLock(TimeSpan)</h4>
+  <h4 id="InSync_ISynchronized_1_TryLock_TimeSpan_" data-uid="InSync.ISynchronized`1.TryLock(TimeSpan)">TryLock(TimeSpan)</h4>
   <div class="markdown level1 summary"><p>Tries to lock and returns a guard to allow access of the protected object and unlocking. If the lock is not acquired, this method returns null immediately.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -351,9 +351,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.TimeSpan</span></td>
+        <td><span class="xref">TimeSpan</span></td>
         <td><span class="parametername">timeout</span></td>
-        <td><p>A <span class="xref">System.TimeSpan</span> that represents the number of milliseconds to wait, a <span class="xref">System.TimeSpan</span> that represents -1 milliseconds to wait indefinitely, or a <span class="xref">System.TimeSpan</span> that represents 0 milliseconds to test the wait handle and return immediately.</p>
+        <td><p>A <seealso cref="!:TimeSpan"></seealso> that represents the number of milliseconds to wait, a <seealso cref="!:TimeSpan"></seealso> that represents -1 milliseconds to wait indefinitely, or a <seealso cref="!:TimeSpan"></seealso> that represents 0 milliseconds to test the wait handle and return immediately.</p>
 </td>
       </tr>
     </tbody>
@@ -390,7 +390,7 @@
     </tbody>
   </table>
   <a id="InSync_ISynchronized_1_TryWithLock_" data-uid="InSync.ISynchronized`1.TryWithLock*"></a>
-  <h4 id="InSync_ISynchronized_1_TryWithLock_System_Action__0__" data-uid="InSync.ISynchronized`1.TryWithLock(System.Action{`0})">TryWithLock(Action&lt;T&gt;)</h4>
+  <h4 id="InSync_ISynchronized_1_TryWithLock_Action__0__" data-uid="InSync.ISynchronized`1.TryWithLock(Action{`0})">TryWithLock(Action&lt;T&gt;)</h4>
   <div class="markdown level1 summary"><p>Tries to lock and performs the action then unlocks. If the lock is not acquired, this method returns immediately. If the action throws an exception, the lock is released automatically.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -409,7 +409,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Action</span>&lt;T&gt;</td>
+        <td><span class="xref">Action</span>&lt;T&gt;</td>
         <td><span class="parametername">action</span></td>
         <td><p>The protected object is supplied as the argument of the action</p>
 </td>
@@ -452,7 +452,7 @@
     </tbody>
   </table>
   <a id="InSync_ISynchronized_1_TryWithLock_" data-uid="InSync.ISynchronized`1.TryWithLock*"></a>
-  <h4 id="InSync_ISynchronized_1_TryWithLock_System_Int32_System_Action__0__" data-uid="InSync.ISynchronized`1.TryWithLock(System.Int32,System.Action{`0})">TryWithLock(Int32, Action&lt;T&gt;)</h4>
+  <h4 id="InSync_ISynchronized_1_TryWithLock_System_Int32_Action__0__" data-uid="InSync.ISynchronized`1.TryWithLock(System.Int32,Action{`0})">TryWithLock(Int32, Action&lt;T&gt;)</h4>
   <div class="markdown level1 summary"><p>Tries to lock and performs the action then unlocks. If the lock is not acquired, this method returns immediately. If the action throws an exception, the lock is released automatically.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -473,11 +473,11 @@
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">millisecondsTimeout</span></td>
-        <td><p>The number of milliseconds to wait, <span class="xref">System.Threading.Timeout.Infinite</span> (-1) to wait indefinitely, or zero to test the state of the wait handle and return immediately.</p>
+        <td><p>The number of milliseconds to wait, <seealso cref="!:System.Threading.Timeout.Infinite"></seealso> (-1) to wait indefinitely, or zero to test the state of the wait handle and return immediately.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Action</span>&lt;T&gt;</td>
+        <td><span class="xref">Action</span>&lt;T&gt;</td>
         <td><span class="parametername">action</span></td>
         <td><p>The protected object is supplied as the argument of the action</p>
 </td>
@@ -520,7 +520,7 @@
     </tbody>
   </table>
   <a id="InSync_ISynchronized_1_TryWithLock_" data-uid="InSync.ISynchronized`1.TryWithLock*"></a>
-  <h4 id="InSync_ISynchronized_1_TryWithLock_System_TimeSpan_System_Action__0__" data-uid="InSync.ISynchronized`1.TryWithLock(System.TimeSpan,System.Action{`0})">TryWithLock(TimeSpan, Action&lt;T&gt;)</h4>
+  <h4 id="InSync_ISynchronized_1_TryWithLock_TimeSpan_Action__0__" data-uid="InSync.ISynchronized`1.TryWithLock(TimeSpan,Action{`0})">TryWithLock(TimeSpan, Action&lt;T&gt;)</h4>
   <div class="markdown level1 summary"><p>Tries to lock and performs the action then unlocks. If the lock is not acquired, this method returns immediately. If the action throws an exception, the lock is released automatically.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -539,13 +539,13 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.TimeSpan</span></td>
+        <td><span class="xref">TimeSpan</span></td>
         <td><span class="parametername">timeout</span></td>
-        <td><p>A <span class="xref">System.TimeSpan</span> that represents the number of milliseconds to wait, a <span class="xref">System.TimeSpan</span> that represents -1 milliseconds to wait indefinitely, or a <span class="xref">System.TimeSpan</span> that represents 0 milliseconds to test the wait handle and return immediately.</p>
+        <td><p>A <seealso cref="!:TimeSpan"></seealso> that represents the number of milliseconds to wait, a <seealso cref="!:TimeSpan"></seealso> that represents -1 milliseconds to wait indefinitely, or a <seealso cref="!:TimeSpan"></seealso> that represents 0 milliseconds to test the wait handle and return immediately.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Action</span>&lt;T&gt;</td>
+        <td><span class="xref">Action</span>&lt;T&gt;</td>
         <td><span class="parametername">action</span></td>
         <td><p>The protected object is supplied as the argument of the action</p>
 </td>
@@ -588,7 +588,7 @@
     </tbody>
   </table>
   <a id="InSync_ISynchronized_1_WithLock_" data-uid="InSync.ISynchronized`1.WithLock*"></a>
-  <h4 id="InSync_ISynchronized_1_WithLock_System_Action__0__" data-uid="InSync.ISynchronized`1.WithLock(System.Action{`0})">WithLock(Action&lt;T&gt;)</h4>
+  <h4 id="InSync_ISynchronized_1_WithLock_Action__0__" data-uid="InSync.ISynchronized`1.WithLock(Action{`0})">WithLock(Action&lt;T&gt;)</h4>
   <div class="markdown level1 summary"><p>Locks, performs the action then unlocks. If the action throws an exception, the lock is released automatically.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -607,7 +607,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Action</span>&lt;T&gt;</td>
+        <td><span class="xref">Action</span>&lt;T&gt;</td>
         <td><span class="parametername">action</span></td>
         <td><p>The protected object is supplied as the argument of the action</p>
 </td>
@@ -634,7 +634,7 @@
     </tbody>
   </table>
   <a id="InSync_ISynchronized_1_WithLock_" data-uid="InSync.ISynchronized`1.WithLock*"></a>
-  <h4 id="InSync_ISynchronized_1_WithLock__1_System_Func__0___0__" data-uid="InSync.ISynchronized`1.WithLock``1(System.Func{`0,``0})">WithLock&lt;TResult&gt;(Func&lt;T, TResult&gt;)</h4>
+  <h4 id="InSync_ISynchronized_1_WithLock__1_Func__0___0__" data-uid="InSync.ISynchronized`1.WithLock``1(Func{`0,``0})">WithLock&lt;TResult&gt;(Func&lt;T, TResult&gt;)</h4>
   <div class="markdown level1 summary"><p>Locks, call the function then unlocks. The returned value from the function is returned. If the function throws an exception, the lock is released automatically.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -653,7 +653,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Func</span>&lt;T, TResult&gt;</td>
+        <td><span class="xref">Func</span>&lt;T, TResult&gt;</td>
         <td><span class="parametername">func</span></td>
         <td><p>The protected object is supplied as the argument of the function. The returned value is returned by this method.</p>
 </td>

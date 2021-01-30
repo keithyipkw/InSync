@@ -173,41 +173,17 @@
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">AsyncSynchronized</span></div>
   </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
-    <div>
-      <span class="xref">System.Object.Equals(System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.GetHashCode()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.GetType()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.MemberwiseClone()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.ToString()</span>
-    </div>
-  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="InSync.html">InSync</a></h6>
   <h6><strong>Assembly</strong>: InSync.dll</h6>
   <h5 id="InSync_AsyncSynchronized_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static class AsyncSynchronized</code></pre>
+    <pre><code class="lang-csharp hljs">public static class AsyncSynchronized : object</code></pre>
   </div>
   <h3 id="methods">Methods
   </h3>
   <a id="InSync_AsyncSynchronized_Create_" data-uid="InSync.AsyncSynchronized.Create*"></a>
   <h4 id="InSync_AsyncSynchronized_Create__1___0_" data-uid="InSync.AsyncSynchronized.Create``1(``0)">Create&lt;T&gt;(T)</h4>
-  <div class="markdown level1 summary"><p>Creates a <a class="xref" href="InSync.AsyncSynchronized-1.html">AsyncSynchronized&lt;T&gt;</a> with the a new <span class="xref">System.Threading.SemaphoreSlim</span> which its initial count is 1 and the specified object to protect.</p>
+  <div class="markdown level1 summary"><p>Creates a <a class="xref" href="InSync.AsyncSynchronized-1.html">AsyncSynchronized&lt;T&gt;</a> with the a new <seealso cref="!:SemaphoreSlim"></seealso> which its initial count is 1 and the specified object to protect.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -264,25 +240,9 @@
       </tr>
     </tbody>
   </table>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.ArgumentNullException</span></td>
-        <td><p><code data-dev-comment-type="paramref" class="paramref">value</code> is <code>null</code>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
   <a id="InSync_AsyncSynchronized_Create_" data-uid="InSync.AsyncSynchronized.Create*"></a>
-  <h4 id="InSync_AsyncSynchronized_Create__1_System_Threading_SemaphoreSlim___0_" data-uid="InSync.AsyncSynchronized.Create``1(System.Threading.SemaphoreSlim,``0)">Create&lt;T&gt;(SemaphoreSlim, T)</h4>
-  <div class="markdown level1 summary"><p>Creates a <a class="xref" href="InSync.AsyncSynchronized-1.html">AsyncSynchronized&lt;T&gt;</a> with the specified <span class="xref">System.Threading.SemaphoreSlim</span> and object to protect.</p>
+  <h4 id="InSync_AsyncSynchronized_Create__1_SemaphoreSlim___0_" data-uid="InSync.AsyncSynchronized.Create``1(SemaphoreSlim,``0)">Create&lt;T&gt;(SemaphoreSlim, T)</h4>
+  <div class="markdown level1 summary"><p>Creates a <a class="xref" href="InSync.AsyncSynchronized-1.html">AsyncSynchronized&lt;T&gt;</a> with the specified <seealso cref="!:SemaphoreSlim"></seealso> and object to protect.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -301,7 +261,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.SemaphoreSlim</span></td>
+        <td><span class="xref">SemaphoreSlim</span></td>
         <td><span class="parametername">semaphore</span></td>
         <td><p>The semaphore for synchronization.</p>
 </td>
@@ -341,27 +301,6 @@
       <tr>
         <td><span class="parametername">T</span></td>
         <td><p>The type of the protected object.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.ArgumentNullException</span></td>
-        <td><p><code data-dev-comment-type="paramref" class="paramref">semaphore</code> is <code>null</code>.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.ArgumentNullException</span></td>
-        <td><p><code data-dev-comment-type="paramref" class="paramref">value</code> is <code>null</code>.</p>
 </td>
       </tr>
     </tbody>

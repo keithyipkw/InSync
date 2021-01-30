@@ -165,7 +165,7 @@
   
   <h1 id="InSync_ReaderWriterSynchronized_2" data-uid="InSync.ReaderWriterSynchronized`2" class="text-break">Class ReaderWriterSynchronized&lt;TWrite, TRead&gt;
   </h1>
-  <div class="markdown level0 summary"><p>Uses <span class="xref">System.Threading.ReaderWriterLockSlim</span> to synchronize and only expose its protected reader or writer after a respective read or write synchronization begins. All the methods implementing its interfaces refer to the writer part. The readers are accessible via <a class="xref" href="InSync.ReaderWriterSynchronized-2.html#InSync_ReaderWriterSynchronized_2_Reader">Reader</a> and <a class="xref" href="InSync.ReaderWriterSynchronized-2.html#InSync_ReaderWriterSynchronized_2_UpgradeableReader">UpgradeableReader</a>.</p>
+  <div class="markdown level0 summary"><p>Uses <seealso cref="!:ReaderWriterLockSlim"></seealso> to synchronize and only expose its protected reader or writer after a respective read or write synchronization begins. All the methods implementing its interfaces refer to the writer part. The readers are accessible via <a class="xref" href="InSync.ReaderWriterSynchronized-2.html#InSync_ReaderWriterSynchronized_2_Reader">Reader</a> and <a class="xref" href="InSync.ReaderWriterSynchronized-2.html#InSync_ReaderWriterSynchronized_2_UpgradeableReader">UpgradeableReader</a>.</p>
 <p>Asynchronous operations are not supported. The protected reader and writer are non-null.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
@@ -181,35 +181,11 @@
     <div><a class="xref" href="InSync.IBareLock-1.html">IBareLock</a>&lt;TWrite&gt;</div>
     <div><a class="xref" href="InSync.IBareLock.html">IBareLock</a></div>
   </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
-    <div>
-      <span class="xref">System.Object.Equals(System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.GetHashCode()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.GetType()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.MemberwiseClone()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.ToString()</span>
-    </div>
-  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="InSync.html">InSync</a></h6>
   <h6><strong>Assembly</strong>: InSync.dll</h6>
   <h5 id="InSync_ReaderWriterSynchronized_2_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class ReaderWriterSynchronized&lt;TWrite, TRead&gt; : ISynchronized&lt;TWrite&gt;, IBareLock&lt;TWrite&gt;, IBareLock where TWrite : class where TRead : class</code></pre>
+    <pre><code class="lang-csharp hljs">public class ReaderWriterSynchronized&lt;TWrite, TRead&gt; : object, ISynchronized&lt;TWrite&gt;, IBareLock&lt;TWrite&gt;, IBareLock where TWrite : class where TRead : class</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -235,8 +211,8 @@
   <h3 id="constructors">Constructors
   </h3>
   <a id="InSync_ReaderWriterSynchronized_2__ctor_" data-uid="InSync.ReaderWriterSynchronized`2.#ctor*"></a>
-  <h4 id="InSync_ReaderWriterSynchronized_2__ctor_System_Threading_ReaderWriterLockSlim__0__1_" data-uid="InSync.ReaderWriterSynchronized`2.#ctor(System.Threading.ReaderWriterLockSlim,`0,`1)">ReaderWriterSynchronized(ReaderWriterLockSlim, TWrite, TRead)</h4>
-  <div class="markdown level1 summary"><p>Initializes a <a class="xref" href="InSync.ReaderWriterSynchronized-2.html">ReaderWriterSynchronized&lt;TWrite, TRead&gt;</a> with the specified <span class="xref">System.Threading.ReaderWriterLockSlim</span>, writer to protect and reader to protect.</p>
+  <h4 id="InSync_ReaderWriterSynchronized_2__ctor_ReaderWriterLockSlim__0__1_" data-uid="InSync.ReaderWriterSynchronized`2.#ctor(ReaderWriterLockSlim,`0,`1)">ReaderWriterSynchronized(ReaderWriterLockSlim, TWrite, TRead)</h4>
+  <div class="markdown level1 summary"><p>Initializes a <a class="xref" href="InSync.ReaderWriterSynchronized-2.html">ReaderWriterSynchronized&lt;TWrite, TRead&gt;</a> with the specified <seealso cref="!:ReaderWriterLockSlim"></seealso>, writer to protect and reader to protect.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -254,9 +230,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.ReaderWriterLockSlim</span></td>
+        <td><span class="xref">ReaderWriterLockSlim</span></td>
         <td><span class="parametername">readerWriterLockSlim</span></td>
-        <td><p>The <span class="xref">System.Threading.ReaderWriterLockSlim</span> for synchronization.</p>
+        <td><p>The <seealso cref="!:ReaderWriterLockSlim"></seealso> for synchronization.</p>
 </td>
       </tr>
       <tr>
@@ -269,32 +245,6 @@
         <td><span class="xref">TRead</span></td>
         <td><span class="parametername">reader</span></td>
         <td><p>The reader to protect.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.ArgumentNullException</span></td>
-        <td><p><code data-dev-comment-type="paramref" class="paramref">readerWriterLockSlim</code> is <code>null</code>.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.ArgumentNullException</span></td>
-        <td><p><code data-dev-comment-type="paramref" class="paramref">writer</code> is <code>null</code>.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.ArgumentNullException</span></td>
-        <td><p><code data-dev-comment-type="paramref" class="paramref">reader</code> is <code>null</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -325,7 +275,7 @@
     </tbody>
   </table>
   <h4 id="InSync_ReaderWriterSynchronized_2_readerWriterLockSlim" data-uid="InSync.ReaderWriterSynchronized`2.readerWriterLockSlim">readerWriterLockSlim</h4>
-  <div class="markdown level1 summary"><p>The <span class="xref">System.Threading.ReaderWriterLockSlim</span> for synchronization.</p>
+  <div class="markdown level1 summary"><p>The <seealso cref="!:ReaderWriterLockSlim"></seealso> for synchronization.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -342,7 +292,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.ReaderWriterLockSlim</span></td>
+        <td><span class="xref">ReaderWriterLockSlim</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -541,7 +491,7 @@
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">millisecondsTimeout</span></td>
-        <td><p>The number of milliseconds to wait, <span class="xref">System.Threading.Timeout.Infinite</span> (-1) to wait indefinitely, or zero to test the state of the wait handle and return immediately.</p>
+        <td><p>The number of milliseconds to wait, <seealso cref="!:System.Threading.Timeout.Infinite"></seealso> (-1) to wait indefinitely, or zero to test the state of the wait handle and return immediately.</p>
 </td>
       </tr>
       <tr>
@@ -583,7 +533,7 @@
     </tbody>
   </table>
   <a id="InSync_ReaderWriterSynchronized_2_BarelyTryLock_" data-uid="InSync.ReaderWriterSynchronized`2.BarelyTryLock*"></a>
-  <h4 id="InSync_ReaderWriterSynchronized_2_BarelyTryLock_System_TimeSpan__0__" data-uid="InSync.ReaderWriterSynchronized`2.BarelyTryLock(System.TimeSpan,`0@)">BarelyTryLock(TimeSpan, out TWrite)</h4>
+  <h4 id="InSync_ReaderWriterSynchronized_2_BarelyTryLock_TimeSpan__0__" data-uid="InSync.ReaderWriterSynchronized`2.BarelyTryLock(TimeSpan,`0@)">BarelyTryLock(TimeSpan, out TWrite)</h4>
   <div class="markdown level1 summary"><p>Tries to acquire the lock. It returns <code>true</code> and the protected non-null object if the lock is acquired.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -602,9 +552,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.TimeSpan</span></td>
+        <td><span class="xref">TimeSpan</span></td>
         <td><span class="parametername">timeout</span></td>
-        <td><p>A <span class="xref">System.TimeSpan</span> that represents the number of milliseconds to wait, a <span class="xref">System.TimeSpan</span> that represents -1 milliseconds to wait indefinitely, or a <span class="xref">System.TimeSpan</span> that represents 0 milliseconds to test the wait handle and return immediately.</p>
+        <td><p>A <seealso cref="!:TimeSpan"></seealso> that represents the number of milliseconds to wait, a <seealso cref="!:TimeSpan"></seealso> that represents -1 milliseconds to wait indefinitely, or a <seealso cref="!:TimeSpan"></seealso> that represents 0 milliseconds to test the wait handle and return immediately.</p>
 </td>
       </tr>
       <tr>
@@ -770,7 +720,7 @@
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">millisecondsTimeout</span></td>
-        <td><p>The number of milliseconds to wait, <span class="xref">System.Threading.Timeout.Infinite</span> (-1) to wait indefinitely, or zero to test the state of the wait handle and return immediately.</p>
+        <td><p>The number of milliseconds to wait, <seealso cref="!:System.Threading.Timeout.Infinite"></seealso> (-1) to wait indefinitely, or zero to test the state of the wait handle and return immediately.</p>
 </td>
       </tr>
     </tbody>
@@ -807,7 +757,7 @@
     </tbody>
   </table>
   <a id="InSync_ReaderWriterSynchronized_2_TryLock_" data-uid="InSync.ReaderWriterSynchronized`2.TryLock*"></a>
-  <h4 id="InSync_ReaderWriterSynchronized_2_TryLock_System_TimeSpan_" data-uid="InSync.ReaderWriterSynchronized`2.TryLock(System.TimeSpan)">TryLock(TimeSpan)</h4>
+  <h4 id="InSync_ReaderWriterSynchronized_2_TryLock_TimeSpan_" data-uid="InSync.ReaderWriterSynchronized`2.TryLock(TimeSpan)">TryLock(TimeSpan)</h4>
   <div class="markdown level1 summary"><p>Tries to lock and returns a guard to allow access of the protected object and unlocking. If the lock is not acquired, this method returns null immediately.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -826,9 +776,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.TimeSpan</span></td>
+        <td><span class="xref">TimeSpan</span></td>
         <td><span class="parametername">timeout</span></td>
-        <td><p>A <span class="xref">System.TimeSpan</span> that represents the number of milliseconds to wait, a <span class="xref">System.TimeSpan</span> that represents -1 milliseconds to wait indefinitely, or a <span class="xref">System.TimeSpan</span> that represents 0 milliseconds to test the wait handle and return immediately.</p>
+        <td><p>A <seealso cref="!:TimeSpan"></seealso> that represents the number of milliseconds to wait, a <seealso cref="!:TimeSpan"></seealso> that represents -1 milliseconds to wait indefinitely, or a <seealso cref="!:TimeSpan"></seealso> that represents 0 milliseconds to test the wait handle and return immediately.</p>
 </td>
       </tr>
     </tbody>
@@ -865,7 +815,7 @@
     </tbody>
   </table>
   <a id="InSync_ReaderWriterSynchronized_2_TryWithLock_" data-uid="InSync.ReaderWriterSynchronized`2.TryWithLock*"></a>
-  <h4 id="InSync_ReaderWriterSynchronized_2_TryWithLock_System_Action__0__" data-uid="InSync.ReaderWriterSynchronized`2.TryWithLock(System.Action{`0})">TryWithLock(Action&lt;TWrite&gt;)</h4>
+  <h4 id="InSync_ReaderWriterSynchronized_2_TryWithLock_Action__0__" data-uid="InSync.ReaderWriterSynchronized`2.TryWithLock(Action{`0})">TryWithLock(Action&lt;TWrite&gt;)</h4>
   <div class="markdown level1 summary"><p>Tries to lock and performs the action then unlocks. If the lock is not acquired, this method returns immediately. If the action throws an exception, the lock is released automatically.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -884,7 +834,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Action</span>&lt;TWrite&gt;</td>
+        <td><span class="xref">Action</span>&lt;TWrite&gt;</td>
         <td><span class="parametername">action</span></td>
         <td></td>
       </tr>
@@ -926,7 +876,7 @@
     </tbody>
   </table>
   <a id="InSync_ReaderWriterSynchronized_2_TryWithLock_" data-uid="InSync.ReaderWriterSynchronized`2.TryWithLock*"></a>
-  <h4 id="InSync_ReaderWriterSynchronized_2_TryWithLock_System_Int32_System_Action__0__" data-uid="InSync.ReaderWriterSynchronized`2.TryWithLock(System.Int32,System.Action{`0})">TryWithLock(Int32, Action&lt;TWrite&gt;)</h4>
+  <h4 id="InSync_ReaderWriterSynchronized_2_TryWithLock_System_Int32_Action__0__" data-uid="InSync.ReaderWriterSynchronized`2.TryWithLock(System.Int32,Action{`0})">TryWithLock(Int32, Action&lt;TWrite&gt;)</h4>
   <div class="markdown level1 summary"><p>Tries to lock and performs the action then unlocks. If the lock is not acquired, this method returns immediately. If the action throws an exception, the lock is released automatically.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -947,11 +897,11 @@
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">millisecondsTimeout</span></td>
-        <td><p>The number of milliseconds to wait, <span class="xref">System.Threading.Timeout.Infinite</span> (-1) to wait indefinitely, or zero to test the state of the wait handle and return immediately.</p>
+        <td><p>The number of milliseconds to wait, <seealso cref="!:System.Threading.Timeout.Infinite"></seealso> (-1) to wait indefinitely, or zero to test the state of the wait handle and return immediately.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Action</span>&lt;TWrite&gt;</td>
+        <td><span class="xref">Action</span>&lt;TWrite&gt;</td>
         <td><span class="parametername">action</span></td>
         <td></td>
       </tr>
@@ -993,7 +943,7 @@
     </tbody>
   </table>
   <a id="InSync_ReaderWriterSynchronized_2_TryWithLock_" data-uid="InSync.ReaderWriterSynchronized`2.TryWithLock*"></a>
-  <h4 id="InSync_ReaderWriterSynchronized_2_TryWithLock_System_TimeSpan_System_Action__0__" data-uid="InSync.ReaderWriterSynchronized`2.TryWithLock(System.TimeSpan,System.Action{`0})">TryWithLock(TimeSpan, Action&lt;TWrite&gt;)</h4>
+  <h4 id="InSync_ReaderWriterSynchronized_2_TryWithLock_TimeSpan_Action__0__" data-uid="InSync.ReaderWriterSynchronized`2.TryWithLock(TimeSpan,Action{`0})">TryWithLock(TimeSpan, Action&lt;TWrite&gt;)</h4>
   <div class="markdown level1 summary"><p>Tries to lock and performs the action then unlocks. If the lock is not acquired, this method returns immediately. If the action throws an exception, the lock is released automatically.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -1012,13 +962,13 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.TimeSpan</span></td>
+        <td><span class="xref">TimeSpan</span></td>
         <td><span class="parametername">timeout</span></td>
-        <td><p>A <span class="xref">System.TimeSpan</span> that represents the number of milliseconds to wait, a <span class="xref">System.TimeSpan</span> that represents -1 milliseconds to wait indefinitely, or a <span class="xref">System.TimeSpan</span> that represents 0 milliseconds to test the wait handle and return immediately.</p>
+        <td><p>A <seealso cref="!:TimeSpan"></seealso> that represents the number of milliseconds to wait, a <seealso cref="!:TimeSpan"></seealso> that represents -1 milliseconds to wait indefinitely, or a <seealso cref="!:TimeSpan"></seealso> that represents 0 milliseconds to test the wait handle and return immediately.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Action</span>&lt;TWrite&gt;</td>
+        <td><span class="xref">Action</span>&lt;TWrite&gt;</td>
         <td><span class="parametername">action</span></td>
         <td></td>
       </tr>
@@ -1060,7 +1010,7 @@
     </tbody>
   </table>
   <a id="InSync_ReaderWriterSynchronized_2_WithLock_" data-uid="InSync.ReaderWriterSynchronized`2.WithLock*"></a>
-  <h4 id="InSync_ReaderWriterSynchronized_2_WithLock_System_Action__0__" data-uid="InSync.ReaderWriterSynchronized`2.WithLock(System.Action{`0})">WithLock(Action&lt;TWrite&gt;)</h4>
+  <h4 id="InSync_ReaderWriterSynchronized_2_WithLock_Action__0__" data-uid="InSync.ReaderWriterSynchronized`2.WithLock(Action{`0})">WithLock(Action&lt;TWrite&gt;)</h4>
   <div class="markdown level1 summary"><p>Locks, performs the action then unlocks. If the action throws an exception, the lock is released automatically.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -1079,7 +1029,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Action</span>&lt;TWrite&gt;</td>
+        <td><span class="xref">Action</span>&lt;TWrite&gt;</td>
         <td><span class="parametername">action</span></td>
         <td></td>
       </tr>
@@ -1105,7 +1055,7 @@
     </tbody>
   </table>
   <a id="InSync_ReaderWriterSynchronized_2_WithLock_" data-uid="InSync.ReaderWriterSynchronized`2.WithLock*"></a>
-  <h4 id="InSync_ReaderWriterSynchronized_2_WithLock__1_System_Func__0___0__" data-uid="InSync.ReaderWriterSynchronized`2.WithLock``1(System.Func{`0,``0})">WithLock&lt;TResult&gt;(Func&lt;TWrite, TResult&gt;)</h4>
+  <h4 id="InSync_ReaderWriterSynchronized_2_WithLock__1_Func__0___0__" data-uid="InSync.ReaderWriterSynchronized`2.WithLock``1(Func{`0,``0})">WithLock&lt;TResult&gt;(Func&lt;TWrite, TResult&gt;)</h4>
   <div class="markdown level1 summary"><p>Locks, call the function then unlocks. The returned value from the function is returned. If the function throws an exception, the lock is released automatically.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -1124,7 +1074,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Func</span>&lt;TWrite, TResult&gt;</td>
+        <td><span class="xref">Func</span>&lt;TWrite, TResult&gt;</td>
         <td><span class="parametername">func</span></td>
         <td></td>
       </tr>
@@ -1206,12 +1156,12 @@
     </tbody>
   </table>
   <a id="InSync_ReaderWriterSynchronized_2_InSync_IBareLock_BarelyTryLock_" data-uid="InSync.ReaderWriterSynchronized`2.InSync#IBareLock#BarelyTryLock*"></a>
-  <h4 id="InSync_ReaderWriterSynchronized_2_InSync_IBareLock_BarelyTryLock_System_Int32_System_Object__" data-uid="InSync.ReaderWriterSynchronized`2.InSync#IBareLock#BarelyTryLock(System.Int32,System.Object@)">IBareLock.BarelyTryLock(Int32, out Object)</h4>
+  <h4 id="InSync_ReaderWriterSynchronized_2_InSync_IBareLock_BarelyTryLock_System_Int32_System_Nullable_System_Object___" data-uid="InSync.ReaderWriterSynchronized`2.InSync#IBareLock#BarelyTryLock(System.Int32,System.Nullable{System.Object}@)">IBareLock.BarelyTryLock(Int32, out Nullable&lt;Object&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool IBareLock.BarelyTryLock(int millisecondsTimeout, out object value)</code></pre>
+    <pre><code class="lang-csharp hljs">bool IBareLock.BarelyTryLock(int millisecondsTimeout, out object? value)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1229,7 +1179,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">System.Object</span></td>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Object</span>&gt;</td>
         <td><span class="parametername">value</span></td>
         <td></td>
       </tr>
@@ -1251,12 +1201,12 @@
     </tbody>
   </table>
   <a id="InSync_ReaderWriterSynchronized_2_InSync_IBareLock_BarelyTryLock_" data-uid="InSync.ReaderWriterSynchronized`2.InSync#IBareLock#BarelyTryLock*"></a>
-  <h4 id="InSync_ReaderWriterSynchronized_2_InSync_IBareLock_BarelyTryLock_System_Object__" data-uid="InSync.ReaderWriterSynchronized`2.InSync#IBareLock#BarelyTryLock(System.Object@)">IBareLock.BarelyTryLock(out Object)</h4>
+  <h4 id="InSync_ReaderWriterSynchronized_2_InSync_IBareLock_BarelyTryLock_System_Nullable_System_Object___" data-uid="InSync.ReaderWriterSynchronized`2.InSync#IBareLock#BarelyTryLock(System.Nullable{System.Object}@)">IBareLock.BarelyTryLock(out Nullable&lt;Object&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool IBareLock.BarelyTryLock(out object value)</code></pre>
+    <pre><code class="lang-csharp hljs">bool IBareLock.BarelyTryLock(out object? value)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1269,7 +1219,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Object</span></td>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Object</span>&gt;</td>
         <td><span class="parametername">value</span></td>
         <td></td>
       </tr>
@@ -1291,12 +1241,12 @@
     </tbody>
   </table>
   <a id="InSync_ReaderWriterSynchronized_2_InSync_IBareLock_BarelyTryLock_" data-uid="InSync.ReaderWriterSynchronized`2.InSync#IBareLock#BarelyTryLock*"></a>
-  <h4 id="InSync_ReaderWriterSynchronized_2_InSync_IBareLock_BarelyTryLock_System_TimeSpan_System_Object__" data-uid="InSync.ReaderWriterSynchronized`2.InSync#IBareLock#BarelyTryLock(System.TimeSpan,System.Object@)">IBareLock.BarelyTryLock(TimeSpan, out Object)</h4>
+  <h4 id="InSync_ReaderWriterSynchronized_2_InSync_IBareLock_BarelyTryLock_TimeSpan_System_Nullable_System_Object___" data-uid="InSync.ReaderWriterSynchronized`2.InSync#IBareLock#BarelyTryLock(TimeSpan,System.Nullable{System.Object}@)">IBareLock.BarelyTryLock(TimeSpan, out Nullable&lt;Object&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool IBareLock.BarelyTryLock(TimeSpan timeout, out object value)</code></pre>
+    <pre><code class="lang-csharp hljs">bool IBareLock.BarelyTryLock(TimeSpan timeout, out object? value)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1309,12 +1259,12 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.TimeSpan</span></td>
+        <td><span class="xref">TimeSpan</span></td>
         <td><span class="parametername">timeout</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">System.Object</span></td>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Object</span>&gt;</td>
         <td><span class="parametername">value</span></td>
         <td></td>
       </tr>

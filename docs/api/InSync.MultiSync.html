@@ -165,7 +165,7 @@
   
   <h1 id="InSync_MultiSync" data-uid="InSync.MultiSync" class="text-break">Class MultiSync
   </h1>
-  <div class="markdown level0 summary"><p>Provides easy ways to acquire multiple locks without deadlocks. It does not require any setup nor lock organizations. Fairness is thread-based and provided by the OS because <span class="xref">System.Threading.Thread.Yield</span> is used. Livelock may occur for a very short period under high contention. In such case, CPU power is wasted.</p>
+  <div class="markdown level0 summary"><p>Provides easy ways to acquire multiple locks without deadlocks. It does not require any setup nor lock organizations. Fairness is thread-based and provided by the OS because <see cref="!:Thread.Yield"></see> is used. Livelock may occur for a very short period under high contention. In such case, CPU power is wasted.</p>
 <p>It uses the smart and polite method described in https://howardhinnant.github.io/dining_philosophers.html#Polite. Basically, it tries to acquire the locks one by one. If an acquisition fails, it releases all acquired locks. Before a blocking retry of the last acquisition, it yields to let other threads to process first.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
@@ -174,41 +174,17 @@
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">MultiSync</span></div>
   </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
-    <div>
-      <span class="xref">System.Object.Equals(System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.GetHashCode()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.GetType()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.MemberwiseClone()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.ToString()</span>
-    </div>
-  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="InSync.html">InSync</a></h6>
   <h6><strong>Assembly</strong>: InSync.dll</h6>
   <h5 id="InSync_MultiSync_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static class MultiSync</code></pre>
+    <pre><code class="lang-csharp hljs">public static class MultiSync : object</code></pre>
   </div>
   <h3 id="methods">Methods
   </h3>
   <a id="InSync_MultiSync_All_" data-uid="InSync.MultiSync.All*"></a>
-  <h4 id="InSync_MultiSync_All_System_Collections_Generic_IReadOnlyList_InSync_IBareLock__" data-uid="InSync.MultiSync.All(System.Collections.Generic.IReadOnlyList{InSync.IBareLock})">All(IReadOnlyList&lt;IBareLock&gt;)</h4>
-  <div class="markdown level1 summary"><p>Acquires the locks unorderly. <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.</p>
+  <h4 id="InSync_MultiSync_All_IReadOnlyList_InSync_IBareLock__" data-uid="InSync.MultiSync.All(IReadOnlyList{InSync.IBareLock})">All(IReadOnlyList&lt;IBareLock&gt;)</h4>
+  <div class="markdown level1 summary"><p>Acquires the locks unorderly. See <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -226,7 +202,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IReadOnlyList</span>&lt;<a class="xref" href="InSync.IBareLock.html">IBareLock</a>&gt;</td>
+        <td><span class="xref">IReadOnlyList</span>&lt;<a class="xref" href="InSync.IBareLock.html">IBareLock</a>&gt;</td>
         <td><span class="parametername">locks</span></td>
         <td><p>The locks to acquire.</p>
 </td>
@@ -243,16 +219,16 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="InSync.GuardedValue-1.html">GuardedValue</a>&lt;<span class="xref">System.Collections.Generic.IReadOnlyList</span>&lt;<span class="xref">System.Object</span>&gt;&gt;</td>
-        <td><p>An <span class="xref">System.IDisposable</span> containing the protected objects.</p>
+        <td><a class="xref" href="InSync.GuardedValue-1.html">GuardedValue</a>&lt;<span class="xref">IReadOnlyList</span>&lt;<span class="xref">System.Object</span>&gt;&gt;</td>
+        <td><p>An <seealso cref="!:IDisposable"></seealso> containing the protected objects.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="InSync_MultiSync_All_" data-uid="InSync.MultiSync.All*"></a>
-  <h4 id="InSync_MultiSync_All_System_Collections_Generic_IReadOnlyList_InSync_IBareLock__System_Int32_InSync_TimingMethod_" data-uid="InSync.MultiSync.All(System.Collections.Generic.IReadOnlyList{InSync.IBareLock},System.Int32,InSync.TimingMethod)">All(IReadOnlyList&lt;IBareLock&gt;, Int32, TimingMethod)</h4>
+  <h4 id="InSync_MultiSync_All_IReadOnlyList_InSync_IBareLock__System_Int32_InSync_TimingMethod_" data-uid="InSync.MultiSync.All(IReadOnlyList{InSync.IBareLock},System.Int32,InSync.TimingMethod)">All(IReadOnlyList&lt;IBareLock&gt;, Int32, TimingMethod)</h4>
   <div class="markdown level1 summary"><p>Acquires the locks unorderly. <a class="xref" href="InSync.TimingMethod.html#InSync_TimingMethod_EnvironmentTick">EnvironmentTick</a> is good enough for general usages. This method detects an increase in remaining time and continue the counting from there.<br>
-Although <a class="xref" href="InSync.TimingMethod.html#InSync_TimingMethod_EnvironmentTick">EnvironmentTick</a> uses <span class="xref">System.Environment.TickCount</span> which is 32-bits (representing 49.8 days), it is practically safe. The wrap around problem is only effective if an execution is suspended for 49.8 days subtracting the timeout, at least 24.9 days.<br>
+Although <a class="xref" href="InSync.TimingMethod.html#InSync_TimingMethod_EnvironmentTick">EnvironmentTick</a> uses <seealso cref="!:Environment.TickCount"></seealso> which is 32-bits (representing 49.8 days), it is practically safe. The wrap around problem is only effective if an execution is suspended for 49.8 days subtracting the timeout, at least 24.9 days.<br>
 <a class="xref" href="InSync.TimingMethod.html#InSync_TimingMethod_DateTime">DateTime</a> is affected by system clock changes. A clock may change several minutes for a low quality system in a network time synchronization. An user may change their system clock to an arbitrary time.<br>
 See <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.<br></p>
 </div>
@@ -272,7 +248,7 @@ See <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IReadOnlyList</span>&lt;<a class="xref" href="InSync.IBareLock.html">IBareLock</a>&gt;</td>
+        <td><span class="xref">IReadOnlyList</span>&lt;<a class="xref" href="InSync.IBareLock.html">IBareLock</a>&gt;</td>
         <td><span class="parametername">locks</span></td>
         <td><p>The locks to acquire.</p>
 </td>
@@ -301,15 +277,15 @@ See <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="InSync.GuardedValue-1.html">GuardedValue</a>&lt;<span class="xref">System.Collections.Generic.IReadOnlyList</span>&lt;<span class="xref">System.Object</span>&gt;&gt;</td>
-        <td><p>An <span class="xref">System.IDisposable</span> containing the protected objects if all the locks are acquired; otherwise, <pre><code>null</code></pre> is returned.</p>
+        <td><a class="xref" href="InSync.GuardedValue-1.html">GuardedValue</a>&lt;<span class="xref">IReadOnlyList</span>&lt;<span class="xref">System.Object</span>&gt;&gt;</td>
+        <td><p>An <seealso cref="!:IDisposable"></seealso> containing the protected objects if all the locks are acquired; otherwise, <pre><code>null</code></pre> is returned.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="InSync_MultiSync_All_" data-uid="InSync.MultiSync.All*"></a>
-  <h4 id="InSync_MultiSync_All__1_System_Collections_Generic_IReadOnlyList_InSync_IBareLock___0___" data-uid="InSync.MultiSync.All``1(System.Collections.Generic.IReadOnlyList{InSync.IBareLock{``0}})">All&lt;T&gt;(IReadOnlyList&lt;IBareLock&lt;T&gt;&gt;)</h4>
-  <div class="markdown level1 summary"><p>Acquires the locks unorderly. <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.</p>
+  <h4 id="InSync_MultiSync_All__1_IReadOnlyList_InSync_IBareLock___0___" data-uid="InSync.MultiSync.All``1(IReadOnlyList{InSync.IBareLock{``0}})">All&lt;T&gt;(IReadOnlyList&lt;IBareLock&lt;T&gt;&gt;)</h4>
+  <div class="markdown level1 summary"><p>Acquires the locks unorderly. See <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -328,7 +304,7 @@ See <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IReadOnlyList</span>&lt;<a class="xref" href="InSync.IBareLock-1.html">IBareLock</a>&lt;T&gt;&gt;</td>
+        <td><span class="xref">IReadOnlyList</span>&lt;<a class="xref" href="InSync.IBareLock-1.html">IBareLock</a>&lt;T&gt;&gt;</td>
         <td><span class="parametername">locks</span></td>
         <td><p>The locks to acquire.</p>
 </td>
@@ -345,8 +321,8 @@ See <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="InSync.GuardedValue-1.html">GuardedValue</a>&lt;<span class="xref">System.Collections.Generic.IReadOnlyList</span>&lt;T&gt;&gt;</td>
-        <td><p>An <span class="xref">System.IDisposable</span> containing the protected objects.</p>
+        <td><a class="xref" href="InSync.GuardedValue-1.html">GuardedValue</a>&lt;<span class="xref">IReadOnlyList</span>&lt;T&gt;&gt;</td>
+        <td><p>An <seealso cref="!:IDisposable"></seealso> containing the protected objects.</p>
 </td>
       </tr>
     </tbody>
@@ -368,9 +344,9 @@ See <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.
     </tbody>
   </table>
   <a id="InSync_MultiSync_All_" data-uid="InSync.MultiSync.All*"></a>
-  <h4 id="InSync_MultiSync_All__1_System_Collections_Generic_IReadOnlyList_InSync_IBareLock___0___System_Int32_InSync_TimingMethod_" data-uid="InSync.MultiSync.All``1(System.Collections.Generic.IReadOnlyList{InSync.IBareLock{``0}},System.Int32,InSync.TimingMethod)">All&lt;T&gt;(IReadOnlyList&lt;IBareLock&lt;T&gt;&gt;, Int32, TimingMethod)</h4>
+  <h4 id="InSync_MultiSync_All__1_IReadOnlyList_InSync_IBareLock___0___System_Int32_InSync_TimingMethod_" data-uid="InSync.MultiSync.All``1(IReadOnlyList{InSync.IBareLock{``0}},System.Int32,InSync.TimingMethod)">All&lt;T&gt;(IReadOnlyList&lt;IBareLock&lt;T&gt;&gt;, Int32, TimingMethod)</h4>
   <div class="markdown level1 summary"><p>Acquires the locks unorderly. <a class="xref" href="InSync.TimingMethod.html#InSync_TimingMethod_EnvironmentTick">EnvironmentTick</a> is good enough for general usages. This method detects an increase in remaining time and continue the counting from there.<br>
-Although <a class="xref" href="InSync.TimingMethod.html#InSync_TimingMethod_EnvironmentTick">EnvironmentTick</a> uses <span class="xref">System.Environment.TickCount</span> which is 32-bits (representing 49.8 days), it is practically safe. The wrap around problem is only effective if an execution is suspended for 49.8 days subtracting the timeout, at least 24.9 days.<br>
+Although <a class="xref" href="InSync.TimingMethod.html#InSync_TimingMethod_EnvironmentTick">EnvironmentTick</a> uses <seealso cref="!:Environment.TickCount"></seealso> which is 32-bits (representing 49.8 days), it is practically safe. The wrap around problem is only effective if an execution is suspended for 49.8 days subtracting the timeout, at least 24.9 days.<br>
 <a class="xref" href="InSync.TimingMethod.html#InSync_TimingMethod_DateTime">DateTime</a> is affected by system clock changes. A clock may change several minutes for a low quality system in a network time synchronization. An user may change their system clock to an arbitrary time.<br>
 See <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.<br></p>
 </div>
@@ -391,7 +367,7 @@ See <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IReadOnlyList</span>&lt;<a class="xref" href="InSync.IBareLock-1.html">IBareLock</a>&lt;T&gt;&gt;</td>
+        <td><span class="xref">IReadOnlyList</span>&lt;<a class="xref" href="InSync.IBareLock-1.html">IBareLock</a>&lt;T&gt;&gt;</td>
         <td><span class="parametername">locks</span></td>
         <td><p>The locks to acquire.</p>
 </td>
@@ -420,8 +396,8 @@ See <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="InSync.GuardedValue-1.html">GuardedValue</a>&lt;<span class="xref">System.Collections.Generic.IReadOnlyList</span>&lt;T&gt;&gt;</td>
-        <td><p>An <span class="xref">System.IDisposable</span> containing the protected objects if all the locks are acquired; otherwise, <pre><code>null</code></pre> is returned.</p>
+        <td><a class="xref" href="InSync.GuardedValue-1.html">GuardedValue</a>&lt;<span class="xref">IReadOnlyList</span>&lt;T&gt;&gt;</td>
+        <td><p>An <seealso cref="!:IDisposable"></seealso> containing the protected objects if all the locks are acquired; otherwise, <pre><code>null</code></pre> is returned.</p>
 </td>
       </tr>
     </tbody>
@@ -442,8 +418,8 @@ See <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.
     </tbody>
   </table>
   <a id="InSync_MultiSync_AllAsync_" data-uid="InSync.MultiSync.AllAsync*"></a>
-  <h4 id="InSync_MultiSync_AllAsync_System_Collections_Generic_IReadOnlyList_InSync_IBareAsyncLock__" data-uid="InSync.MultiSync.AllAsync(System.Collections.Generic.IReadOnlyList{InSync.IBareAsyncLock})">AllAsync(IReadOnlyList&lt;IBareAsyncLock&gt;)</h4>
-  <div class="markdown level1 summary"><p>Acquires the locks unorderly. <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.</p>
+  <h4 id="InSync_MultiSync_AllAsync_IReadOnlyList_InSync_IBareAsyncLock__" data-uid="InSync.MultiSync.AllAsync(IReadOnlyList{InSync.IBareAsyncLock})">AllAsync(IReadOnlyList&lt;IBareAsyncLock&gt;)</h4>
+  <div class="markdown level1 summary"><p>Acquires the locks unorderly. See <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -461,7 +437,7 @@ See <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IReadOnlyList</span>&lt;<a class="xref" href="InSync.IBareAsyncLock.html">IBareAsyncLock</a>&gt;</td>
+        <td><span class="xref">IReadOnlyList</span>&lt;<a class="xref" href="InSync.IBareAsyncLock.html">IBareAsyncLock</a>&gt;</td>
         <td><span class="parametername">locks</span></td>
         <td><p>The locks to acquire.</p>
 </td>
@@ -478,15 +454,15 @@ See <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="InSync.GuardedValue-1.html">GuardedValue</a>&lt;<span class="xref">System.Collections.Generic.IReadOnlyList</span>&lt;<span class="xref">System.Object</span>&gt;&gt;&gt;</td>
-        <td><p>An <span class="xref">System.IDisposable</span> containing the protected objects.</p>
+        <td><span class="xref">Task</span>&lt;<a class="xref" href="InSync.GuardedValue-1.html">GuardedValue</a>&lt;<span class="xref">IReadOnlyList</span>&lt;<span class="xref">System.Object</span>&gt;&gt;&gt;</td>
+        <td><p>An <seealso cref="!:IDisposable"></seealso> containing the protected objects.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="InSync_MultiSync_AllAsync_" data-uid="InSync.MultiSync.AllAsync*"></a>
-  <h4 id="InSync_MultiSync_AllAsync_System_Collections_Generic_IReadOnlyList_InSync_IBareAsyncLock__System_Threading_CancellationToken_" data-uid="InSync.MultiSync.AllAsync(System.Collections.Generic.IReadOnlyList{InSync.IBareAsyncLock},System.Threading.CancellationToken)">AllAsync(IReadOnlyList&lt;IBareAsyncLock&gt;, CancellationToken)</h4>
-  <div class="markdown level1 summary"><p>Acquires the locks unorderly. <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.</p>
+  <h4 id="InSync_MultiSync_AllAsync_IReadOnlyList_InSync_IBareAsyncLock__CancellationToken_" data-uid="InSync.MultiSync.AllAsync(IReadOnlyList{InSync.IBareAsyncLock},CancellationToken)">AllAsync(IReadOnlyList&lt;IBareAsyncLock&gt;, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Acquires the locks unorderly. See <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -504,15 +480,15 @@ See <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IReadOnlyList</span>&lt;<a class="xref" href="InSync.IBareAsyncLock.html">IBareAsyncLock</a>&gt;</td>
+        <td><span class="xref">IReadOnlyList</span>&lt;<a class="xref" href="InSync.IBareAsyncLock.html">IBareAsyncLock</a>&gt;</td>
         <td><span class="parametername">locks</span></td>
         <td><p>The locks to acquire.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Threading.CancellationToken</span></td>
+        <td><span class="xref">CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>
-        <td><p>A <span class="xref">System.Threading.CancellationToken</span> to observe while waiting for the tasks to complete.</p>
+        <td><p>A <seealso cref="!:CancellationToken"></seealso> to observe while waiting for the tasks to complete.</p>
 </td>
       </tr>
     </tbody>
@@ -527,15 +503,15 @@ See <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="InSync.GuardedValue-1.html">GuardedValue</a>&lt;<span class="xref">System.Collections.Generic.IReadOnlyList</span>&lt;<span class="xref">System.Object</span>&gt;&gt;&gt;</td>
-        <td><p>An <span class="xref">System.IDisposable</span> containing the protected objects.</p>
+        <td><span class="xref">Task</span>&lt;<a class="xref" href="InSync.GuardedValue-1.html">GuardedValue</a>&lt;<span class="xref">IReadOnlyList</span>&lt;<span class="xref">System.Object</span>&gt;&gt;&gt;</td>
+        <td><p>An <seealso cref="!:IDisposable"></seealso> containing the protected objects.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="InSync_MultiSync_AllAsync_" data-uid="InSync.MultiSync.AllAsync*"></a>
-  <h4 id="InSync_MultiSync_AllAsync__1_System_Collections_Generic_IReadOnlyList_InSync_IBareAsyncLock___0___" data-uid="InSync.MultiSync.AllAsync``1(System.Collections.Generic.IReadOnlyList{InSync.IBareAsyncLock{``0}})">AllAsync&lt;T&gt;(IReadOnlyList&lt;IBareAsyncLock&lt;T&gt;&gt;)</h4>
-  <div class="markdown level1 summary"><p>Acquires the locks unorderly. <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.</p>
+  <h4 id="InSync_MultiSync_AllAsync__1_IReadOnlyList_InSync_IBareAsyncLock___0___" data-uid="InSync.MultiSync.AllAsync``1(IReadOnlyList{InSync.IBareAsyncLock{``0}})">AllAsync&lt;T&gt;(IReadOnlyList&lt;IBareAsyncLock&lt;T&gt;&gt;)</h4>
+  <div class="markdown level1 summary"><p>Acquires the locks unorderly. See <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -554,7 +530,7 @@ See <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IReadOnlyList</span>&lt;<a class="xref" href="InSync.IBareAsyncLock-1.html">IBareAsyncLock</a>&lt;T&gt;&gt;</td>
+        <td><span class="xref">IReadOnlyList</span>&lt;<a class="xref" href="InSync.IBareAsyncLock-1.html">IBareAsyncLock</a>&lt;T&gt;&gt;</td>
         <td><span class="parametername">locks</span></td>
         <td><p>The locks to acquire.</p>
 </td>
@@ -571,8 +547,8 @@ See <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="InSync.GuardedValue-1.html">GuardedValue</a>&lt;<span class="xref">System.Collections.Generic.IReadOnlyList</span>&lt;T&gt;&gt;&gt;</td>
-        <td><p>An <span class="xref">System.IDisposable</span> containing the protected objects.</p>
+        <td><span class="xref">Task</span>&lt;<a class="xref" href="InSync.GuardedValue-1.html">GuardedValue</a>&lt;<span class="xref">IReadOnlyList</span>&lt;T&gt;&gt;&gt;</td>
+        <td><p>An <seealso cref="!:IDisposable"></seealso> containing the protected objects.</p>
 </td>
       </tr>
     </tbody>
@@ -594,8 +570,8 @@ See <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.
     </tbody>
   </table>
   <a id="InSync_MultiSync_AllAsync_" data-uid="InSync.MultiSync.AllAsync*"></a>
-  <h4 id="InSync_MultiSync_AllAsync__1_System_Collections_Generic_IReadOnlyList_InSync_IBareAsyncLock___0___System_Threading_CancellationToken_" data-uid="InSync.MultiSync.AllAsync``1(System.Collections.Generic.IReadOnlyList{InSync.IBareAsyncLock{``0}},System.Threading.CancellationToken)">AllAsync&lt;T&gt;(IReadOnlyList&lt;IBareAsyncLock&lt;T&gt;&gt;, CancellationToken)</h4>
-  <div class="markdown level1 summary"><p>Acquires the locks unorderly. <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.</p>
+  <h4 id="InSync_MultiSync_AllAsync__1_IReadOnlyList_InSync_IBareAsyncLock___0___CancellationToken_" data-uid="InSync.MultiSync.AllAsync``1(IReadOnlyList{InSync.IBareAsyncLock{``0}},CancellationToken)">AllAsync&lt;T&gt;(IReadOnlyList&lt;IBareAsyncLock&lt;T&gt;&gt;, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Acquires the locks unorderly. See <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -614,15 +590,15 @@ See <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.IReadOnlyList</span>&lt;<a class="xref" href="InSync.IBareAsyncLock-1.html">IBareAsyncLock</a>&lt;T&gt;&gt;</td>
+        <td><span class="xref">IReadOnlyList</span>&lt;<a class="xref" href="InSync.IBareAsyncLock-1.html">IBareAsyncLock</a>&lt;T&gt;&gt;</td>
         <td><span class="parametername">locks</span></td>
         <td><p>The locks to acquire.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Threading.CancellationToken</span></td>
+        <td><span class="xref">CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>
-        <td><p>A <span class="xref">System.Threading.CancellationToken</span> to observe while waiting for the tasks to complete.</p>
+        <td><p>A <seealso cref="!:CancellationToken"></seealso> to observe while waiting for the tasks to complete.</p>
 </td>
       </tr>
     </tbody>
@@ -637,8 +613,8 @@ See <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="InSync.GuardedValue-1.html">GuardedValue</a>&lt;<span class="xref">System.Collections.Generic.IReadOnlyList</span>&lt;T&gt;&gt;&gt;</td>
-        <td><p>An <span class="xref">System.IDisposable</span> containing the protected objects.</p>
+        <td><span class="xref">Task</span>&lt;<a class="xref" href="InSync.GuardedValue-1.html">GuardedValue</a>&lt;<span class="xref">IReadOnlyList</span>&lt;T&gt;&gt;&gt;</td>
+        <td><p>An <seealso cref="!:IDisposable"></seealso> containing the protected objects.</p>
 </td>
       </tr>
     </tbody>
