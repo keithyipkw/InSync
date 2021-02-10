@@ -37,7 +37,7 @@ namespace InSync
         /// <param name="locks">The locks to acquire.</param>
         /// <param name="millisecondsTimeout">The number of milliseconds to wait. A negative value specifies an infinite wait.</param>
         /// <param name="timingMethod">The method of counting time. See <seealso cref="TimingMethod"/> for more details.</param>
-        /// <returns>An <seealso cref="IDisposable"/> containing the protected objects if all the locks are acquired; otherwise, <code>null</code> is returned.</returns>
+        /// <returns>An <seealso cref="IDisposable"/> containing the protected objects if all the locks are acquired; otherwise, <c>null</c> is returned.</returns>
         public static GuardedValue<IReadOnlyList<T>>? All<T>(IReadOnlyList<IBareLock<T>> locks, int millisecondsTimeout, TimingMethod timingMethod)
             where T : class
         {
@@ -63,7 +63,7 @@ namespace InSync
         /// <param name="locks">The locks to acquire.</param>
         /// <param name="millisecondsTimeout">The number of milliseconds to wait. A negative value specifies an infinite wait.</param>
         /// <param name="timingMethod">The method of counting time. See <seealso cref="TimingMethod"/> for more details.</param>
-        /// <returns>An <seealso cref="IDisposable"/> containing the protected objects if all the locks are acquired; otherwise, <code>null</code> is returned.</returns>
+        /// <returns>An <seealso cref="IDisposable"/> containing the protected objects if all the locks are acquired; otherwise, <c>null</c> is returned.</returns>
         public static GuardedValue<IReadOnlyList<object>>? All(IReadOnlyList<IBareLock> locks, int millisecondsTimeout, TimingMethod timingMethod)
         {
             return AcquireAll<object>(locks, millisecondsTimeout, timingMethod);
