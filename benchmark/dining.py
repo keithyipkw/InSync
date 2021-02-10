@@ -26,8 +26,8 @@ def main():
         x = d.index
         color = colors[method]
         ax.plot(x, d[("Time", "mean")], label=f"{method}", color=color)
-        ax.fill_between(x, d[("Time", "25%")], d[("Time", "75%")], label=f"{method} mid 50%-ile", alpha=0.2, color=color)
-        ax.fill_between(x, d[("Time", "min")], d[("Time", "max")], label=f"{method} all", alpha=0.07, color=color)
+        ax.fill_between(x, d[("Time", "25%")], d[("Time", "75%")], label=f"{method} Mid 50%-ile", alpha=0.2, color=color)
+        ax.fill_between(x, d[("Time", "min")], d[("Time", "max")], label=f"{method} Min to Max", alpha=0.07, color=color)
         ax.set_ylabel("Seconds")
         ax.set_xlabel("Number of Philosophers")
     idealX = range(2, 33)

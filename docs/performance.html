@@ -102,53 +102,53 @@
 <tbody>
 <tr>
 <td>Loop overhead</td>
-<td>0.502205</td>
-<td>0.002618017</td>
+<td>0.251335</td>
+<td>0.003273752</td>
 </tr>
 <tr>
 <td>lock</td>
-<td>10.48168</td>
-<td>0.042191334</td>
+<td>10.44946</td>
+<td>0.037760254</td>
 </tr>
 <tr>
 <td>Synchronized.WithLock</td>
-<td>11.074585</td>
-<td>0.154348616</td>
+<td>11.077325</td>
+<td>0.125649291</td>
 </tr>
 <tr>
 <td>Synchronized.Lock</td>
-<td>23.35174</td>
-<td>1.227891217</td>
+<td>24.920565</td>
+<td>0.589758128</td>
 </tr>
 <tr>
 <td>SemaphoreSlim.Wait</td>
-<td>26.62024</td>
-<td>0.105064133</td>
+<td>26.13611</td>
+<td>0.300629437</td>
 </tr>
 <tr>
 <td>AsyncSynchronized.WithLock</td>
-<td>35.361215</td>
-<td>0.94974477</td>
+<td>37.637085</td>
+<td>0.366919775</td>
 </tr>
 <tr>
 <td>AsyncSynchronized.Lock</td>
-<td>58.553095</td>
-<td>1.554136994</td>
+<td>51.63986</td>
+<td>0.724153676</td>
 </tr>
 <tr>
 <td>SemaphoreSlim.WaitAsync</td>
-<td>25.621235</td>
-<td>0.277216726</td>
+<td>37.379345</td>
+<td>0.691119172</td>
 </tr>
 <tr>
 <td>AsyncSynchronized.WithLockAsync</td>
-<td>80.763075</td>
-<td>1.842565078</td>
+<td>95.74239</td>
+<td>0.231985083</td>
 </tr>
 <tr>
 <td>AsyncSynchronized.LockAsync</td>
-<td>103.82279</td>
-<td>1.143010283</td>
+<td>110.948145</td>
+<td>0.605324165</td>
 </tr>
 </tbody>
 </table>
@@ -165,48 +165,48 @@
 <tbody>
 <tr>
 <td>Loop overhead</td>
-<td>0.50222</td>
-<td>0.004764833</td>
+<td>0.501575</td>
+<td>0.001162058</td>
 </tr>
 <tr>
 <td>lock</td>
-<td>20.710595</td>
-<td>0.181092486</td>
+<td>20.69993</td>
+<td>0.188203361</td>
 </tr>
 <tr>
 <td>Synchronized.Lock</td>
-<td>39.91558</td>
-<td>0.510229626</td>
+<td>42.319905</td>
+<td>0.945111729</td>
 </tr>
 <tr>
-<td>MultiSync.All monitor</td>
-<td>176.746805</td>
-<td>3.011581144</td>
+<td>MultiSync.All Monitor</td>
+<td>102.502125</td>
+<td>1.99298697</td>
 </tr>
 <tr>
-<td>MultiSync.All monitor reuse array</td>
-<td>167.6974</td>
-<td>1.265423182</td>
+<td>MultiSync.All Monitor reusing array</td>
+<td>98.72238</td>
+<td>1.695725165</td>
 </tr>
 <tr>
 <td>SemaphoreSlim.WaitAsync</td>
-<td>50.941635</td>
-<td>0.240256196</td>
+<td>73.396305</td>
+<td>0.943295799</td>
 </tr>
 <tr>
-<td>MultiSync.AllAsync semaphoreslim</td>
-<td>370.783275</td>
-<td>3.404508767</td>
+<td>MultiSync.AllAsync SemaphoreSlim</td>
+<td>321.813115</td>
+<td>1.390673596</td>
 </tr>
 </tbody>
 </table>
 <h3 id="dining-philosophers">Dining Philosophers</h3>
-<p>The original C++ code was rewritten in C# but with 10s eating time. For the 4-core case, 11 times was run using core 4, 5, 6 and 7. For the 8 core case, 11 times was run using all cores.</p>
-<p><img src="https://user-images.githubusercontent.com/2862593/103096006-754f1b00-463d-11eb-8469-0abcb0f955a4.png" alt="dining_core_4"></p>
-<p><img src="https://user-images.githubusercontent.com/2862593/103096004-74b68480-463d-11eb-85d3-751f5deb166c.png" alt="dining_core_8"></p>
-<p>Similary, an async version was run 14 and 11 times for the 4-core case and the 8-core case.</p>
-<p><img src="https://user-images.githubusercontent.com/2862593/103216353-d5510480-4950-11eb-990e-f5d6dc2547c1.png" alt="async_dining_core_4"></p>
-<p><img src="https://user-images.githubusercontent.com/2862593/103216363-d84bf500-4950-11eb-8ac2-0c73f5a142d4.png" alt="async_dining_core_8"></p>
+<p>The original C++ code was rewritten in C# but with 10s eating time. For the 4-core case, 11 times was run using core 4, 5, 6 and 7. For the 8 core case, 10 times was run using all the cores.</p>
+<p><img src="https://user-images.githubusercontent.com/2862593/107522942-2eb67f80-6bef-11eb-8800-cb235ad6dcec.png" alt="dining_core_4"></p>
+<p><img src="https://user-images.githubusercontent.com/2862593/107522935-2d855280-6bef-11eb-8145-414b9c57b393.png" alt="dining_core_8"></p>
+<p>Similary, an async version was run 13 and 13 times for the 4-core case and the 8-core case.</p>
+<p><img src="https://user-images.githubusercontent.com/2862593/107522957-31b17000-6bef-11eb-84a7-ba14aec67005.png" alt="dining_fw_4"></p>
+<p><img src="https://user-images.githubusercontent.com/2862593/107522952-3118d980-6bef-11eb-8c94-22ca74dba6d1.png" alt="dining_fw_8"></p>
 <h2 id="net-framework">.NET Framework</h2>
 <p>The benchmark program was run with the environment:</p>
 <ul>
@@ -235,53 +235,53 @@
 <tbody>
 <tr>
 <td>Loop overhead</td>
-<td>0.36252</td>
-<td>0.003144596</td>
+<td>0.36223</td>
+<td>0.001206924</td>
 </tr>
 <tr>
 <td>lock</td>
-<td>12.412035</td>
-<td>0.0109658</td>
+<td>12.41344</td>
+<td>0.014205078</td>
 </tr>
 <tr>
 <td>Synchronized.WithLock</td>
-<td>15.138875</td>
-<td>0.232656967</td>
+<td>15.11072</td>
+<td>0.070974434</td>
 </tr>
 <tr>
 <td>Synchronized.Lock</td>
-<td>22.0225</td>
-<td>0.6347454</td>
+<td>24.416935</td>
+<td>0.668656778</td>
 </tr>
 <tr>
 <td>SemaphoreSlim.Wait</td>
-<td>114.748535</td>
-<td>1.128779152</td>
+<td>115.474135</td>
+<td>1.21495724</td>
 </tr>
 <tr>
 <td>AsyncSynchronized.WithLock</td>
-<td>124.169925</td>
-<td>2.015787666</td>
+<td>123.731365</td>
+<td>1.971970009</td>
 </tr>
 <tr>
 <td>AsyncSynchronized.Lock</td>
-<td>147.514825</td>
-<td>1.482475072</td>
+<td>144.250505</td>
+<td>1.632774856</td>
 </tr>
 <tr>
 <td>SemaphoreSlim.WaitAsync</td>
-<td>103.236805</td>
-<td>1.896086705</td>
+<td>107.495325</td>
+<td>1.348014322</td>
 </tr>
 <tr>
 <td>AsyncSynchronized.WithLockAsync</td>
-<td>279.55305</td>
-<td>1.981495923</td>
+<td>295.73078</td>
+<td>1.973408472</td>
 </tr>
 <tr>
 <td>AsyncSynchronized.LockAsync</td>
-<td>304.958515</td>
-<td>1.775532174</td>
+<td>317.64382</td>
+<td>1.759929962</td>
 </tr>
 </tbody>
 </table>
@@ -298,48 +298,48 @@
 <tbody>
 <tr>
 <td>Loop overhead</td>
-<td>0.56915</td>
-<td>0.003600295</td>
+<td>0.57007</td>
+<td>0.012049984</td>
 </tr>
 <tr>
 <td>lock</td>
-<td>24.191225</td>
-<td>0.181012533</td>
+<td>24.06699</td>
+<td>0.131246722</td>
 </tr>
 <tr>
 <td>Synchronized.Lock</td>
-<td>46.275455</td>
-<td>0.86436219</td>
+<td>43.842105</td>
+<td>0.545906966</td>
 </tr>
 <tr>
-<td>MultiSync.All monitor</td>
-<td>179.386635</td>
-<td>3.11450811</td>
+<td>MultiSync.All Monitor reusing array</td>
+<td>116.076655</td>
+<td>1.714836014</td>
 </tr>
 <tr>
-<td>MultiSync.All monitor reuse array</td>
-<td>166.543805</td>
-<td>2.345737108</td>
+<td>MultiSync.All Monitor</td>
+<td>127.937495</td>
+<td>1.485412852</td>
 </tr>
 <tr>
 <td>SemaphoreSlim.WaitAsync</td>
-<td>193.14303</td>
-<td>2.538284758</td>
+<td>214.37862</td>
+<td>2.697429956</td>
 </tr>
 <tr>
-<td>MultiSync.AllAsync semaphoreslim</td>
-<td>752.56565</td>
-<td>3.728029591</td>
+<td>MultiSync.AllAsync SemaphoreSlim</td>
+<td>715.955235</td>
+<td>2.760225229</td>
 </tr>
 </tbody>
 </table>
 <h3 id="dining-philosophers-1">Dining Philosophers</h3>
-<p>The original C++ code was rewritten in C# but with 10s eating time. For the 4-core case, 13 times was run using core 4, 5, 6 and 7. For the 8-core case, 13 times was run using all cores.</p>
-<p><img src="https://user-images.githubusercontent.com/2862593/103096003-74b68480-463d-11eb-8d73-7742e6d33907.png" alt="dining_fw_4"></p>
-<p><img src="https://user-images.githubusercontent.com/2862593/103096001-73855780-463d-11eb-8230-e877f1aa16c2.png" alt="dining_fw_8"></p>
-<p>Similary, an async version was run 12 and 15 times for the 4-core case and the 8-core case.</p>
-<p><img src="https://user-images.githubusercontent.com/2862593/103216360-d7b35e80-4950-11eb-9517-91cb7d925b19.png" alt="async_dining_fw_4"></p>
-<p><img src="https://user-images.githubusercontent.com/2862593/103216355-d6823180-4950-11eb-89b5-8596ec1c36fb.png" alt="async_dining_fw_8"></p>
+<p>The original C++ code was rewritten in C# but with 10s eating time. For the 4-core case, 12 times was run using core 4, 5, 6 and 7. For the 8-core case, 13 times was run using all cores.</p>
+<p><img src="https://user-images.githubusercontent.com/2862593/107522949-30804300-6bef-11eb-8239-90d7bc2849d6.png" alt="async_dining_core_4"></p>
+<p><img src="https://user-images.githubusercontent.com/2862593/107522947-30804300-6bef-11eb-81bf-2647d86c200d.png" alt="async_dining_core_8"></p>
+<p>Similary, an async version was run 13 and 13 times for the 4-core case and the 8-core case.</p>
+<p><img src="https://user-images.githubusercontent.com/2862593/107522946-2fe7ac80-6bef-11eb-8caa-798329189595.png" alt="async_dining_fw_4"></p>
+<p><img src="https://user-images.githubusercontent.com/2862593/107522945-2f4f1600-6bef-11eb-89dd-435113077cb2.png" alt="async_dining_fw_8"></p>
 <h2 id="c">C++</h2>
 <p>For reference, a slightly modified version of the original C++ code was run. The eating time was 10s. Other modifications were for conveniently running continously. The environment was:</p>
 <ul>

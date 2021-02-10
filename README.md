@@ -401,7 +401,7 @@ This library does not support `Thread.Abort()`. It may leave some locks being pe
 
 # Performance
 
-To view the full benchmark result, please visit https://keithyipkw.github.io/InSync/performance.html
+The full benchmark result is available at https://keithyipkw.github.io/InSync/performance.html
 
 The benchmark program was run with the environment:
 
@@ -421,16 +421,16 @@ With no contentions, execution time of different methods of acquiring 1 lock was
 
 Method|Mean|STD
 ---|---|---
-Loop overhead|0.502205|0.002618017
-lock|10.48168|0.042191334
-Synchronized.WithLock|11.074585|0.154348616
-Synchronized.Lock|23.35174|1.227891217
-SemaphoreSlim.Wait|26.62024|0.105064133
-AsyncSynchronized.WithLock|35.361215|0.94974477
-AsyncSynchronized.Lock|58.553095|1.554136994
-SemaphoreSlim.WaitAsync|25.621235|0.277216726
-AsyncSynchronized.WithLockAsync|80.763075|1.842565078
-AsyncSynchronized.LockAsync|103.82279|1.143010283
+Loop overhead|0.251335|0.003273752
+lock|10.44946|0.037760254
+Synchronized.WithLock|11.077325|0.125649291
+Synchronized.Lock|24.920565|0.589758128
+SemaphoreSlim.Wait|26.13611|0.300629437
+AsyncSynchronized.WithLock|37.637085|0.366919775
+AsyncSynchronized.Lock|51.63986|0.724153676
+SemaphoreSlim.WaitAsync|37.379345|0.691119172
+AsyncSynchronized.WithLockAsync|95.74239|0.231985083
+AsyncSynchronized.LockAsync|110.948145|0.605324165
 
 ### Multiple Locks
 
@@ -438,16 +438,16 @@ Similarly, that of acquiring 2 locks was measured.
 
 Method|Mean|STD
 ---|---|---
-Loop overhead|0.50222|0.004764833
-lock|20.710595|0.181092486
-Synchronized.Lock|39.91558|0.510229626
-MultiSync.All monitor|176.746805|3.011581144
-MultiSync.All monitor reuse array|167.6974|1.265423182
-SemaphoreSlim.WaitAsync|50.941635|0.240256196
-MultiSync.AllAsync semaphoreslim|370.783275|3.404508767
+Loop overhead|0.501575|0.001162058
+lock|20.69993|0.188203361
+Synchronized.Lock|42.319905|0.945111729
+MultiSync.All Monitor|102.502125|1.99298697
+MultiSync.All Monitor reusing array|98.72238|1.695725165
+SemaphoreSlim.WaitAsync|73.396305|0.943295799
+MultiSync.AllAsync SemaphoreSlim|321.813115|1.390673596
 
 ### Dining Philosophers
 
 The original C++ code was rewritten in C# but with 10s eating time. For the 4-core case, 11 times was run using core 4, 5, 6 and 7.
 
-![dining_core_4](https://user-images.githubusercontent.com/2862593/103096006-754f1b00-463d-11eb-8469-0abcb0f955a4.png)
+![dining_core_4](https://user-images.githubusercontent.com/2862593/107522942-2eb67f80-6bef-11eb-8800-cb235ad6dcec.png)
