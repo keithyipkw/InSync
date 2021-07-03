@@ -285,7 +285,7 @@ See <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.
   </table>
   <a id="InSync_MultiSync_All_" data-uid="InSync.MultiSync.All*"></a>
   <h4 id="InSync_MultiSync_All__1_IReadOnlyList_InSync_IBareLock___0___" data-uid="InSync.MultiSync.All``1(IReadOnlyList{InSync.IBareLock{``0}})">All&lt;T&gt;(IReadOnlyList&lt;IBareLock&lt;T&gt;&gt;)</h4>
-  <div class="markdown level1 summary"><p>Acquires the locks unorderly. See <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.</p>
+  <div class="markdown level1 summary"><p>Acquires the locks in the list unorderly. See <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -345,7 +345,7 @@ See <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.
   </table>
   <a id="InSync_MultiSync_All_" data-uid="InSync.MultiSync.All*"></a>
   <h4 id="InSync_MultiSync_All__1_IReadOnlyList_InSync_IBareLock___0___System_Int32_InSync_TimingMethod_" data-uid="InSync.MultiSync.All``1(IReadOnlyList{InSync.IBareLock{``0}},System.Int32,InSync.TimingMethod)">All&lt;T&gt;(IReadOnlyList&lt;IBareLock&lt;T&gt;&gt;, Int32, TimingMethod)</h4>
-  <div class="markdown level1 summary"><p>Acquires the locks unorderly. <a class="xref" href="InSync.TimingMethod.html#InSync_TimingMethod_EnvironmentTick">EnvironmentTick</a> is good enough for general usages. This method detects an increase in remaining time and continue the counting from there.<br>
+  <div class="markdown level1 summary"><p>Acquires the locks in the list unorderly. <a class="xref" href="InSync.TimingMethod.html#InSync_TimingMethod_EnvironmentTick">EnvironmentTick</a> is good enough for general usages. This method detects an increase in remaining time and continue the counting from there.<br>
 Although <a class="xref" href="InSync.TimingMethod.html#InSync_TimingMethod_EnvironmentTick">EnvironmentTick</a> uses <seealso cref="!:Environment.TickCount"></seealso> which is 32-bits (representing 49.8 days), it is practically safe. The wrap around problem is only effective if an execution is suspended for 49.8 days subtracting the timeout, at least 24.9 days.<br>
 <a class="xref" href="InSync.TimingMethod.html#InSync_TimingMethod_DateTime">DateTime</a> is affected by system clock changes. A clock may change several minutes for a low quality system in a network time synchronization. An user may change their system clock to an arbitrary time.<br>
 See <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.<br></p>
@@ -414,6 +414,534 @@ See <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.
       <tr>
         <td><span class="parametername">T</span></td>
         <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="InSync_MultiSync_All_" data-uid="InSync.MultiSync.All*"></a>
+  <h4 id="InSync_MultiSync_All__2_InSync_IBareLock___0__InSync_IBareLock___1__" data-uid="InSync.MultiSync.All``2(InSync.IBareLock{``0},InSync.IBareLock{``1})">All&lt;T1, T2&gt;(IBareLock&lt;T1&gt;, IBareLock&lt;T2&gt;)</h4>
+  <div class="markdown level1 summary"><p>Acquires the locks unorderly. The protected objects are returned in a tuple. See <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GuardedValue&lt;Tuple&lt;T1, T2&gt;&gt; All&lt;T1, T2&gt;(IBareLock&lt;T1&gt; lock1, IBareLock&lt;T2&gt; lock2)
+    where T1 : class where T2 : class</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InSync.IBareLock-1.html">IBareLock</a>&lt;T1&gt;</td>
+        <td><span class="parametername">lock1</span></td>
+        <td><p>The first lock to acquire.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="InSync.IBareLock-1.html">IBareLock</a>&lt;T2&gt;</td>
+        <td><span class="parametername">lock2</span></td>
+        <td><p>The second lock to acquire.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InSync.GuardedValue-1.html">GuardedValue</a>&lt;<span class="xref">Tuple</span>&lt;T1, T2&gt;&gt;</td>
+        <td><p>An <seealso cref="!:IDisposable"></seealso> containing the protected objects.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T1</span></td>
+        <td><p>The type of the first protected object.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">T2</span></td>
+        <td><p>The type of the second protected object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="InSync_MultiSync_All_" data-uid="InSync.MultiSync.All*"></a>
+  <h4 id="InSync_MultiSync_All__2_InSync_IBareLock___0__InSync_IBareLock___1__System_Int32_InSync_TimingMethod_" data-uid="InSync.MultiSync.All``2(InSync.IBareLock{``0},InSync.IBareLock{``1},System.Int32,InSync.TimingMethod)">All&lt;T1, T2&gt;(IBareLock&lt;T1&gt;, IBareLock&lt;T2&gt;, Int32, TimingMethod)</h4>
+  <div class="markdown level1 summary"><p>Acquires the locks unorderly. The protected objects are returned in a tuple. See <a class="xref" href="InSync.MultiSync.html#InSync_MultiSync_All_IReadOnlyList_InSync_IBareLock__System_Int32_InSync_TimingMethod_">All(IReadOnlyList&lt;IBareLock&gt;, Int32, TimingMethod)</a> for more details.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GuardedValue&lt;Tuple&lt;T1, T2&gt;&gt; All&lt;T1, T2&gt;(IBareLock&lt;T1&gt; lock1, IBareLock&lt;T2&gt; lock2, int millisecondsTimeout, TimingMethod timingMethod)
+    where T1 : class where T2 : class</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InSync.IBareLock-1.html">IBareLock</a>&lt;T1&gt;</td>
+        <td><span class="parametername">lock1</span></td>
+        <td><p>The first lock to acquire.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="InSync.IBareLock-1.html">IBareLock</a>&lt;T2&gt;</td>
+        <td><span class="parametername">lock2</span></td>
+        <td><p>The second lock to acquire.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">millisecondsTimeout</span></td>
+        <td><p>The number of milliseconds to wait. A negative value specifies an infinite wait.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="InSync.TimingMethod.html">TimingMethod</a></td>
+        <td><span class="parametername">timingMethod</span></td>
+        <td><p>The method of counting time. See <a class="xref" href="InSync.TimingMethod.html">TimingMethod</a> for more details.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InSync.GuardedValue-1.html">GuardedValue</a>&lt;<span class="xref">Tuple</span>&lt;T1, T2&gt;&gt;</td>
+        <td><p>An <seealso cref="!:IDisposable"></seealso> containing the protected objects if all the locks are acquired; otherwise, <code>null</code> is returned.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T1</span></td>
+        <td><p>The type of the first protected object.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">T2</span></td>
+        <td><p>The type of the second protected object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="InSync_MultiSync_All_" data-uid="InSync.MultiSync.All*"></a>
+  <h4 id="InSync_MultiSync_All__3_InSync_IBareLock___0__InSync_IBareLock___1__InSync_IBareLock___2__" data-uid="InSync.MultiSync.All``3(InSync.IBareLock{``0},InSync.IBareLock{``1},InSync.IBareLock{``2})">All&lt;T1, T2, T3&gt;(IBareLock&lt;T1&gt;, IBareLock&lt;T2&gt;, IBareLock&lt;T3&gt;)</h4>
+  <div class="markdown level1 summary"><p>Acquires the locks unorderly. The protected objects are returned in a tuple. See <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GuardedValue&lt;Tuple&lt;T1, T2, T3&gt;&gt; All&lt;T1, T2, T3&gt;(IBareLock&lt;T1&gt; lock1, IBareLock&lt;T2&gt; lock2, IBareLock&lt;T3&gt; lock3)
+    where T1 : class where T2 : class where T3 : class</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InSync.IBareLock-1.html">IBareLock</a>&lt;T1&gt;</td>
+        <td><span class="parametername">lock1</span></td>
+        <td><p>The first lock to acquire.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="InSync.IBareLock-1.html">IBareLock</a>&lt;T2&gt;</td>
+        <td><span class="parametername">lock2</span></td>
+        <td><p>The second lock to acquire.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="InSync.IBareLock-1.html">IBareLock</a>&lt;T3&gt;</td>
+        <td><span class="parametername">lock3</span></td>
+        <td><p>The third lock to acquire.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InSync.GuardedValue-1.html">GuardedValue</a>&lt;<span class="xref">Tuple</span>&lt;T1, T2, T3&gt;&gt;</td>
+        <td><p>An <seealso cref="!:IDisposable"></seealso> containing the protected objects.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T1</span></td>
+        <td><p>The type of the first protected object.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">T2</span></td>
+        <td><p>The type of the second protected object.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">T3</span></td>
+        <td><p>The type of the third protected object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="InSync_MultiSync_All_" data-uid="InSync.MultiSync.All*"></a>
+  <h4 id="InSync_MultiSync_All__3_InSync_IBareLock___0__InSync_IBareLock___1__InSync_IBareLock___2__System_Int32_InSync_TimingMethod_" data-uid="InSync.MultiSync.All``3(InSync.IBareLock{``0},InSync.IBareLock{``1},InSync.IBareLock{``2},System.Int32,InSync.TimingMethod)">All&lt;T1, T2, T3&gt;(IBareLock&lt;T1&gt;, IBareLock&lt;T2&gt;, IBareLock&lt;T3&gt;, Int32, TimingMethod)</h4>
+  <div class="markdown level1 summary"><p>Acquires the locks unorderly. The protected objects are returned in a tuple. See <a class="xref" href="InSync.MultiSync.html#InSync_MultiSync_All_IReadOnlyList_InSync_IBareLock__System_Int32_InSync_TimingMethod_">All(IReadOnlyList&lt;IBareLock&gt;, Int32, TimingMethod)</a> for more details.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GuardedValue&lt;Tuple&lt;T1, T2, T3&gt;&gt; All&lt;T1, T2, T3&gt;(IBareLock&lt;T1&gt; lock1, IBareLock&lt;T2&gt; lock2, IBareLock&lt;T3&gt; lock3, int millisecondsTimeout, TimingMethod timingMethod)
+    where T1 : class where T2 : class where T3 : class</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InSync.IBareLock-1.html">IBareLock</a>&lt;T1&gt;</td>
+        <td><span class="parametername">lock1</span></td>
+        <td><p>The first lock to acquire.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="InSync.IBareLock-1.html">IBareLock</a>&lt;T2&gt;</td>
+        <td><span class="parametername">lock2</span></td>
+        <td><p>The second lock to acquire.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="InSync.IBareLock-1.html">IBareLock</a>&lt;T3&gt;</td>
+        <td><span class="parametername">lock3</span></td>
+        <td><p>The third lock to acquire.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">millisecondsTimeout</span></td>
+        <td><p>The number of milliseconds to wait. A negative value specifies an infinite wait.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="InSync.TimingMethod.html">TimingMethod</a></td>
+        <td><span class="parametername">timingMethod</span></td>
+        <td><p>The method of counting time. See <a class="xref" href="InSync.TimingMethod.html">TimingMethod</a> for more details.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InSync.GuardedValue-1.html">GuardedValue</a>&lt;<span class="xref">Tuple</span>&lt;T1, T2, T3&gt;&gt;</td>
+        <td><p>An <seealso cref="!:IDisposable"></seealso> containing the protected objects if all the locks are acquired; otherwise, <code>null</code> is returned.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T1</span></td>
+        <td><p>The type of the first protected object.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">T2</span></td>
+        <td><p>The type of the second protected object.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">T3</span></td>
+        <td><p>The type of the third protected object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="InSync_MultiSync_All_" data-uid="InSync.MultiSync.All*"></a>
+  <h4 id="InSync_MultiSync_All__4_InSync_IBareLock___0__InSync_IBareLock___1__InSync_IBareLock___2__InSync_IBareLock___3__" data-uid="InSync.MultiSync.All``4(InSync.IBareLock{``0},InSync.IBareLock{``1},InSync.IBareLock{``2},InSync.IBareLock{``3})">All&lt;T1, T2, T3, T4&gt;(IBareLock&lt;T1&gt;, IBareLock&lt;T2&gt;, IBareLock&lt;T3&gt;, IBareLock&lt;T4&gt;)</h4>
+  <div class="markdown level1 summary"><p>Acquires the locks unorderly. The protected objects are returned in a tuple. See <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GuardedValue&lt;Tuple&lt;T1, T2, T3, T4&gt;&gt; All&lt;T1, T2, T3, T4&gt;(IBareLock&lt;T1&gt; lock1, IBareLock&lt;T2&gt; lock2, IBareLock&lt;T3&gt; lock3, IBareLock&lt;T4&gt; lock4)
+    where T1 : class where T2 : class where T3 : class where T4 : class</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InSync.IBareLock-1.html">IBareLock</a>&lt;T1&gt;</td>
+        <td><span class="parametername">lock1</span></td>
+        <td><p>The first lock to acquire.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="InSync.IBareLock-1.html">IBareLock</a>&lt;T2&gt;</td>
+        <td><span class="parametername">lock2</span></td>
+        <td><p>The second lock to acquire.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="InSync.IBareLock-1.html">IBareLock</a>&lt;T3&gt;</td>
+        <td><span class="parametername">lock3</span></td>
+        <td><p>The third lock to acquire.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="InSync.IBareLock-1.html">IBareLock</a>&lt;T4&gt;</td>
+        <td><span class="parametername">lock4</span></td>
+        <td><p>The forth lock to acquire.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InSync.GuardedValue-1.html">GuardedValue</a>&lt;<span class="xref">Tuple</span>&lt;T1, T2, T3, T4&gt;&gt;</td>
+        <td><p>An <seealso cref="!:IDisposable"></seealso> containing the protected objects.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T1</span></td>
+        <td><p>The type of the first protected object.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">T2</span></td>
+        <td><p>The type of the second protected object.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">T3</span></td>
+        <td><p>The type of the third protected object.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">T4</span></td>
+        <td><p>The type of the forth protected object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="InSync_MultiSync_All_" data-uid="InSync.MultiSync.All*"></a>
+  <h4 id="InSync_MultiSync_All__4_InSync_IBareLock___0__InSync_IBareLock___1__InSync_IBareLock___2__InSync_IBareLock___3__System_Int32_InSync_TimingMethod_" data-uid="InSync.MultiSync.All``4(InSync.IBareLock{``0},InSync.IBareLock{``1},InSync.IBareLock{``2},InSync.IBareLock{``3},System.Int32,InSync.TimingMethod)">All&lt;T1, T2, T3, T4&gt;(IBareLock&lt;T1&gt;, IBareLock&lt;T2&gt;, IBareLock&lt;T3&gt;, IBareLock&lt;T4&gt;, Int32, TimingMethod)</h4>
+  <div class="markdown level1 summary"><p>Acquires the locks unorderly. The protected objects are returned in a tuple. See <a class="xref" href="InSync.MultiSync.html#InSync_MultiSync_All_IReadOnlyList_InSync_IBareLock__System_Int32_InSync_TimingMethod_">All(IReadOnlyList&lt;IBareLock&gt;, Int32, TimingMethod)</a> for more details.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GuardedValue&lt;Tuple&lt;T1, T2, T3, T4&gt;&gt; All&lt;T1, T2, T3, T4&gt;(IBareLock&lt;T1&gt; lock1, IBareLock&lt;T2&gt; lock2, IBareLock&lt;T3&gt; lock3, IBareLock&lt;T4&gt; lock4, int millisecondsTimeout, TimingMethod timingMethod)
+    where T1 : class where T2 : class where T3 : class where T4 : class</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InSync.IBareLock-1.html">IBareLock</a>&lt;T1&gt;</td>
+        <td><span class="parametername">lock1</span></td>
+        <td><p>The first lock to acquire.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="InSync.IBareLock-1.html">IBareLock</a>&lt;T2&gt;</td>
+        <td><span class="parametername">lock2</span></td>
+        <td><p>The second lock to acquire.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="InSync.IBareLock-1.html">IBareLock</a>&lt;T3&gt;</td>
+        <td><span class="parametername">lock3</span></td>
+        <td><p>The third lock to acquire.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="InSync.IBareLock-1.html">IBareLock</a>&lt;T4&gt;</td>
+        <td><span class="parametername">lock4</span></td>
+        <td><p>The forth lock to acquire.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">millisecondsTimeout</span></td>
+        <td><p>The number of milliseconds to wait. A negative value specifies an infinite wait.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="InSync.TimingMethod.html">TimingMethod</a></td>
+        <td><span class="parametername">timingMethod</span></td>
+        <td><p>The method of counting time. See <a class="xref" href="InSync.TimingMethod.html">TimingMethod</a> for more details.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InSync.GuardedValue-1.html">GuardedValue</a>&lt;<span class="xref">Tuple</span>&lt;T1, T2, T3, T4&gt;&gt;</td>
+        <td><p>An <seealso cref="!:IDisposable"></seealso> containing the protected objects if all the locks are acquired; otherwise, <code>null</code> is returned.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T1</span></td>
+        <td><p>The type of the first protected object.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">T2</span></td>
+        <td><p>The type of the second protected object.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">T3</span></td>
+        <td><p>The type of the third protected object.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">T4</span></td>
+        <td><p>The type of the forth protected object.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -511,7 +1039,7 @@ See <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.
   </table>
   <a id="InSync_MultiSync_AllAsync_" data-uid="InSync.MultiSync.AllAsync*"></a>
   <h4 id="InSync_MultiSync_AllAsync__1_IReadOnlyList_InSync_IBareAsyncLock___0___" data-uid="InSync.MultiSync.AllAsync``1(IReadOnlyList{InSync.IBareAsyncLock{``0}})">AllAsync&lt;T&gt;(IReadOnlyList&lt;IBareAsyncLock&lt;T&gt;&gt;)</h4>
-  <div class="markdown level1 summary"><p>Acquires the locks unorderly. See <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.</p>
+  <div class="markdown level1 summary"><p>Acquires the locks in the list unorderly. See <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -571,7 +1099,7 @@ See <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.
   </table>
   <a id="InSync_MultiSync_AllAsync_" data-uid="InSync.MultiSync.AllAsync*"></a>
   <h4 id="InSync_MultiSync_AllAsync__1_IReadOnlyList_InSync_IBareAsyncLock___0___CancellationToken_" data-uid="InSync.MultiSync.AllAsync``1(IReadOnlyList{InSync.IBareAsyncLock{``0}},CancellationToken)">AllAsync&lt;T&gt;(IReadOnlyList&lt;IBareAsyncLock&lt;T&gt;&gt;, CancellationToken)</h4>
-  <div class="markdown level1 summary"><p>Acquires the locks unorderly. See <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.</p>
+  <div class="markdown level1 summary"><p>Acquires the locks in the list unorderly. See <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -631,6 +1159,516 @@ See <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.
       <tr>
         <td><span class="parametername">T</span></td>
         <td><p>The type of the protected objects.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="InSync_MultiSync_AllAsync_" data-uid="InSync.MultiSync.AllAsync*"></a>
+  <h4 id="InSync_MultiSync_AllAsync__2_InSync_IBareAsyncLock___0__InSync_IBareAsyncLock___1__" data-uid="InSync.MultiSync.AllAsync``2(InSync.IBareAsyncLock{``0},InSync.IBareAsyncLock{``1})">AllAsync&lt;T1, T2&gt;(IBareAsyncLock&lt;T1&gt;, IBareAsyncLock&lt;T2&gt;)</h4>
+  <div class="markdown level1 summary"><p>Acquires the locks unorderly. The protected objects are returned in a tuple.  See <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Task&lt;GuardedValue&lt;Tuple&lt;T1, T2&gt;&gt;&gt; AllAsync&lt;T1, T2&gt;(IBareAsyncLock&lt;T1&gt; lock1, IBareAsyncLock&lt;T2&gt; lock2)
+    where T1 : class where T2 : class</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InSync.IBareAsyncLock-1.html">IBareAsyncLock</a>&lt;T1&gt;</td>
+        <td><span class="parametername">lock1</span></td>
+        <td><p>The first lock to acquire.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="InSync.IBareAsyncLock-1.html">IBareAsyncLock</a>&lt;T2&gt;</td>
+        <td><span class="parametername">lock2</span></td>
+        <td><p>The second lock to acquire.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<a class="xref" href="InSync.GuardedValue-1.html">GuardedValue</a>&lt;<span class="xref">Tuple</span>&lt;T1, T2&gt;&gt;&gt;</td>
+        <td><p>An <seealso cref="!:IDisposable"></seealso> containing the protected objects.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T1</span></td>
+        <td><p>The type of the first protected object.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">T2</span></td>
+        <td><p>The type of the second protected object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="InSync_MultiSync_AllAsync_" data-uid="InSync.MultiSync.AllAsync*"></a>
+  <h4 id="InSync_MultiSync_AllAsync__2_InSync_IBareAsyncLock___0__InSync_IBareAsyncLock___1__CancellationToken_" data-uid="InSync.MultiSync.AllAsync``2(InSync.IBareAsyncLock{``0},InSync.IBareAsyncLock{``1},CancellationToken)">AllAsync&lt;T1, T2&gt;(IBareAsyncLock&lt;T1&gt;, IBareAsyncLock&lt;T2&gt;, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Acquires the locks unorderly. The protected objects are returned in a tuple. See <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Task&lt;GuardedValue&lt;Tuple&lt;T1, T2&gt;&gt;&gt; AllAsync&lt;T1, T2&gt;(IBareAsyncLock&lt;T1&gt; lock1, IBareAsyncLock&lt;T2&gt; lock2, CancellationToken cancellationToken)
+    where T1 : class where T2 : class</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InSync.IBareAsyncLock-1.html">IBareAsyncLock</a>&lt;T1&gt;</td>
+        <td><span class="parametername">lock1</span></td>
+        <td><p>The first lock to acquire.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="InSync.IBareAsyncLock-1.html">IBareAsyncLock</a>&lt;T2&gt;</td>
+        <td><span class="parametername">lock2</span></td>
+        <td><p>The second lock to acquire.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>A <seealso cref="!:CancellationToken"></seealso> to observe while waiting for the tasks to complete.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<a class="xref" href="InSync.GuardedValue-1.html">GuardedValue</a>&lt;<span class="xref">Tuple</span>&lt;T1, T2&gt;&gt;&gt;</td>
+        <td><p>An <seealso cref="!:IDisposable"></seealso> containing the protected objects.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T1</span></td>
+        <td><p>The type of the first protected object.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">T2</span></td>
+        <td><p>The type of the second protected object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="InSync_MultiSync_AllAsync_" data-uid="InSync.MultiSync.AllAsync*"></a>
+  <h4 id="InSync_MultiSync_AllAsync__3_InSync_IBareAsyncLock___0__InSync_IBareAsyncLock___1__InSync_IBareAsyncLock___2__" data-uid="InSync.MultiSync.AllAsync``3(InSync.IBareAsyncLock{``0},InSync.IBareAsyncLock{``1},InSync.IBareAsyncLock{``2})">AllAsync&lt;T1, T2, T3&gt;(IBareAsyncLock&lt;T1&gt;, IBareAsyncLock&lt;T2&gt;, IBareAsyncLock&lt;T3&gt;)</h4>
+  <div class="markdown level1 summary"><p>Acquires the locks unorderly. The protected objects are returned in a tuple. See <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Task&lt;GuardedValue&lt;Tuple&lt;T1, T2, T3&gt;&gt;&gt; AllAsync&lt;T1, T2, T3&gt;(IBareAsyncLock&lt;T1&gt; lock1, IBareAsyncLock&lt;T2&gt; lock2, IBareAsyncLock&lt;T3&gt; lock3)
+    where T1 : class where T2 : class where T3 : class</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InSync.IBareAsyncLock-1.html">IBareAsyncLock</a>&lt;T1&gt;</td>
+        <td><span class="parametername">lock1</span></td>
+        <td><p>The first lock to acquire.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="InSync.IBareAsyncLock-1.html">IBareAsyncLock</a>&lt;T2&gt;</td>
+        <td><span class="parametername">lock2</span></td>
+        <td><p>The second lock to acquire.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="InSync.IBareAsyncLock-1.html">IBareAsyncLock</a>&lt;T3&gt;</td>
+        <td><span class="parametername">lock3</span></td>
+        <td><p>The third lock to acquire.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<a class="xref" href="InSync.GuardedValue-1.html">GuardedValue</a>&lt;<span class="xref">Tuple</span>&lt;T1, T2, T3&gt;&gt;&gt;</td>
+        <td><p>An <seealso cref="!:IDisposable"></seealso> containing the protected objects.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T1</span></td>
+        <td><p>The type of the first protected object.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">T2</span></td>
+        <td><p>The type of the second protected object.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">T3</span></td>
+        <td><p>The type of the third protected object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="InSync_MultiSync_AllAsync_" data-uid="InSync.MultiSync.AllAsync*"></a>
+  <h4 id="InSync_MultiSync_AllAsync__3_InSync_IBareAsyncLock___0__InSync_IBareAsyncLock___1__InSync_IBareAsyncLock___2__CancellationToken_" data-uid="InSync.MultiSync.AllAsync``3(InSync.IBareAsyncLock{``0},InSync.IBareAsyncLock{``1},InSync.IBareAsyncLock{``2},CancellationToken)">AllAsync&lt;T1, T2, T3&gt;(IBareAsyncLock&lt;T1&gt;, IBareAsyncLock&lt;T2&gt;, IBareAsyncLock&lt;T3&gt;, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Acquires the locks unorderly. The protected objects are returned in a tuple. See <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Task&lt;GuardedValue&lt;Tuple&lt;T1, T2, T3&gt;&gt;&gt; AllAsync&lt;T1, T2, T3&gt;(IBareAsyncLock&lt;T1&gt; lock1, IBareAsyncLock&lt;T2&gt; lock2, IBareAsyncLock&lt;T3&gt; lock3, CancellationToken cancellationToken)
+    where T1 : class where T2 : class where T3 : class</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InSync.IBareAsyncLock-1.html">IBareAsyncLock</a>&lt;T1&gt;</td>
+        <td><span class="parametername">lock1</span></td>
+        <td><p>The first lock to acquire.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="InSync.IBareAsyncLock-1.html">IBareAsyncLock</a>&lt;T2&gt;</td>
+        <td><span class="parametername">lock2</span></td>
+        <td><p>The second lock to acquire.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="InSync.IBareAsyncLock-1.html">IBareAsyncLock</a>&lt;T3&gt;</td>
+        <td><span class="parametername">lock3</span></td>
+        <td><p>The third lock to acquire.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>A <seealso cref="!:CancellationToken"></seealso> to observe while waiting for the tasks to complete.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<a class="xref" href="InSync.GuardedValue-1.html">GuardedValue</a>&lt;<span class="xref">Tuple</span>&lt;T1, T2, T3&gt;&gt;&gt;</td>
+        <td><p>An <seealso cref="!:IDisposable"></seealso> containing the protected objects.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T1</span></td>
+        <td><p>The type of the first protected object.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">T2</span></td>
+        <td><p>The type of the second protected object.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">T3</span></td>
+        <td><p>The type of the third protected object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="InSync_MultiSync_AllAsync_" data-uid="InSync.MultiSync.AllAsync*"></a>
+  <h4 id="InSync_MultiSync_AllAsync__4_InSync_IBareAsyncLock___0__InSync_IBareAsyncLock___1__InSync_IBareAsyncLock___2__InSync_IBareAsyncLock___3__" data-uid="InSync.MultiSync.AllAsync``4(InSync.IBareAsyncLock{``0},InSync.IBareAsyncLock{``1},InSync.IBareAsyncLock{``2},InSync.IBareAsyncLock{``3})">AllAsync&lt;T1, T2, T3, T4&gt;(IBareAsyncLock&lt;T1&gt;, IBareAsyncLock&lt;T2&gt;, IBareAsyncLock&lt;T3&gt;, IBareAsyncLock&lt;T4&gt;)</h4>
+  <div class="markdown level1 summary"><p>Acquires the locks unorderly. The protected objects are returned in a tuple. See <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Task&lt;GuardedValue&lt;Tuple&lt;T1, T2, T3, T4&gt;&gt;&gt; AllAsync&lt;T1, T2, T3, T4&gt;(IBareAsyncLock&lt;T1&gt; lock1, IBareAsyncLock&lt;T2&gt; lock2, IBareAsyncLock&lt;T3&gt; lock3, IBareAsyncLock&lt;T4&gt; lock4)
+    where T1 : class where T2 : class where T3 : class where T4 : class</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InSync.IBareAsyncLock-1.html">IBareAsyncLock</a>&lt;T1&gt;</td>
+        <td><span class="parametername">lock1</span></td>
+        <td><p>The first lock to acquire.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="InSync.IBareAsyncLock-1.html">IBareAsyncLock</a>&lt;T2&gt;</td>
+        <td><span class="parametername">lock2</span></td>
+        <td><p>The second lock to acquire.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="InSync.IBareAsyncLock-1.html">IBareAsyncLock</a>&lt;T3&gt;</td>
+        <td><span class="parametername">lock3</span></td>
+        <td><p>The third lock to acquire.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="InSync.IBareAsyncLock-1.html">IBareAsyncLock</a>&lt;T4&gt;</td>
+        <td><span class="parametername">lock4</span></td>
+        <td><p>The forth lock to acquire.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<a class="xref" href="InSync.GuardedValue-1.html">GuardedValue</a>&lt;<span class="xref">Tuple</span>&lt;T1, T2, T3, T4&gt;&gt;&gt;</td>
+        <td><p>An <seealso cref="!:IDisposable"></seealso> containing the protected objects.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T1</span></td>
+        <td><p>The type of the first protected object.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">T2</span></td>
+        <td><p>The type of the second protected object.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">T3</span></td>
+        <td><p>The type of the third protected object.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">T4</span></td>
+        <td><p>The type of the forth protected object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="InSync_MultiSync_AllAsync_" data-uid="InSync.MultiSync.AllAsync*"></a>
+  <h4 id="InSync_MultiSync_AllAsync__4_InSync_IBareAsyncLock___0__InSync_IBareAsyncLock___1__InSync_IBareAsyncLock___2__InSync_IBareAsyncLock___3__CancellationToken_" data-uid="InSync.MultiSync.AllAsync``4(InSync.IBareAsyncLock{``0},InSync.IBareAsyncLock{``1},InSync.IBareAsyncLock{``2},InSync.IBareAsyncLock{``3},CancellationToken)">AllAsync&lt;T1, T2, T3, T4&gt;(IBareAsyncLock&lt;T1&gt;, IBareAsyncLock&lt;T2&gt;, IBareAsyncLock&lt;T3&gt;, IBareAsyncLock&lt;T4&gt;, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Acquires the locks unorderly. The protected objects are returned in a tuple. See <a class="xref" href="InSync.MultiSync.html">MultiSync</a> for more details.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Task&lt;GuardedValue&lt;Tuple&lt;T1, T2, T3, T4&gt;&gt;&gt; AllAsync&lt;T1, T2, T3, T4&gt;(IBareAsyncLock&lt;T1&gt; lock1, IBareAsyncLock&lt;T2&gt; lock2, IBareAsyncLock&lt;T3&gt; lock3, IBareAsyncLock&lt;T4&gt; lock4, CancellationToken cancellationToken)
+    where T1 : class where T2 : class where T3 : class where T4 : class</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="InSync.IBareAsyncLock-1.html">IBareAsyncLock</a>&lt;T1&gt;</td>
+        <td><span class="parametername">lock1</span></td>
+        <td><p>The first lock to acquire.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="InSync.IBareAsyncLock-1.html">IBareAsyncLock</a>&lt;T2&gt;</td>
+        <td><span class="parametername">lock2</span></td>
+        <td><p>The second lock to acquire.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="InSync.IBareAsyncLock-1.html">IBareAsyncLock</a>&lt;T3&gt;</td>
+        <td><span class="parametername">lock3</span></td>
+        <td><p>The third lock to acquire.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="InSync.IBareAsyncLock-1.html">IBareAsyncLock</a>&lt;T4&gt;</td>
+        <td><span class="parametername">lock4</span></td>
+        <td><p>The forth lock to acquire.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>A <seealso cref="!:CancellationToken"></seealso> to observe while waiting for the tasks to complete.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<a class="xref" href="InSync.GuardedValue-1.html">GuardedValue</a>&lt;<span class="xref">Tuple</span>&lt;T1, T2, T3, T4&gt;&gt;&gt;</td>
+        <td><p>An <seealso cref="!:IDisposable"></seealso> containing the protected objects.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T1</span></td>
+        <td><p>The type of the first protected object.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">T2</span></td>
+        <td><p>The type of the second protected object.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">T3</span></td>
+        <td><p>The type of the third protected object.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">T4</span></td>
+        <td><p>The type of the forth protected object.</p>
 </td>
       </tr>
     </tbody>

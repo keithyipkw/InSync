@@ -12,10 +12,10 @@ namespace Example
 
         public void UnorderedAcquisition()
         {
-            using (var guard = MultiSync.All(new[] { lock1, lock2 }))
+            using (var guard = MultiSync.All(lock1, lock2))
             {
-                var list1 = guard.Value[0];
-                var list2 = guard.Value[1];
+                var list1 = guard.Value.Item1;
+                var list2 = guard.Value.Item2;
                 list1.AddRange(list2);
             }
         }

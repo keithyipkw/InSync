@@ -226,6 +226,51 @@ namespace InSyncTest
             // assert
             currentStates.ShouldBe(Enumerable.Repeat(0, count));
         }
+
+        [Test]
+        public void AllTupleBareLock_Release()
+        {
+            // setup
+            var lock1 = new Mock<IBareLock<List<byte>>>(MockBehavior.Strict);
+            var lock2 = new Mock<IBareLock<List<short>>>(MockBehavior.Strict);
+            var lock3 = new Mock<IBareLock<List<int>>>(MockBehavior.Strict);
+            var lock4 = new Mock<IBareLock<List<long>>>(MockBehavior.Strict);
+            var locks = new List<Mock<IBareLock>>
+            {
+                lock1.As<IBareLock>(),
+                lock2.As<IBareLock>(),
+                lock3.As<IBareLock>(),
+                lock4.As<IBareLock>(),
+            };
+            var types = new List<Type> { typeof(List<byte>), typeof(List<short>), typeof(List<int>), typeof(List<long>) };
+            var currentStates = new List<int> { 0, 0, 0, 0 };
+            int count = currentStates.Count;
+            for (int i = 0; i < count; ++i)
+            {
+                int iCopy = i;
+                var l = locks[i];
+                l.Setup(x => x.BarelyLock()).Returns(() =>
+                {
+                    ++currentStates[iCopy];
+                    return Activator.CreateInstance(types[iCopy]);
+                });
+                object valueToken;
+                l.Setup(x => x.BarelyTryLock(out valueToken)).Returns(new TryLockDelegate((out object v) =>
+                {
+                    ++currentStates[iCopy];
+                    v = Activator.CreateInstance(types[iCopy]);
+                    return true;
+                }));
+                l.Setup(x => x.BarelyUnlock()).Callback(() => --currentStates[iCopy]);
+            }
+            var guard = MultiSync.All(lock1.Object, lock2.Object, lock3.Object, lock4.Object);
+
+            // act
+            guard.Dispose();
+
+            // assert
+            currentStates.ShouldBe(Enumerable.Repeat(0, count));
+        }
         
         [Test]
         public void AllBareLock_ExceptionInRelease_ThrowsUnlockException()

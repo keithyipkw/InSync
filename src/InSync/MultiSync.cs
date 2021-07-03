@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -16,7 +15,7 @@ namespace InSync
     public static class MultiSync
     {
         /// <summary>
-        /// Acquires the locks unorderly. See <seealso cref="MultiSync"/> for more details.
+        /// Acquires the locks in the list unorderly. See <seealso cref="MultiSync"/> for more details.
         /// </summary>
         /// <typeparam name="T">The type of the protected objects.</typeparam>
         /// <param name="locks">The locks to acquire.</param>
@@ -28,7 +27,64 @@ namespace InSync
         }
 
         /// <summary>
-        /// Acquires the locks unorderly. <seealso cref="TimingMethod.EnvironmentTick"/> is good enough for general usages. This method detects an increase in remaining time and continue the counting from there.<br/>
+        /// Acquires the locks unorderly. The protected objects are returned in a tuple. See <seealso cref="MultiSync"/> for more details.
+        /// </summary>
+        /// <typeparam name="T1">The type of the first protected object.</typeparam>
+        /// <typeparam name="T2">The type of the second protected object.</typeparam>
+        /// <param name="lock1">The first lock to acquire.</param>
+        /// <param name="lock2">The second lock to acquire.</param>
+        /// <returns>An <seealso cref="IDisposable"/> containing the protected objects.</returns>
+        public static GuardedValue<Tuple<T1, T2>> All<T1, T2>(IBareLock<T1> lock1, IBareLock<T2> lock2)
+            where T1 : class
+            where T2 : class
+        {
+            var guard = AcquireAll<object>(new IBareLock[] { lock1, lock2 });
+            return new GuardedValue<Tuple<T1, T2>>(Tuple.Create((T1)guard.Value[0], (T2)guard.Value[1]), guard.Dispose);
+        }
+
+        /// <summary>
+        /// Acquires the locks unorderly. The protected objects are returned in a tuple. See <seealso cref="MultiSync"/> for more details.
+        /// </summary>
+        /// <typeparam name="T1">The type of the first protected object.</typeparam>
+        /// <typeparam name="T2">The type of the second protected object.</typeparam>
+        /// <typeparam name="T3">The type of the third protected object.</typeparam>
+        /// <param name="lock1">The first lock to acquire.</param>
+        /// <param name="lock2">The second lock to acquire.</param>
+        /// <param name="lock3">The third lock to acquire.</param>
+        /// <returns>An <seealso cref="IDisposable"/> containing the protected objects.</returns>
+        public static GuardedValue<Tuple<T1, T2, T3>> All<T1, T2, T3>(IBareLock<T1> lock1, IBareLock<T2> lock2, IBareLock<T3> lock3)
+            where T1 : class
+            where T2 : class
+            where T3 : class
+        {
+            var guard = AcquireAll<object>(new IBareLock[] { lock1, lock2, lock3});
+            return new GuardedValue<Tuple<T1, T2, T3>>(Tuple.Create((T1)guard.Value[0], (T2)guard.Value[1], (T3)guard.Value[2]), guard.Dispose);
+        }
+
+        /// <summary>
+        /// Acquires the locks unorderly. The protected objects are returned in a tuple. See <seealso cref="MultiSync"/> for more details.
+        /// </summary>
+        /// <typeparam name="T1">The type of the first protected object.</typeparam>
+        /// <typeparam name="T2">The type of the second protected object.</typeparam>
+        /// <typeparam name="T3">The type of the third protected object.</typeparam>
+        /// <typeparam name="T4">The type of the forth protected object.</typeparam>
+        /// <param name="lock1">The first lock to acquire.</param>
+        /// <param name="lock2">The second lock to acquire.</param>
+        /// <param name="lock3">The third lock to acquire.</param>
+        /// <param name="lock4">The forth lock to acquire.</param>
+        /// <returns>An <seealso cref="IDisposable"/> containing the protected objects.</returns>
+        public static GuardedValue<Tuple<T1, T2, T3, T4>> All<T1, T2, T3, T4>(IBareLock<T1> lock1, IBareLock<T2> lock2, IBareLock<T3> lock3, IBareLock<T4> lock4)
+            where T1 : class
+            where T2 : class
+            where T3 : class
+            where T4 : class
+        {
+            var guard = AcquireAll<object>(new IBareLock[] { lock1, lock2, lock3, lock4 });
+            return new GuardedValue<Tuple<T1, T2, T3, T4>>(Tuple.Create((T1)guard.Value[0], (T2)guard.Value[1], (T3)guard.Value[2], (T4)guard.Value[3]), guard.Dispose);
+        }
+
+        /// <summary>
+        /// Acquires the locks in the list unorderly. <seealso cref="TimingMethod.EnvironmentTick"/> is good enough for general usages. This method detects an increase in remaining time and continue the counting from there.<br/>
         /// Although <seealso cref="TimingMethod.EnvironmentTick"/> uses <seealso cref="Environment.TickCount"/> which is 32-bits (representing 49.8 days), it is practically safe. The wrap around problem is only effective if an execution is suspended for 49.8 days subtracting the timeout, at least 24.9 days.<br/>
         /// <seealso cref="TimingMethod.DateTime"/> is affected by system clock changes. A clock may change several minutes for a low quality system in a network time synchronization. An user may change their system clock to an arbitrary time.<br/>
         /// See <seealso cref="MultiSync"/> for more details.<br/>
@@ -42,6 +98,81 @@ namespace InSync
             where T : class
         {
             return AcquireAll<T>(locks, millisecondsTimeout, timingMethod);
+        }
+
+        /// <summary>
+        /// Acquires the locks unorderly. The protected objects are returned in a tuple. See <seealso cref="All(IReadOnlyList{IBareLock}, int, TimingMethod)"/> for more details.
+        /// </summary>
+        /// <typeparam name="T1">The type of the first protected object.</typeparam>
+        /// <typeparam name="T2">The type of the second protected object.</typeparam>
+        /// <param name="lock1">The first lock to acquire.</param>
+        /// <param name="lock2">The second lock to acquire.</param>
+        /// <param name="millisecondsTimeout">The number of milliseconds to wait. A negative value specifies an infinite wait.</param>
+        /// <param name="timingMethod">The method of counting time. See <seealso cref="TimingMethod"/> for more details.</param>
+        /// <returns>An <seealso cref="IDisposable"/> containing the protected objects if all the locks are acquired; otherwise, <c>null</c> is returned.</returns>
+        public static GuardedValue<Tuple<T1, T2>>? All<T1, T2>(IBareLock<T1> lock1, IBareLock<T2> lock2, int millisecondsTimeout, TimingMethod timingMethod)
+            where T1 : class
+            where T2 : class
+        {
+            var guard = AcquireAll<object>(new IBareLock[] { lock1, lock2 }, millisecondsTimeout, timingMethod);
+            if (guard == null)
+            {
+                return null;
+            }
+            return new GuardedValue<Tuple<T1, T2>>(Tuple.Create((T1)guard.Value[0], (T2)guard.Value[1]), guard.Dispose);
+        }
+
+        /// <summary>
+        /// Acquires the locks unorderly. The protected objects are returned in a tuple. See <seealso cref="All(IReadOnlyList{IBareLock}, int, TimingMethod)"/> for more details.
+        /// </summary>
+        /// <typeparam name="T1">The type of the first protected object.</typeparam>
+        /// <typeparam name="T2">The type of the second protected object.</typeparam>
+        /// <typeparam name="T3">The type of the third protected object.</typeparam>
+        /// <param name="lock1">The first lock to acquire.</param>
+        /// <param name="lock2">The second lock to acquire.</param>
+        /// <param name="lock3">The third lock to acquire.</param>
+        /// <param name="millisecondsTimeout">The number of milliseconds to wait. A negative value specifies an infinite wait.</param>
+        /// <param name="timingMethod">The method of counting time. See <seealso cref="TimingMethod"/> for more details.</param>
+        /// <returns>An <seealso cref="IDisposable"/> containing the protected objects if all the locks are acquired; otherwise, <c>null</c> is returned.</returns>
+        public static GuardedValue<Tuple<T1, T2, T3>>? All<T1, T2, T3>(IBareLock<T1> lock1, IBareLock<T2> lock2, IBareLock<T3> lock3, int millisecondsTimeout, TimingMethod timingMethod)
+            where T1 : class
+            where T2 : class
+            where T3 : class
+        {
+            var guard = AcquireAll<object>(new IBareLock[] { lock1, lock2, lock3 }, millisecondsTimeout, timingMethod);
+            if (guard == null)
+            {
+                return null;
+            }
+            return new GuardedValue<Tuple<T1, T2, T3>>(Tuple.Create((T1)guard.Value[0], (T2)guard.Value[1], (T3)guard.Value[2]), guard.Dispose);
+        }
+
+        /// <summary>
+        /// Acquires the locks unorderly. The protected objects are returned in a tuple. See <seealso cref="All(IReadOnlyList{IBareLock}, int, TimingMethod)"/> for more details.
+        /// </summary>
+        /// <typeparam name="T1">The type of the first protected object.</typeparam>
+        /// <typeparam name="T2">The type of the second protected object.</typeparam>
+        /// <typeparam name="T3">The type of the third protected object.</typeparam>
+        /// <typeparam name="T4">The type of the forth protected object.</typeparam>
+        /// <param name="lock1">The first lock to acquire.</param>
+        /// <param name="lock2">The second lock to acquire.</param>
+        /// <param name="lock3">The third lock to acquire.</param>
+        /// <param name="lock4">The forth lock to acquire.</param>
+        /// <param name="millisecondsTimeout">The number of milliseconds to wait. A negative value specifies an infinite wait.</param>
+        /// <param name="timingMethod">The method of counting time. See <seealso cref="TimingMethod"/> for more details.</param>
+        /// <returns>An <seealso cref="IDisposable"/> containing the protected objects if all the locks are acquired; otherwise, <c>null</c> is returned.</returns>
+        public static GuardedValue<Tuple<T1, T2, T3, T4>>? All<T1, T2, T3, T4>(IBareLock<T1> lock1, IBareLock<T2> lock2, IBareLock<T3> lock3, IBareLock<T4> lock4, int millisecondsTimeout, TimingMethod timingMethod)
+            where T1 : class
+            where T2 : class
+            where T3 : class
+            where T4 : class
+        {
+            var guard = AcquireAll<object>(new IBareLock[] { lock1, lock2, lock3, lock4 }, millisecondsTimeout, timingMethod);
+            if (guard == null)
+            {
+                return null;
+            }
+            return new GuardedValue<Tuple<T1, T2, T3, T4>>(Tuple.Create((T1)guard.Value[0], (T2)guard.Value[1], (T3)guard.Value[2], (T4)guard.Value[3]), guard.Dispose);
         }
 
         /// <summary>
@@ -345,7 +476,7 @@ namespace InSync
         }
 
         /// <summary>
-        /// Acquires the locks unorderly. See <seealso cref="MultiSync"/> for more details.
+        /// Acquires the locks in the list unorderly. See <seealso cref="MultiSync"/> for more details.
         /// </summary>
         /// <typeparam name="T">The type of the protected objects.</typeparam>
         /// <param name="locks">The locks to acquire.</param>
@@ -357,7 +488,64 @@ namespace InSync
         }
 
         /// <summary>
-        /// Acquires the locks unorderly. See <seealso cref="MultiSync"/> for more details.
+        /// Acquires the locks unorderly. The protected objects are returned in a tuple.  See <seealso cref="MultiSync"/> for more details.
+        /// </summary>
+        /// <typeparam name="T1">The type of the first protected object.</typeparam>
+        /// <typeparam name="T2">The type of the second protected object.</typeparam>
+        /// <param name="lock1">The first lock to acquire.</param>
+        /// <param name="lock2">The second lock to acquire.</param>
+        /// <returns>An <seealso cref="IDisposable"/> containing the protected objects.</returns>
+        public static async Task<GuardedValue<Tuple<T1, T2>>> AllAsync<T1, T2>(IBareAsyncLock<T1> lock1, IBareAsyncLock<T2> lock2)
+            where T1 : class
+            where T2 : class
+        {
+            var guard = await AcquireAllAsync<object>(new IBareAsyncLock[] { lock1, lock2 }, CancellationToken.None);
+            return new GuardedValue<Tuple<T1, T2>>(Tuple.Create((T1)guard.Value[0], (T2)guard.Value[1]), guard.Dispose);
+        }
+
+        /// <summary>
+        /// Acquires the locks unorderly. The protected objects are returned in a tuple. See <seealso cref="MultiSync"/> for more details.
+        /// </summary>
+        /// <typeparam name="T1">The type of the first protected object.</typeparam>
+        /// <typeparam name="T2">The type of the second protected object.</typeparam>
+        /// <typeparam name="T3">The type of the third protected object.</typeparam>
+        /// <param name="lock1">The first lock to acquire.</param>
+        /// <param name="lock2">The second lock to acquire.</param>
+        /// <param name="lock3">The third lock to acquire.</param>
+        /// <returns>An <seealso cref="IDisposable"/> containing the protected objects.</returns>
+        public static async Task<GuardedValue<Tuple<T1, T2, T3>>> AllAsync<T1, T2, T3>(IBareAsyncLock<T1> lock1, IBareAsyncLock<T2> lock2, IBareAsyncLock<T3> lock3)
+            where T1 : class
+            where T2 : class
+            where T3 : class
+        {
+            var guard = await AcquireAllAsync<object>(new IBareAsyncLock[] { lock1, lock2, lock3 }, CancellationToken.None);
+            return new GuardedValue<Tuple<T1, T2, T3>>(Tuple.Create((T1)guard.Value[0], (T2)guard.Value[1], (T3)guard.Value[2]), guard.Dispose);
+        }
+
+        /// <summary>
+        /// Acquires the locks unorderly. The protected objects are returned in a tuple. See <seealso cref="MultiSync"/> for more details.
+        /// </summary>
+        /// <typeparam name="T1">The type of the first protected object.</typeparam>
+        /// <typeparam name="T2">The type of the second protected object.</typeparam>
+        /// <typeparam name="T3">The type of the third protected object.</typeparam>
+        /// <typeparam name="T4">The type of the forth protected object.</typeparam>
+        /// <param name="lock1">The first lock to acquire.</param>
+        /// <param name="lock2">The second lock to acquire.</param>
+        /// <param name="lock3">The third lock to acquire.</param>
+        /// <param name="lock4">The forth lock to acquire.</param>
+        /// <returns>An <seealso cref="IDisposable"/> containing the protected objects.</returns>
+        public static async Task<GuardedValue<Tuple<T1, T2, T3, T4>>> AllAsync<T1, T2, T3, T4>(IBareAsyncLock<T1> lock1, IBareAsyncLock<T2> lock2, IBareAsyncLock<T3> lock3, IBareAsyncLock<T4> lock4)
+            where T1 : class
+            where T2 : class
+            where T3 : class
+            where T4 : class
+        {
+            var guard = await AcquireAllAsync<object>(new IBareAsyncLock[] { lock1, lock2, lock3, lock4 }, CancellationToken.None);
+            return new GuardedValue<Tuple<T1, T2, T3, T4>>(Tuple.Create((T1)guard.Value[0], (T2)guard.Value[1], (T3)guard.Value[2], (T4)guard.Value[3]), guard.Dispose);
+        }
+
+        /// <summary>
+        /// Acquires the locks in the list unorderly. See <seealso cref="MultiSync"/> for more details.
         /// </summary>
         /// <typeparam name="T">The type of the protected objects.</typeparam>
         /// <param name="locks">The locks to acquire.</param>
@@ -367,6 +555,66 @@ namespace InSync
             where T : class
         {
             return AcquireAllAsync<T>(locks, cancellationToken);
+        }
+
+        /// <summary>
+        /// Acquires the locks unorderly. The protected objects are returned in a tuple. See <seealso cref="MultiSync"/> for more details.
+        /// </summary>
+        /// <typeparam name="T1">The type of the first protected object.</typeparam>
+        /// <typeparam name="T2">The type of the second protected object.</typeparam>
+        /// <param name="lock1">The first lock to acquire.</param>
+        /// <param name="lock2">The second lock to acquire.</param>
+        /// <param name="cancellationToken">A <seealso cref="CancellationToken"/> to observe while waiting for the tasks to complete.</param>
+        /// <returns>An <seealso cref="IDisposable"/> containing the protected objects.</returns>
+        public static async Task<GuardedValue<Tuple<T1, T2>>> AllAsync<T1, T2>(IBareAsyncLock<T1> lock1, IBareAsyncLock<T2> lock2, CancellationToken cancellationToken)
+            where T1 : class
+            where T2 : class
+        {
+            var guard = await AcquireAllAsync<object>(new IBareAsyncLock[] { lock1, lock2 }, cancellationToken);
+            return new GuardedValue<Tuple<T1, T2>>(Tuple.Create((T1)guard.Value[0], (T2)guard.Value[1]), guard.Dispose);
+        }
+
+        /// <summary>
+        /// Acquires the locks unorderly. The protected objects are returned in a tuple. See <seealso cref="MultiSync"/> for more details.
+        /// </summary>
+        /// <typeparam name="T1">The type of the first protected object.</typeparam>
+        /// <typeparam name="T2">The type of the second protected object.</typeparam>
+        /// <typeparam name="T3">The type of the third protected object.</typeparam>
+        /// <param name="lock1">The first lock to acquire.</param>
+        /// <param name="lock2">The second lock to acquire.</param>
+        /// <param name="lock3">The third lock to acquire.</param>
+        /// <param name="cancellationToken">A <seealso cref="CancellationToken"/> to observe while waiting for the tasks to complete.</param>
+        /// <returns>An <seealso cref="IDisposable"/> containing the protected objects.</returns>
+        public static async Task<GuardedValue<Tuple<T1, T2, T3>>> AllAsync<T1, T2, T3>(IBareAsyncLock<T1> lock1, IBareAsyncLock<T2> lock2, IBareAsyncLock<T3> lock3, CancellationToken cancellationToken)
+            where T1 : class
+            where T2 : class
+            where T3 : class
+        {
+            var guard = await AcquireAllAsync<object>(new IBareAsyncLock[] { lock1, lock2, lock3 }, cancellationToken);
+            return new GuardedValue<Tuple<T1, T2, T3>>(Tuple.Create((T1)guard.Value[0], (T2)guard.Value[1], (T3)guard.Value[2]), guard.Dispose);
+        }
+
+        /// <summary>
+        /// Acquires the locks unorderly. The protected objects are returned in a tuple. See <seealso cref="MultiSync"/> for more details.
+        /// </summary>
+        /// <typeparam name="T1">The type of the first protected object.</typeparam>
+        /// <typeparam name="T2">The type of the second protected object.</typeparam>
+        /// <typeparam name="T3">The type of the third protected object.</typeparam>
+        /// <typeparam name="T4">The type of the forth protected object.</typeparam>
+        /// <param name="lock1">The first lock to acquire.</param>
+        /// <param name="lock2">The second lock to acquire.</param>
+        /// <param name="lock3">The third lock to acquire.</param>
+        /// <param name="lock4">The forth lock to acquire.</param>
+        /// <param name="cancellationToken">A <seealso cref="CancellationToken"/> to observe while waiting for the tasks to complete.</param>
+        /// <returns>An <seealso cref="IDisposable"/> containing the protected objects.</returns>
+        public static async Task<GuardedValue<Tuple<T1, T2, T3, T4>>> AllAsync<T1, T2, T3, T4>(IBareAsyncLock<T1> lock1, IBareAsyncLock<T2> lock2, IBareAsyncLock<T3> lock3, IBareAsyncLock<T4> lock4, CancellationToken cancellationToken)
+            where T1 : class
+            where T2 : class
+            where T3 : class
+            where T4 : class
+        {
+            var guard = await AcquireAllAsync<object>(new IBareAsyncLock[] { lock1, lock2, lock3, lock4 }, cancellationToken);
+            return new GuardedValue<Tuple<T1, T2, T3, T4>>(Tuple.Create((T1)guard.Value[0], (T2)guard.Value[1], (T3)guard.Value[2], (T4)guard.Value[3]), guard.Dispose);
         }
 
         /// <summary>

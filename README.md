@@ -236,10 +236,10 @@ private readonly Synchronized<List<int>> lock2 = Synchronized.Create(new List<in
 
 public void UnorderedAcquisition()
 {
-    using (var guard = MultiSync.All(new[] { lock1, lock2 }))
+    using (var guard = MultiSync.All(lock1, lock2))
     {
-        var list1 = guard[0];
-        var list2 = guard[1];
+        var list1 = guard.Value.Item1;
+        var list2 = guard.Value.Item2;
         list1.AddRange(list2);
     }
 }
